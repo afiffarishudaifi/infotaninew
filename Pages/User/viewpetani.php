@@ -14,7 +14,7 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php
-        include "../_partials/sidebar.php";
+        include "../_partials/sidebaruser.php";
     ?>
     </section>
     <!-- /.sidebar -->

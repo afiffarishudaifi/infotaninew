@@ -34,7 +34,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
+                <a href="./admin/pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
               </div>
               <div class="pull-right">
                 <a href="#" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Sign out</a>
