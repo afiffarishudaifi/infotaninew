@@ -26,7 +26,7 @@
                 <nav class="classy-navbar justify-content-between" id="akameNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><h3>INFO TANI</h3></a>
+                    <a class="nav-brand" href="index.php"><h3>INFO TANI</h3></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -42,10 +42,10 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="./index.html">Beranda</a></li>
-                                <li><a href="./portfolio.html">Cari</a></li>
-                                <li><a href="./service.html">Tentang Kami</a></li>
-                                <li><a href="./about.html">Kontak</a></li>
+                                <li><a href="./index.php">Beranda</a></li>
+                                <li><a href="./cari.php">Cari</a></li>
+                                <li><a href="./tentangkami.php">Tentang Kami</a></li>
+                                <li><a href="./contact.php">Kontak</a></li>
                             </ul>
 
                             <!-- Book Icon -->

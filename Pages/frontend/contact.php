@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Form -->
-                    <form action="../../controller/phpmailer/mail.php" method="post" class="akame-contact-form border-0 p-0">
+                    <form action="../../controller/frontend/mail.php" method="post" class="akame-contact-form border-0 p-0">
                         <div class="row">
                             <div class="col-lg-6">
                                 <input type="text" name="nama" class="form-control mb-30" placeholder="Masukkan Nama" required>

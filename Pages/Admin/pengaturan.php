@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/controllerdesa.php">
+            <form method="post" action="../../controller/admin/pengaturan.php">
                 <?php
                 require_once "../../controller/koneksi.php";
                 if(isset($_GET['id'])) {
@@ -49,7 +49,7 @@
                     while ($data = mysqli_fetch_array($query)) {?>
                 <input type="hidden" name="iddesa" value="<?php echo $data['ID_DESA']?>">
                 <div class="form-group">
-                    <label>Nama Desa</label>
+                    <label>Nama Pengguna</label>
                     <!--menginputkan sebuah inputan nim bertipe text-->
                     <input type="text" class="form-control" value="<?php echo $data['NAMA_DESA']?>" name="namadesa" required>
                 </div>
