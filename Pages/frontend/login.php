@@ -1,3 +1,9 @@
+<?php include ('../../controller/session.php'); ?>
+<?php
+  if(isset($login_session)) {
+	header('Location:./register.php'); // Mengarahkan ke Home Page
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,22 +40,22 @@
 
     <div class="container">
       <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
-
-
-        <br>
+        <br> 
         <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LOGIN INFOTANI</h2>
-
+        
         <br>
         <label for="username" class="sr-only">Username</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <br>
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-
-        <p>Belum punya akun?
-          Silahkan<a href="./register.php">Registrasi Disini</a></p>
+        
+        <p>Belum punya akun? 
+          Silahkan <a href="./register.php">Registrasi Disini</a></p>
         <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
-      	<br />
-	<a href="./index.php" class="btn btn-warning btn-block">Kembali ke Website Infotani</a>
+      	<br>
+	<a href="./index.php" class="btn btn-warning btn-block">Kembali</a>
+      <br>
       </form>
     </div> <!-- /container -->
 

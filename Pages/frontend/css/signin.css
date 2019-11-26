@@ -1,12 +1,24 @@
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: url(../img/bg-login-blur.jpg) no-repeat;
-  background-size:cover;
-  padding:20px}
+html,body{
+background: url(../img/bg-login-blur.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }
-h1{text-align:center; colo:#FFF}
+body {
+padding-top: 40px;
+  padding-bottom: 40px;
+  
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat
+  padding:20px}  
+
+label {color:#FFF}
+h2{text-align:center; color:#FFF}
 p{margin-bottom:10px; color:#FFF}
+form{color:#FFF}
 
 .form-signin {
  background:rgba(0, 0, 0, 0.39);
@@ -48,4 +60,21 @@ p{margin-bottom:10px; color:#FFF}
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.btn{
+  display: : ;
+   padding: 6px 36px;
+
+}
+.container{
+	width: 400px;
+	height: 200px;
+	position: fixed;
+
+	left: 50%;
+	
+	margin-left: -230px;
+	text-align: center;
+	padding:80px;
+	display: table;
 }
