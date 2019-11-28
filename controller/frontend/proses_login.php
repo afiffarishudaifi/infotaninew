@@ -1,13 +1,13 @@
 <?php
 session_start();
 $error='';
-if (isset($_GET['submit'])) {
-if (empty($_GET['username']) || empty($_GET['password'])) {
+if (isset($_POST['submit'])) {
+if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is invalid";
     } else {
         // Variabel username dan password
-        $username=$_GET['username'];
-        $password=$_GET['password'];
+        $username=$_POST['username'];
+        $password=$_POST['password'];
         // Membangun koneksi ke database
         include "../koneksi.php";
         // Mencegah MySQL injection
