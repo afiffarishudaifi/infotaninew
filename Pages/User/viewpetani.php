@@ -8,7 +8,7 @@
 
     <!--header-->
     <?php
-            include "../_partials/header.php";
+            include "../_partials/headeruser.php";
     ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">

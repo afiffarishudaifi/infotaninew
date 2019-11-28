@@ -12,10 +12,12 @@ $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['ID_USER'];
 $AKSES =$row['ID_LEVEL'];
 $pass =$row['PASSWORD'];
+$userr = $row['USERNAME'];
+$gambar = $row['FOTO'];
 
 //Untuk Kasir
 $sql2 = "select * from USER where ID_user='$login_session'" ;
-$ses_sql2=mysqli_query($koneksi,$sql2);
+$ses_sql2=mysqli_query($koneksi, $sql2);
 $row2 = mysqli_fetch_assoc($ses_sql2);
 $id_pengguna =$row2['ID_USER'];
 $nama_pengguna =$row2['USERNAME'];

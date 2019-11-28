@@ -1,3 +1,13 @@
+<?php
+  include "../../controller/session.php";
+  include "../../controller/koneksi.php";
+
+  /*if ($_SESSION['ID_LEVEL']==1){
+  	header('Location: ../admin/index.php'); // Mengarahkan ke Home Page
+} else if ($_SESSION['ID_LEVEL'] == 2) {
+    header('Location: ../user/index.php');
+}*/
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +20,8 @@
 
     <title>INFOTANI - LOGIN</title>
 
+    <!-- logo infotani -->
+    <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,7 +45,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
+      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="GET">
 
 
         <br>

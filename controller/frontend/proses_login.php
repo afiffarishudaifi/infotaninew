@@ -1,13 +1,13 @@
 <?php
-//session_start();
+session_start();
 $error='';
-if (isset($_POST['submit'])) {
-if (empty($_POST['username']) || empty($_POST['password'])) {
+if (isset($_GET['submit'])) {
+if (empty($_GET['username']) || empty($_GET['password'])) {
         $error = "Username or Password is invalid";
     } else {
         // Variabel username dan password
-        $username=$_POST['username'];
-        $password=$_POST['password'];
+        $username=$_GET['username'];
+        $password=$_GET['password'];
         // Membangun koneksi ke database
         include "../koneksi.php";
         // Mencegah MySQL injection
@@ -24,7 +24,8 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
             $c = mysqli_fetch_array($query);// Membuat Sesi/session
 
             $_SESSION['USERNAME'] = $c['USERNAME'];
-            $_SESSION['AKSES'] = $c['ID_LEVEL'];
+            $_SESSION['ID_LEVEL'] = $c['ID_LEVEL'];
+            $_SESSION['ID_USER'] = $c['ID_USER'];
 
             if ($c['ID_LEVEL']==1) {
             header("location:..\..\pages\admin\index.php");
@@ -40,7 +41,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 ?>
 <script language="JavaScript">
         alert('Username atau Password Salah !');
-        setTimeout(function() {window.location.href='#'},10);
+        setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
     </script>
 <?php
         }

@@ -8,8 +8,8 @@
     <!-- Title -->
     <title>IT - Info Tani</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.ico">
+    <!-- logo infotani -->
+    <link rel="icon" href="../../img/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="../../style.css">

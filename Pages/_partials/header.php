@@ -1,3 +1,26 @@
+<?php
+    require_once "../../controller/koneksi.php";
+    include "../../controller/session.php";
+  if(!isset($login_session)) {
+      ?>
+      <script language="JavaScript">
+  		alert('Anda Belum Login !');
+  		setTimeout(function() {window.location.href="../frontend/login.php"},10);
+  		</script>
+      <?php
+	mysqli_close($koneksi); // Menutup koneksi
+	header('Location: ../frontend/login.php'); // Mengarahkan ke Home Page
+	}
+
+  if ($_SESSION['ID_LEVEL']!=1){
+  ?>
+	<script language="JavaScript">
+		alert('Anda Bukan Admin !');
+		setTimeout(function() {window.location.href="../frontend/login.php"},10);
+		</script>
+	<?php
+}
+?>
 <header class="main-header">
   <!-- Logo -->
   <a href="index.php" class="logo">
@@ -19,7 +42,7 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="../../Assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs"><?php echo $_SESSION['USERNAME'] ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -37,7 +60,7 @@
                 <a href="./admin/pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Sign out</a>
+                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Sign out</a>
               </div>
             </li>
           </ul>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <?php
-        include "../_partials/head.php";
+        require_once "../_partials/head.php";
 ?>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
     <!--header-->
     <?php
-            include "../_partials/header.php";
+            require_once "../_partials/headeruser.php";
     ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php
-        include "../_partials/sidebar.php";
+        require_once "../_partials/sidebaruser.php";
     ?>
     </section>
     <!-- /.sidebar -->
@@ -25,47 +25,53 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Ubah Data Desa
+        Pengaturan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
     <section class="content">
         <div class="container">
             <br>
-            <?php
+            <div class="col-md-5 col-md-offset-3 form-login" style="position:static">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><span class="fa fa-hand-o-right" style="position:static"></span>
+                	Form Ganti Password </div>
+                    <div class="panel-body" style="min-height:450px">
+                        <form action="../../controller/admin/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
 
-             ?>
-            <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/pengaturan.php">
-                <?php
-                require_once "../../controller/koneksi.php";
-                if(isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT * FROM desa WHERE ID_DESA='$id'");
-                    while ($data = mysqli_fetch_array($query)) {?>
-                <input type="hidden" name="iddesa" value="<?php echo $data['ID_DESA']?>">
-                <div class="form-group">
-                    <label>Nama Pengguna</label>
-                    <!--menginputkan sebuah inputan nim bertipe text-->
-                    <input type="text" class="form-control" value="<?php echo $data['NAMA_DESA']?>" name="namadesa" required>
+                        	<input type="hidden" name="userid" id="userid" value="<?php echo $login_session ?>">
+
+                        	<div class="form-group">
+                        		Password Lama
+                                <input type="password" class="form-control" placeholder="Password Lama"  name="pass_lama" id="pass_lama" required/>
+                            </div>
+
+                        	<div class="form-group">
+                        		Password Baru
+                                <input type="password" class="form-control" placeholder="Password Baru"  name="pass_baru" id="pass_baru" required/>
+                            </div>
+
+                        	<div class="form-group">
+                        		Konfirmasi Password
+                                <input type="password" class="form-control" placeholder="Konfirmasi Password"  name="pass_konf" id="pass_konf" required/>
+                            </div>
+
+                        	<input class="btn btn-block sub-hover" type="submit" name="Ganti" value="Ganti">
+
+                        </form>
+                    </div>
                 </div>
-                <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
-                <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
-            </form>
-
-            <?php
-        }} ?>
+            </div>
         </div>
     </section>
     <br><br>
     </div>
   <!-- /.content-wrapper -->
   <?php
-        include "../_partials/footer.php";
+        require_once "../_partials/footer.php";
   ?>
 
   <!-- Control Sidebar -->
@@ -79,7 +85,7 @@
 
 <!-- jQuery 2.2.3 -->
 <?php
-    include "../_partials/js.php";
+    require_once "../_partials/js.php";
 ?>
 </body>
 </html>
