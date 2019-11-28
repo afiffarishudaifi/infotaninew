@@ -66,14 +66,3 @@ form{color:#FFF}
    padding: 6px 36px;
 
 }
-
-.container{
-	width: 400px;
-	height: 200px;
-	position: fixed;
-
-	left: 50%;
-	
-	margin-left: -230px;
-	padding:80px;
-}
