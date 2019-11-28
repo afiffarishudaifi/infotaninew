@@ -1,17 +1,3 @@
-
-<?php include ('../../controller/session.php'); ?>
-<?php
-  if(isset($login_session)) {
-	header('Location:./register.php'); // Mengarahkan ke Home Page
-	}
-
-      if ($_SESSION['ID_LEVEL']==1){
-          header('Location:../user/index.php');
-    } elseif ($_SESSION['ID_LEVEL']==2) {
-        header('Location:../user/index.php');
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,11 +7,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-    <title>INFOTANI - LOGIN</title>
+    <title>INFOTANI - REGISTRASI</title>
 
-    <!-- logo infotani -->
-    <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,7 +18,7 @@
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/signin.css" rel="stylesheet">
+    <link href="./css/register.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -49,27 +34,26 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="GET">
-
-
+      <form class="form-signin" action="proses_register.php" method="post">
+      
+      
+        <br> 
+        <h2 class="form-signin-heading" align="center" >REGISTRASI</h2>
+        
         <br>
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
-        <br>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LOGIN INFOTANI</h2>
-
-        <br>
-        <label for="username" class="sr-only">Username</label>
+        <label for="username" >Username</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
         <br>
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-
-        <p>Belum punya akun?
-          Silahkan <a href="./register.php">Registrasi Disini</a></p>
-        <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
-      	<br>
-	<a href="./index.php" class="btn btn-warning btn-block">Kembali</a>
-      <br>
+        <label for="password" >Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required autofocus>
+        <br>
+        <label for="passwordConf" >Confirm Password</label>
+        <input type="password" id="passwordConf" name="passwordConf" class="form-control" placeholder="Ulangi Kata Sandi" required>
+        <br>
+        <label for-"fotoUser" > Foto Anda </label>
+        <input type="file" name="file" />
+        <a href="./login.php" class="btn btn-lg btn-warning">Batal</a>
+        <button class="btn btn-lg btn-success " type="submit">Register</button>
       </form>
     </div> <!-- /container -->
 
