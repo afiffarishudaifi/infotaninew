@@ -34,7 +34,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="proses_register.php" method="post">
+      <form class="form-sign" action="proses_register.php" method="post">
       
       
         <br> 
