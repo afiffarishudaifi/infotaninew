@@ -33,29 +33,13 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="proses_login.php" method="post">
+      <form class="form-signin" action="cariHasil.php" method="post">
         <br> 
-        <h2 class="form-signin-heading" align="center" style="color: black;">CARI DATA INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center" >CARI DATA INFOTANI</h2>
         
   <input class="search"  type="text" placeholder="Cari..." required> 
   <input class="button"  type="button" value="Cari">    
   </form>
-  <style type="text/css"0>
-.search {
-    padding:8px 15px;
-    width: 500px;
-    background:rgba(50, 50, 50, 0.5);
-    border:0px solid #dbdbdb;
-}
-.button {
-    position:relative;
-    padding:6px 15px;
-    left:-8px;
-    border:2px solid #53bd84;
-    background-color:#53bd84;
-    color:#fafafa;
-}
-</style> 
 
     </div> <!-- /container -->
 

@@ -4,11 +4,23 @@ body {
   padding-bottom: 40px;
   background: url(../img/bg-login-blur.jpg) no-repeat;
   background-size:cover;
-  padding:20px}
+  padding:20px
 }
-h1{text-align:center; colo:#FFF}
-p{margin-bottom:10px; color:#FFF}
 
+/*support chrome*/
+.search:-webkit-input-placeholder{
+	color:whitesmoke;
+}
+ 
+/*support mozilla*/
+.search:-moz-input-placeholder{
+	color: whitesmoke;
+}
+ 
+/*support internet explorer*/
+.search:-ms-input-placeholder{
+	color: whitesmoke;
+}
 
 .form-signin {
   text-align: center;
@@ -19,6 +31,7 @@ p{margin-bottom:10px; color:#FFF}
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+  color: black;
 }
 .form-signin .checkbox {
   font-weight: normal;
@@ -35,13 +48,22 @@ p{margin-bottom:10px; color:#FFF}
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+.search {
+  padding:8px 15px;
+  width: 500px;
+  background:rgba(50, 50, 50, 0.5);
+  border:0px solid #dbdbdb;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.button {
+  position:relative;
+  padding:6px 15px;
+  left:-8px;
+  border:4px solid #53bd84;
+  background-color:#53bd84;
+  color:black;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: orange
 }

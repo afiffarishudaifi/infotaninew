@@ -35,7 +35,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="proses_register.php" method="post">
+      <form class="form-signin" action="../../controller/frontend/proses_register.php" method="post" enctype="multipart/form-data">
       
       
         <br> 
@@ -44,17 +44,17 @@
         <br>
         <label for="username" >Username</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-        <br>
+        
         <label for="password" >Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required autofocus>
-        <br>
         <label for="passwordConf" >Confirm Password</label>
         <input type="password" id="passwordConf" name="passwordConf" class="form-control" placeholder="Ulangi Kata Sandi" required>
+        <label for="foto" > Foto KTP </label>
+        <input type="file" id="foto" name="foto" >
         <br>
-        <label for-"fotoUser" > Foto Anda </label>
-        <input type="file" name="file" />
+        <br>
         <a href="./login.php" class="btn btn-lg btn-warning">Batal</a>
-        <button class="btn btn-lg btn-success " type="submit">Register</button>
+        <button class="btn btn-lg btn-success " type="submit" name="submit">Register</button>
       </form>
     </div> <!-- /container -->
 
