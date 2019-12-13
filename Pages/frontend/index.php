@@ -22,7 +22,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/halamanindex.jpg);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
@@ -30,8 +30,8 @@
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-9 col-lg-6">
                                 <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">We Care About <br> Your Hair</h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“Discover your own style. Don't try to repeat what has already been written - have the courage to do your own thing and don't be afraid to do something different.”</p>
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black"> Info Tani<br> Pertanian Indonesia</h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Pertanian di Indonesia merupakan salah satu sektor kunci perekonomian Indonesia. Meskipun kontribusi sektor pertanian terhadap produk domestik bruto nasional telah menurun secara signifikan dalam setengah abad terakhir, saat ini sektor pertanian masih memberikan pendapatan bagi sebagian besar rumah tangga Indonesia.”</p>
                                     <a href="#" class="btn akame-btn" data-animation="fadeInUp" data-delay="700ms">About Us</a>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
             </div>
 
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/halaman2.jpg);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
@@ -49,8 +49,8 @@
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-9 col-lg-6">
                                 <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">We Care About <br> Your Hair</h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“Discover your own style. Don't try to repeat what has already been written - have the courage to do your own thing and don't be afraid to do something different.”</p>
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black">Info Tani <br> Pertanian Indonesia</h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Sawah adalah suatu bentuk pertanian yang dilakukan di lahan basah dan memerlukan banyak air baik sawah irigasi, sawah lebak, sawah tadah hujan maupun sawah pasang surut. Yang pada masa sekarang sudah hampir punah.”</p>
                                     <a href="#" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">About Us</a>
                                 </div>
                             </div>
@@ -69,8 +69,8 @@
                 <!-- Section Heading -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="section-heading mb-80">
-                        <h2>Hair Salon</h2>
-                        <p>The House of Hair Salon &amp; Spa</p>
+                        <h2>Tumbuhan Dikotil</h2>
+                        <p>Bahan baku kecap,tahu,tempe &amp; Spa</p>
                         <span>About Us</span>
                     </div>
                 </div>
@@ -78,15 +78,15 @@
                 <!-- About Us Thumbnail -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="about-us-thumbnail mb-80">
-                        <img src="../../assets/img/bg-img/15.jpg" alt="">
+                        <img src="../../assets/img/bg-img/kedelai.jpg" alt="">
                     </div>
                 </div>
 
                 <!-- About Us Content -->
                 <div class="col-12 col-lg-4">
                     <div class="about-us-content mb-80 pl-4">
-                        <h3>Beautiful Hair Comes From A Legendary.</h3>
-                        <p>“Working in a salon, you look at trends all day long. You’re looking at color all the time,what new products are coming out. You’re a part of the fashion industry,especially if you’re working in a higher-end salon.”</p>
+                        <h3>Budidaya Kedelai.</h3>
+                        <p>“Kedelai, atau kacang kedelai, adalah salah satu tanaman jenis polong-polongan yang menjadi bahan dasar banyak makanan dari Asia Timur seperti kecap, tahu, dan tempe. Berdasarkan peninggalan arkeologi, tanaman ini telah dibudidayakan sejak 3500 tahun yang lalu di Asia Timur.”</p>
                         <a href="#" class="btn akame-btn active mt-30">Read More</a>
                     </div>
                 </div>
@@ -110,22 +110,22 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="choose-us-thumbnail mt-30 mb-80">
-                        <div class="choose-us-img bg-img" style="background-image: url(../../assets/img/bg-img/4.jpg);"></div>
+                        <div class="choose-us-img bg-img" style="background-image: url(../../assets/img/bg-img/jagung.jpg);"></div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Why Choose Us</h2>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <h2>Tumbuhan Jagung</h2>
                     </div>
                     <!-- Choose Us Content -->
                     <div class="choose-us-content mt-30 mb-80">
+                        <p>Macam-macam Jagung</p>
                         <ul>
-                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> We Strive For LIVE Answer On Our Calls.</li>
-                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> A Wide Spectrum Of Skills And Experience.</li>
-                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Fast Response To Requests &amp; Critical Response Time Guaranteed.</li>
-                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> We Help Solve Your Business Problems.</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> 1. Jagung Gigi Kuda (Dent Corn)</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> 2. Jagung Mutiara (Flint Corn)</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> 3. Jagung Manis (Sweet Corn)</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> 4. Jagung Berondong (Pop Corn)</li>
                         </ul>
                     </div>
                 </div>
@@ -142,15 +142,15 @@
     <section class="akame-our-expert-area section-padding-80-0">
 
         <!-- Side Thumbnail -->
-        <div class="side-thumbnail" style="background-image: url(../../assets/img/bg-img/14.png);"></div>
+        <div class="side-thumbnail" style=" background-color: #0000 "></div>
 
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Our Experts</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                        <h2>Hasil Pembenihan</h2>
+                        <p>Pembenihan adalah suatu tahap kegiatan dalam budidaya yang sangat menentukan tahap kegiatan selanjutnya, yaitu pembesaran atau suau kegiatan pemeliharaan yang bertujuan untuk menghasilkan benih dan selanjutnya benih yang dihasilkan menjadi komponen input bagi kegiatan pembesaran.</p>
                     </div>
                     <!-- Our Certificate -->
                     <div class="our-certificate-area mb-60 d-flex align-items-center">
@@ -168,7 +168,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/10.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihpadi.jpeg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -180,8 +180,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Mila Hartley</h5>
-                            <p>Hairdresser</p>
+                            <h5>Benih Padi</h5>
+                            <p>monocot plant</p>
                         </div>
                     </div>
                 </div>
@@ -190,7 +190,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/11.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihkangkung.JPG" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -202,8 +202,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Teigan Duran</h5>
-                            <p>Stylist</p>
+                            <h5>Benih Kedelai</h5>
+                            <p>dicotyledonous plants</p>
                         </div>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/12.jpg" alt="">
+                            <img src="../../assets/img/bg-img/Benihjagung.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -224,8 +224,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Tanya Ramsay</h5>
-                            <p>Hairstylist</p>
+                            <h5>Benih Jagung</h5>
+                            <p>monocot plant</p>
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="800ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/13.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihkacanghijau.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -269,8 +269,8 @@
                 <!-- Section Heading -->
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2>Latest News</h2>
-                        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <h2>Berita Terbaru</h2>
+                        <p>Informasi pertanian Indonesia terbaru</p>
                     </div>
                 </div>
             </div>
@@ -281,15 +281,15 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/1.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info1.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Nina Dobrev Got a Major Haircut and Doesn't Look Like Nina Dobrev.</a>
+                            <a href="#" class="post-title">Kementerian Pertanian (Kementan) berharap produksi padi terus meningkat. Apalagi, pemerintah telah memberikan subsidi pupuk bagi petani.</a>
                             <div class="post-meta">
-                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> September 27, 2018</a>
+                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> November 11, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>
                             </div>
-                            <p>Most people recognize the CFDA Awards for its slew of perfect gowns and skin-tight.</p>
+                            <p>Menteri Pertanian Syahrul Yasin Limpo pun menargetkan produksi padi dapat meningkat hingga tujuh ton per hektare. Dengan begitu, pemerintah dapat mengekspor padi hingga 100 - 500 ribu ton.</p>
                         </div>
                     </div>
                 </div>
@@ -298,15 +298,15 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/2.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Finally: How to Make Your Agressively Straight Hair Hold a Curl</a>
+                            <a href="#" class="post-title">Pemerintah Siap Ekspor Beras hingga Ayam ke Arab Saudi</a>
                             <div class="post-meta">
-                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> September 27, 2018</a>
+                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> Desember 13, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>
                             </div>
-                            <p>So I sought out an actual professional, i.e. celeb hairstylist Justine Marjan.</p>
+                            <p>Pemerintah Indonesia tengah  mendorong ekspor beras ke Arab Saudi. Sebab, saat ini Arab Saudi masih mengimpor kebutuhan berasnya dari Thailand, India dan kawasan Amerika.</p>
                         </div>
                     </div>
                 </div>
@@ -315,15 +315,15 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/3.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Yes, Emilia Clarke Just Cut Off All Her Hair Into a Tiny Bob</a>
+                            <a href="#" class="post-title">Tak Kompetitif, Ongkos Produksi Beras RI 2,5 Kali Lipat dari Vietnam</a>
                             <div class="post-meta">
-                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> September 27, 2018</a>
+                                <a href="#" class="post-date"><i class="icon_clock_alt"></i> November 27, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>
                             </div>
-                            <p>Last night, Clarke appeared on Late Night with Seth Meyers, wearing a charcoal blazer.</p>
+                            <p>Harga beras produksi Indonesia dinilai sulit bersaing di pasar global lantaran biaya produksinya yang mahal. Guru Besar Tetap Ilmu Ekonomi Pertanian, Universitas Lampung (Unila) Bustanul Arifin mengatakan, ongkos produksi beras di Indonesia 2,5 kali lipat lebih mahal dari Vietnam.</p>
                         </div>
                     </div>
                 </div>
