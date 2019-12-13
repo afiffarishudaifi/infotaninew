@@ -35,7 +35,7 @@
     <div class="container">
       <form class="form-signin" action="proses_login.php" method="post">
         <br> 
-        <h2 class="form-signin-heading" align="center" style="color: black;">CARI DATA INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center" style="color:white;">CARI DATA INFOTANI</h2>
         
   <input class="search"  type="text" placeholder="Cari..." required> 
   <input class="button"  type="button" value="Cari">    
