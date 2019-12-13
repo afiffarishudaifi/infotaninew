@@ -22,7 +22,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/16.jpg);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
@@ -41,7 +41,7 @@
             </div>
 
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(../../assets/img/bg-img/16.jpg);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
@@ -78,7 +78,7 @@
                 <!-- About Us Thumbnail -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="about-us-thumbnail mb-80">
-                        <img src="img/bg-img/15.jpg" alt="">
+                        <img src="../../assets/img/bg-img/15.jpg" alt="">
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="choose-us-thumbnail mt-30 mb-80">
-                        <div class="choose-us-img bg-img" style="background-image: url(img/bg-img/4.jpg);"></div>
+                        <div class="choose-us-img bg-img" style="background-image: url(../../assets/img/bg-img/4.jpg);"></div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -142,7 +142,7 @@
     <section class="akame-our-expert-area section-padding-80-0">
 
         <!-- Side Thumbnail -->
-        <div class="side-thumbnail" style="background-image: url(img/bg-img/14.png);"></div>
+        <div class="side-thumbnail" style="background-image: url(../../assets/img/bg-img/14.png);"></div>
 
         <div class="container">
             <div class="row justify-content-end">
@@ -154,9 +154,9 @@
                     </div>
                     <!-- Our Certificate -->
                     <div class="our-certificate-area mb-60 d-flex align-items-center">
-                        <img src="img/core-img/certificate-1.png" alt="">
-                        <img src="img/core-img/certificate-2.png" alt="">
-                        <img src="img/core-img/certificate-3.png" alt="">
+                        <img src="../../assets/img/core-img/certificate-1.png" alt="">
+                        <img src="../../assets/img/core-img/certificate-2.png" alt="">
+                        <img src="../../assets/img/core-img/certificate-3.png" alt="">
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="team-member-img">
-                            <img src="img/bg-img/10.jpg" alt="">
+                            <img src="../../assets/img/bg-img/10.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -190,7 +190,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="team-member-img">
-                            <img src="img/bg-img/11.jpg" alt="">
+                            <img src="../../assets/img/bg-img/11.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -212,7 +212,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="team-member-img">
-                            <img src="img/bg-img/12.jpg" alt="">
+                            <img src="../../assets/img/bg-img/12.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -234,7 +234,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="800ms">
                         <div class="team-member-img">
-                            <img src="img/bg-img/13.jpg" alt="">
+                            <img src="../../assets/img/bg-img/13.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -281,7 +281,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="img/bg-img/1.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/1.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a href="#" class="post-title">Nina Dobrev Got a Major Haircut and Doesn't Look Like Nina Dobrev.</a>
@@ -298,7 +298,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="img/bg-img/2.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/2.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a href="#" class="post-title">Finally: How to Make Your Agressively Straight Hair Hold a Curl</a>
@@ -315,7 +315,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="img/bg-img/3.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/3.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a href="#" class="post-title">Yes, Emilia Clarke Just Cut Off All Her Hair Into a Tiny Bob</a>
@@ -338,7 +338,7 @@
 
     <!-- Footer Area Start -->
     <?php
-        require_once "_partials/footer.php";
+        require_once "./_partials/footer.php";
     ?>
     <!-- Footer Area End -->
 
