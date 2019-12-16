@@ -70,7 +70,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="section-heading mb-80">
                         <h2>Tumbuhan Dikotil</h2>
-                        <p>Bahan baku kecap,tahu,tempe &amp; Spa</p>
+                        <p>Bahan baku kecap,tahu,&amp; tempe</p>
                         <span>About Us</span>
                     </div>
                 </div>
@@ -246,8 +246,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Donna Carr</h5>
-                            <p>Baber</p>
+                            <h5>Benih Kacang Hijau</h5>
+                            <p>dicotyledonous plants</p>
                         </div>
                     </div>
                 </div>

@@ -36,9 +36,7 @@
       <form class="form-signin" action="cariHasil.php" method="post">
         <br> 
 
-        <h2 class="form-signin-heading" align="center" style="color:white;">CARI DATA INFOTANI</h2>
-
-        <h2 class="form-signin-heading" align="center" >CARI DATA INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center">CARI DATA INFOTANI</h2>
 
         
   <input class="search"  type="text" placeholder="Cari..." required> 
