@@ -15,11 +15,21 @@ if (isset($_POST['kirim'])) {
     $mail->SetFrom($_POST['email'], $_POST['nama']); //set email pengirim
     $mail->Subject = "Komentar dari ".$_POST['nama']; //subyek email
     $mail->AddAddress("afiffaris5@gmail.com", "You");  //tujuan email
+
+
+    /*$mail->MsgHTML($_POST['komentar']."
+    <br>
+    <button><a href='http://localhost/infotani/Pages/frontend/index.php'
+     target='output'>Link contoh 1</a></button>
+    ");*/
+
+
     $mail->MsgHTML($_POST['komentar']);
     if($mail->Send()) {?> <script language="JavaScript">
     alert('Berhasil Terkirim');
-    setTimeout(function() {window.location.href='../../pages/frontend/contact.php'},10);
     </script><?php
+    header("location:../../pages/frontend/contact.php");
+
 }else echo "Failed to sending message";
 }
 ?>

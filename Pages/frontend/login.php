@@ -6,7 +6,7 @@
 	}
 
       if ($_SESSION['ID_LEVEL']==1){
-          header('Location:../user/index.php');
+          header('Location:../admin/index.php');
     } elseif ($_SESSION['ID_LEVEL']==2) {
         header('Location:../user/index.php');
     }

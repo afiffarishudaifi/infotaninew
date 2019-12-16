@@ -17,7 +17,11 @@
              setTimeout(function() {window.location.href='../../pages/admin/viewkecamatan.php'},10);
              </script><?php
          } else {
-
+             ?>
+                 <script language="JavaScript">
+                 alert('Tambah Gagal !');
+                 setTimeout(function() {window.location.href='../../pages/admin/viewkecamatan.php'},10);
+                 </script><?php
          }
      } else if (isset($_POST['ubah'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php

@@ -5,12 +5,10 @@
     require_once "../../controller/admin/koneksi.php";
         include "../_partials/head.php";
         date_default_timezone_set('Asia/Jakarta');
-        $tgll = date("Y-m-d H:i:s");
+        $tgll = date("Y-m-d");
         $tgl = date("d");
-        $bulan = date("M");
-        $tahun = date("Y");
-                $month = date ("Y");
-                switch ($month) {
+                $year = date ("Y");
+                switch ($year) {
                 case '1' : $sari = "Januari"; break;
                 case '2' : $sari = "Februari"; break;
                 case '3' : $sari = "Maret"; break;
@@ -37,8 +35,7 @@
                 default : $hari = "kiamat"; }
 
 
-                        $month = date ("Y");
-                        $bulan = date("m");
+                        $year = date ("Y");
 ?>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
@@ -165,128 +162,149 @@
         </div>
         <div class="col-lg-12">
             <?php
-            $query1 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 01 and year(PANEN) = $month AND ID_STATUS=1";
+            //belum diperiksa
+            //======================================================================================================//
+            /*$querycari = "select * from petani where id_user=$iduserpetani";
+            $sqlcari = mysqli_query($koneksi, $querycari);
+            $rowcari = mysqli_fetch_assoc($sqlcari);
+            $tglpanen =$rowcari['PANEN'];
+            $KTP = $rowcari['KTP'];
+            $status = $rowcari['ID_STATUS'];
+            $komoditas = $rowcari['ID_KOMODITAS'];
+            if ($tgll==$tglpanen) {
+                $query = "update petani set ID_STATUS=1 WHERE PANEN='$tgll'";
+                $ubah = mysqli_query($koneksi, $query);
+                if ($status==2) {
+                    $queryinsertpanen = "insert into PANEN(KTP,TGL_PANEN,KOMODITAS) values($KTP,'$tgll', $komoditas)";
+                    $insert = mysqli_query($koneksi, $queryinsertpanen);
+                }
+            }
+            */
+            //======================================================================================================//
+
+            $query1 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 01 and year(PANEN) = $year AND ID_STATUS=1";
             $sql1 = mysqli_query($koneksi, $query1);
             while ($data1 = mysqli_fetch_row($sql1)) {
                 $id1 = $data1[0];}
 
-            $query2 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 02 and year(PANEN) = $month AND ID_STATUS=1";
+            $query2 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 02 and year(PANEN) = $year AND ID_STATUS=1";
             $sql2 = mysqli_query($koneksi, $query2);
             while ($data2 = mysqli_fetch_row($sql2)) {
                 $id2 = $data2[0];}
 
-            $query3 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 03 and year(PANEN) = $month AND ID_STATUS=1";
+            $query3 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 03 and year(PANEN) = $year AND ID_STATUS=1";
             $sql3 = mysqli_query($koneksi,$query3);
-            while($data3 = mysqli_fetch_row($sql3)){
+            while($data3 = mysqli_fetch_row($sql3)) {
             $id3 = $data3[0];}
 
-            $query4 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 04 and year(PANEN) = $month AND ID_STATUS=1";
+            $query4 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 04 and year(PANEN) = $year AND ID_STATUS=1";
             $sql4 = mysqli_query($koneksi,$query4);
-            while($data4 = mysqli_fetch_row($sql4)){
+            while($data4 = mysqli_fetch_row($sql4)) {
             $id4 = $data4[0];}
 
-            $query5 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 05 and year(PANEN) = $month AND ID_STATUS=1";
+            $query5 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 05 and year(PANEN) = $year AND ID_STATUS=1";
             $sql5 = mysqli_query($koneksi,$query5);
             while($data5 = mysqli_fetch_row($sql5)){
             $id5 = $data5[0];}
 
-            $query6 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 06 and year(PANEN) = $month AND ID_STATUS=1";
+            $query6 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 06 and year(PANEN) = $year AND ID_STATUS=1";
             $sql6 = mysqli_query($koneksi,$query6);
             while($data6 = mysqli_fetch_row($sql6)){
             $id6 = $data6[0];}
 
-            $query7 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 07 and year(PANEN) = $month AND ID_STATUS=1";
+            $query7 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 07 and year(PANEN) = $year AND ID_STATUS=1";
             $sql7 = mysqli_query($koneksi,$query7);
             while($data7 = mysqli_fetch_row($sql7)){
             $id7 = $data7[0];}
 
-            $query8 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 08 and year(PANEN) = $month AND ID_STATUS=1";
+            $query8 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 08 and year(PANEN) = $year AND ID_STATUS=1";
             $sql8 = mysqli_query($koneksi,$query8);
             while($data8 = mysqli_fetch_row($sql8)){
             $id8 = $data8[0];}
 
-            $query9 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 09 and year(PANEN) = $month AND ID_STATUS=1";
+            $query9 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 09 and year(PANEN) = $year AND ID_STATUS=1";
             $sql9 = mysqli_query($koneksi,$query9);
             while($data9 = mysqli_fetch_row($sql9)){
             $id9 = $data9[0];}
 
-            $query10 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 10 and year(PANEN) = $month AND ID_STATUS=1";
+            $query10 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 10 and year(PANEN) = $year AND ID_STATUS=1";
             $sql10 = mysqli_query($koneksi,$query10);
             while($data10 = mysqli_fetch_row($sql10)){
             $id10 = $data10[0];}
 
-            $query11 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 11 and year(PANEN) = $month AND ID_STATUS=1";
+            $query11 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 11 and year(PANEN) = $year AND ID_STATUS=1";
             $sql11 = mysqli_query($koneksi,$query11);
             while($data11 = mysqli_fetch_row($sql11)){
             $id11 = $data11[0];}
 
-            $query12 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 12 and year(PANEN) = $month AND ID_STATUS=1";
+            $query12 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 12 and year(PANEN) = $year AND ID_STATUS=1";
             $sql12 = mysqli_query($koneksi,$query12);
             while($data12 = mysqli_fetch_row($sql12)){
             $id12 = $data12[0];}
 
 
             //kereta api
-            $queryl1 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 01 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl1 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 01 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll1 = mysqli_query($koneksi,$queryl1);
-            while($datal1 = mysqli_fetch_row($sqll1)){
+            while($datal1 = mysqli_fetch_row($sqll1)) {
             $idl1 = $datal1[0];}
 
-            $queryl2 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 02 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl2 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 02 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll2 = mysqli_query($koneksi,$queryl2);
-            while($datal2 = mysqli_fetch_row($sqll2)){
+            while($datal2 = mysqli_fetch_row($sqll2)) {
             $idl2 = $datal2[0];}
 
-            $queryl3 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 03 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl3 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 03 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll3 = mysqli_query($koneksi,$queryl3);
             while($datal3 = mysqli_fetch_row($sqll3)){
             $idl3 = $datal3[0];}
 
-            $queryl4 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 04 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl4 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 04 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll4 = mysqli_query($koneksi,$queryl4);
             while($datal4 = mysqli_fetch_row($sqll4)){
             $idl4 = $datal4[0];}
 
-            $queryl5 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 05 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl5 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 05 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll5 = mysqli_query($koneksi,$queryl5);
             while($datal5 = mysqli_fetch_row($sqll5)){
             $idl5 = $datal5[0];}
 
-            $queryl6 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 06 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl6 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 06 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll6 = mysqli_query($koneksi,$queryl6);
             while($datal6 = mysqli_fetch_row($sqll6)){
             $idl6 = $datal6[0];}
 
-            $queryl7 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 07 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl7 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 07 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll7 = mysqli_query($koneksi,$queryl7);
             while($datal7 = mysqli_fetch_row($sqll7)){
             $idl7 = $datal7[0];}
 
-            $queryl8 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 08 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl8 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 08 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll8 = mysqli_query($koneksi,$queryl8);
             while($datal8 = mysqli_fetch_row($sqll8)){
             $idl8 = $datal8[0];}
 
-            $queryl9 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 09 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl9 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 09 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll9 = mysqli_query($koneksi,$queryl9);
             while($datal9 = mysqli_fetch_row($sqll9)){
             $idl9 = $datal9[0];}
 
-            $queryl10 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 10 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl10 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 10 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll10 = mysqli_query($koneksi,$queryl10);
             while($datal10 = mysqli_fetch_row($sqll10)){
             $idl10 = $datal10[0];}
 
-            $queryl11 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 11 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl11 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 11 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll11 = mysqli_query($koneksi,$queryl11);
             while($datal11 = mysqli_fetch_row($sqll11)){
             $idl11 = $datal11[0];}
 
-            $queryl12 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=1 AND month(PANEN) = 12 and year(PANEN) = $month AND ID_STATUS=1";
+            $queryl12 = "SELECT count(*) FROM petani WHERE ID_KOMODITAS=2 AND month(PANEN) = 12 and year(PANEN) = $year AND ID_STATUS=1";
             $sqll12 = mysqli_query($koneksi,$queryl12);
             while($datal12 = mysqli_fetch_row($sqll12)){
             $idl12 = $datal12[0];}
-            ?><!DOCTYPE HTML>
+            ?>
+            <!DOCTYPE HTML>
             <html>
             <head>
                  <script type="text/javascript">
@@ -312,54 +330,54 @@
                                      type: "line",
                                      name:"Padi",
                                      dataPoints: [
-                                          { x: new Date(<?php echo $month;?>, 0, 1), y: <?php echo $id1;?> },
-                                          { x: new Date(<?php echo $month;?>, 1, 1), y: <?php echo $id2;?> },
-                                          { x: new Date(<?php echo $month;?>, 2, 1), y: <?php echo $id3;?> },
-                                          { x: new Date(<?php echo $month;?>, 3, 1), y: <?php echo $id4;?> },
-                                          { x: new Date(<?php echo $month;?>, 4, 1), y: <?php echo $id5;?> },
-                                          { x: new Date(<?php echo $month;?>, 5, 1), y: <?php echo $id6;?> },
-                                          { x: new Date(<?php echo $month;?>, 6, 1), y: <?php echo $id7;?> },
-                                          { x: new Date(<?php echo $month;?>, 7, 1), y: <?php echo $id8;?> },
-                                          { x: new Date(<?php echo $month;?>, 8, 1), y: <?php echo $id9;?> },
-                                          { x: new Date(<?php echo $month;?>, 9, 1), y: <?php echo $id10;?> },
-                                          { x: new Date(<?php echo $month;?>, 10, 1), y: <?php echo $id11;?> },
-                                          { x: new Date(<?php echo $month;?>, 11, 1), y: <?php echo $id12;?> }
+                                          { x: new Date(<?php echo $year;?>, 0, 1), y: <?php echo $id1;?> },
+                                          { x: new Date(<?php echo $year;?>, 1, 1), y: <?php echo $id2;?> },
+                                          { x: new Date(<?php echo $year;?>, 2, 1), y: <?php echo $id3;?> },
+                                          { x: new Date(<?php echo $year;?>, 3, 1), y: <?php echo $id4;?> },
+                                          { x: new Date(<?php echo $year;?>, 4, 1), y: <?php echo $id5;?> },
+                                          { x: new Date(<?php echo $year;?>, 5, 1), y: <?php echo $id6;?> },
+                                          { x: new Date(<?php echo $year;?>, 6, 1), y: <?php echo $id7;?> },
+                                          { x: new Date(<?php echo $year;?>, 7, 1), y: <?php echo $id8;?> },
+                                          { x: new Date(<?php echo $year;?>, 8, 1), y: <?php echo $id9;?> },
+                                          { x: new Date(<?php echo $year;?>, 9, 1), y: <?php echo $id10;?> },
+                                          { x: new Date(<?php echo $year;?>, 10, 1), y: <?php echo $id11;?> },
+                                          { x: new Date(<?php echo $year;?>, 11, 1), y: <?php echo $id12;?> }
                                      ]
                                 }, {
                                      showInLegend: true,
                                      type: "line",
                                      name:"Jagung",
                                      dataPoints: [
-                                          { x: new Date(<?php echo $month;?>, 0, 1), y: <?php echo $idl1;?> },
-                                          { x: new Date(<?php echo $month;?>, 1, 1), y: <?php echo $idl2;?> },
-                                          { x: new Date(<?php echo $month;?>, 2, 1), y: <?php echo $idl3;?> },
-                                          { x: new Date(<?php echo $month;?>, 3, 1), y: <?php echo $idl4;?> },
-                                          { x: new Date(<?php echo $month;?>, 4, 1), y: <?php echo $idl5;?> },
-                                          { x: new Date(<?php echo $month;?>, 5, 1), y: <?php echo $idl6;?> },
-                                          { x: new Date(<?php echo $month;?>, 6, 1), y: <?php echo $idl7;?> },
-                                          { x: new Date(<?php echo $month;?>, 7, 1), y: <?php echo $idl8;?> },
-                                          { x: new Date(<?php echo $month;?>, 8, 1), y: <?php echo $idl9;?> },
-                                          { x: new Date(<?php echo $month;?>, 9, 1), y: <?php echo $idl10;?> },
-                                          { x: new Date(<?php echo $month;?>, 10, 1), y: <?php echo $idl11;?> },
-                                          { x: new Date(<?php echo $month;?>, 11, 1), y: <?php echo $idl12;?> }
+                                          { x: new Date(<?php echo $year;?>, 0, 1), y: <?php echo $idl1;?> },
+                                          { x: new Date(<?php echo $year;?>, 1, 1), y: <?php echo $idl2;?> },
+                                          { x: new Date(<?php echo $year;?>, 2, 1), y: <?php echo $idl3;?> },
+                                          { x: new Date(<?php echo $year;?>, 3, 1), y: <?php echo $idl4;?> },
+                                          { x: new Date(<?php echo $year;?>, 4, 1), y: <?php echo $idl5;?> },
+                                          { x: new Date(<?php echo $year;?>, 5, 1), y: <?php echo $idl6;?> },
+                                          { x: new Date(<?php echo $year;?>, 6, 1), y: <?php echo $idl7;?> },
+                                          { x: new Date(<?php echo $year;?>, 7, 1), y: <?php echo $idl8;?> },
+                                          { x: new Date(<?php echo $year;?>, 8, 1), y: <?php echo $idl9;?> },
+                                          { x: new Date(<?php echo $year;?>, 9, 1), y: <?php echo $idl10;?> },
+                                          { x: new Date(<?php echo $year;?>, 10, 1), y: <?php echo $idl11;?> },
+                                          { x: new Date(<?php echo $year;?>, 11, 1), y: <?php echo $idl12;?> }
                                      ]
                                 }/*, {
                                      showInLegend: true,
                                      type: "line",
                                      name:"Laporan Pembayaran",
                                      dataPoints: [
-                                          { x: new Date(<?php //echo $month;?>, 0, 1), y: <?php //echo $idll1;?> },
-                                          { x: new Date(<?php //echo $month;?>, 1, 1), y: <?php //echo $idll2;?> },
-                                          { x: new Date(<?php //echo $month;?>, 2, 1), y: <?php //echo $idll3;?> },
-                                          { x: new Date(<?php //echo $month;?>, 3, 1), y: <?php //echo $idll4;?> },
-                                          { x: new Date(<?php //echo $month;?>, 4, 1), y: <?php //echo $idll5;?> },
-                                          { x: new Date(<?php //echo $month;?>, 5, 1), y: <?php //echo $idll6;?> },
-                                          { x: new Date(<?php //echo $month;?>, 6, 1), y: <?php //echo $idll7;?> },
-                                          { x: new Date(<?php //echo $month;?>, 7, 1), y: <?php //echo $idll8;?> },
-                                          { x: new Date(<?php //echo $month;?>, 8, 1), y: <?php //echo $idll9;?> },
-                                          { x: new Date(<?php //echo $month;?>, 9, 1), y: <?php //echo $idll10;?> },
-                                          { x: new Date(<?php //echo $month;?>, 10, 1), y: <?php //echo $idll11;?> },
-                                          { x: new Date(<?php //echo $month;?>, 11, 1), y: <?php //echo $idll12;?> }
+                                          { x: new Date(<?php //echo $year;?>, 0, 1), y: <?php //echo $idll1;?> },
+                                          { x: new Date(<?php //echo $year;?>, 1, 1), y: <?php //echo $idll2;?> },
+                                          { x: new Date(<?php //echo $year;?>, 2, 1), y: <?php //echo $idll3;?> },
+                                          { x: new Date(<?php //echo $year;?>, 3, 1), y: <?php //echo $idll4;?> },
+                                          { x: new Date(<?php //echo $year;?>, 4, 1), y: <?php //echo $idll5;?> },
+                                          { x: new Date(<?php //echo $year;?>, 5, 1), y: <?php //echo $idll6;?> },
+                                          { x: new Date(<?php //echo $year;?>, 6, 1), y: <?php //echo $idll7;?> },
+                                          { x: new Date(<?php //echo $year;?>, 7, 1), y: <?php //echo $idll8;?> },
+                                          { x: new Date(<?php //echo $year;?>, 8, 1), y: <?php //echo $idll9;?> },
+                                          { x: new Date(<?php //echo $year;?>, 9, 1), y: <?php //echo $idll10;?> },
+                                          { x: new Date(<?php //echo $year;?>, 10, 1), y: <?php //echo $idll11;?> },
+                                          { x: new Date(<?php //echo $year;?>, 11, 1), y: <?php //echo $idll12;?> }
                                      ]
                                 }*/]
                            });

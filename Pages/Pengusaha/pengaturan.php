@@ -8,13 +8,13 @@
 
     <!--header-->
     <?php
-            require_once "../_partials/headeruser.php";
+            require_once "../_partials/headerusaha.php";
     ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php
-        require_once "../_partials/sidebaruser.php";
+        require_once "../_partials/sidebarusaha.php";
     ?>
     </section>
     <!-- /.sidebar -->
@@ -29,7 +29,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Pengaturan Data</li>
+        <li class="active">Ganti Password</li>
       </ol>
     </section>
     <section class="content">
@@ -40,14 +40,10 @@
                     <div class="panel-heading"><span class="fa fa-hand-o-right" style="position:static"></span>
                 	Form Ganti Password </div>
                     <div class="panel-body" style="min-height:450px">
-                        <form action="../../controller/user/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
+                        <form action="../../controller/pengusaha/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
 
                         	<input type="hidden" name="userid" id="userid" value="<?php echo $login_session ?>">
-                            <div class="form-group">
-                        		Foto
-                                <img src="../../img/user/<?php echo $gambar;?>" style="height:160px; width:120px;" class="img-rectangle" alt="User Image">
-                                <input type="file" id="foto" name="foto" >
-                            </div>
+
                         	<div class="form-group">
                         		Password Lama
                                 <input type="password" class="form-control" placeholder="Password Lama"  name="pass_lama" id="pass_lama" required/>

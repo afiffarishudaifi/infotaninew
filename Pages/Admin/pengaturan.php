@@ -8,13 +8,13 @@
 
     <!--header-->
     <?php
-            require_once "../_partials/headeruser.php";
+            require_once "../_partials/header.php";
     ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php
-        require_once "../_partials/sidebaruser.php";
+        require_once "../_partials/sidebar.php";
     ?>
     </section>
     <!-- /.sidebar -->
@@ -29,7 +29,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Tambah Data</li>
+        <li class="active">Pengaturan Data</li>
       </ol>
     </section>
     <section class="content">

@@ -20,7 +20,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
         $sql = "select * from user where PASSWORD='$password' AND USERNAME='$username'";
         $query = mysqli_query($koneksi, $sql);
         $rows = mysqli_num_rows($query);
-        if ($rows == 1) {
+        if ($rows != 0) {
             $c = mysqli_fetch_array($query);// Membuat Sesi/session
 
             $_SESSION['USERNAME'] = $c['USERNAME'];
@@ -28,9 +28,9 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
             $_SESSION['ID_USER'] = $c['ID_USER'];
 
             if ($c['ID_LEVEL']==1) {
-            header("location:..\..\pages\admin\index.php");
+                header("location:..\..\pages\admin\index.php");
             } elseif ($c['ID_LEVEL']==2) {
-            header("location:..\..\pages\user\index.php");
+                header("location:..\..\pages\user\index.php");
             } else {
                 die("error");
             }
