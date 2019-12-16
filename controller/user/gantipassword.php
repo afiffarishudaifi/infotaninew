@@ -3,6 +3,7 @@ include "../koneksi.php";
 require_once "../session.php";
 session_start();
 if (isset($login_session)) {
+
     $userid =  $user_check;
 } else {
     die("Error. No ID Selected!");
@@ -22,6 +23,7 @@ if (isset($_POST['Ganti'])) {
     $fotobaru = $gambar.".jpg";
     //set path folder tempat menyimpan foto
     $path = "../../img/user/".$fotobaru;
+
     //Cek Password Lama
     $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password='$pass_lama'";
     $sql = mysqli_query($koneksi, $query);
@@ -37,7 +39,7 @@ if (isset($_POST['Ganti'])) {
         // session_destroy();
     }
     //Validasi data data kosong
-    elseif (empty($_POST['pass_baru']) || empty($_POST['pass_konf'])) {
+    else if (empty($_POST['pass_baru']) || empty($_POST['pass_konf'])) {
         ?>
         <script language="JavaScript">
         alert('Gagal ganti password, Data tidak boleh kosong !');
@@ -56,9 +58,9 @@ if (isset($_POST['Ganti'])) {
     <?php
     }
     //Update data
-    else {
+    else{
         if (file_exists($gambar)) {
-            unlink($gambar); //hapus
+            unlink($gambar);
         } else {
             if(move_uploaded_file($tmp, $path)){
                 $query = "UPDATE user SET password = '$pass_baru', FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";

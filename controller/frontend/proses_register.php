@@ -10,7 +10,8 @@
 			$tmp = $_FILES['foto']['tmp_name'];
 
 			//merename foto dengan menambah tgl dan jam upload
-			$fotobaru = date('dmYHis').$foto;
+			$fotobaru = $foto;
+			$fotobaru = date('dmYHis').".jpg";
 			//set path folder tempat menyimpan foto
 			$path = "../../img/user/".$fotobaru;
 
@@ -21,9 +22,9 @@
                 if($password == $passwordConf){
 					if(move_uploaded_file($tmp, $path)){
 				    	$sql = mysqli_query
-				    	($koneksi, "INSERT INTO user(id_level, username, password, foto_user) 
+				    	($koneksi, "INSERT INTO user(id_level, username, password, foto_user)
 				    	VALUES('$id_level', '$username', '$password', '$fotobaru')") or die(mysqli_error($koneksi));
-				
+
 				    	if($sql){
 					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';
                     	}

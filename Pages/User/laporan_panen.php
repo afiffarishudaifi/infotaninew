@@ -8,13 +8,13 @@
 
     <!--header-->
     <?php
-            include_once "../_partials/header.php";
+            include_once "../_partials/headeruser.php";
     ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <?php
-        include_once "../_partials/sidebar.php";
+        include_once "../_partials/sidebaruser.php";
     ?>    <!-- /.sidebar -->
   </aside>
 
@@ -26,25 +26,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Laporan Panen</h3>
-              <h3>
-                  <form action="" method="POST">
-                    <?php
+              <h3 class="box-title">Laporan Panen <?php echo $_SESSION['USERNAME'] ?></h3>
 
-                            echo "<select name='pilih' class='form-control hidden-print'>";
-
-                        echo "<option value='belum memilih' selected>--Pilih Komoditas--</option>";
-                        echo "<option value=1>Jagung</option>";
-                        echo "<option value=2>Padi</option>";
-
-                        echo "</select><br>";
-                        echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>   ";
-                        echo "<button type='submit' name='submit1' class='btn btn-warning hidden-print'>Semua</button>";
-                    ?>
-              </h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
+            <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -53,25 +39,18 @@
                   <th>DESA</th>
                   <th>KECAMATAN</th>
                   <th>TANGGAL PANEN</th>
+                  <th>KOMODITAS</th>
                   <th>HASIL PANEN</th>
                 </tr>
                 </thead>
-                <?php if (isset($_POST['submit'])) {
-                    if ($_POST['pilih']==1) {
-                        $tipe = "laporan_jagung";
-                    } else {
-                        $tipe = "laporan_padi";
-                    }
-                }else {
-                    $tipe = "laporan_panen";
-                } ?>
                 <tbody>
                     <?php
                     require_once "../../controller/admin/koneksi.php";
+                    $iduser= $_SESSION['ID_USER'];
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "select * from $tipe");
+                    $query = mysqli_query($koneksi, "select * from laporan_panen_user where id_user= $iduser");
                     //echo $query;
-                    while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
+                    while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
@@ -80,6 +59,7 @@
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
                         <td><?php echo $data ['TGL_PANEN'];?></td>
+                        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td><?php echo $data ['HASIL'];?></td>
 
                         </tr>
@@ -100,9 +80,9 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-    <?php
+  <?php
         include_once "../_partials/footer.php";
-    ?>
+  ?>
 
   <!-- Control Sidebar -->
 

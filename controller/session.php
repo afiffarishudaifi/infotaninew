@@ -13,7 +13,7 @@ $login_session =$row['ID_USER'];
 $AKSES =$row['ID_LEVEL'];
 $pass =$row['PASSWORD'];
 $userr = $row['USERNAME'];
-$gambar = $row['FOTO'];
+$gambar = $row['FOTO_USER'];
 
 //Untuk Kasir
 $sql2 = "select * from USER where ID_user='$login_session'" ;

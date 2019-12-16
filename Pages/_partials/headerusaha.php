@@ -12,10 +12,10 @@
 	header('Location: ../frontend/login.php'); // Mengarahkan ke Home Page
 	}
 
-  if ($_SESSION['ID_LEVEL']!=2){
+  if ($_SESSION['ID_LEVEL']!=3){
   ?>
 	<script language="JavaScript">
-		alert('Anda Bukan User !');
+		alert('Anda Bukan Pengusaha !');
 		setTimeout(function() {window.location.href="../frontend/login.php"},10);
 		</script>
 	<?php
@@ -46,14 +46,6 @@
           </a>
           <ul class="dropdown-menu">
             <!-- Menu Footer-->
-            <li class="user-header">
-              <img src="../../img/user/<?php echo $gambar;?>" class="img-circle" alt="User Image">
-
-              <p>
-                <?php echo $_SESSION['USERNAME'] ?>
-                <small>Member Info Tani</small>
-              </p>
-            </li>
             <li class="user-footer">
               <div class="pull-left">
                 <a href="./pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>

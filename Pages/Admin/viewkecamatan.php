@@ -30,7 +30,7 @@
               <h3><a href="tambahkecamatan.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
