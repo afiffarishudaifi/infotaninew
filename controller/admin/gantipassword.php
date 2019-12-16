@@ -14,6 +14,14 @@ if (isset($_POST['Ganti'])) {
     $pass_lama = $_POST['pass_lama'];
     $pass_baru = $_POST['pass_baru'];
     $pass_konf = $_POST['pass_konf'];
+    $foto = $_FILES['foto']['name'];
+    $tmp = $_FILES['foto']['tmp_name'];
+
+    //merename foto dengan menambah tgl dan jam upload
+    $fotobaru = $foto;
+    $fotobaru = $gambar.".jpg";
+    //set path folder tempat menyimpan foto
+    $path = "../../img/user/".$fotobaru;
     //Cek Password Lama
     $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password='$pass_lama'";
     $sql = mysqli_query($koneksi, $query);
@@ -49,25 +57,31 @@ if (isset($_POST['Ganti'])) {
     }
     //Update data
     else {
-        $query = "UPDATE user SET password = '$pass_baru' WHERE ID_USER='$userid'";
-        $sql = mysqli_query($koneksi, $query);
-    //Setelah diupdate
-        if ($sql) {
-        ?>
-        <script language="JavaScript">
-        alert('Password Berhasil di Update!');
-        setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
-        </script>
-    <?php
+        if (file_exists($gambar)) {
+            unlink($gambar); //hapus
         } else {
-        ?>
-        <script language="JavaScript">
-        alert('Password Gagal di Update !');
-        </script>
-    <?php
+            if(move_uploaded_file($tmp, $path)){
+                $query = "UPDATE user SET password = '$pass_baru', FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";
+                $sql = mysqli_query($koneksi,$query);
+                //Setelah diupdate
+                if($sql){
+                    ?>
+                    <script language="JavaScript">
+                    alert('Password Berhasil di Update!');
+                    setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
+                    </script>
+                <?php
+                    }
+                else{
+                    ?>
+                    <script language="JavaScript">
+                    alert('Password Gagal di Update !');
+                    </script>
+                <?php
 
+                    }
+            }
         }
-
     }
 }
 

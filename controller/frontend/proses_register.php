@@ -11,7 +11,7 @@
 
 			//merename foto dengan menambah tgl dan jam upload
 			$fotobaru = $foto;
-			$fotobaru = date('dmYHis');
+			$fotobaru = date('dmYHis').".jpg";
 			//set path folder tempat menyimpan foto
 			$path = "../../img/user/".$fotobaru;
 
