@@ -27,6 +27,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Pengguna</h3>
+              <h3><a href="./tambahuser.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -57,7 +58,7 @@
                         <td><?php echo $data ['PASSWORD'];?></td>
                         <td><img style="height:160px; width:120px;" src="../../img/user/<?php echo $data ['FOTO_USER'];?>"></td>
                         <td>
-                        <a href="ubahdesa.php?id=<?php echo $data['ID_USER'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <a href="./ubahuser.php?id=<?php echo $data['ID_USER'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
                         <a href="#del<?php echo $data['ID_USER'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->

@@ -65,7 +65,7 @@
                     <label>Nama Kecamatan</label>
                     <!--menginputkan sebuah inputan nim bertipe text-->
                     <input type="text" class="form-control" value="<?php echo $data['NAMA_KECAMATAN']?>"
-                    name="namakec" required>
+                    name="namakec" required onkeypress="return hanyaTulisan(event)">
                 </div>
                 <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
                 <input type="reset" name="reset" class="btn btn-danger" value="Hapus">

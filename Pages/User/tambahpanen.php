@@ -58,7 +58,8 @@
                 <div class="form-group">
                     <label>Hasil Panen</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
-                    <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required>
+                    <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
+                    onkeypress="return hanyaAngka(event)">
                 </div>
                 <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
                 <input type="reset" name="reset" class="btn btn-danger" value="Hapus">

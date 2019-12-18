@@ -25,7 +25,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Ubah Data Desa
+        Ubah Data User
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -39,26 +39,40 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/controllerdesa.php">
+            <form method="POST" action="../../controller/admin/controlleruser.php">
                 <?php
-                require_once "../../controller/koneksi.php";
-                if(isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT * FROM desa WHERE ID_DESA='$id'");
-                    while ($data = mysqli_fetch_array($query)) {?>
-                <input type="hidden" name="iddesa" value="<?php echo $data['ID_DESA']?>">
+                require_once "../../controller/koneksi.php";?>
                 <div class="form-group">
-                    <label>Nama Desa</label>
-                    <!--menginputkan sebuah inputan nim bertipe text-->
-                    <input type="text" class="form-control" value="<?php echo $data['NAMA_DESA']?>" name="namadesa" required onkeypress="return hanyaTulisan(event)">
+                    <label>Nama Pengguna</label>
+                    <input type="text" class="form-control" placeholder="Masukkan nama pengguna" name="username" required onkeypress="return hanyaTulisan(event)">
                 </div>
-                <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
+                <div class="form-group">
+                    <label>Level</label>
+						<div class='form-check form-check-inline'>
+				  			<input class='form-check-input' type='radio' name='level' value='1'>
+				  			<label class='form-check-label' >Admin</label>
+						</div>
+						<div class='form-check form-check-inline'>
+				  			<input class='form-check-input' type='radio' name='level' value='2'>
+				  			<label class='form-check-label' >User</label>
+						</div>
+                </div>
+                <div class="form-group">
+                    <label>Katasandi</label>
+                    <input type="password" class="form-control" placeholder="Masukkan katasandi" name="password" required">
+                </div>
+
+                <div class="form-group">
+                    <label>Katasandi Konfirmasi</label>
+                    <input type="password" class="form-control" placeholder="Masukkan katasandi" name="passwordConf" required ">
+                </div>
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input type="file" name="foto" id="foto" >
+                </div>
+                <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
                 <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
             </form>
-
-            <?php
-        }} ?>
         </div>
     </section>
     <br><br>
