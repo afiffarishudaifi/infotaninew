@@ -40,7 +40,7 @@
     			<div class="form-group">
     				<label>Nama Komoditas</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
-    				<input type="text" class="form-control" name="namakomoditas" placeholder="Nama Komoditas" required>
+    				<input type="text" class="form-control" name="namakomoditas" placeholder="Nama Komoditas" required onkeypress="return hanyaTulisan(event)">
     			</div>
     			<input type="submit" name="simpan" class="btn btn-success" value="Simpan">
     			<input type="reset" name="reset" class="btn btn-danger" value="Hapus">

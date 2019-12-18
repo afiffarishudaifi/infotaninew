@@ -49,3 +49,6 @@
   <link href="../../chart/vendor/morrisjs/morris.css" rel="stylesheet">-->
 
 </head>
+<?php
+date_default_timezone_set('Asia/Jakarta');
+?>

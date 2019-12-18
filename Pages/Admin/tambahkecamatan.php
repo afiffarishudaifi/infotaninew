@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label>Nama Kecamatan</label>
                     <!--menginputkan sebuah inputan nim bertipe text-->
-                    <input type="text" class="form-control" name="namakec" placeholder="Nama Kecamatan" required>
+                    <input type="text" class="form-control" name="namakec" placeholder="Nama Kecamatan" required onkeypress="return hanyaTulisan(event)">
                 </div>
                 <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
                 <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
