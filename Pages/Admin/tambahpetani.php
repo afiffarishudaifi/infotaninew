@@ -76,18 +76,18 @@
     			<div class="form-group">
     				<label>Luas Sawah</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
-    				<input type="text" class="form-control" name="namadesa" placeholder="Masukkan Luas Sawah" required onkeypress="return hanyaAngka(event)">
+    				<input type="text" class="form-control" name="luassawah" placeholder="Masukkan Luas Sawah" required onkeypress="return hanyaAngka(event)">
     			</div>
 
           <div class="form-group">
             <label>Tanggal Tanam</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="namadesa" placeholder="Masukkan tanggal tanam" required>
+            <input type="text" class="form-control" name="tgltanam" placeholder="Masukkan tanggal tanam" required>
           </div>
           <div class="form-group">
             <label>Tanggal Panen</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="namadesa" placeholder="Masukkan tanggal panen" required>
+            <input type="text" class="form-control" name="tglpanen" placeholder="Masukkan tanggal panen" required>
           </div>
     			<input type="submit" name="simpan" class="btn btn-success" value="Simpan">
     			<input type="reset" name="reset" class="btn btn-danger" value="Hapus">

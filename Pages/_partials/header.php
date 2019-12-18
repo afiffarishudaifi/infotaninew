@@ -50,7 +50,7 @@
               <img src="../../img/user/<?php echo $gambar;?>" class="img-circle" alt="User Image">
 
               <p>
-                Alexander Pierce - Web Developer
+                <?php echo $_SESSION['USERNAME'] ?>
                 <small>Member since Nov. 2012</small>
               </p>
             </li>
