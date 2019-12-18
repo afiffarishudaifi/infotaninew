@@ -6,7 +6,6 @@
     </div>
     <div class="pull-left info">
       <p><?php echo $_SESSION['USERNAME'] ?></p>
-      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
   </div>
   <!-- /.search form -->
@@ -14,7 +13,7 @@
   <ul class="sidebar-menu">
     <li class="header">MAIN NAVIGATION</li>
     <li class="treeview">
-      <a href=".index.php">
+      <a href="./index.php">
         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
       </a>
     </li>
