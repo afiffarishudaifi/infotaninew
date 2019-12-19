@@ -354,9 +354,12 @@ input:focus {
         font-size: 36px; } }
     @media only screen and (max-width: 767px) {
       .section-heading h2 {
-        font-size: 30px; } }
+        font-size: 30px;
+      } }
   .section-heading p {
-    font-size: 16px; }
+    font-size: 16px; 
+    color: white;
+  }
   .section-heading span {
     position: absolute;
     top: 50%;
@@ -1114,7 +1117,9 @@ input:focus {
     top: 0;
     right: 0;
     z-index: -1;
-    background-color: #21e03a; }
+    background-image: url("../../assets/img/bg-img/info1.jpg");
+    background-size: 100% 100%;
+  }
   .akame-our-expert-area .side-thumbnail {
     position: absolute;
     width: 555px;
@@ -1142,7 +1147,8 @@ input:focus {
   z-index: 1; }
   .our-certificate-area img {
     margin-right: 30px;
-    max-height: 45px; }
+    max-height: 45px; 
+  }
     .our-certificate-area img:last-child {
       margin-right: 0; }
 
