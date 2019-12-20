@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="POST" action="../../controller/admin/controlleruser.php" enctype="multipart/form-data">
+            <form method="POST" action="../../controller/admin/controlleruser.php">
                 <?php
                 require_once "../../controller/koneksi.php";?>
                 <div class="form-group">

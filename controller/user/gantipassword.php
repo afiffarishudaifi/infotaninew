@@ -20,7 +20,7 @@ if (isset($_POST['Ganti'])) {
 
     //merename foto dengan menambah tgl dan jam upload
     $fotobaru = $foto;
-    $fotobaru = $gambar;
+    $fotobaru = $gambar.".jpg";
     //set path folder tempat menyimpan foto
     $path = "../../img/user/".$fotobaru;
 
@@ -43,7 +43,7 @@ if (isset($_POST['Ganti'])) {
         ?>
         <script language="JavaScript">
         alert('Gagal ganti password, Data tidak boleh kosong !');
-        setTimeou t(function() {window.location.href='../../pages/user/pengaturan.php'},10);
+        setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
         </script>
     <?php
 

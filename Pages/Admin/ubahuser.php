@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/controlleruser.php" enctype="multipart/form-data">
+            <form method="post" action="../../controller/admin/controlleruser.php">
                 <?php
                 require_once "../../controller/koneksi.php";
                 if(isset($_GET['id'])) {
@@ -85,7 +85,6 @@
                 <div class="form-group">
                     <label>Foto</label>
                     <img style="height:160px; width:120px;" src="../../img/user/<?php echo $data ['FOTO_USER'];?>">
-                    <input type="hidden" name="fotouser" value="<?php echo $data['FOTO_USER'];?>">
                     <input type="file" name="foto" >
                 </div>
                 <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
