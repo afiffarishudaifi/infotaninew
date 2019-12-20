@@ -122,7 +122,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area section-padding-80">
+    <section class="breadcrumb-area section-padding-0">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -147,7 +147,7 @@
             <div class="row">
                 <!-- Section Heading -->
                 <div class="col-12 col-lg-6">
-                    <div class="section-heading text-right mb-80 pr-5 pt-3">
+                    <div class="section-heading text-left mb-80 pr-5 pt-3">
                         <p>Jember • Tahun 2019</p>
                         <h2>Cerita Tentang Kami</h2>
                         <span>Riwayat</span>
@@ -156,7 +156,7 @@
 
                 <div class="col-12 col-lg-6">
                     <div class="about--us--content mb-80">
-                        <p>At Hairone Salon, we are lorem ipsum dolor sit amet, consectetur adipi elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Website ini dibuat untuk sistem informasi pertanian Indonesia, memudahkan para pengepul untuk mencari tahu data pertanian tiap daerah, seperti data bulan tanam, data bulan panen, komoditas tiap daerah dan lain lain yang bertujuan juga untuk mensejahterakan para tani</p>
                         <img src="img/core-img/signature.png" alt="">
                         <h4>Lara Croft</h4>
                     </div>
@@ -185,26 +185,26 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <span>Case</span>
-                        <h2 class="counter">457</h2>
-                        <p>Projects Completed</p>
+                        <img src="../../assets/img/bg-img/bajaksawah.jpg" alt="">
+                        <p>Proses bajak sawah</p>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                        <span>Client</span>
+                        <img src="../../assets/img/bg-img/musimtanam.jpg" alt="">
+                        <p>Musim tanam</p>
                     </div>
                 </div>
 
                 <!-- Single Cool Facts Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="400ms">
-                        <span>Client</span>
-                        <h2 class="counter">343</h2>
-                        <p>Happy Customers</p>
-                    </div>
-                </div>
-
-                <!-- Single Cool Facts Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <span>Award</span>
-                        <h2 class="counter">379</h2>
-                        <p>Award Winners</p>
+                        <img src="../../assets/img/bg-img/hama.jpg" alt="">
+                        <p>Proses membasmi hama</p>
                     </div>
                 </div>
 
@@ -212,8 +212,8 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="800ms">
                         <span>Style</span>
-                        <h2 class="counter">97</h2>
-                        <p>Different Hairstyles</p>
+                        <img src="../../assets/img/bg-img/musimpanen.jpg" alt="">
+                        <p>Musim panen</p>
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
                             <img src="img/core-img/quote.png" alt="">
-                            <p>BlueFresh is so simple, it's so easy to use. And from the customer's standpoint it's very intuitive, the platform is pretty much unlimited features!</p>
+                            <p>Pertanian adalah sumber kehidupan, Petani adalah seorang yang berkeyakinan baik, orang yang bermoral tinggi, dan memiliki cinta kepada kebebasan yang kokoh.</p>
                             <div class="ratings-name d-flex align-items-center justify-content-center">
                                 <div class="ratings mr-3">
                                     <i class="icon_star"></i>
@@ -240,14 +240,14 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h5>Jackson Nash</h5>
+                                <h5>Che Guevara</h5>
                             </div>
                         </div>
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
                             <img src="img/core-img/quote.png" alt="">
-                            <p>BlueFresh is so simple, it's so easy to use. And from the customer's standpoint it's very intuitive, the platform is pretty much unlimited features!</p>
+                            <p>Pertanian terlihat perkasa mudah ketika bajak Anda adalah pensil dan kau seribu mil dari ladang jagung.</p>
                             <div class="ratings-name d-flex align-items-center justify-content-center">
                                 <div class="ratings mr-3">
                                     <i class="icon_star"></i>
@@ -256,14 +256,14 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h5>Jackson Nash</h5>
+                                <h5>Dwight D. Eisenhower</h5>
                             </div>
                         </div>
 
                         <!-- Single Testimonial Slide -->
                         <div class="single-testimonial-slide">
                             <img src="img/core-img/quote.png" alt="">
-                            <p>BlueFresh is so simple, it's so easy to use. And from the customer's standpoint it's very intuitive, the platform is pretty much unlimited features!</p>
+                            <p>Tidak akan mungkin menjadi bangsa yang berdaulat di bidang pangan, kalau jumlah bendungan dan saluran irigasi yang mengairi lahan-lahan pertanian kita di seluruh penjuru Tanah Air, sangat terbatas.</p>
                             <div class="ratings-name d-flex align-items-center justify-content-center">
                                 <div class="ratings mr-3">
                                     <i class="icon_star"></i>
@@ -272,7 +272,7 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star"></i>
                                 </div>
-                                <h5>Jackson Nash</h5>
+                                <h5>Joko Widodo</h5>
                             </div>
                         </div>
 
@@ -283,227 +283,21 @@
     </section>
     <!-- Testimonial Area End -->
 
-    <!-- Border -->
-    <div class="container">
-        <div class="border-top"></div>
-    </div>
-
-    <!-- Booking Area Start -->
-    <section class="booking-area-start section-padding-80-0">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <!-- Booking Info -->
-                <div class="col-12 col-lg-4">
-                    <div class="booking-info mb-80">
-                        <h2>Booking</h2>
-                        <p>Monday - Friday: 10.00 AM - 23.00 PM <br> Saturday: 10.00 AM - 19.00 PM</p>
-                        <h4>(+84) 900 122 1223</h4>
-                        <p>hello.colorlib@gmail.com <br> Iris Watson, P.O. Box 283 8562 Fusce Rd, NY</p>
-                    </div>
-                </div>
-
-                <!-- Booking Table -->
-                <div class="col-12 col-lg-8">
-                    <div class="booking-table-slider owl-carousel mb-80">
-
-                        <!-- Single Booking Table -->
-                        <div class="single-booking-table d-flex">
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours active">
-                                <div class="booking-day">
-                                    <h5>Today</h5>
-                                    <h6>Monday, 02/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span class="active">09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span>10:15</span>
-                                    <span>09:30</span>
-                                    <span>10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>Tomorrow</h5>
-                                    <h6>Tueday, 03/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Wednesday, 04/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span class="active">10:00</span>
-                                    <span>09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span class="active">10:45</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Single Booking Table -->
-                        <div class="single-booking-table d-flex">
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Monday, 02/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span class="active">09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span>10:15</span>
-                                    <span>09:30</span>
-                                    <span>10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Tueday, 03/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Wednesday, 04/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span class="active">10:00</span>
-                                    <span>09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span class="active">10:45</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Single Booking Table -->
-                        <div class="single-booking-table d-flex">
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Monday, 02/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span class="active">09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span>10:15</span>
-                                    <span>09:30</span>
-                                    <span>10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Tueday, 03/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span>10:00</span>
-                                    <span class="active">09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span>10:45</span>
-                                </div>
-                            </div>
-
-                            <!-- Single Date & Hours -->
-                            <div class="single-date-hours">
-                                <div class="booking-day">
-                                    <h5>After</h5>
-                                    <h6>Wednesday, 04/10</h6>
-                                </div>
-                                <div class="booking-hours d-flex flex-wrap">
-                                    <span>09:00</span>
-                                    <span class="active">10:00</span>
-                                    <span>09:15</span>
-                                    <span class="active">10:15</span>
-                                    <span>09:30</span>
-                                    <span class="active">10:30</span>
-                                    <span>09:45</span>
-                                    <span class="active">10:45</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Booking Area End -->
+   
 
     <!-- Our Expert Area Start -->
     <section class="akame-our-expert-area about-us-page section-padding-80-0">
 
         <!-- Side Thumbnail -->
-        <div class="side-thumbnail" style="background-image: url(img/bg-img/14.png);"></div>
+        <div class="side-thumbnail" style="background-image: url(img/bg-img/.png);"></div>
 
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Our Experts</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                        <h2>Anggota</h2>
+                        <p>Tiap anggota memiliki peran masing-masing dalam pembuatan website, yaitu front end, back end, dan database. Dalam proses pembuatan, kami menggunakan aplikasi Github dekstop untuk kerjasama tim menyelesaikan website info tani.  </p>
                     </div>
                     <!-- Our Certificate -->
                     <div class="our-certificate-area mb-60 d-flex align-items-center">
@@ -534,7 +328,7 @@
                         </div>
                         <div class="team-member-info">
                             <h5>Murpy Satria Nugraha</h5>
-                            <p>Programmer</p>
+                            <p>Developer Team</p>
                         </div>
                     </div>
                 </div>
@@ -556,7 +350,7 @@
                         </div>
                         <div class="team-member-info">
                             <h5>Afif Faris Hudaifi</h5>
-                            <p>Programmer</p>
+                            <p>Developer Team</p>
                         </div>
                     </div>
                 </div>
@@ -565,7 +359,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80">
                         <div class="team-member-img">
-                            <img src="img/bg-img/12.jpg" alt="">
+                            <img src="../../assets/img/bg-img/rapep.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -587,7 +381,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member mb-80">
                         <div class="team-member-img">
-                            <img src="img/bg-img/13.jpg" alt="">
+                            <img src="../../assets/img/bg-img/camalla.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
@@ -599,7 +393,7 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Camalla Sabrinar</h5>
+                            <h5>Camalla Sabrina</h5>
                             <p>Developer Team</p>
                         </div>
                     </div>
@@ -621,12 +415,12 @@
                         <!-- Footer Logo -->
                         <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
-                        <p class="mb-30">We would love to serve you and let you enjoy your culinary experience. Excepteur sint occaecat cupidatat non proident.</p>
+                        <p class="mb-30">Kita akan berusaha memberikan pelayanan yang maksimal untuk Anda</p>
 
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                             <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">CAMRI</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -636,12 +430,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="col-12 col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
-                        <h4 class="widget-title">Opening times</h4>
+                        <h4 class="widget-title">Waktu Pelayanan</h4>
 
                         <!-- Open Times -->
-                        <div class="open-time">
-                            <p>Monday: Friday: 10.00 - 23.00</p>
-                            <p>Saturday: 10.00 - 19.00</p>
+                        <div class="Waktu Pelayanan">
+                            <p>Senin : Jumat: 10.00 WIB - 20.00 WIB</p>
+                            <p>Sabtu: 10.00WIB - 17.00 WIB</p>
                         </div>
 
                         <!-- Social Info -->
@@ -659,13 +453,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     <div class="single-footer-widget mb-80">
 
                         <!-- Widget Title -->
-                        <h4 class="widget-title">Contact Us</h4>
+                        <h4 class="widget-title">Kontak Kami</h4>
 
                         <!-- Contact Address -->
                         <div class="contact-address">
-                            <p>Tel: (+12) 345 678 910</p>
-                            <p>E-mail: Hello.colorlib@gmail.com</p>
-                            <p>Address: Iris Watson, P.O. Box 283 8562 Fusce Rd, NY</p>
+                            <p>Tel:(+62) 345 678 910</p>
+                            <p>E-mail: infotani@gmail.com</p>
+                            <p>Alamat: Jl. Mastrip</p>
                         </div>
                     </div>
                 </div>
