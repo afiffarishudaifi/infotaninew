@@ -59,7 +59,7 @@
                     <nav class="classy-navbar justify-content-between" id="akameNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="index.html"><img src="./infotaninew/img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -577,8 +577,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Tanya Ramsay</h5>
-                            <p>Hairstylist</p>
+                            <h5>Rafif Zuhdi Filiatno</h5>
+                            <p>Developer Team</p>
                         </div>
                     </div>
                 </div>
@@ -599,8 +599,8 @@
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Donna Carr</h5>
-                            <p>Baber</p>
+                            <h5>Camalla Sabrinar</h5>
+                            <p>Developer Team</p>
                         </div>
                     </div>
                 </div>
