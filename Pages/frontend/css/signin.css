@@ -67,7 +67,7 @@ form{color:#FFF}
 .container{
 	width: 400px;
 	height: 200px;
-	position: relative;
+	position: fixed;
 
 	left: 50%;
 	
