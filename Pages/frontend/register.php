@@ -42,12 +42,12 @@
         <h2 class="form-signin-heading" align="center" >REGISTRASI</h2>
         
         <br>
-        <label for="username" >Username</label>
+        <label for="username" >Nama Pengguna</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
         
         <label for="password" >Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required autofocus>
-        <label for="passwordConf" >Confirm Password</label>
+        <label for="passwordConf" >Konfirmasi password</label>
         <input type="password" id="passwordConf" name="passwordConf" class="form-control" placeholder="Ulangi Kata Sandi" required>
         <label for="foto" > Foto KTP </label>
         <input type="file" id="foto" name="foto" >

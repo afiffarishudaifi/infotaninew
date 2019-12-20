@@ -60,7 +60,7 @@
                 <a href="./pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
               </div>
               <div class="pull-right">
-                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Sign out</a>
+                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Keluar</a>
               </div>
             </li>
           </ul>
