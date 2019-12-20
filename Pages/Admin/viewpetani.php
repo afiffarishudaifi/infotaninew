@@ -27,6 +27,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Tabel Level</h3>
+              <h3><a href="./tambahpetani.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">

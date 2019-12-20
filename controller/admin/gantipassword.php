@@ -11,7 +11,7 @@ if (isset($login_session)) {
 //Ganti password
 if (isset($_POST['Ganti'])) {
     $userid = $_POST['userid'];
-    $pass_lama = md5($_POST['pass_lama']);
+    $pass_lama = $_POST['pass_lama'];
     $pass_baru = $_POST['pass_baru'];
     $pass_konf = $_POST['pass_konf'];
     $foto = $_FILES['foto']['name'];
@@ -61,7 +61,7 @@ if (isset($_POST['Ganti'])) {
             unlink($gambar); //hapus
         } else {
             if(move_uploaded_file($tmp, $path)){
-                $query = "UPDATE user SET password = md5('$pass_baru'), FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";
+                $query = "UPDATE user SET password = '$pass_baru', FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";
                 $sql = mysqli_query($koneksi,$query);
                 //Setelah diupdate
                 if($sql){

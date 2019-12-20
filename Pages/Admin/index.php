@@ -6,6 +6,34 @@
         include "../_partials/head.php";
         date_default_timezone_set('Asia/Jakarta');
         $tgll = date("Y-m-d");
+        $tgl = date("d");
+                $year = date ("Y");
+                switch ($year) {
+                case '1' : $sari = "Januari"; break;
+                case '2' : $sari = "Februari"; break;
+                case '3' : $sari = "Maret"; break;
+                case '4' : $sari = "April"; break;
+                case '5' : $sari = "Mei"; break;
+                case '6' : $sari = "Juni"; break;
+                case '7' : $sari = "Juli"; break;
+                case '8' : $sari = "Agustus"; break;
+                case '9' : $sari = "September"; break;
+                case '10' : $sari = "Oktober"; break;
+                case '11' : $sari = "November"; break;
+                case '12' : $sari = "Desember"; break;
+                default : $sari = "kiamat"; }
+
+                $day = date ("D");
+                switch ($day) {
+                case 'Sun' : $hari = "Minggu"; break;
+                case 'Mon' : $hari = "Senin"; break;
+                case 'Tue' : $hari = "Selasa"; break;
+                case 'Wed' : $hari = "Rabu"; break;
+                case 'Thu' : $hari = "Kamis"; break;
+                case 'Fri' : $hari = "Jumat"; break;
+                case 'Sat' : $hari = "Sabtu"; break;
+                default : $hari = "kiamat"; }
+
 
                         $year = date ("Y");
 ?>
@@ -68,7 +96,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-blue">
+          <div class="small-box bg-green">
             <div class="inner">
                 <h3>
                     <?php
