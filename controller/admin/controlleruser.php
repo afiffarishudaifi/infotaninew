@@ -88,27 +88,26 @@ if (isset($login_session)) {
     }
   
 } else if(isset($_POST['hapus'])){
-            
-    $fotouser= $_POST['fotouser'];
-            $id = $_POST['idhapus'];
-            $path = "../../img/user/".$fotouser;
+    $id = $_POST['idhapus'];
+    $fotouser = $_POST['fotouser'];
+    $path = "../../img/user/".$fotouser;
+    if (file_exists($path)) {
+        unlink($path);}
+    //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
+    $query = "Delete FROM user WHERE ID_USER='$id'";
+    $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
 
-            if (file_exists($path)) {
-                unlink($path);
-            //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-            $query = "Delete FROM user WHERE ID_USER='$id'";
-            $result = mysqli_query($koneksi, $query);
-            }
-            if ($result) {?>
-                <script language="JavaScript">
-                alert('Hapus Berhasil !');
-                setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
-                </script><?php
-            } else {?>
-                <script language="JavaScript">
-                alert('Hapus User Gagal!');
-                setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
-                </script><?php
-            }
-        }
+    if ($result) {?>
+        <script language="JavaScript">
+        alert('Hapus Berhasil !');
+        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+        </script><?php
+    } else {?>
+        <script language="JavaScript">
+        alert('Hapus Gagal ! Silahkan Hapus Data Petani terlebih Dahulu');
+        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+        </script><?php
+    }
+}
+        
 ?>

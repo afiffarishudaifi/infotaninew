@@ -37,13 +37,13 @@
                   <th>KTP</th>
                   <th>KECAMATAN</th>
                   <th>KOMODITAS</th>
-                  <th>NAMA PENGGUNA</th>
-                  <th>ID LEVEL</th>
-                  <th>NAMA LEVEL</th>
-                  <th>ID LEVEL</th>
-                  <th>NAMA LEVEL</th>
-                  <th>ID LEVEL</th>
-                  <th>NAMA LEVEL</th>
+                  <th>NAMA PETANI</th>
+                  <th>ALAMAT PETANI</th>
+                  <th>LUAS SAWAH</th>
+                  <th>ALAMAT SAWAH</th>
+                  <th>TANAM</th>
+                  <th>PANEN</th>
+                  <th>NO HP</th>
                   <!--<th>AKSI(s)</th>-->
                 </tr>
                 </thead>
