@@ -23,7 +23,7 @@
 					if(move_uploaded_file($tmp, $path)){
 				    	$sql = mysqli_query
 				    	($koneksi, "INSERT INTO user(id_level, username, password, foto_user)
-				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
+				    	VALUES('$id_level', '$username', '$password', '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
 					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';

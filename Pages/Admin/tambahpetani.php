@@ -82,7 +82,7 @@
           <div class="form-group">
             <label>Tanggal Tanam</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="tgltanam" placeholder="Masukkan tanggal tanam" required>
+            <input type="date" class="form-control" name="tgltanam" placeholder="Masukkan tanggal tanam" required>
           </div>
           <div class="form-group">
             <label>Tanggal Panen</label>
