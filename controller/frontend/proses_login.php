@@ -7,7 +7,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
     } else {
         // Variabel username dan password
         $username=$_POST['username'];
-        $password=$_POST['password'];
+        $password=md5($_POST['password']);
         // Membangun koneksi ke database
         include "../koneksi.php";
         // Mencegah MySQL injection
@@ -38,14 +38,14 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 // header("location: index.php"); // Mengarahkan ke halaman awal
         } else {
 // header("location: index_login.php"); // Mengarahkan ke halaman login
-?>
-<script language="JavaScript">
-        alert('Username atau Password Salah !');
-        setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
-    </script>
-<?php
-        }
-        mysqli_close($koneksi); // Menutup koneksi
+        ?>
+        <script language="JavaScript">
+                alert('Username atau Password Salah !');
+                setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+            </script>
+        <?php
+                }
+                mysqli_close($koneksi); // Menutup koneksi
     }
 }
 ?>

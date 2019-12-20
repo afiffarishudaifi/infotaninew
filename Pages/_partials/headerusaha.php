@@ -1,7 +1,7 @@
 <?php
     require_once "../../controller/koneksi.php";
     include "../../controller/session.php";
-  if(!isset($login_session)) {
+  /*if(!isset($login_session)) {
       ?>
       <script language="JavaScript">
   		alert('Anda Belum Login !');
@@ -19,7 +19,7 @@
 		setTimeout(function() {window.location.href="../frontend/login.php"},10);
 		</script>
 	<?php
-}
+}*/
 ?>
 <header class="main-header">
   <!-- Logo -->
@@ -51,7 +51,7 @@
                 <a href="./pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
               </div>
               <div class="pull-right">
-                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Sign out</a>
+                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Keluar</a>
               </div>
             </li>
           </ul>

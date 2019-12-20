@@ -12,10 +12,10 @@
   <!-- /.search form -->
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
-    <li class="header">MAIN NAVIGATION</li>
+    <li class="header">NAVIGASI</li>
     <li class="active treeview">
       <a href="./index.php">
-        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>
     </li>
     <li class="treeview">
