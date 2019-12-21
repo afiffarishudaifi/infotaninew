@@ -35,16 +35,18 @@
                 <thead>
                 <tr>
                   <th>KTP</th>
-                  <th>KECAMATAN</th>
-                  <th>KOMODITAS</th>
+                  <th>USERNAME</th>
                   <th>NAMA PETANI</th>
                   <th>ALAMAT PETANI</th>
+                  <th>NO HP</th>
+                  <th>KOMODITAS</th>
                   <th>LUAS SAWAH</th>
                   <th>ALAMAT SAWAH</th>
+                  <th>KECAMATAN</th>
                   <th>TANAM</th>
                   <th>PANEN</th>
-                  <th>NO HP</th>
-                  <!--<th>AKSI(s)</th>-->
+                  <th>STATUS</th>
+                  <th>AKSI(s)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,23 +59,25 @@
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
-                        <td><?php echo $data ['ktp'];?></td>
-                        <td><?php echo $data ['kecamatan'];?></td>
+                        <td><?php echo $data ['ktpp'];?></td>
+                        <td><?php echo $data ['USERNAME'];?></td>
+                        <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['ALAMAT_PETANI'];?></td>
+                        <td><?php echo $data ['NO_HP'];?></td>
                         <td><?php echo $data ['komoditas'];?></td>
-                        <td><?php echo $data ['petani.ID_USER'];?></td>
-                        <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <!--<td>
-                        <a href="ubahdesa.php?id=<?php //echo $data['ID_LEVEL'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <td><?php echo $data ['LUAS_SAWAH'];?></td>
+                        <td><?php echo $data ['ALAMAT_SAWAH'];?></td>
+                        <td><?php echo $data ['kecamatan'];?></td>
+                        <td><?php echo $data ['TANAM'];?></td>
+                        <td><?php echo $data ['PANEN'];?></td>
+                        <td><?php echo $data ['STATUS'];?></td>
+                        <td>
+                        <a href="./ubahpetani.php?id=<?php echo $data['ktpp'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
-                        <a href="#del<?php //echo $data['ID_LEVEL'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>-->
+                        <a href="#del<?php echo $data['KTP'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->
-                        <div class="modal fade" id="del<?php echo $data['ID_LEVEL']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerdesa.php" method="post">
+                        <div class="modal fade" id="del<?php echo $data['KTP']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <form action="../../controller/admin/controllerpetani.php" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -82,12 +86,12 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                                  $del=mysqli_query($koneksi, "select * from LEVEL where ID_LEVEL='".$data['ID_LEVEL']."'");
+                                  $del=mysqli_query($koneksi, "select * from PETANI where KTP='".$data['ktpp']."'");
                                   $drow=mysqli_fetch_array($del);
                                 ?>
                                         <div class="modal-footer">    <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
-                                            <input type="hidden" name="idhapus" value="<?php echo $drow['ID_LEVEL']; ?>">
-                                            <h5><center>Apakah yakin ingin menghapus Desa <strong><?php echo $drow['NAMA_LEVEL']; ?></strong> ?</center></h5>
+                                            <input type="hidden" name="idhapus" value="<?php echo $drow['KTP']; ?>">
+                                            <h5><center>Apakah yakin ingin menghapus  <strong><?php echo $drow['NAMA_PETANI']; ?></strong> ?</center></h5>
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
                                             <button type="submit" class="btn btn-danger" name="hapus"><span class="fa fa-trash"></span> Hapus</button>
                                         </div>

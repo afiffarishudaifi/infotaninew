@@ -36,49 +36,92 @@
         <div class="container">
     		<br>
     		<!--membuat sebuah form-->
-    		<form method="post" action="../../controller/admin/controllerdesa.php">
+    		<form method="post" action="../../controller/admin/controllerpetani.php">
           <div class="form-group">
             <label>KTP</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
             <input type="text" class="form-control" name="KTP" placeholder="Masukkan KTP" required onkeypress="return hanyaAngka(event)">
           </div>
+          
           <div class="form-group">
-            <label>Kecamatan</label>
+            <label>Username</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="kecamatan" placeholder="Masukkan Kecamatan" required >
-          </div>
-          <div class="form-group">
-            <label>Komoditas</label>
-            <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="komoditas" placeholder="Masukkan Komoditas" required">
-          </div>
-          <div class="form-group">
-            <label>Status Pengguna</label>
-            <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="status" placeholder="Status Pengguna" required onkeypress="return hanyaTulisan(event)">
+            <?php
+                        require_once "../../controller/admin/koneksi.php";
+                        $query = "select * from user";
+                        $resultuser = mysqli_query($koneksi, $query);
+                       // ----------------------------------------
+                        echo "<select name='iduser' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih User ===</option>";
+                            while($row2=mysqli_fetch_array($resultuser))
+                            {
+                                echo "<option value=$row2[0]>$row2[2]</option>";
+                            }
+                       echo "</select>";
+                   ?>
           </div>
           <div class="form-group">
             <label>Nama Petani</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Petani" required onkeypress="return hanyaTulisan(event)">
+            <input type="text" class="form-control" name="namapetani" placeholder="Masukkan Nama Petani" required onkeypress="return hanyaTulisan(event)">
           </div>
           <div class="form-group">
             <label>Alamat Petani</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="alamat" placeholder="Masukkan alamat Desa" required>
+            <input type="text" class="form-control" name="alamatpetani" placeholder="Masukkan alamat Desa" required>
           </div>
 
           <div class="form-group">
             <label>No HP Petani</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="namadesa" placeholder="Masukkan No hp" required>
+            <input type="text" class="form-control" name="nohp" placeholder="Masukkan No hp" required>
           </div>
-    			<div class="form-group">
+    			
+          <div class="form-group">
+            <label>Komoditas</label>
+            <!--menginputkan sebuah inputan nim bertipe text-->
+            <?php
+                        require_once "../../controller/admin/koneksi.php";
+                        $query = "select * from komoditas";
+                        $resultkomoditas = mysqli_query($koneksi, $query);
+                       // ----------------------------------------
+                        echo "<select name='idkomoditas' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih Komoditas ===</option>";
+                            while($row2=mysqli_fetch_array($resultkomoditas))
+                            {
+                                echo "<option value=$row2[0]>$row2[1]</option>";
+                            }
+                       echo "</select>";
+                   ?>
+                </div>
+          <div class="form-group">
     				<label>Luas Sawah</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
     				<input type="text" class="form-control" name="luassawah" placeholder="Masukkan Luas Sawah" required onkeypress="return hanyaAngka(event)">
     			</div>
-
+          <div class="form-group">
+    				<label>Alamat Sawah</label>
+    				<!--menginputkan sebuah inputan nim bertipe text-->
+    				<input type="text" class="form-control" name="alamatsawah" placeholder="Masukkan Alamat Sawah" required>
+    			</div>
+          <div class="form-group">
+            <label>Kecamatan</label>
+            <!--menginputkan sebuah inputan nim bertipe text-->
+            <?php
+                        require_once "../../controller/admin/koneksi.php";
+                        $query = "select * from kecamatan";
+                        $resultkecamatan = mysqli_query($koneksi, $query);
+                       // ----------------------------------------
+                        echo "<select name='idkecamatan' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih Kecamatan ===</option>";
+                            while($row2=mysqli_fetch_array($resultkecamatan))
+                            {
+                                echo "<option value=$row2[0]>$row2[2]</option>";
+                            }
+                       echo "</select>";
+                   ?>
+                </div>
+          
           <div class="form-group">
             <label>Tanggal Tanam</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
@@ -87,7 +130,7 @@
           <div class="form-group">
             <label>Tanggal Panen</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="tglpanen" placeholder="Masukkan tanggal panen" required>
+            <input type="date" class="form-control" name="tglpanen" placeholder="Masukkan tanggal panen" required>
           </div>
     			<input type="submit" name="simpan" class="btn btn-success" value="Simpan">
     			<input type="reset" name="reset" class="btn btn-danger" value="Hapus">
