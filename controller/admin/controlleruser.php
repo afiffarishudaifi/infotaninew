@@ -31,7 +31,7 @@ if (isset($login_session)) {
 					if(move_uploaded_file($tmp, $path)){
 				    	$sql = mysqli_query
 				    	($koneksi, "INSERT INTO user(id_level, username, password, foto_user)
-				    	VALUES('$id_level', '$username', '$password', '$fotobaru')") or die(mysqli_error($koneksi));
+				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
 					    	echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/frontend/login.php";</script>';
@@ -73,7 +73,7 @@ if (isset($login_session)) {
     }else{
         if(move_uploaded_file($tmp, $path)){
             //sebuah query untuk menginputkan data ke table tb_siswa
-            $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD='$password', FOTO_USER='$fotobaru' where ID_USER='$id'";
+            $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD=md5('$password'), FOTO_USER='$fotobaru' where ID_USER='$id'";
     
             $result = mysqli_query($koneksi, $query);
     

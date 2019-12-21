@@ -25,7 +25,7 @@ if (isset($_POST['Ganti'])) {
     $path = "../../img/user/".$fotobaru;
 
     //Cek Password Lama
-    $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password='$pass_lama'";
+    $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password=md5('$pass_lama')";
     $sql = mysqli_query($koneksi, $query);
     $hasil = mysqli_num_rows($sql);
     if (!$hasil >= 1) {
@@ -63,7 +63,7 @@ if (isset($_POST['Ganti'])) {
             unlink($gambar);
         } else {
             if(move_uploaded_file($tmp, $path)){
-                $query = "UPDATE user SET password = '$pass_baru', FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";
+                $query = "UPDATE user SET password = md5('$pass_baru'), FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";
                 $sql = mysqli_query($koneksi,$query);
                 //Setelah diupdate
                 if($sql){
