@@ -7,9 +7,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    
 
-    <title>INFOTANI - CARI DATA</title>
-
+    <title>INFOTANI - REGISTRASI</title>
+    <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,7 +18,8 @@
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/cari.css" rel="stylesheet">
+    
+    <link href="./css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,17 +35,27 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="cariHasil.php" method="post">
+      <form class="form-signin" action="../../controller/frontend/proses_register.php" method="post" enctype="multipart/form-data">
+      
+      
         <br> 
-
-        <h2 class="form-signin-heading" align="center">CARI DATA INFOTANI</h2>
-
+        <h2 class="form-signin-heading" align="center" >REGISTRASI</h2>
         
-  <input class="search"  type="text" placeholder="Cari..." required> 
-  <a href="./cariHasil.php" class="button"  type="button"  a href="./cariHasil.php">Cari</a>     
-  
-  </form>
-
+        <br>
+        <label for="username" >Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        
+        <label for="password" >Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required autofocus>
+        <label for="passwordConf" >Confirm Password</label>
+        <input type="password" id="passwordConf" name="passwordConf" class="form-control" placeholder="Ulangi Kata Sandi" required>
+        <label for="foto" > SIUP </label>
+        <input type="file" id="foto" name="foto" >
+        <br>
+        <br>
+        <a href="./login.php" class="btn btn-lg btn-warning">Batal</a>
+        <button class="btn btn-lg btn-success " type="submit" name="submit">Register</button>
+      </form>
     </div> <!-- /container -->
 
      <script>window.jQuery || document.write('<script src="./assets/jquery.min.js"><\/script>')</script>
@@ -57,6 +69,5 @@
         },3000);
       });
     </script>
-    
   </body>
 </html>
