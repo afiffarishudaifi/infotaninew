@@ -15,12 +15,13 @@ $pass =$row['PASSWORD'];
 $userr = $row['USERNAME'];
 $gambar = $row['FOTO_USER'];
 
-//Untuk Kasir
-$sql2 = "select * from PENGUSAHA where ID_user='$login_session'" ;
+$pengusaha=$_SESSION['id_perusahaan'];
+
+$sql2 = "select * from PENGUSAHA where id_perusahaan='$pengusaha'" ;
 $ses_sql2=mysqli_query($koneksi, $sql2);
 $row2 = mysqli_fetch_assoc($ses_sql2);
-$id_pengguna =$row2['ID_USER'];
-$nama_pengguna =$row2['USERNAME'];
+$id_pengguna =$row2['ID_PERUSAHAAN'];
+$nama_pengguna =$row2['NAMA_PERUSAHAAN'];
 
 
 ?>
