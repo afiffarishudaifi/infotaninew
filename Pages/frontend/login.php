@@ -64,7 +64,7 @@
           Silahkan <a href="./button_register.php">Registrasi Disini</a></p>
         <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
       	<br>
-	<a href="./index.php" class="btn btn-warning btn-block">Kembali</a>
+	<a href="../../pages/frontend/login.php" class="btn btn-warning btn-block">Kembali</a>
       <br>
       </form>
     </div> <!-- /container -->
