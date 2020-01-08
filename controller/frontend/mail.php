@@ -1,5 +1,5 @@
 <?php
-include "classes/class.phpmailer.php";
+include "phpmailer/class.phpmailer.php";
 if (isset($_POST['kirim'])) {
 
 

@@ -12,7 +12,7 @@
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
     <li class="header">NAVIGASI</li>
-    <li class="active treeview">
+    <li class="treeview">
       <a href="./index.php">
         <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>

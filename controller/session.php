@@ -16,7 +16,7 @@ $userr = $row['USERNAME'];
 $gambar = $row['FOTO_USER'];
 
 //Untuk Kasir
-$sql2 = "select * from USER where ID_user='$login_session'" ;
+$sql2 = "select * from PENGUSAHA where ID_user='$login_session'" ;
 $ses_sql2=mysqli_query($koneksi, $sql2);
 $row2 = mysqli_fetch_assoc($ses_sql2);
 $id_pengguna =$row2['ID_USER'];

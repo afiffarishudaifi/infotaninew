@@ -39,10 +39,10 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
         } else {
 // header("location: index_login.php"); // Mengarahkan ke halaman login
 ?>
-<script language="JavaScript">
-        alert('Username atau Password Salah !');
-        setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
-    </script>
+        <script language="JavaScript">
+            alert('Username atau Password Salah !');
+            setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+        </script>
 <?php
         }
         mysqli_close($koneksi); // Menutup koneksi

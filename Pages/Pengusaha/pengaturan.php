@@ -28,8 +28,8 @@
         Pengaturan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Ganti Password</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li class="active">Ganti Katasandi </li>
       </ol>
     </section>
     <section class="content">
@@ -38,24 +38,24 @@
             <div class="col-md-5 col-md-offset-3 form-login" style="position:static">
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="fa fa-hand-o-right" style="position:static"></span>
-                	Form Ganti Password </div>
+                	Form Ganti Katasandi </div>
                     <div class="panel-body" style="min-height:450px">
                         <form action="../../controller/pengusaha/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
 
                         	<input type="hidden" name="userid" id="userid" value="<?php echo $login_session ?>">
 
                         	<div class="form-group">
-                        		Password Lama
+                        		Katasandi Lama
                                 <input type="password" class="form-control" placeholder="Password Lama"  name="pass_lama" id="pass_lama" required/>
                             </div>
 
                         	<div class="form-group">
-                        		Password Baru
+                        		Katasandi Baru
                                 <input type="password" class="form-control" placeholder="Password Baru"  name="pass_baru" id="pass_baru" required/>
                             </div>
 
                         	<div class="form-group">
-                        		Konfirmasi Password
+                        		Konfirmasi Katasandi
                                 <input type="password" class="form-control" placeholder="Konfirmasi Password"  name="pass_konf" id="pass_konf" required/>
                             </div>
 

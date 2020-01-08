@@ -44,6 +44,14 @@
                     WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS and petani.KTP=panen.KTP and petani.id_user= $login_session AND HASIL=0";
                     $query = mysqli_query($koneksi, $sql);
                     $drow=mysqli_fetch_array($query);
+                    if($drow==0 || $drow==NULL) {
+                        ?>
+                          <script language="JavaScript">
+                          alert('Tunggu Panen Selesai !');
+                          setTimeout(function() {window.location.href='./index.php'},10);
+                          </script>
+                        <?php
+                    }
                     ?>
                     <input type="text" class="form-control" readonly name="id" value="<?php echo $drow['KTP']; ?>">
                 </div>
@@ -61,8 +69,12 @@
                     <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
                     onkeypress="return hanyaAngka(event)">
                 </div>
-                <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
-                <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+                <?php if($drow==0 || $drow==NULL){ ?>
+
+                <?php} else {?>
+                  <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
+                  <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+                <?php }?>
                 </form>
             </div>
     </section>

@@ -74,7 +74,7 @@
           <div class="form-group">
             <label>No HP Petani</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-            <input type="text" class="form-control" name="nohp" placeholder="Masukkan No hp" required>
+            <input type="text" class="form-control" name="nohp" placeholder="Masukkan No hp" onkeypress="return hanyaAngka(event)" required>
           </div>
     			
           <div class="form-group">
