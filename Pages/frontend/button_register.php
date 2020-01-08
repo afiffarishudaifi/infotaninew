@@ -1,3 +1,17 @@
+
+<?php include ('../../controller/session.php'); ?>
+<?php
+  if(isset($login_session)) {
+	header('Location:./register.php'); // Mengarahkan ke Home Page
+	}
+
+      if ($_SESSION['ID_LEVEL']==1){
+          header('Location:../admin/index.php');
+    } elseif ($_SESSION['ID_LEVEL']==2) {
+        header('Location:../user/index.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,9 +21,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    
 
-    <title>INFOTANI - REGISTRASI</title>
+    <title>INFOTANI - REGISTER</title>
+
+    <!-- logo infotani -->
     <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +33,6 @@
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    
     <link href="./css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -35,26 +49,17 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="../../controller/frontend/proses_register.php" method="post" enctype="multipart/form-data">
-      
-      
-        <br> 
-        <h2 class="form-signin-heading" align="center" >REGISTRASI</h2>
-        
+      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
         <br>
-        <label for="username" >Nama Pengguna</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-        
-        <label for="password" >Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required autofocus>
-        <label for="passwordConf" >Konfirmasi password</label>
-        <input type="password" id="passwordConf" name="passwordConf" class="form-control" placeholder="Ulangi Kata Sandi" required>
-        <label for="foto" > Foto KTP </label>
-        <input type="file" id="foto" name="foto" >
+        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">REGISTER INFOTANI</h2>
+
         <br>
-        <br>
-        <a href="../../pages/frontend/button_register.php" class="btn btn-lg btn-warning">Batal</a>
-        <button class="btn btn-lg btn-success " type="submit" name="submit">Register</button>
+       
+	<a href="../../pages/frontend/register.php" class="btn btn-primary btn-block">PETANI</a>
+  <a href="../../pages/frontend/register_pengusaha.php" class="btn btn-warning btn-block">PENGUSAHA</a>
+  <br>
+   <a href="../../pages/frontend/login.php" class="btn btn- btn-block">kembali</a>
+      <br>
       </form>
     </div> <!-- /container -->
 
