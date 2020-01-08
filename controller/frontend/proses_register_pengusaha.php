@@ -23,7 +23,7 @@
 					if(move_uploaded_file($tmp, $path)){
 				    	$sql = mysqli_query
 				    	($koneksi, "INSERT INTO perusahaan(id_perusahaan, username, password, siup, nama_perusahaan, email, alamat_perusahaan, no_telp_perusahaan, nama_manager, id_level)
-				    	VALUES('$id_perusahaan', '$username', '$password','$siup', '$nama_perusahaan', '$email','$alamat_perusahaan', '$no_telp_perusahaan', '$nama_manager', '$id_level')") or die(mysqli_error($koneksi));
+				    	VALUES('$id_perusahaan', '$username', md5('$password'),'$siup', '$nama_perusahaan', '$email','$alamat_perusahaan', '$no_telp_perusahaan', '$nama_manager', '$id_level')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
 					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';
