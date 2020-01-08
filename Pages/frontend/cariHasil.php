@@ -1,12 +1,18 @@
+<?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!-- logo infotani -->
+<link rel="icon" href="../../img/logo.png">
     <title>
-      LIMAS - Library Management System
+      IT - Pencarian
   </title>
 
     <!-- XAVIER Supports -->
@@ -22,19 +28,47 @@
     <script type="text/javascript" src="./js/database.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap-select.min.js"></script>
+    
     <!--manual CSS-->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/cariHasil.css" />
     <!-- Check session -->
     <script type="text/javascript">
 
     </script>
+
 </head>
+
 <body>
+<?php
+if(isset($_POST['submitcari'])||isset($_POST['submitcariHasil'])):
+    $_SESSION['pos']=$_POST;
+elseif(isset($_POST['filter'])):
+    $_SESSION['posF']=$_POST;
+endif;
+if (isset($_SESSION['pos'])):
+    $cari =$_SESSION['pos']['cari'];
+elseif(isset($_SESSION['posF'])):
+    if (isset($_POST['komoditas'])):
+        $komoditas = $_SESSION['posF']['komoditas'];
+    endif;
+    if (isset($_REQUEST['kecamatan'])):
+        $kecamatan = $_SESSION['posF']['kecamatan'];
+        //foreach ($_SESSION['posF']['kecamatan'] as $kecamatan){     
+          //   $camat[] = mysqli_real_escape_string ($koneksi, $kecamatan);
+        //}
+    endif;
+    if (isset($_POST['tglpanen'])):
+        $tglpanen= $_SESSION['posF']['tglpanen'];
+    endif;
+else:
+    $cari="";
+    $komoditas ="";
+endif;
+?>
 
 
-
-
-<div id="flipkart-navbar" class="navbar-fixed-top">
+<div id="flipkart-navbar" class="navbar navbar-top">
     <div class="container">
         <div class="row row1">
             <ul class="largenav pull-right">
@@ -44,246 +78,639 @@
         </div>
         <div class="row row2">
             <div class="col-sm-2">
-                <h2 style="margin:0px;"><span class="smallnav menu" onclick="openNav()">INFOTANI</span></h2>
-                <h1 style="margin:0px;"><span class="largenav" style="font-size:25px;">INFOTANI</span></h1>
+                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;">INFOTANI</a></h2>
+                <!--<h1 style="margin:0px;"><span class="nav-brand" href="index.php"><h3>INFO TANI</h3></span></h1>-->
             </div>
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
                 <div class="row">
 
-                  <form role="search" action="" method="GET" id="XXX">
-                    <input class="flipkart-navbar-input col-xs-11 cari" type="text" placeholder="Cari Data..." value="">
-                    <button class="flipkart-navbar-button col-xs-1" id="btnsearch" onclick="">
+                  <form role="search" action="cariHasil.php" method="post">
+                  <?php 
+                  if(isset($_POST['submitcari'])){
+                      $cari=$_POST['cari'];
+                ?>
+                    <input class="flipkart-navbar-input col-xs-11 cari" type="text" id="cari" name="cari" placeholder="Cari Data..." value="<?php echo $cari;?>">
+                <?php
+                }else{?>
+               <input class="flipkart-navbar-input col-xs-11 cari" type="text" id="cari" name="cari" placeholder="Cari Data..." value="">
+                <?php
+               }
+                ?>
+                  
+                  <button class="flipkart-navbar-button col-xs-1" id="btnsearch" name="submitcariHasil" onclick="">
                         <svg width="15px" height="15px">
                             <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868
                             11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0
                             2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895
                             6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                         </svg>
-                    </button>
-                  </form>
+                    </button>  
                 </div>
-            </div>
+            </div> 
+            </div>                
         </div>
     </div>
 </div>
 
-
-
-
-<div class="container-fluid content">
-    <div class="col-lg-12">
-        <div class="col-lg-11 col-lg-offset-1">
-           
-<div id="datatable" style="margin-top: 130px;"></div>
-            <div>
-                <nav aria-label="Page navigation" style="margin: -12px 10px 0 10px;">
-                    <ul class="pager">
-                        <li class="previous" id="previous">
-                            <a id="aprevious" onclick="PopulateTable('','previous');">
-                                <span aria-hidden="true">&larr;</span>
-                                Previous
-                            </a>
-                        </li>
-                        <li><label style="margin:6px" id="page">PAGE<label></li>
-                        <li class="next" id="next">
-                            <a id="anext" onclick="PopulateTable('','next');">
-                                Next
-                                <span aria-hidden="true">&rarr;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-    </div>
-</div>
-
-<!--Modal view-->
-<!--
-<div id="ModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalResult" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-
-            <h4 class="modal-title" id="ModalResult">Detail Buku {judul}        </div>
-        <div class="modal-body">
-            <div class="form-horizontal">
-                <table class="table">
-                    <thead>
-                                            <tbody id="datatablee"></tbody>
-                </table>
-                    <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-                        Kembali                         </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>-->
-
-<script type="text/javascript">
-PopulateTable();
-PopulateTable('buku');$(".cari").keyup(function(e){
-  if (e.which == 13) {
-    PopulateTable($(".cari").val());
-  }
-});
-$("#btnsearch").click(function(e){PopulateTable($(".cari").val());
-});
-$("#XXX").submit(function(e){e.preventDefault();});
-var currentpage = 0;
-var totalpages = 0;
-
-
-function PopulateTable(id, mode, pagez) {
-  if (!pagez) {
-      pagez = 0;
-  }
-  if (!id) {
-      id = "";
-  }
-  if (mode) {
-      if (mode == "next") {
-          if (currentpage != totalpages - 1) {
-              pagez = currentpage += 1;
-          } else {
-              return;
-          }
-      } else if (mode == "previous") {
-          if (currentpage != 0) {
-              pagez = currentpage -= 1;
-          } else {
-              return;
-          }
-      }
-  }
-    var key = "";
-    var query = {"action" : "populatetable_result", "search" : id, "key" : key, "page" : pagez};
-        XAVIER({"processor" : "./processor/result", "data" : query}, function(data) {
-            var items = [];
-            if (data === "noresult") {
-                items.push("<font style='margin-top: 20px;'>Data Tidak Tersedia</font>");
-            } else {
-                if(data) {
-                    var butcher = JSON.parse(data);
-                    var pages   = butcher["pages"];
-                    var xjson = $.parseJSON(butcher["data"]);
+<div class="fluid-container">
+    <div class="left-sidebar col">
+    <h4>Filters
+            <br/><h5>Komoditas</h5>
+            <?php 
+                 require_once "../../controller/admin/koneksi.php";
+                $sql=mysqli_query($koneksi, "SELECT * FROM komoditas");
+                while ($data=mysqli_fetch_array($sql)) {
+                ?>
+                <label>
+                <input type="radio" name="komoditas" value="<?=$data['ID_KOMODITAS']?>">
+                <?=$data['NAMA_KOMODITAS']?>
+                </label><br>
+                <?php
                 }
-                $.each(xjson, function(index, value) {
-                    /* var line = '';
-                    if (index != 0) {
-                        line = "style='border-bottom:1px solid black;'";
+                ?>
+            
+            <br/><h5>Kecamatan</h5>   
+                <?php 
+                 require_once "../../controller/admin/koneksi.php";
+                $sql=mysqli_query($koneksi, "SELECT * FROM kecamatan");
+                while ($data=mysqli_fetch_array($sql)) {
+                ?>
+                <label>
+                <input type="checkbox" name="kecamatan[]" value="<?=$data['ID_KECAMATAN']?>">
+                <?=$data['NAMA_KECAMATAN']?>
+                </label><br>
+                <?php
+                }
+                ?>
+
+           <br/><h5>Bulan Panen</h5>
+           <select name="tglpanen">
+            <option selected="selected" disabled>==Pilih Bulan==</option>
+            <?php
+            $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+            $jlh_bln=count($bulan);
+            for($c=0; $c<$jlh_bln; $c+=1){
+                $vbln=$c+1;
+                echo"<option value=$vbln> $bulan[$c] </option>";
+            }
+            ?>
+            </select>
+            <br/><br/>
+                <!--<button type="submit" class="btn btn-success" name="filter" value="Filter">Cari Filter</button>-->
+                <button type="submit" class="btn btn-success" name="filter" value="Filter" style="border-left-width: 6px;border-right-width: 6px;">Cari Filter</button>    
+            <br/><br/>
+                <button class="btn btn-warning" name="reset" title="Klik 2X">Reset Filter</button>  
+                    
+            </form>
+            <?php if(isset($_POST['reset'])){
+                        
+                        session_destroy();}?>
+</div>
+<div class="container">
+<div class ="content">
+<div class="box-body table-responsive">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>KOMODITAS</th>
+                  <th>ALAMAT SAWAH</th>
+                  <th>KECAMATAN</th>
+                  <th>TGL TANAM</th>
+                  <th>TGL PANEN</th>
+                  <th>NAMA PETANI</th>
+                  <th>ALAMAT PETANI</th>
+                  <th>NO HP</th>
+                  
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require_once "../../controller/admin/koneksi.php";
+                    //query untuk menampilkan data table dari tb_siswa
+                    $halaman = 10;
+                     $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                     $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+                    
+                    //query view data berdasar filter
+                    
+            if(isset($_POST['filter'])||isset($_SESSION['posF']['komoditas'])
+                                    ||isset($_SESSION['posF']['kecamatan'])
+                                    ||isset($_SESSION['posF']['tglpanen'])) {
+                if(!empty($_SESSION['pos']['cari'])){
+                    $cari = $_SESSION['pos']['cari'];
+                }
+                else{
+                    $cari = "";
+                }
+                if(!empty($_POST['komoditas'])&&!empty($_POST['kecamatan'])&&!empty($_POST['tglpanen'])
+                ||!empty($_SESSION['posF']['komoditas'])&&!empty($_SESSION['posF']['kecamatan'])&&!empty($_SESSION['posF']['tglpanen'])){
+                    if(isset($_POST['filter'])){
+                        $komoditas = $_POST['komoditas'];
+                    $kecamatan = $_REQUEST['kecamatan'];
+                    $tglpanen= $_POST['tglpanen']; 
+                    //$jmlLoop = count($kecamatan);
+                    foreach ($_REQUEST['kecamatan'] as $kecamatan){
+                        $statearray[] = mysqli_real_escape_string ($koneksi, $kecamatan);
                     }
-                    items.push("<tr "+line+"><td>&nbsp</td></tr><tr>" +
-                    "<td style='font-size: 22px; color: #000099' colspan='3'>" +
-                     value[0] + "</td></tr>");
-                    items.push("<tr><td width='200px' valign='top' rowspan='4'><a href='resources/upload/buku/"+value[4]+"' target='_blank'><img width='150' src='resources/upload/buku/" +  value[4] +"' onerror=\"this.onerror=null;this.src='resources/upload/buku/404.jpg';\"></a></td><td width='50px'><b>Tersedia</b></td> <td>" +  value[1] +"</td></tr>");
-                    items.push("<tr><td width='50px'><b>Jenis</b></td> <td>" +  value[2] +"</td></tr>");
-		    items.push("<tr><td width='90px'><b> CD Buku </b></td> <td>" +  value[5] +"</td></tr>");
-                    items.push("<tr height='200'><td valign='top' width='90px'><b> Deskripsi </b></td> <td valign='top' style='text-align:justify;'>" + value[3] +"</td></tr>");
-*/
-		    items.push('<div class="row">');	
+                    }else{
+                        $komoditas = $_SESSION['posF']['komoditas'];
+                        $kecamatan = $_SESSION['posF']['kecamatan'];
+                        foreach ($_SESSION['posF']['kecamatan'] as $camat){
+                            $statearray[] = mysqli_real_escape_string ($koneksi, $camat);
+                        }
+                        $tglpanen = $_SESSION['posF']['tglpanen'];
+                    }
+                    $states = implode("','", $statearray);
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KOMODITAS = $komoditas)
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    AND (month(petani.PANEN) = '".$tglpanen."')
+                    ");
 
-		    items.push('<div class="col-md-12">');
-		    items.push('<h3>'+value[0]+'</h3>');
-		    items.push('</div>');
+                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KOMODITAS = $komoditas)
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    AND (month(petani.PANEN) = '".$tglpanen."')
+                    ORDER BY komoditas.NAMA_KOMODITAS
+                    LIMIT $mulai, $halaman
+                    ");
+                   
+                }elseif(!empty($_POST['komoditas'])&&!empty($_POST['kecamatan'])&&empty($_POST['tglpanen'])
+                ||!empty($_SESSION['posF']['komoditas'])&&!empty($_SESSION['posF']['kecamatan'])&&empty($_SESSION['posF']['tglpanen'])){
+                    
+                    if(isset($_POST['filter'])){
+                        $komoditas = $_POST['komoditas'];
+                    $kecamatan = $_REQUEST['kecamatan']; 
+                    //$jmlLoop = count($kecamatan);
+                    foreach ($_REQUEST['kecamatan'] as $kecamatan){
+                        $statearray[] = mysqli_real_escape_string ($koneksi, $kecamatan);
+                    }
+                    }else{
+                        $komoditas = $_SESSION['posF']['komoditas'];
+                        $kecamatan = $_SESSION['posF']['kecamatan'];
+                        foreach ($_SESSION['posF']['kecamatan'] as $camat){
+                            $statearray[] = mysqli_real_escape_string ($koneksi, $camat);
+                        }
+                    }
+                    $states = implode("','", $statearray);
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KOMODITAS = $komoditas)
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    ");
 
-		    items.push('</div>');
-		    
-		    items.push('<div class="row">');
-		    
-		    items.push('<div class="col-md-3">');
-			items.push("<a href='resources/upload/buku/"+value[4]+"' target='_blank'><img width='100%' src='resources/upload/buku/" +  value[4] +"' onerror=\"this.onerror=null;this.src='resources/upload/buku/404.jpg';\"></a>");
-		    items.push('</div>');
-		    
-		    items.push('<div class="col-md-9">');
-			items.push('<dl class="dl-horizontal">');
+                   $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                   FROM petani
+                    INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                   INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                   INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                   INNER JOIN user on  user.ID_USER=petani.ID_USER
+                   WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                       OR petani.ALAMAT_PETANI like '%".$cari."%'
+                       OR petani.NO_HP like '%".$cari."%'
+                       OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                       OR petani.LUAS_SAWAH like '%".$cari."%'
+                       OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                       OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                       )
+                   
+                   AND (petani.ID_KOMODITAS = $komoditas)
+                   AND (petani.ID_KECAMATAN IN ('$states'))
+                   ORDER BY komoditas.NAMA_KOMODITAS
+                   LIMIT $mulai, $halaman
+                   ");
+                }elseif(!empty($_POST['komoditas'])&&!empty($_POST['tglpanen'])&&empty($_POST['kecamatan'])){
+                    if(isset($_POST['filter'])){
+                        $komoditas = $_POST['komoditas'];
+                    $tglpanen= $_POST['tglpanen']; 
+                    }else{
+                        $komoditas = $_SESSION['posF']['komoditas'];
+                        $tglpanen = $_SESSION['posF']['tglpanen'];
+                    }
+                    
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    )
 
-			items.push('<dt>Tersedia</dt>');
-			items.push('<dd><span class="hidden-xs">: </span>'+value[1]+'</dd>');
+                
+                AND (petani.ID_KOMODITAS = $komoditas)
+                AND (month(petani.PANEN) = '".$tglpanen."')
+               
+                ");
 
-			items.push('<dt>Jenis</dt>');
-			items.push('<dd><span class="hidden-xs">: </span>'+value[2]+'</dd>');
-			items.push('<dt>CD Buku</dt>');
-			items.push('<dd><span class="hidden-xs">: </span>'+value[5]+'</dd>');
-			items.push('<dt>Deskripsi</dt>');
-			items.push('<dd><span class="hidden-xs">: </span>'+value[3]+'</dd>');
+                 $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                 FROM petani
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                 INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                 INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                 INNER JOIN user on  user.ID_USER=petani.ID_USER
+                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                     OR petani.ALAMAT_PETANI like '%".$cari."%'
+                     OR petani.NO_HP like '%".$cari."%'
+                     OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                     OR petani.LUAS_SAWAH like '%".$cari."%'
+                     OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                     OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                     )
+ 
+                 
+                 AND (petani.ID_KOMODITAS = $komoditas)
+                 AND (month(petani.PANEN) = '".$tglpanen."')
+                 ORDER BY komoditas.NAMA_KOMODITAS
+                 limit $mulai, $halaman
+                 ");
+                }elseif(!empty($_POST['kecamatan'])&&!empty($_POST['tglpanen'])&&empty($_POST['komoditas'])){
+                    if(isset($_POST['filter'])){
+                    $kecamatan = $_REQUEST['kecamatan'];
+                    $tglpanen= $_POST['tglpanen']; 
+                    //$jmlLoop = count($kecamatan);
+                    foreach ($_REQUEST['kecamatan'] as $kecamatan){
+                        $statearray[] = mysqli_real_escape_string ($koneksi, $kecamatan);
+                    }
+                    }else{
+                        $kecamatan = $_SESSION['posF']['kecamatan'];
+                        foreach ($_SESSION['posF']['kecamatan'] as $camat){
+                            $statearray[] = mysqli_real_escape_string ($koneksi, $camat);
+                        }
+                        $tglpanen = $_SESSION['posF']['tglpanen'];
+                    }
+                    $states = implode("','", $statearray);
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    AND (month(petani.PANEN) = '".$tglpanen."')
+                    ");
 
-			items.push('</dl>')
-		    items.push('</div>');
-		    
-		    items.push('</div><hr />');
-                });
-                totalpages = pages;
-                if (pages == 1) {
-                    $("#previous").attr("class", "previous disabled");
-                    $("#next").attr("class", "next disabled");
-                } else if (currentpage == 0) {
-                    $("#next").attr("class", "next");
-                    $("#previous").attr("class", "previous disabled");
-                } else if (currentpage == pages - 1) {
-                    $("#previous").attr("class", "previous");
-                    $("#next").attr("class", "next disabled");
-                } else {
-                    $("#previous").attr("class", "previous");
-                    $("#next").attr("class", "next");
+                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    AND (month(petani.PANEN) = '".$tglpanen."')
+                    ORDER by komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman
+                    ");
+                   
                 }
+                elseif(!empty($_POST['komoditas'])&&empty($_POST['kecamatan'])&&empty($_POST['tglpanen'])
+                    ||!empty($_SESSION['posF']['komoditas'])&&empty($_SESION['posF']['kecamatan'])&&empty($_SESSION['posF']['tglpanen'])){
+                    if(isset($_POST['filter'])){
+                        $komoditas = $_POST['komoditas'];
+                    }else{
+                        $komoditas = $_SESSION['posF']['komoditas'];
+                    }
+                
+                $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    )
+
+                
+                AND (petani.ID_KOMODITAS = $komoditas)
+               
+                ");
+
+                $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    )
+
+                
+                AND (petani.ID_KOMODITAS = $komoditas)
+                ORDER BY komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman
+                ");
+                }elseif(!empty($_POST['kecamatan'])&&empty($_POST['komoditas'])&&empty($_POST['tglpanen'])
+                ||!empty($_SESSION['posF']['kecamatan'])&&empty($_SESSION['posF']['komoditas'])&&empty($_SESSION['posF']['tglpanen'])){
+                    if(isset($_REQUEST['kecamatan'])){
+                        $kecamatan = $_REQUEST['kecamatan'];
+                        //$jmlLoop = count($kecamatan);
+                        foreach ($_REQUEST['kecamatan'] as $kecamatan){
+                            $statearray[] = mysqli_real_escape_string ($koneksi, $kecamatan);
+                        }
+                    }else{
+                        $kecamatan = $_SESSION['posF']['kecamatan'];
+                        foreach ($_SESSION['posF']['kecamatan'] as $camat){
+                            $statearray[] = mysqli_real_escape_string ($koneksi, $camat);
+                        }
+                    }   
+                    $states = implode("','", $statearray);
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    ");
+
+                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                        OR petani.ALAMAT_PETANI like '%".$cari."%'
+                        OR petani.NO_HP like '%".$cari."%'
+                        OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                        OR petani.LUAS_SAWAH like '%".$cari."%'
+                        OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                        OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                        )
+                    
+                    AND (petani.ID_KECAMATAN IN ('$states'))
+                    ORDER BY komoditas.NAMA_KOMODITAS
+                    LIMIT $mulai, $halaman
+                    ");
+                   
+                }elseif(!empty($_POST['tglpanen'])&&empty($_POST['komoditas'])&&empty($_POST['kecamatan'])
+                ||isset($_SESSION['posF']['tglpanen'])&&empty($_SESSION['posF']['kecamatan'])&&empty($_SESSION['posF']['komoditas'])){
+                    if(isset($_POST['tglpanen'])){
+                        $tglpanen= $_POST['tglpanen'];
+                    }else{
+                        $tglpanen = $_SESSION['posF']['tglpanen'];
+                    }
+                    //$tglpanen1 = date('Y-m-d',strtotime($tglpanen));
+                    //echo $tglpanen;
+                    
+                    
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    )
+
+                 
+                AND (month(petani.PANEN) = '".$tglpanen."')
+               
+                ");
+
+                $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE (petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    )
+
+                
+                AND (month(petani.PANEN) = '".$tglpanen."')
+                ORDER BY komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman
+                ");
+                }else{
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    ");
+                $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE petani.NAMA_PETANI like '%".$cari."%'
+                OR petani.ALAMAT_PETANI like '%".$cari."%'
+                OR petani.NO_HP like '%".$cari."%'
+                OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                OR petani.LUAS_SAWAH like '%".$cari."%'
+                OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                ORDER by komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman 
+                ");
+                    echo "<script>alert('Silahkan Pilih Filters Terlebih Dahulu!');history.back(self);</script>";
+                }
+                
+            }elseif(isset($_POST['submitcari'])||isset($_POST['submitcariHasil'])||isset($_SESSION['pos']['cari'])) {
+                if(isset($_POST['submitcariHasil'])){
+                    $cari = $_POST['cari'];
+                }
+                else{
+                    $cari = $_SESSION['pos']['cari'];
+                }
+                $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER
+                    WHERE petani.NAMA_PETANI like '%".$cari."%'
+                    OR petani.ALAMAT_PETANI like '%".$cari."%'
+                    OR petani.NO_HP like '%".$cari."%'
+                    OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                    OR petani.LUAS_SAWAH like '%".$cari."%'
+                    OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                    OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                    ");
+                $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                WHERE petani.NAMA_PETANI like '%".$cari."%'
+                OR petani.ALAMAT_PETANI like '%".$cari."%'
+                OR petani.NO_HP like '%".$cari."%'
+                OR komoditas.NAMA_KOMODITAS like '%".$cari."%'
+                OR petani.LUAS_SAWAH like '%".$cari."%'
+                OR petani.ALAMAT_SAWAH like '%".$cari."%'
+                OR kecamatan.NAMA_KECAMATAN like '%".$cari."%'
+                ORDER by komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman 
+                ");
+                
             }
-            var output = items.join("");
-            $("#datatable").html(output);
-	    
-            $("html, body").animate({ scrollTop: 0 }, "fast");
-            var xaxa = currentpage + 1;
-            if (pages !== 0) {
-                $("#page").html("Halaman " + xaxa + " dari " + pages + " halaman");
-            } else {
-                $("#page").html("Tidak ada hasil");
-                currentpage = 0;
-                $("#previous").attr("class", "previous disabled");
-                $("#next").attr("class", "next disabled");
+            else{
+                $query = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    FROM petani
+                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                    INNER JOIN user on  user.ID_USER=petani.ID_USER");
+                $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                FROM petani
+                 INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
+                INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
+                INNER JOIN user on  user.ID_USER=petani.ID_USER
+                ORDER by komoditas.NAMA_KOMODITAS
+                LIMIT $mulai, $halaman 
+                ");
             }
-        });
-    }
-function set(puzzle) {
-    totalpages = puzzle;
-    return puzzle;
-}
-/*
+                             
+            $total = mysqli_num_rows($query);
+            $pages = ceil($total/$halaman);
+                    //start no tabel
+                    $no = $mulai+1;
+                    //echo $query;
+                    while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek ke array yang biasanya
+                    ?>
+                    <tr>
+                        <!--memangambil data dari tabel dengan mengisikan data di table-->
+                        <td><?php echo $no;?></td>
+                        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
+                        <td><?php echo $data ['ALAMAT_SAWAH'];?></td>
+                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TANAM']),'d M Y');?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['PANEN']),'d M Y');?></td>
+                        <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['ALAMAT_PETANI'];?></td>
+                        <td><?php echo $data ['NO_HP'];?></td>
+                        
+                    </tr>
+                    <?php
+                    $no++;
+                    } ?>
+                    </tbody>
+                    </table>
+<ul class="pagination pagination-sm" style="margin:0">
+  <?php 
+  if (isset($_SESSION['pos']['cari'])){
+      $cari = $_SESSION['pos']['cari'];
+  }else{
+      $cari = "";
+  }
+    for ($i=1; $i<=$pages ; $i++){
+        echo "<li><a href='?cari=$cari&halaman=$i'>$i</a></li>";
+   } ?>
+</ul>
 
-//fungsi modal
-function view(id) {
-    if (id) {
-      $('#ModalView').modal({
-          backdrop: 'static',
-          keyboard: false
-      });
-      str = "Detail Buku {judul}";
-      str = str.replace(/\{(.*?)\}/g, name);
-      $("#ModalResult").text(str);
-    }
-    var key = "";
-    var query = {"action" : "populatetable_result2", "search" : id, "key" : key};
-    XAVIER({"processor" : "./processor/result", "data" : query}, function(data, status) {
-      var items = [];
-      if (data) {
-        var xjson = $.parseJSON(data);
-      }
-       $.each($.parseJSON(data), function(index, value) {
-            items.push("<tr><td>" + value[0] + "</td></tr>");//Deskripsi
-       //     items.push("<td> <a href='#view' onclick=view('" + value.id + "')>view</a></td>");
-   });
-   var output = items.join("");
-   $("#datatablee").html(output);
-   console.log(data);
- })
-}
-*/
 
-
-
-
-</script>
-
+</div>
+                </div>
 </body>
 </html>

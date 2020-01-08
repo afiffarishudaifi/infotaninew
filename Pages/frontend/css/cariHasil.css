@@ -1,6 +1,6 @@
 
 #flipkart-navbar {
-    background-color: green;
+    background-color: #32CD32;
     color: #FFFFFF;
 }
 
@@ -139,4 +139,24 @@
 .dl-horizontal dt { text-align: left;}
 .dl-horizontal dd { text-align: justify;}
 
-    	
+.left-sidebar {
+	
+    float:left;
+    background:#f9f9f9;
+box-shadow:0px 0px 0px 0px;
+border-radius: 5px;
+width: auto;
+margin: 15px auto;
+padding: 20px;
+max-width: 330px;
+padding: 15px;
+margin: 0 auto;	
+}
+.box-body{
+    padding-left: 20px;
+    padding-right:20px;
+}
+.fluid-container{
+    padding-left: 20px;
+    padding-right:20px;
+}

@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INFOTANI - CARI DATA</title>
+    <!-- logo infotani -->
+<link rel="icon" href="../../img/logo.png">
+    <title>IT - CARI DATA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -38,10 +40,8 @@
 
         <h2 class="form-signin-heading" align="center">CARI DATA INFOTANI</h2>
 
-        
-  <input class="search"  type="text" placeholder="Cari..." required> 
-  <a href="./cariHasil.php" class="button"  type="button"  a href="./cariHasil.php">Cari</a>     
-  
+        <input class="search"  type="text" placeholder="Cari Data..." name="cari"> 
+      <button class="btn btn-lg btn-primary " type="submit" name="submitcari" >Cari</button> 
   </form>
 
     </div> <!-- /container -->

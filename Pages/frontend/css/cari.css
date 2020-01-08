@@ -9,17 +9,17 @@ body {
 
 /*support chrome*/
 .search:-webkit-input-placeholder{
-	color:whitesmoke;
+	color:white;
 }
  
 /*support mozilla*/
-.search:-moz-input-placeholder{
-	color: whitesmoke;
+.search::-moz-input-placeholder{
+	color: white;
 }
  
 /*support internet explorer*/
 .search:-ms-input-placeholder{
-	color: whitesmoke;
+	color: white;
 }
 
 .form-signin {
@@ -55,15 +55,27 @@ body {
   background:rgba(50, 50, 50, 0.5);
   border:0px solid #dbdbdb;
 }
-.button {
+.btn {
   position:relative;
   padding:6px 15px;
-  left:-8px;
-  border:4px solid #53bd84;
-  background-color:#53bd84;
+  left:-105px;
+  border:4px solid wh;
+  background-color:#008EFE;
   color:black;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: orange
+  color: white;
+}
+::placeholder{
+  color: white;
+}
+#cari{
+  float: left;
+}
+button{
+  float: right;
+}
+input{
+  color: white;
 }
