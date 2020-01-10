@@ -2,7 +2,7 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="../../img/user/<?php echo $gambar;?>" class="img-circle" alt="User Image">
+      <img src="../../img/pengusaha/user/<?php echo $gambar2;?>" class="img-circle" alt="User Image">
     </div>
     <div class="pull-left info">
       <p><?php echo $_SESSION['USERNAME'] ?></p>
@@ -18,13 +18,6 @@
         <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>
     </li>
-    <!--<li class="treeview">
-      <a href="./Pemesanan.php">
-        <i class="fa fa-users"></i> <span>Form Pemesanan</span>
-        <span class="pull-right-container">
-        </span>
-      </a>
-    </li>-->
     <li class="treeview">
       <a href="./Riwayat.php">
         <i class="fa fa-users"></i> <span>Riwayat Pemesanan</span>

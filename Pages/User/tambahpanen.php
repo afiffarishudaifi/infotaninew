@@ -69,9 +69,13 @@
                     <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
                     onkeypress="return hanyaAngka(event)">
                 </div>
-                <?php if($drow==0 || $drow==NULL){ ?>
-
-                <?php} else {?>
+                <?php 
+                  if($drow['KTP']==' ' || $drow['NAMA_KOMODITAS']==' ' || $drow['TGL_PANEN']==' ') {
+                        ?>
+                        <input type="hidden" name="ubah" class="btn btn-success" value="Simpan">
+                        <input type="hidden" name="reset" class="btn btn-danger" value="Hapus">
+                        <?php
+                    } else {?>
                   <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
                   <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
                 <?php }?>
