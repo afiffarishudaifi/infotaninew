@@ -19,6 +19,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!--manual CSS-->
+    <link rel="stylesheet" href="./css/tentangkami.css">
+
 </head>
 
 <body>
@@ -32,25 +35,6 @@
     <?php
         require_once "./_partials/header.php";
     ?>
-        <!-- Top Header Area Start -->
-        <!--div class="top-header-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-5">
-                        <div class="top-header-content">
-                            <p>Welcome to hair salon!</p>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="top-header-content text-right">
-                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> Mon-Sat: 8.00 to 17.00 <span class="mx-2"></span> | <span class="mx-2"></span> <i class="fa fa-phone" aria-hidden="true"></i> Call us: (+12)-345-6789</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top Header Area End -->
-
         <!-- Main Header Start -->
         <div class="main-header-area">
             <div class="classy-nav-container breakpoint-off">
@@ -59,7 +43,7 @@
                     <nav class="classy-navbar justify-content-between" id="akameNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="./infotaninew/img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="index.php"><!--<img src="../../img/logo.png" alt="">--></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -72,47 +56,6 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
-                            <!-- Nav Start -->
-                            <!--div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="./index.html">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="./index.html">- Home</a></li>
-                                            <li><a href="./about.html">- About Us</a></li>
-                                            <li><a href="./service.html">- Services</a></li>
-                                            <li><a href="./portfolio.html">- Portfolio</a></li>
-                                            <li><a href="./blog.html">- Blog</a></li>
-                                            <li><a href="./single-blog.html">- Blog Details</a></li>
-                                            <li><a href="./contact.html">- Contact</a></li>
-                                            <li><a href="#">- Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="./portfolio.html">Portfolio</a></li>
-                                    <li><a href="./service.html">Services</a></li>
-                                    <li class="active"><a href="./about.html">About Us</a></li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
-                                </ul>
-
-                                <!-- Cart Icon -->
-                                <!--div class="cart-icon ml-5 mt-4 mt-lg-0">
-                                    <a href="#"><i class="icon_cart"></i></a>
-                                </div>
-
-                                <!-- Book Icon -->
-                                <!--div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
-                                    <a href="#" class="btn akame-btn">Book Now</a>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
                         </div>
                     </nav>
                 </div>
@@ -156,9 +99,12 @@
 
                 <div class="col-12 col-lg-6">
                     <div class="about--us--content mb-80">
-                        <p>Website ini dibuat untuk sistem informasi pertanian Indonesia, memudahkan para pengepul untuk mencari tahu data pertanian tiap daerah, seperti data bulan tanam, data bulan panen, komoditas tiap daerah dan lain lain yang bertujuan juga untuk mensejahterakan para tani</p>
-                        <img src="img/core-img/signature.png" alt="">
-                        <h4>Lara Croft</h4>
+                        <p>Website ini dibuat untuk sistem informasi pertanian Indonesia, 
+                        memudahkan masyarakat maupun perusahaan untuk mencari tahu data pertanian tiap daerah, 
+                        seperti data bulan tanam, data bulan panen, komoditas tiap daerah 
+                        dan lain lain yang bertujuan juga untuk mensejahterakan para tani</p>
+                        <!--<img src="img/core-img/signature.png" alt="">-->
+                        <h4>Info Tani Crew</h4>
                     </div>
                 </div>
             </div>
@@ -175,7 +121,7 @@
                 <div class="col-12">
                     <div class="video-content-area mb-80">
                         <img src="../../assets/img/bg-img/tani.jpg" alt="">
-                        <a href="https://youtu.be/YxvWmvZxyz0" class="video-play-btn wow bounceInDown" data-wow-delay="200ms"><i class="fa fa-play"></i></a>
+                        <a href="https://www.youtube.com/watch?v=YxvWmvZxyz0" class="video-play-btn wow bounceInDown" data-wow-delay="200ms"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
             </div>

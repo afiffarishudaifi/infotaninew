@@ -677,6 +677,7 @@ endif;
                     //start no tabel
                     $no = $mulai+1;
                     //echo $query;
+                    if ($total != 0){
                     while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
@@ -694,7 +695,9 @@ endif;
                     </tr>
                     <?php
                     $no++;
-                    } ?>
+                    } }else{?>
+                        <td><?php echo "Tidak Ada Data";?></td>
+                    <?php } ?>
                     </tbody>
                     </table>
 <ul class="pagination pagination-sm" style="margin:0">

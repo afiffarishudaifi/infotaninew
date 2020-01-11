@@ -2,8 +2,11 @@ body {
   margin-top: 200px;
   padding-top: 10px;
   padding-bottom: 40px;
-  background: url(../img/bg-login-blur.jpg) no-repeat;
-  background-size:cover;
+  background: url(../img/bg-login-blur.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   padding:20px
 }
 
@@ -20,6 +23,11 @@ body {
 /*support internet explorer*/
 .search:-ms-input-placeholder{
 	color: white;
+}
+.search {
+  position: relative;
+  height: auto;
+  width : auto;
 }
 
 .form-signin {
@@ -78,4 +86,13 @@ button{
 }
 input{
   color: white;
+}
+@media screen and (max-width: 600px) {
+  .form-signin, input[type=text] {
+      width: 100%;
+      margin-top: 0;
+  }
+}
+.container {
+  margin: auto;
 }
