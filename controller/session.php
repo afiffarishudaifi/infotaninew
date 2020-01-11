@@ -24,5 +24,7 @@ $login_pengusaha =$row2['ID_USER'];
 $id_pengguna =$row2['ID_PERUSAHAAN'];
 $nama_pengguna =$row2['NAMA_PERUSAHAAN'];
 $gambar2 = $row2['LOGO'];
+$nama_manager = $row2['NAMA_MANAGER'];
+$alamat_usaha = $row2['ALAMAT_PERUSAHAAN'];
 
 ?>
