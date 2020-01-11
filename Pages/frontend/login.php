@@ -9,6 +9,8 @@
           header('Location:../admin/index.php');
     } elseif ($_SESSION['ID_LEVEL']==2) {
         header('Location:../user/index.php');
+    } elseif ($_SESSION['ID_LEVEL']==3) {
+        header('Location:../pengusaha/index.php');
     } 
     
 ?>

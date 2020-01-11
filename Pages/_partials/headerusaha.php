@@ -1,7 +1,7 @@
 <?php
     require_once "../../controller/koneksi.php";
     include "../../controller/session.php";
-  /*if(!isset($login_session)) {
+  if(!isset($id_pengguna)) {
       ?>
       <script language="JavaScript">
   		alert('Anda Belum Login !');
@@ -19,7 +19,7 @@
 		setTimeout(function() {window.location.href="../frontend/login.php"},10);
 		</script>
 	<?php
-}*/
+}
 ?>
 <header class="main-header">
   <!-- Logo -->
@@ -41,11 +41,19 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="../../img/user/<?php echo $gambar;?>" class="user-image" alt="User Image">
+            <img src="../../img/pengusaha/user/<?php echo $gambar2;?>" class="user-image" alt="User Image">
             <span class="hidden-xs"><?php echo $_SESSION['USERNAME'] ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- Menu Footer-->
+            <li class="user-header">
+              <img src="../../img/pengusaha/user/<?php echo $gambar2;?>" class="img-circle" alt="User Image">
+
+              <p>
+                <?php echo $_SESSION['USERNAME'] ?>
+                <small>Member Info Tani</small>
+              </p>
+            </li>
             <li class="user-footer">
               <div class="pull-left">
                 <a href="./pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>

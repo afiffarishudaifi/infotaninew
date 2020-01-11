@@ -57,6 +57,19 @@
                 <?php
             }
 
+            //cek data
+            $cekdata = "select * from petani where id_user='$iduserpetani'";
+            $querydata = mysqli_query($koneksi, $cekdata);
+            $hasilcekdata=mysqli_fetch_array($querydata);
+            if($hasilcekdata==0) {
+                ?>
+                  <script language="JavaScript">
+                  alert('Lengkapi Data !');
+                  setTimeout(function() {window.location.href='./viewpetani.php'},10);
+                  </script>
+                <?php
+            }
+
             //insert into PANEN
             $querycari = "select * from petani where id_user=$iduserpetani";
             $sqlcari = mysqli_query($koneksi, $querycari);
@@ -74,6 +87,7 @@
                 }
             }
 
+            //cek panen
             $cek = "select * from PANEN, petani where petani.KTP=PANEN.KTP and HASIL=0 and petani.id_user='$iduserpetani'";
             $querycek = mysqli_query($koneksi, $cek);
             $hasilcek=mysqli_fetch_array($querycek);

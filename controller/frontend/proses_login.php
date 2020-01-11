@@ -37,7 +37,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 
 // header("location: index.php"); // Mengarahkan ke halaman awal
         } else { 
-            $sql = "select * from perusahaan where PASSWORD=md5('$password') AND USERNAME='$username'";
+        $sql = "select * from perusahaan where PASSWORD=md5('$password') AND USERNAME='$username'";
         $query = mysqli_query($koneksi, $sql);
         $rows = mysqli_num_rows($query);
         if ($rows != 0) {
