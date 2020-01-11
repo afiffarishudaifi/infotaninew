@@ -17,7 +17,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
         $password = mysqli_real_escape_string($koneksi, $password);
 
         // SQL query untuk memeriksa apakah karyawan terdapat di database?
-        $sql = "select * from user where PASSWORD=md5('$password') AND USERNAME='$username'";
+        $sql = "select * from user where PASSWORD=md5('$password') AND USERNAME='$username' AND ID_LEVEL=2";
         $query = mysqli_query($koneksi, $sql);
         $rows = mysqli_num_rows($query);
         if ($rows != 0) {
