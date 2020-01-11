@@ -161,10 +161,12 @@ endif;
             <br/><br/>
                 <button class="btn btn-warning" name="reset" title="Klik 2X">Reset Filter</button>  
                     
-            </form>
+            
             <?php if(isset($_POST['reset'])){
                         
-                        session_destroy();}?>
+                unset($_SESSION['posF']['komoditas']);
+                unset($_SESSION['posF']['kecamatan']);
+                unset($_SESSION['posF']['tglpanen']);}?>
 </div>
 <div class="container">
 <div class ="content">
@@ -174,13 +176,13 @@ endif;
                 <tr>
                   <th>NO.</th>
                   <th>KOMODITAS</th>
-                  <th>ALAMAT SAWAH</th>
-                  <th>KECAMATAN</th>
-                  <th>TGL TANAM</th>
                   <th>TGL PANEN</th>
                   <th>NAMA PETANI</th>
-                  <th>ALAMAT PETANI</th>
+                  <th>ALAMAT</th>
+                  <th>KECAMATAN</th>
                   <th>NO HP</th>
+                  <th>STATUS</th>
+                  <th>PESAN</th>
                   
                 </tr>
                 </thead>
@@ -612,10 +614,11 @@ endif;
                 ORDER by komoditas.NAMA_KOMODITAS
                 LIMIT $mulai, $halaman 
                 ");
-                    echo "<script>alert('Silahkan Pilih Filters Terlebih Dahulu!');history.back(self);</script>";
+                    //echo "<script>alert('Silahkan Pilih Filters Terlebih Dahulu!');history.back(self);</script>";
                 }
                 
             }elseif(isset($_POST['submitcari'])||isset($_POST['submitcariHasil'])||isset($_SESSION['pos']['cari'])) {
+                
                 if(isset($_POST['submitcariHasil'])){
                     $cari = $_POST['cari'];
                 }
@@ -677,6 +680,7 @@ endif;
                     //start no tabel
                     $no = $mulai+1;
                     //echo $query;
+                    
                     if ($total != 0){
                     while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek ke array yang biasanya
                     ?>
@@ -684,14 +688,14 @@ endif;
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $no;?></td>
                         <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
-                        <td><?php echo $data ['ALAMAT_SAWAH'];?></td>
-                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <td><?php echo DATE_FORMAT(date_create($data ['TANAM']),'d M Y');?></td>
                         <td><?php echo DATE_FORMAT(date_create($data ['PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['NAMA_PETANI'];?></td>
                         <td><?php echo $data ['ALAMAT_PETANI'];?></td>
+                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
                         <td><?php echo $data ['NO_HP'];?></td>
-                        
+                        <td><?php echo $data ['STATUS'];?></td>
+                        <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['KTP'];?>&tgl=<?php echo $data['PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
+                    </form>
                     </tr>
                     <?php
                     $no++;
