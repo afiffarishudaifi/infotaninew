@@ -9,8 +9,8 @@
           header('Location:../admin/index.php');
     } elseif ($_SESSION['ID_LEVEL']==2) {
         header('Location:../user/index.php');
-    } 
-    
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,17 +54,11 @@
         <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LOGIN INFOTANI</h2>
 
         <br>
-        <label for="username" class="sr-only">Username</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-        <br>
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-
-        <p>Belum punya akun?
-          Silahkan <a href="./button_register.php">Registrasi Disini</a></p>
-        <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
-      	<br>
-	<a href="../../pages/frontend/index.php" class="btn btn-warning btn-block">Kembali</a>
+       
+	<a href="../../pages/frontend/login.php" class="btn btn-primary btn-block">PETANI</a>
+  <a href="../../pages/frontend/login_pengusaha.php" class="btn btn-warning btn-block">PENGUSAHA</a>
+  <br>
+   <a href="../../pages/frontend/index.php" class="btn btn- btn-block">kembali</a>
       <br>
       </form>
     </div> <!-- /container -->
