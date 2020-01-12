@@ -47,15 +47,12 @@
             if(isset($_GET['id'])) {
                 $id = $_GET['id'];
                     $tgl = $_GET['tgl'];
-                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP as nohppetani
-                    ,panen.HASIL, panen.HARGA
-                      FROM petani
-                    INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
-                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN 
-                    INNER JOIN status on status.ID_STATUS=petani.ID_STATUS 
-                    INNER JOIN user on  user.ID_USER=petani.ID_USER
-                    INNER JOIN panen on panen.KTP = petani.KTP
-                    where panen.KTP = '$id' and panen.TGL_PANEN = '$tgl'
+                    $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
+                    INNER JOIN petani on petani.KTP = panen.KTP
+                    INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = petani.ID_KECAMATAN
+                    where panen.ID_PANEN = '$id' and panen.TGL_PANEN = '$tgl'
+                    and panen.HASIL !=0
                    
                 ") or die(mysqli_error($koneksi));
                   while($data = mysqli_fetch_array($query_tampil)) {
