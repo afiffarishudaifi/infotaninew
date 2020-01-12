@@ -12,11 +12,9 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $petani = $_POST['namapetani'];
     $pengusaha = $_POST['namapengusaha'];
 
-    //sebuah query untuk menginputkan data ke table tb_siswa
-    $query = "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS) values('$id','$ktp','$tgl','$jumlah','$total','1')";
+    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS) values('$id','$ktp','$tgl','$jumlah','$total','1')");
 
-    $result = mysqli_query($koneksi, $query);
-
+    
     if ($result) {
 
     $mail = new PHPMailer;
@@ -32,7 +30,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         $mail->Subject = "Pemesanan dari ".$_POST['namapengusaha']; //subyek email
         $mail->AddAddress("afiffaris5@gmail.com", "You");  //tujuan email
 
-        $mail->MsgHTML("Ingin melakukan sebuah pemesanan kepada $petani dengan penjualan ".$_POST['komoditas']." sebesar ".$_POST['jmlpesan']." dengan Total Harga Rp.".$_POST['total']." oleh ".$_POST['namapengusaha']."");
+        $mail->MsgHTML("Ingin melakukan sebuah pemesanan kepada $petani dengan penjualan ".$_POST['komoditas']." sebesar ".$_POST['jmlpesan']." dengan Total Harga Rp.".$_POST['total']." oleh ".$_POST['namapengusaha']);
 
         if($mail->Send()) {?> <script language="JavaScript">
         alert('Berhasil Terkirim');

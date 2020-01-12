@@ -42,10 +42,12 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-12">
+          <?php
+          require_once "../../controller/koneksi.php";
+          if(isset($_POST['konfirmasi'])) { 
+          ?>
           <form action="../../controller/user/Pemesanan.php" method="post" enctype="multipart/form-data">
             <?php
-                require_once "../../controller/koneksi.php";
-                if(isset($_POST['konfirmasi'])) {
                     $id = $_POST['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
                     $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
@@ -85,9 +87,57 @@
               <a href="./riwayat.php" class="btn btn-danger" value="Kembali">Kembali</a>
 
             <?php
-          }}
+          }
             ?>
             </form>
+          <?php } elseif(isset($_POST['batal'])) { 
+          ?>
+          <form action="../../controller/user/Pemesanan.php" method="post" enctype="multipart/form-data">
+            <?php
+                    $id = $_POST['id'];
+                    //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
+                    $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
+                    while ($data = mysqli_fetch_array($query)) {?>
+            <fieldset><legend><h5>Data Pemesanan</h5></legend></fieldset>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>ID Pesan</label>
+                  <input type="text" value="<?php echo $data['ID_PESAN']?>" name="idpesan" class="form-control" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>ID Perusahaan</label>
+                  <input type="text" value="<?php echo $data['ID_PERUSAHAAN']?>" name="idperusahaan" class="form-control" readonly>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label >KTP</label>
+                  <input type="text" value="<?php echo $data['KTP']?>" name="ktp" class="form-control" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                  <label >Tanggal</label>
+                  <input type="text" name="Tanggal" value="<?php echo $data['TANGGAL']?>" class="form-control" readonly>
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <label>Jumlah Pemesanan</label>
+                <input type="text" id="jmlpesan" value="<?php echo $data['JUMLAH_PESAN']?>" name="jmlpesan" class="form-control" readonly="">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label>Total Harga Pemesanan</label>
+                  <input type="text" name="total" value="<?php echo $data['TOTAL_BIAYA']?>" id="total" class="form-control" readonly>
+                </div>
+              </div>
+              <input type="submit" name="batal" class="btn btn-success" value="Batal Konfirmasi">
+              <a href="./riwayat.php" class="btn btn-danger" value="Kembali">Kembali</a>
+
+            <?php
+          }
+            ?>
+            </form>
+          <?php } ?>
+
         </div>
     </section>
     <!-- /.content -->
@@ -112,4 +162,3 @@
 ?>
 </body>
 </html>
-<?php //} ?>

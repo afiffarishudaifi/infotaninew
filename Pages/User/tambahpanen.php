@@ -64,11 +64,16 @@
                     <input type="text" class="form-control" readonly value="<?php echo $drow['TGL_PANEN']; ?>">
                 </div>
                 <div class="form-group">
+                    <label>Harga Panen /kg</label>
+                    <input type="text" class="form-control" name="harga" required onkeypress="return hanyaAngka(event)">
+                </div>
+                <div class="form-group">
                     <label>Hasil Panen</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
                     <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
                     onkeypress="return hanyaAngka(event)">
                 </div>
+                <input type="hidden" class="form-control" readonly name="panen" value="Panen">
                 <?php 
                   if($drow['KTP']==' ' || $drow['NAMA_KOMODITAS']==' ' || $drow['TGL_PANEN']==' ') {
                         ?>

@@ -41,6 +41,7 @@
                         echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>   ";
                         echo "<button type='submit' name='submit1' class='btn btn-warning hidden-print'>Semua</button>";
                     ?>
+                  </form>
               </h3>
             </div>
             <!-- /.box-header -->

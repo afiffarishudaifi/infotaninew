@@ -83,7 +83,8 @@
                                             <input type="hidden" name="id" value="<?php echo $drow['ID_PESAN']; ?>">
                                             <h5><center>Apakah yakin ingin mengkonfirmasi pemesanan <strong><?php echo $drow['ID_PESAN']; ?></strong> ?</center></h5>
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
-                                            <button type="submit" class="btn btn-danger" name="konfirmasi"><span class="fa fa-pencil"></span> Konfirmasi</button>
+                                            <button type="submit" class="btn btn-danger" name="batal"><span class="fa fa-trash"></span> Hapus Pemesanan</button>
+                                            <button type="submit" class="btn btn-success" name="konfirmasi"><span class="fa fa-pencil"></span> Konfirmasi</button>
                                         </div>
                                     </div>
                                 </div>

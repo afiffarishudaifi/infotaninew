@@ -87,7 +87,7 @@
     <script>
 		function hanyaAngka(evt) {
 		  var charCode = (evt.which) ? evt.which : event.keyCode
-		   if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode == 222)
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
 
 		    return false;
 		  return true;
@@ -98,7 +98,7 @@
     <script>
         function hanyaTulisan(evt) {
           var charCode = (evt.which) ? evt.which : event.keyCode
-           if ((charCode < 57 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode == 222)
+           if ((charCode < 57 || charCode > 90) && (charCode < 97 || charCode > 122))
 
             return false;
           return true;

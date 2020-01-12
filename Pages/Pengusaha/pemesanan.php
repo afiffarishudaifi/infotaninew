@@ -47,7 +47,7 @@
             if(isset($_GET['id'])) {
                 $id = $_GET['id'];
                     $tgl = $_GET['tgl'];
-                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP 
+                    $query_tampil = mysqli_query($koneksi, "SELECT petani.KTP, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP as nohppetani
                     ,panen.HASIL, panen.HARGA
                       FROM petani
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS=petani.ID_KOMODITAS 
@@ -59,6 +59,7 @@
                    
                 ") or die(mysqli_error($koneksi));
                   while($data = mysqli_fetch_array($query_tampil)) {
+                    $nohppetani = $data['nohppetani'];
                   ?>
             <fieldset><legend><h5>Data Petani</h5></legend>
               <div class="form-row">
@@ -131,8 +132,9 @@
                 </div>
               </div>
               <input type="hidden" name="email" class="form-control" readonly>
-              <input type="submit" name="pesan" class="btn btn-success" value="Lanjut">
-              <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPush">Lanjut</button>
+              <!--<input type="submit" name="pesan" class="btn btn-success" value="Lanjut">-->
+              <a href="../frontend/cariHasil.php" class="btn btn-danger" value="Kembali">Kembali</a>
               <a href="https://api.whatsapp.com/send?phone=6289697020078&text=Halo%20mau%20order%20gan">coba</a>
               <script type="text/javascript">
                 function sum(){
@@ -144,6 +146,39 @@
                   }
                 }
               </script>
+                            <!-- Button trigger modal-->
+              <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>-->
+
+              <!--Modal: modalPush-->
+              <div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-notify modal-info" role="document">
+                  <!--Content-->
+                  <div class="modal-content text-center">
+                    <!--Header-->
+                    <div class="modal-header d-flex justify-content-center">
+                      <p class="heading">Informasi Penting</p>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+
+                      <i class="fa fa-bell fa-4x animated rotateIn mb-4"></i>
+
+                      <p>Silahkan Hubungan No HP petani yaitu <?php echo $nohppetani ?> untuk melanjutkan proses pemesanan panen</p>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <input type="submit" name="pesan" class="btn btn-info" value="Pesan">
+                      <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Tidak</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+              <!--Modal: modalPush-->
             </form>
         </div>
     </section>

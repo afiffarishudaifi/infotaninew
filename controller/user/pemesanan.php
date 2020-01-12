@@ -28,8 +28,18 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     }
 } elseif (isset($_POST['konfirmasi'])) {
     $id = $_POST['idpesan'];
+    $jumlah = $_POST['jmlpesan'];
+    $ktp = $_POST['ktp'];
         $sql = mysqli_query
         ($koneksi, "UPDATE PEMESANAN SET ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+
+        $cekkurang = mysqli_query($koneksi, "SELECT HASIL FROM panen WHERE KTP='$ktp'");
+        while ($data = mysqli_fetch_array($cekkurang)) {
+            $hasil = $data['HASIL'] - $jumlah;
+            };
+
+        $kurang = mysqli_query($koneksi,"UPDATE panen set hasil=$hasil WHERE ktp='$ktp'");
+
         if($sql){
             echo '?>
         <script language="JavaScript">
@@ -40,6 +50,33 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         else{
             echo '<script language="JavaScript">
         alert("Tambah Pemesanan Gagal !"");
+        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        </script>';
+        }
+} elseif (isset($_POST['batal'])) {
+    $id = $_POST['idpesan'];
+    $jumlah = $_POST['jmlpesan'];
+    $ktp = $_POST['ktp'];
+        $sql = mysqli_query
+        ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+        
+        $cekkurang = mysqli_query($koneksi, "SELECT HASIL FROM panen WHERE KTP='$ktp'");
+        while ($data = mysqli_fetch_array($cekkurang)) {
+            $hasil = $data['HASIL'] + $jumlah;
+            };
+
+        $kurang = mysqli_query($koneksi,"UPDATE panen set hasil=$hasil WHERE ktp='$ktp'");
+
+        if($sql){
+            echo '?>
+        <script language="JavaScript">
+        alert("Hapus Pemesanan Berhasil !");
+        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        </script><?php';
+        }
+        else{
+            echo '<script language="JavaScript">
+        alert("Hapus Pemesanan Gagal !"");
         setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
         </script>';
         }
