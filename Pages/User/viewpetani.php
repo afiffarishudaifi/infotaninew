@@ -166,7 +166,7 @@
                           </script>
                         <?php
                     }
-                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN as kecamatan, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, kecamatan, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=1 and panen.hasil>0");
+                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN as kecamatan, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, kecamatan, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
                     while ($data = mysqli_fetch_array($query1)) {?>
                       <div class="form-group">
                         <label>KTP</label>

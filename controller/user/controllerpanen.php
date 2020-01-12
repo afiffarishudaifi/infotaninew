@@ -5,9 +5,11 @@ if (isset($_POST['ubah'])) {        //memanggil sebuah nilai dari sebuah inputan
         $hasil = $_POST['hasil'];
         $harga = $_POST['harga'];
         $status = $_POST['panen'];
+        $tgl = $_POST['tgl'];
+        $max = $_POST['max'];
 
         //sebuah query untuk menginputkan data ke table tb_siswa
-        $query = "UPDATE panen SET HASIL=$hasil, HARGA=$harga, STATUS_PANEN='$status' where KTP=$id";
+        $query = "UPDATE panen SET HASIL=$hasil, HARGA=$harga, STATUS_PANEN='$status' where ID_PANEN=$max";
 
         $result = mysqli_query($koneksi, $query);
 

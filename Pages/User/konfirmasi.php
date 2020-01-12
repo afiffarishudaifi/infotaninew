@@ -49,10 +49,12 @@
           <form action="../../controller/user/Pemesanan.php" method="post" enctype="multipart/form-data">
             <?php
                     $id = $_POST['id'];
+
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
                     $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
                     while ($data = mysqli_fetch_array($query)) {?>
             <fieldset><legend><h5>Data Pemesanan</h5></legend></fieldset>
+            <input type="hidden" name="idpanen" value="<?php echo $data['ID_PANEN'] ?>">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>ID Pesan</label>
@@ -99,6 +101,7 @@
                     $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
                     while ($data = mysqli_fetch_array($query)) {?>
             <fieldset><legend><h5>Data Pemesanan</h5></legend></fieldset>
+            <input type="hidden" name="idpanen" value="<?php echo $data['ID_PANEN'] ?>">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>ID Pesan</label>

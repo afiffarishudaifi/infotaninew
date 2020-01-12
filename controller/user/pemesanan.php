@@ -30,15 +30,17 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $id = $_POST['idpesan'];
     $jumlah = $_POST['jmlpesan'];
     $ktp = $_POST['ktp'];
+    $idpanen = $_POST['idpanen'];
+    $idperusahaan = $_POST['idperusahaan'];
         $sql = mysqli_query
         ($koneksi, "UPDATE PEMESANAN SET ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
 
-        $cekkurang = mysqli_query($koneksi, "SELECT HASIL FROM panen WHERE KTP='$ktp'");
+        $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
             $hasil = $data['HASIL'] - $jumlah;
             };
 
-        $kurang = mysqli_query($koneksi,"UPDATE panen set hasil=$hasil WHERE ktp='$ktp'");
+        $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
 
         if($sql){
             echo '?>
@@ -57,15 +59,17 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $id = $_POST['idpesan'];
     $jumlah = $_POST['jmlpesan'];
     $ktp = $_POST['ktp'];
+    $idpanen = $_POST['idpanen'];
+    $idperusahaan = $_POST['idperusahaan'];
         $sql = mysqli_query
         ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         
-        $cekkurang = mysqli_query($koneksi, "SELECT HASIL FROM panen WHERE KTP='$ktp'");
+        $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
             $hasil = $data['HASIL'] + $jumlah;
             };
 
-        $kurang = mysqli_query($koneksi,"UPDATE panen set hasil=$hasil WHERE ktp='$ktp'");
+        $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
 
         if($sql){
             echo '?>

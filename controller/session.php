@@ -15,6 +15,11 @@ $pass =$row['PASSWORD'];
 $userr = $row['USERNAME'];
 $gambar = $row['FOTO_USER'];
 
+$ses_sql_petani=mysqli_query($koneksi,"select * from petani where ID_USER='$login_session'");
+$rowpetani = mysqli_fetch_assoc($ses_sql_petani);
+$ktppetani =$rowpetani['KTP'];
+
+
 $pengusaha=$_SESSION['ID_PERUSAHAAN'];
 
 $sql2 = "select * from PERUSAHAAN where ID_PERUSAHAAN='$pengusaha'" ;

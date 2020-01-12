@@ -100,73 +100,73 @@
                 <?php
             } 
             
-            $query1 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 01 and year(TGL_PANEN) = $tahun";
+            $query1 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 01 and year(TGL_PANEN) = $tahun";
             $sql1 = mysqli_query($koneksi, $query1);
             while ($data1 = mysqli_fetch_row($sql1)) {
                 $id1 = $data1[0];
             }
 
-            $query2 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 02 and year(TGL_PANEN) = $tahun";
+            $query2 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 02 and year(TGL_PANEN) = $tahun";
             $sql2 = mysqli_query($koneksi, $query2);
             while ($data2 = mysqli_fetch_row($sql2)) {
                 $id2 = $data2[0];
             }
 
-            $query3 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 03 and year(TGL_PANEN) = $tahun";
+            $query3 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 03 and year(TGL_PANEN) = $tahun";
             $sql3 = mysqli_query($koneksi, $query3);
             while ($data3 = mysqli_fetch_row($sql3)) {
                 $id3 = $data3[0];
             }
 
-            $query4 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 04 and year(TGL_PANEN) = $tahun";
+            $query4 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 04 and year(TGL_PANEN) = $tahun";
             $sql4 = mysqli_query($koneksi, $query4);
             while ($data4 = mysqli_fetch_row($sql4)) {
                 $id4 = $data4[0];
             }
 
-            $query5 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 05 and year(TGL_PANEN) = $tahun";
+            $query5 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 05 and year(TGL_PANEN) = $tahun";
             $sql5 = mysqli_query($koneksi, $query5);
             while ($data5 = mysqli_fetch_row($sql5)) {
                 $id5 = $data5[0];
             }
 
-            $query6 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 06 and year(TGL_PANEN) = $tahun";
+            $query6 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 06 and year(TGL_PANEN) = $tahun";
             $sql6 = mysqli_query($koneksi, $query6);
             while ($data6 = mysqli_fetch_row($sql6)) {
                 $id6 = $data6[0];
             }
 
-            $query7 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 07 and year(TGL_PANEN) = $tahun";
+            $query7 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 07 and year(TGL_PANEN) = $tahun";
             $sql7 = mysqli_query($koneksi, $query7);
             while ($data7 = mysqli_fetch_row($sql7)) {
                 $id7 = $data7[0];
             }
 
-            $query8 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 08 and year(TGL_PANEN) = $tahun";
+            $query8 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 08 and year(TGL_PANEN) = $tahun";
             $sql8 = mysqli_query($koneksi, $query8);
             while ($data8 = mysqli_fetch_row($sql8)) {
                 $id8 = $data8[0];
             }
 
-            $query9 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 09 and year(TGL_PANEN) = $tahun";
+            $query9 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 09 and year(TGL_PANEN) = $tahun";
             $sql9 = mysqli_query($koneksi, $query9);
             while ($data9 = mysqli_fetch_row($sql9)) {
                 $id9 = $data9[0];
             }
 
-            $query10 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 10 and year(TGL_PANEN) = $tahun";
+            $query10 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 10 and year(TGL_PANEN) = $tahun";
             $sql10 = mysqli_query($koneksi, $query10);
             while ($data10 = mysqli_fetch_row($sql10)) {
                 $id10 = $data10[0];
             }
 
-            $query11 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 11 and year(TGL_PANEN) = $tahun";
+            $query11 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 11 and year(TGL_PANEN) = $tahun";
             $sql11 = mysqli_query($koneksi, $query11);
             while ($data11 = mysqli_fetch_row($sql11)) {
                 $id11 = $data11[0];
             }
 
-            $query12 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=1 AND month(TGL_PANEN) = 12 and year(TGL_PANEN) = $tahun";
+            $query12 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 12 and year(TGL_PANEN) = $tahun";
             $sql12 = mysqli_query($koneksi, $query12);
             while ($data12 = mysqli_fetch_row($sql12)) {
                 $id12 = $data12[0];
@@ -176,73 +176,73 @@
 
 
             //jagung
-            $queryl1 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 01 and year(TGL_PANEN) = $tahun";
+            $queryl1 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 01 and year(TGL_PANEN) = $tahun";
             $sqll1 = mysqli_query($koneksi, $queryl1);
             while ($datal1 = mysqli_fetch_row($sqll1)) {
                 $idl1 = $datal1[0];
             }
 
-            $queryl2 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 02 and year(TGL_PANEN) = $tahun";
+            $queryl2 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 02 and year(TGL_PANEN) = $tahun";
             $sqll2 = mysqli_query($koneksi, $queryl2);
             while ($datal2 = mysqli_fetch_row($sqll2)) {
                 $idl2 = $datal2[0];
             }
 
-            $queryl3 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 03 and year(TGL_PANEN) = $tahun";
+            $queryl3 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 03 and year(TGL_PANEN) = $tahun";
             $sqll3 = mysqli_query($koneksi, $queryl3);
             while ($datal3 = mysqli_fetch_row($sqll3)) {
                 $idl3 = $datal3[0];
             }
 
-            $queryl4 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 04 and year(TGL_PANEN) = $tahun";
+            $queryl4 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 04 and year(TGL_PANEN) = $tahun";
             $sqll4 = mysqli_query($koneksi, $queryl4);
             while ($datal4 = mysqli_fetch_row($sqll4)) {
                 $idl4 = $datal4[0];
             }
 
-            $queryl5 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 05 and year(TGL_PANEN) = $tahun";
+            $queryl5 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 05 and year(TGL_PANEN) = $tahun";
             $sqll5 = mysqli_query($koneksi, $queryl5);
             while ($datal5 = mysqli_fetch_row($sqll5)) {
                 $idl5 = $datal5[0];
             }
 
-            $queryl6 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 06 and year(TGL_PANEN) = $tahun";
+            $queryl6 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 06 and year(TGL_PANEN) = $tahun";
             $sqll6 = mysqli_query($koneksi, $queryl6);
             while ($datal6 = mysqli_fetch_row($sqll6)) {
                 $idl6 = $datal6[0];
             }
 
-            $queryl7 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 07 and year(TGL_PANEN) = $tahun";
+            $queryl7 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 07 and year(TGL_PANEN) = $tahun";
             $sqll7 = mysqli_query($koneksi, $queryl7);
             while ($datal7 = mysqli_fetch_row($sqll7)) {
                 $idl7 = $datal7[0];
             }
 
-            $queryl8 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 08 and year(TGL_PANEN) = $tahun";
+            $queryl8 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 08 and year(TGL_PANEN) = $tahun";
             $sqll8 = mysqli_query($koneksi, $queryl8);
             while ($datal8 = mysqli_fetch_row($sqll8)) {
                 $idl8 = $datal8[0];
             }
 
-            $queryl9 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 09 and year(TGL_PANEN) = $tahun";
+            $queryl9 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 09 and year(TGL_PANEN) = $tahun";
             $sqll9 = mysqli_query($koneksi, $queryl9);
             while ($datal9 = mysqli_fetch_row($sqll9)) {
                 $idl9 = $datal9[0];
             }
 
-            $queryl10 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 10 and year(TGL_PANEN) = $tahun";
+            $queryl10 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 10 and year(TGL_PANEN) = $tahun";
             $sqll10 = mysqli_query($koneksi, $queryl10);
             while ($datal10 = mysqli_fetch_row($sqll10)) {
                 $idl10 = $datal10[0];
             }
 
-            $queryl11 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 11 and year(TGL_PANEN) = $tahun";
+            $queryl11 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 11 and year(TGL_PANEN) = $tahun";
             $sqll11 = mysqli_query($koneksi, $queryl11);
             while ($datal11 = mysqli_fetch_row($sqll11)) {
                 $idl11 = $datal11[0];
             }
 
-            $queryl12 = "SELECT count(*) FROM panen, petani WHERE petani.KTP=panen.KTP and petani.ID_USER= $iduserpetani and panen.KOMODITAS=2 AND month(TGL_PANEN) = 12 and year(TGL_PANEN) = $tahun";
+            $queryl12 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=2 AND month(TGL_PANEN) = 12 and year(TGL_PANEN) = $tahun";
             $sqll12 = mysqli_query($koneksi, $queryl12);
             while ($datal12 = mysqli_fetch_row($sqll12)) {
                 $idl12 = $datal12[0];

@@ -26,7 +26,18 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Laporan Panen</h3>
+               <?php if (isset($_POST['submit'])) {
+                    if ($_POST['pilih']==1) {
+                        $tipe = "laporan_jagung";
+                        $komoditaspanen = "Jagung";
+                    } else {
+                        $tipe = "laporan_padi";
+                        $komoditaspanen = "Padi";
+                    }
+                }else {
+                    $tipe = "laporan_panen";
+                } ?>
+              <h3 class="box-title">Laporan Panen <?php echo $komoditaspanen; ?></h3>
               <h3>
                   <form action="" method="POST">
                     <?php
@@ -43,6 +54,8 @@
                     ?>
                   </form>
               </h3>
+
+               
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
@@ -57,15 +70,6 @@
                   <th>HASIL PANEN</th>
                 </tr>
                 </thead>
-                <?php if (isset($_POST['submit'])) {
-                    if ($_POST['pilih']==1) {
-                        $tipe = "laporan_jagung";
-                    } else {
-                        $tipe = "laporan_padi";
-                    }
-                }else {
-                    $tipe = "laporan_panen";
-                } ?>
                 <tbody>
                     <?php
                     require_once "../../controller/admin/koneksi.php";

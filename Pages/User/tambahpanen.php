@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label>KTP</label>
                     <?php
-                    $sql = "select MAX(ID_PANEN), panen.KTP, komoditas.NAMA_KOMODITAS, PANEN.TGL_PANEN, HASIL from petani, panen, komoditas
+                    $sql = "select MAX(ID_PANEN) as max, panen.KTP, komoditas.NAMA_KOMODITAS, PANEN.TGL_PANEN, HASIL from petani, panen, komoditas
                     WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS and petani.KTP=panen.KTP and petani.id_user= $login_session AND HASIL=0";
                     $query = mysqli_query($koneksi, $sql);
                     $drow=mysqli_fetch_array($query);
@@ -54,6 +54,7 @@
                     }
                     ?>
                     <input type="text" class="form-control" readonly name="id" value="<?php echo $drow['KTP']; ?>">
+                    <input type="hidden" name="max" value="<?php echo $drow['max'] ?>">
                 </div>
                 <div class="form-group">
                     <label>Komoditas</label>
@@ -61,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <label>Tanggal Panen</label>
-                    <input type="text" class="form-control" readonly value="<?php echo $drow['TGL_PANEN']; ?>">
+                    <input type="text" class="form-control" name="tgl" readonly value="<?php echo $drow['TGL_PANEN']; ?>">
                 </div>
                 <div class="form-group">
                     <label>Harga Panen /kg</label>

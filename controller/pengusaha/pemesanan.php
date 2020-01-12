@@ -11,8 +11,8 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $komoditas = $_POST['komoditas'];
     $petani = $_POST['namapetani'];
     $pengusaha = $_POST['namapengusaha'];
-
-    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS) values('$id','$ktp','$tgl','$jumlah','$total','1')");
+    $idpanen = $_POST['idpanen'];
+    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah','$total','1','$idpanen')");
 
     
     if ($result) {

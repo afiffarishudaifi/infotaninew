@@ -59,6 +59,7 @@
                     $nohppetani = $data['nohppetani'];
                   ?>
             <fieldset><legend><h5>Data Petani</h5></legend>
+              <input type="hidden" name="idpanen" value="<?php echo $data['ID_PANEN']?>">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">KTP Petani</label>
