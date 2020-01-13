@@ -56,7 +56,7 @@
                 <?php
             }
         include "../../controller/admin/koneksi.php";
-         $query1 = "SELECT count(*) FROM pemesanan WHERE id_perusahaan= $id_pengguna AND month(TANGGAL) = 01 and year(TANGGAL) = $tahun";
+            $query1 = "SELECT count(*) FROM pemesanan WHERE id_perusahaan= $id_pengguna AND month(TANGGAL) = 01 and year(TANGGAL) = $tahun";
             $sql1 = mysqli_query($koneksi, $query1);
             while ($data1 = mysqli_fetch_row($sql1)) {
                 $id1 = $data1[0];

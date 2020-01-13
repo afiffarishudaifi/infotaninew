@@ -133,7 +133,7 @@
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPush">Lanjut</button>
               <!--<input type="submit" name="pesan" class="btn btn-success" value="Lanjut">-->
               <a href="../frontend/cariHasil.php" class="btn btn-danger" value="Kembali">Kembali</a>
-              <a href="https://api.whatsapp.com/send?phone=6289697020078&text=Halo%20mau%20order%20gan">coba</a>
+              <!--<a href="https://api.whatsapp.com/send?phone=6289697020078&text=Halo%20mau%20order%20gan">coba</a>-->
               <script type="text/javascript">
                 function sum(){
                   var textharga = document.getElementById('harga').value;
