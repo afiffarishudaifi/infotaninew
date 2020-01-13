@@ -14,7 +14,7 @@
                     <!-- Copywrite Text -->
                     <div class="copywrite-text">
                         <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by CAMRI </a>
+Copyright &copy;2019 All rights reserved | by CAMRI </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -37,7 +37,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="instagram"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6288216416650" class="instagram"
+                        target="popup" onClick="MyWindow=window.open('https://wa.me/6288216416650','MyWindow','width=600,height=300'); return false;"><i class="fa fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -52,8 +53,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     <!-- Contact Address -->
                     <div class="contact-address">
                         <p>Tel: (+62) 345 678 910</p>
-                        <p>E-mail: infotani@gmail.com</p>
-                        <p>Address: Jl. Mastrip</p>
+                        <p>E-mail: <a href="./contact.php">infotani.mif@gmail.com</a></p>
+                        <p>Address: <a href="#">Jl. Mastrip</p>
                     </div>
                 </div>
             </div>
