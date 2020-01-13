@@ -20,7 +20,7 @@
     </li>
     <li class="treeview">
       <a href="./Riwayat.php">
-        <i class="fa fa-users"></i> <span>Riwayat Pemesanan</span>
+        <i class="fa fa-send"></i> <span>Riwayat Pemesanan</span>
         <span class="pull-right-container">
         </span>
       </a>

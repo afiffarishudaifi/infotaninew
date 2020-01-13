@@ -35,13 +35,13 @@
 
     <li class="treeview">
       <a href="#">
-        <i class="fa fa-book"></i> <span>Laporan</span>
+        <i class="fa fa-bookmark"></i> <span>Laporan</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="./viewlaporan.php"><i class="fa fa-map-marker"></i>Data Panen</a></li>
+        <li><a href="./viewlaporan.php"><i class="fa fa-leaf"></i>Data Panen</a></li>
         <!--<li><a href="viewlappanenpadi.php"><i class="fa fa-map-o"></i> Data Panen Padi</a></li>-->
       </ul>
     </li>
