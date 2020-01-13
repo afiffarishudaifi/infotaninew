@@ -37,7 +37,7 @@
             <!--membuat sebuah form-->
             <?php 
             require "../../controller/koneksi.php";
-            $cekdata = "select * from perusahaan where id_perusahaan='$id_pengguna' and SIUP='' OR NAMA_PERUSAHAAN='' OR EMAIL='' OR ALAMAT_PERUSAHAAN='' OR NO_TELP_PERUSAHAAN='' OR NAMA_MANAGER=''";
+            $cekdata = "SELECT * FROM perusahaan WHERE perusahaan.ID_PERUSAHAAN='$id_pengguna' AND perusahaan.NAMA_PERUSAHAAN=''";
             $querydata = mysqli_query($koneksi, $cekdata);
             $hasilcekdata=mysqli_fetch_array($querydata);
             if($hasilcekdata==null) {

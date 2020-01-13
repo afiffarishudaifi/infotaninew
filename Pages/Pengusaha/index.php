@@ -44,11 +44,10 @@
       <div class="row">
         <div class="col-lg-12">
          <?php
-          include "../../controller/pengusaha/koneksi.php";
-          $cekdata = "select * from perusahaan where id_perusahaan='$id_pengguna' and SIUP='' OR NAMA_PERUSAHAAN='' OR EMAIL='' OR ALAMAT_PERUSAHAAN='' OR NO_TELP_PERUSAHAAN='' OR NAMA_MANAGER=''";
+         $cekdata = "SELECT * FROM perusahaan WHERE perusahaan.ID_PERUSAHAAN='$id_pengguna' AND perusahaan.NAMA_PERUSAHAAN=''";
             $querydata = mysqli_query($koneksi, $cekdata);
             $hasilcekdata=mysqli_fetch_array($querydata);
-            if($hasilcekdata>0) {
+            if($hasilcekdata!=null) {
                 ?>
                   <script language="JavaScript">
                   alert('Lengkapi Data !');
@@ -56,7 +55,7 @@
                   </script>
                 <?php
             }
-
+        include "../../controller/admin/koneksi.php";
          $query1 = "SELECT count(*) FROM pemesanan WHERE id_perusahaan= $id_pengguna AND month(TANGGAL) = 01 and year(TANGGAL) = $tahun";
             $sql1 = mysqli_query($koneksi, $query1);
             while ($data1 = mysqli_fetch_row($sql1)) {
