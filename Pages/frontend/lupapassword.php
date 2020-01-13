@@ -112,7 +112,7 @@ function validate_forgot() {
           <?php echo $error_message; ?>
           <?php } ?>
           </div>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">ATUR ULANG KATASANDI</h2>
+        <h3 class="form-signin-heading" align="center" style="color: #FFFFFF;">ATUR ULANG KATASANDI</h3>
 
         <br>
           <label for="username" class="sr-only">Username</label>
@@ -121,9 +121,8 @@ function validate_forgot() {
         <label for="password" class="sr-only">Email</label>
           <input type="email" name="user-email" id="user-email" class="form-control" placeholder="Email">
           <input type="submit" name="forgot-password" id="forgot-password" value="Submit" class="form-submit-button btn btn-lg btn-block">
-        <button class="btn btn-lg btn-success btn-block form-submit-button" type="submit" name="forgot-password" id="forgot-password">Login</button>
         <br>
-  <a href="./index.php" class="btn btn-warning btn-block">Kembali</a>
+  <a href="./button_login.php" class="btn btn-warning btn-block">Kembali</a>
       <br>
       </form>
     </div> <!-- /container -->

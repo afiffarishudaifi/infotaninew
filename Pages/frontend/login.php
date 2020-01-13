@@ -61,10 +61,13 @@
         <br>
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-
-        <p>Belum punya akun?
-          Silahkan <a href="./button_register.php">Registrasi Disini</a></p>
-        <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
+        <br>
+        <a href="./button_login.php">Lupa Password Anda?</a></p>
+        <center> <p>------------------- Atau --------------------</p> </center>
+        <a href="./button_register.php" class="btn btn-success btn-block">Buat Akun Baru?</a>
+        
       	<br>
 	<a href="../../pages/frontend/index.php" class="btn btn-warning btn-block">Kembali</a>
       <br>

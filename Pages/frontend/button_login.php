@@ -51,14 +51,14 @@
     <div class="container">
       <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
         <br>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LOGIN INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LUPA PASSWORD</h2>
 
         <br>
        
-	<a href="../../pages/frontend/login.php" class="btn btn-primary btn-block">PETANI</a>
-  <a href="../../pages/frontend/login_pengusaha.php" class="btn btn-warning btn-block">PENGUSAHA</a>
+	<a href="../../pages/frontend/contact.php" class="btn btn-primary btn-block">PETANI</a>
+  <a href="../../pages/frontend/lupapassword.php" class="btn btn-warning btn-block">PENGUSAHA</a>
   <br>
-   <a href="../../pages/frontend/index.php" class="btn btn- btn-block">kembali</a>
+   <a href="../../pages/frontend/login.php" class="btn btn- btn-block">kembali</a>
       <br>
       </form>
     </div> <!-- /container -->
