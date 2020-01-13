@@ -626,10 +626,12 @@ endif;
             else{
                 $query = mysqli_query($koneksi, "SELECT * FROM panen
                 INNER JOIN petani on petani.KTP = panen.KTP
-                INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS");
+                INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = petani.ID_KECAMATAN");
                 $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = petani.ID_KECAMATAN
                 LIMIT $mulai, $halaman 
                 ");
             }
