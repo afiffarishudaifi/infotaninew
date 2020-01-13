@@ -100,7 +100,7 @@
                 <?php
             } 
             
-            $query1 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TANGGAL) = 01 and year(TANGGAL) = $tahun";
+            $query1 = "SELECT count(*) FROM panen WHERE KTP='$ktppetani' and panen.KOMODITAS=1 AND month(TGL_PANEN) = 01 and year(TGL_PANEN) = $tahun";
             $sql1 = mysqli_query($koneksi, $query1);
             while ($data1 = mysqli_fetch_row($sql1)) {
                 $id1 = $data1[0];
