@@ -4,6 +4,7 @@
 <?php
     include "./_partials/head.php";
 ?>
+<link rel="stylesheet" type="text/css" href="./css/index.css" />
 
 <body>
     <!-- Preloader -->
@@ -32,7 +33,7 @@
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black"> Info Tani<br> Pertanian Indonesia</h2>
                                     <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Pertanian di Indonesia merupakan salah satu sektor kunci perekonomian Indonesia. Meskipun kontribusi sektor pertanian terhadap produk domestik bruto nasional telah menurun secara signifikan dalam setengah abad terakhir, saat ini sektor pertanian masih memberikan pendapatan bagi sebagian besar rumah tangga Indonesia.”</p>
-                                    <a href="#" class="btn akame-btn" data-animation="fadeInUp" data-delay="700ms">About Us</a>
+                                    <a href="tentangkami.php" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +52,7 @@
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black">Info Tani <br> Pertanian Indonesia</h2>
                                     <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Sawah adalah suatu bentuk pertanian yang dilakukan di lahan basah dan memerlukan banyak air baik sawah irigasi, sawah lebak, sawah tadah hujan maupun sawah pasang surut. Yang pada masa sekarang sudah hampir punah.”</p>
-                                    <a href="#" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">About Us</a>
+                                    <a href="tentangkami.php" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +88,7 @@
                     <div class="about-us-content mb-80 pl-4">
                         <h3>Budidaya Kedelai.</h3>
                         <p>“Kedelai, atau kacang kedelai, adalah salah satu tanaman jenis polong-polongan yang menjadi bahan dasar banyak makanan dari Asia Timur seperti kecap, tahu, dan tempe. Berdasarkan peninggalan arkeologi, tanaman ini telah dibudidayakan sejak 3500 tahun yang lalu di Asia Timur.”</p>
-                        <a href="#" class="btn akame-btn active mt-30">Read More</a>
+                        <a href="https://id.wikipedia.org/wiki/Kedelai" class="btn akame-btn active mt-30 video-play-btn wow bounceInDown" data-wow-delay="200ms">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -150,14 +151,10 @@
                     <!-- Section Heading -->
                     <div class="section-heading">
                         <h2>Hasil Pembenihan</h2>
+                        <div class="trans">
                         <p>Pembenihan adalah suatu tahap kegiatan dalam budidaya yang sangat menentukan tahap kegiatan selanjutnya, yaitu pembesaran atau suau kegiatan pemeliharaan yang bertujuan untuk menghasilkan benih dan selanjutnya benih yang dihasilkan menjadi komponen input bagi kegiatan pembesaran.</p>
-                    </div>
+                    </div></div>
                     <!-- Our Certificate -->
-                    <div class="our-certificate-area mb-60 d-flex align-items-center">
-                        <img src="../../assets/img/core-img/certificate-1.png" alt="">
-                        <img src="../../assets/img/core-img/certificate-2.png" alt="">
-                        <img src="../../assets/img/core-img/certificate-3.png" alt="">
-                    </div>
                 </div>
             </div>
         </div>
@@ -175,7 +172,7 @@
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +194,7 @@
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +216,7 @@
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +238,7 @@
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -281,15 +278,20 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info1.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/berita1.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Kementerian Pertanian (Kementan) berharap produksi padi terus meningkat. Apalagi, pemerintah telah memberikan subsidi pupuk bagi petani.</a>
+                            <a class="post-title" href="https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar','MyWindow','width=600,height=300'); return false;">
+                            Kementerian Pertanian (Kementan) berharap produksi padi terus meningkat. 
+                            Apalagi, pemerintah telah memberikan subsidi pupuk bagi petani.</a>
                             <div class="post-meta">
                                 <a href="#" class="post-date"><i class="icon_clock_alt"></i> November 11, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>
                             </div>
-                            <p>Menteri Pertanian Syahrul Yasin Limpo pun menargetkan produksi padi dapat meningkat hingga tujuh ton per hektare. Dengan begitu, pemerintah dapat mengekspor padi hingga 100 - 500 ribu ton.</p>
+                            <p>Menteri Pertanian Syahrul Yasin Limpo pun menargetkan produksi padi dapat meningkat 
+                                hingga tujuh ton per hektare. Dengan begitu, pemerintah dapat mengekspor padi hingga 
+                                100 - 500 ribu ton.</p>
                         </div>
                     </div>
                 </div>
@@ -301,7 +303,9 @@
                             <a href="single-blog.html"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Pemerintah Siap Ekspor Beras hingga Ayam ke Arab Saudi</a>
+                            <a class="post-title" href="https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi','MyWindow','width=600,height=300'); return false;">
+                            Pemerintah Siap Ekspor Beras hingga Ayam ke Arab Saudi</a>
                             <div class="post-meta">
                                 <a href="#" class="post-date"><i class="icon_clock_alt"></i> Desember 13, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>
@@ -318,7 +322,9 @@
                             <a href="single-blog.html"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-title">Tak Kompetitif, Ongkos Produksi Beras RI 2,5 Kali Lipat dari Vietnam</a>
+                        <a class="post-title" href="https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam','MyWindow','width=600,height=300'); return false;">
+                           Tak Kompetitif, Ongkos Produksi Beras RI 2,5 Kali Lipat dari Vietnam</a>
                             <div class="post-meta">
                                 <a href="#" class="post-date"><i class="icon_clock_alt"></i> November 27, 2019</a>
                                 <a href="#" class="post-comments"><i class="icon_chat_alt"></i> 10</a>

@@ -424,9 +424,9 @@ input:focus {
   padding: 0 35px;
   text-align: center;
   text-transform: uppercase;
-  background-color: transparent;
-  color: #252525;
-  border: 1px solid #252525;
+  background-color:transparent;
+color:#252525;
+border: 1px solid#252525;
   border-radius: 60px;
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;
@@ -440,9 +440,9 @@ input:focus {
     -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15); }
   .akame-btn.active {
-    border-color: #21e03a;
-    background-color: #21e03a;
-    color: #ffffff; }
+    border-color: #252525;
+    background-color:transparent;
+    color: #252525; }
     .akame-btn.active:focus, .akame-btn.active:hover {
       border-color: #252525;
       background-color: #21e03a;

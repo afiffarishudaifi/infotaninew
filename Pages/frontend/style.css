@@ -407,8 +407,8 @@ input:focus {
   box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
   z-index: 15962536; }
   #scrollUp:focus, #scrollUp:hover {
-    background-color: #21e03a;
-    color: #ffffff; }
+    background-color: white;
+    color: #21e03a; }
 
 /* :: 6.0 Buttons CSS */
 .btn:focus {
@@ -445,7 +445,7 @@ input:focus {
   .akame-btn.active {
     border-color: #21e03a;
     background-color: #21e03a;
-    color: #ffffff; }
+    color: #252525; }
     .akame-btn.active:focus, .akame-btn.active:hover {
       border-color: #252525;
       background-color: #21e03a;
