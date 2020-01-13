@@ -434,7 +434,7 @@ border: 1px solid#252525;
   .akame-btn:focus, .akame-btn:hover {
     border-color: #21e03a;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 14px; 
     background-color: #21e03a;
     color: #ffffff;
     -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);

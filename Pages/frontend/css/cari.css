@@ -9,7 +9,7 @@ body {
     background-size: cover;
   padding:20px
 }
-
+ 
 /*support chrome*/
 .search:-webkit-input-placeholder{
 	color:white;
