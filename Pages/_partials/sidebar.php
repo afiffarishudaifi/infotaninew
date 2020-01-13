@@ -65,7 +65,8 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="./viewlappanen.php"><i class="fa fa-map-marker"></i>Data Panen</a></li>
+        <li><a href="./viewlappanen.php"><i class="fa fa-leaf"></i>Data Panen</a></li>
+        <li><a href="./viewlappesan.php"><i class="fa fa-send"></i>Data Pemesanan</a></li>
         <!--<li><a href="viewlappanenpadi.php"><i class="fa fa-map-o"></i> Data Panen Padi</a></li>-->
       </ul>
     </li>

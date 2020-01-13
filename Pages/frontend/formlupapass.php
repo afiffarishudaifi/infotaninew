@@ -1,17 +1,3 @@
-
-<?php include ('../../controller/session.php'); ?>
-<?php
-  if(isset($login_session)) {
-	header('Location:./register.php'); // Mengarahkan ke Home Page
-	}
-
-      if ($_SESSION['ID_LEVEL']==1){
-          header('Location:../admin/index.php');
-    } elseif ($_SESSION['ID_LEVEL']==2) {
-        header('Location:../user/index.php');
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,10 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    
 
-    <title>INFOTANI - LOGIN</title>
-
-    <!-- logo infotani -->
+    <title>INFOTANI - REGISTRASI</title>
     <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +18,7 @@
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    
     <link href="./css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -49,17 +35,20 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
+      <form class="form-signin" action="lupapasswordpetani.php" method="post">
+        <br> 
+        <h2 class="form-signin-heading" align="center" >Cari Akun</h2>
+        
         <br>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LUPA PASSWORD</h2>
-
+        <label for="username" >Nama Pengguna</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        
+        <label for="password" >Nomor HP</label>
+        <input type="text" id="password" name="nohp" class="form-control" placeholder="Masukkan No HP" required autofocus>
         <br>
-       
-	<a href="../../pages/frontend/formlupapass.php" class="btn btn-primary btn-block">PETANI</a>
-  <a href="../../pages/frontend/lupapassword.php" class="btn btn-warning btn-block">PENGUSAHA</a>
-  <br>
-   <a href="../../pages/frontend/login.php" class="btn btn- btn-block">kembali</a>
-      <br>
+        <br>
+        <a href="../../pages/frontend/login.php" class="btn btn-lg btn-warning">Batal</a>
+        <button class="btn btn-lg btn-success " type="submit" name="submit">Cari</button>
       </form>
     </div> <!-- /container -->
 

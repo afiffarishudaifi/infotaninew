@@ -37,7 +37,7 @@
             <!--membuat sebuah form-->
             <?php 
             require "../../controller/koneksi.php";
-            $cekdata = "SELECT * FROM perusahaan WHERE perusahaan.ID_PERUSAHAAN='$id_pengguna' AND perusahaan.NAMA_PERUSAHAAN=''";
+            $cekdata = "select * from perusahaan where id_perusahaan='$id_pengguna' and SIUP='' OR NAMA_PERUSAHAAN='' OR EMAIL='' OR ALAMAT_PERUSAHAAN='' OR NO_TELP_PERUSAHAAN='' OR NAMA_MANAGER=''";
             $querydata = mysqli_query($koneksi, $cekdata);
             $hasilcekdata=mysqli_fetch_array($querydata);
             if($hasilcekdata==null) {
@@ -50,7 +50,7 @@
             }?>
                   <form method="post" action="../../controller/pengusaha/controllerusaha.php" enctype="multipart/form-data">
                         <?php 
-                        $query = mysqli_query($koneksi, "SELECT Username, ID_PERUSAHAAN FROM perusahaan WHERE ID_PERUSAHAAN='$pengusaha'");
+                        $query = mysqli_query($koneksi, "SELECT Username, ID_PERUSAHAAN FROM perusahaan WHERE ID_PERUSAHAAN=$id_pengguna");
                         while ($data = mysqli_fetch_array($query)) {?>
                     <div class="form-group">
                       <label>ID PERUSAHAAN</label>

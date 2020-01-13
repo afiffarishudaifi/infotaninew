@@ -14,7 +14,7 @@ if (isset($_POST['kirim'])) {
     $mail->Password = "Ar3manita040699"; //password email
     $mail->SetFrom($_POST['email'], $_POST['nama']); //set email pengirim
     $mail->Subject = "Komentar dari ".$_POST['nama']; //subyek email
-    $mail->AddAddress("afiffaris5@gmail.com", "You");  //tujuan email
+    $mail->AddAddress("infotani.mif@gmail.com", "You");  //tujuan email
 
 
     /*$mail->MsgHTML($_POST['komentar']."

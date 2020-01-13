@@ -28,7 +28,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         $mail->Password = "Ar3manita040699"; //password email
         $mail->SetFrom($_POST['email'], $_POST['namapengusaha']); //set email pengirim
         $mail->Subject = "Pemesanan dari ".$_POST['namapengusaha']; //subyek email
-        $mail->AddAddress("afiffaris5@gmail.com", "You");  //tujuan email
+        $mail->AddAddress("infotani.mif@gmail.com", "You");  //tujuan email
 
         $mail->MsgHTML("Ingin melakukan sebuah pemesanan kepada $petani dengan penjualan ".$_POST['komoditas']." sebesar ".$_POST['jmlpesan']." dengan Total Harga Rp.".$_POST['total']." oleh ".$_POST['namapengusaha']);
 

@@ -1,0 +1,57 @@
+<?php
+include "../koneksi.php";
+
+//Ganti password
+if (isset($_POST['Ganti'])) {
+    $iduser = $_POST['iduser'];
+    $pass_baru = $_POST['pass_baru'];
+    $pass_konf = $_POST['pass_konf'];
+
+    //Cek Password Lama
+    $query = "SELECT PASSWORD FROM user WHERE ID_USER=$iduser";
+    $sql = mysqli_query($koneksi, $query);
+    $hasil = mysqli_num_rows($sql);
+    if (!$hasil >= 1) {
+    ?>
+        <script language="JavaScript">
+        alert('Username Tidak Ada, Silahkan ulang kembali !');
+        setTimeout(function() {window.location.href='../../pages/frontend/formlupapass.php'},10);
+        </script>
+    <?php
+        // unset($_SESSION['userid']);
+        // session_destroy();
+    }
+    //Validasi input konfirm
+    else if (($_POST['pass_baru']) !=($_POST['pass_konf'])) {
+        ?>
+        <script language="JavaScript">
+        alert('Gagal Ganti Password,New Password harus sama dengan Confirm Password !');
+        setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
+        </script>
+    <?php
+    }
+    //Update data
+    else{
+        $query = "UPDATE user SET password = md5('$pass_baru') WHERE ID_USER='$iduser'";
+        $sql = mysqli_query($koneksi,$query);
+        //Setelah diupdate
+        if($sql){
+            ?>
+            <script language="JavaScript">
+            alert('Password Berhasil di Update!');
+            setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+            </script>
+        <?php
+            }
+        else{
+            ?>
+            <script language="JavaScript">
+            alert('Password Gagal di Update !');
+            </script>
+        <?php
+
+        }
+    }
+}
+
+?>
