@@ -7,7 +7,6 @@
         date_default_timezone_set('Asia/Jakarta');
         $tgll = date("Y-m-d");
         $tgl = date("d");
-        $day = date ("D");
         $tahun = date ("Y");
 ?>
 <body class="hold-transition skin-green sidebar-mini">
@@ -329,54 +328,54 @@
                                      type: "line",
                                      name:"Padi",
                                      dataPoints: [
-                                          { x: new Date(<?php echo $year;?>, 0, 1), y: <?php echo $id1;?> },
-                                          { x: new Date(<?php echo $year;?>, 1, 1), y: <?php echo $id2;?> },
-                                          { x: new Date(<?php echo $year;?>, 2, 1), y: <?php echo $id3;?> },
-                                          { x: new Date(<?php echo $year;?>, 3, 1), y: <?php echo $id4;?> },
-                                          { x: new Date(<?php echo $year;?>, 4, 1), y: <?php echo $id5;?> },
-                                          { x: new Date(<?php echo $year;?>, 5, 1), y: <?php echo $id6;?> },
-                                          { x: new Date(<?php echo $year;?>, 6, 1), y: <?php echo $id7;?> },
-                                          { x: new Date(<?php echo $year;?>, 7, 1), y: <?php echo $id8;?> },
-                                          { x: new Date(<?php echo $year;?>, 8, 1), y: <?php echo $id9;?> },
-                                          { x: new Date(<?php echo $year;?>, 9, 1), y: <?php echo $id10;?> },
-                                          { x: new Date(<?php echo $year;?>, 10, 1), y: <?php echo $id11;?> },
-                                          { x: new Date(<?php echo $year;?>, 11, 1), y: <?php echo $id12;?> }
+                                          { x: new Date(<?php echo $tahun;?>, 0, 1), y: <?php echo $id1;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 1, 1), y: <?php echo $id2;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 2, 1), y: <?php echo $id3;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 3, 1), y: <?php echo $id4;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 4, 1), y: <?php echo $id5;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 5, 1), y: <?php echo $id6;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 6, 1), y: <?php echo $id7;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 7, 1), y: <?php echo $id8;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 8, 1), y: <?php echo $id9;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 9, 1), y: <?php echo $id10;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 10, 1), y: <?php echo $id11;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 11, 1), y: <?php echo $id12;?> }
                                      ]
                                 }, {
                                      showInLegend: true,
                                      type: "line",
                                      name:"Jagung",
                                      dataPoints: [
-                                          { x: new Date(<?php echo $year;?>, 0, 1), y: <?php echo $idl1;?> },
-                                          { x: new Date(<?php echo $year;?>, 1, 1), y: <?php echo $idl2;?> },
-                                          { x: new Date(<?php echo $year;?>, 2, 1), y: <?php echo $idl3;?> },
-                                          { x: new Date(<?php echo $year;?>, 3, 1), y: <?php echo $idl4;?> },
-                                          { x: new Date(<?php echo $year;?>, 4, 1), y: <?php echo $idl5;?> },
-                                          { x: new Date(<?php echo $year;?>, 5, 1), y: <?php echo $idl6;?> },
-                                          { x: new Date(<?php echo $year;?>, 6, 1), y: <?php echo $idl7;?> },
-                                          { x: new Date(<?php echo $year;?>, 7, 1), y: <?php echo $idl8;?> },
-                                          { x: new Date(<?php echo $year;?>, 8, 1), y: <?php echo $idl9;?> },
-                                          { x: new Date(<?php echo $year;?>, 9, 1), y: <?php echo $idl10;?> },
-                                          { x: new Date(<?php echo $year;?>, 10, 1), y: <?php echo $idl11;?> },
-                                          { x: new Date(<?php echo $year;?>, 11, 1), y: <?php echo $idl12;?> }
+                                          { x: new Date(<?php echo $tahun;?>, 0, 1), y: <?php echo $idl1;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 1, 1), y: <?php echo $idl2;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 2, 1), y: <?php echo $idl3;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 3, 1), y: <?php echo $idl4;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 4, 1), y: <?php echo $idl5;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 5, 1), y: <?php echo $idl6;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 6, 1), y: <?php echo $idl7;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 7, 1), y: <?php echo $idl8;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 8, 1), y: <?php echo $idl9;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 9, 1), y: <?php echo $idl10;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 10, 1), y: <?php echo $idl11;?> },
+                                          { x: new Date(<?php echo $tahun;?>, 11, 1), y: <?php echo $idl12;?> }
                                      ]
                                 }/*, {
                                      showInLegend: true,
                                      type: "line",
                                      name:"Laporan Pembayaran",
                                      dataPoints: [
-                                          { x: new Date(<?php //echo $year;?>, 0, 1), y: <?php //echo $idll1;?> },
-                                          { x: new Date(<?php //echo $year;?>, 1, 1), y: <?php //echo $idll2;?> },
-                                          { x: new Date(<?php //echo $year;?>, 2, 1), y: <?php //echo $idll3;?> },
-                                          { x: new Date(<?php //echo $year;?>, 3, 1), y: <?php //echo $idll4;?> },
-                                          { x: new Date(<?php //echo $year;?>, 4, 1), y: <?php //echo $idll5;?> },
-                                          { x: new Date(<?php //echo $year;?>, 5, 1), y: <?php //echo $idll6;?> },
-                                          { x: new Date(<?php //echo $year;?>, 6, 1), y: <?php //echo $idll7;?> },
-                                          { x: new Date(<?php //echo $year;?>, 7, 1), y: <?php //echo $idll8;?> },
-                                          { x: new Date(<?php //echo $year;?>, 8, 1), y: <?php //echo $idll9;?> },
-                                          { x: new Date(<?php //echo $year;?>, 9, 1), y: <?php //echo $idll10;?> },
-                                          { x: new Date(<?php //echo $year;?>, 10, 1), y: <?php //echo $idll11;?> },
-                                          { x: new Date(<?php //echo $year;?>, 11, 1), y: <?php //echo $idll12;?> }
+                                          { x: new Date(<?php //echo $tahun;?>, 0, 1), y: <?php //echo $idll1;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 1, 1), y: <?php //echo $idll2;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 2, 1), y: <?php //echo $idll3;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 3, 1), y: <?php //echo $idll4;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 4, 1), y: <?php //echo $idll5;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 5, 1), y: <?php //echo $idll6;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 6, 1), y: <?php //echo $idll7;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 7, 1), y: <?php //echo $idll8;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 8, 1), y: <?php //echo $idll9;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 9, 1), y: <?php //echo $idll10;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 10, 1), y: <?php //echo $idll11;?> },
+                                          { x: new Date(<?php //echo $tahun;?>, 11, 1), y: <?php //echo $idll12;?> }
                                      ]
                                 }*/]
                            });

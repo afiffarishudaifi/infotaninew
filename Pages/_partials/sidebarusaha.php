@@ -25,6 +25,13 @@
         </span>
       </a>
     </li>
+    <li class="treeview">
+      <a href="./viewlaporan.php">
+        <i class="fa fa-book"></i> <span>Laporan Pemesanan</span>
+        <span class="pull-right-container">
+        </span>
+      </a>
+    </li>
   </ul>
 
   </section>

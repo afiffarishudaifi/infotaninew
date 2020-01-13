@@ -278,7 +278,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/berita1.jpg" alt=""></a>
+                            <a href="https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/berita1.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a class="post-title" href="https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar" 
@@ -300,7 +301,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
+                            <a href="https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a class="post-title" href="https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi" 
@@ -319,7 +321,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="post-thumbnail">
-                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
+                            <a href="post-title" href="https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam" 
+                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                         <a class="post-title" href="https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam" 
