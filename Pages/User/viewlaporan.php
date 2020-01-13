@@ -30,12 +30,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-               <?php if (isset($_POST['submit'])) {
+                <?php if (isset($_POST['submit'])) {
                   $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select * from pemesanan where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=$tahun and KTP=$ktppetani";
+                  $lanjut = "select * from panen where month(TGL_PANEN) = $bulanpilih AND year(TGL_PANEN)=$tahun and KTP=$ktppetani";
                 }else {
                     $bulanpilih = 'Tahun '.$tahun;
-                    $lanjut = "select * from pemesanan where KTP=$ktppetani";
+                    $lanjut = "select * from panen where KTP=$ktppetani";
                 } ?>
               <h3 class="box-title">Laporan Panen <?php echo $bulanpilih; ?></h3>
               <h3>
@@ -64,7 +64,6 @@
                   ?>
                   </form>
               </h3>
-
                
             </div>
             <!-- /.box-header -->
@@ -72,28 +71,30 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                 <tr>
-                  <th>ID PEMESANAN</th>
-                  <th>ID PERUSAHAAN</th>
-                  <th>TANGGAL</th>
-                  <th>JUMLAH_PESAN</th>
-                  <th>TOTAL BIAYA</th>
+                  <th>ID PETANI</th>
+                  <th>NAMA PETANI</th>
+                  <th>DESA</th>
+                  <th>KECAMATAN</th>
+                  <th>TANGGAL PANEN</th>
+                  <th>HASIL PANEN</th>
                 </tr>
                 </thead>
                 <tbody>
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, $lanjut);
+                    $query = mysqli_query($koneksi, "select * from $tipe");
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
-                        <td><?php echo $data ['ID_PESAN'];?></td>
-                        <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
-                        <td><?php echo $data ['TANGGAL'];?></td>
-                        <td><?php echo $data ['JUMLAH_PESAN'];?></td>
-                        <td><?php echo $data ['TOTAL_BIAYA'];?></td>
+                        <td><?php echo $data ['KTP'];?></td>
+                        <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['NAMA_DESA'];?></td>
+                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+                        <td><?php echo $data ['TGL_PANEN'];?></td>
+                        <td><?php echo $data ['HASIL'];?></td>
 
                         </tr>
                     <?php
