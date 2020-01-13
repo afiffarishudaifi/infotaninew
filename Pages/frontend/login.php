@@ -65,7 +65,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
         <br>
         <a href="./button_login.php">Lupa Password Anda?</a></p>
-        <center> <p>------------------- Atau --------------------</p> </center>
+        <center> <p>------------------- atau --------------------</p> </center>
         <a href="./button_register.php" class="btn btn-success btn-block">Buat Akun Baru?</a>
         
       	<br>
