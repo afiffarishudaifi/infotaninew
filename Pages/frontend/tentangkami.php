@@ -197,16 +197,19 @@
     <section class="akame-our-expert-area about-us-page section-padding-80-0">
 
         <!-- Side Thumbnail -->
-        <div class="side-thumbnail" style="background-image: url(img/bg-img/.png);"></div>
+        <!-- Side Thumbnail -->
+        <div class="side-thumbnail" style=" background-color: #0000 "></div>
 
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Anggota</h2>
-                        <p>Tiap anggota memiliki peran masing-masing dalam pembuatan website, yaitu front end, back end, dan database. Dalam proses pembuatan, kami menggunakan aplikasi Github dekstop untuk kerjasama tim menyelesaikan website info tani.  </p>
-                  
+                        <h2>Hasil Pembenihan</h2>
+                        <div class="trans">
+                        <p>Pembenihan adalah suatu tahap kegiatan dalam budidaya yang sangat menentukan tahap kegiatan selanjutnya, yaitu pembesaran atau suau kegiatan pemeliharaan yang bertujuan untuk menghasilkan benih dan selanjutnya benih yang dihasilkan menjadi komponen input bagi kegiatan pembesaran.</p>
+                    </div></div>
+                    <!-- Our Certificate -->
                 </div>
             </div>
         </div>
@@ -215,91 +218,95 @@
 
                 <!-- Single Team Member -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/murpy.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihpadi.jpeg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Murpy Satriya Nugraha</h5>
-                            <p>Developer Team</p>
+                            <h5>Benih Padi</h5>
+                            <p>monocot plant</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Single Team Member -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/afif.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihkangkung.JPG" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Afif Faris Hudaifi</h5>
-                            <p>Developer Team</p>
+                            <h5>Benih Kedelai</h5>
+                            <p>dicotyledonous plants</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Single Team Member -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/rapep.jpg" alt="">
+                            <img src="../../assets/img/bg-img/Benihjagung.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Rafif Zuhdi Filiatno</h5>
-                            <p>Developer Team</p>
+                            <h5>Benih Jagung</h5>
+                            <p>monocot plant</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Single Team Member -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="800ms">
                         <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/camalla.jpg" alt="">
+                            <img src="../../assets/img/bg-img/benihkacanghijau.jpg" alt="">
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
-                            <h5>Camalla Sabrina</h5>
-                            <p>Developer Team</p>
+                            <h5>Benih Kacang Hijau</h5>
+                            <p>dicotyledonous plants</p>
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
             
             </div>
         </div>
