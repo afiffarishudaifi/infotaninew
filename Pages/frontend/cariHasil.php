@@ -64,6 +64,8 @@ elseif(isset($_SESSION['posF'])):
 else:
     $cari="";
     $komoditas ="";
+    $tglpanen = "";
+    $kecamatan = "";
 endif;
 ?>
 
@@ -78,7 +80,7 @@ endif;
         </div>
         <div class="row row2">
             <div class="col-sm-2">
-                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;">INFOTANI</a></h2>
+                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;">INFO TANI</a></h2>
                 <!--<h1 style="margin:0px;"><span class="nav-brand" href="index.php"><h3>INFO TANI</h3></span></h1>-->
             </div>
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
@@ -166,7 +168,8 @@ endif;
                         
                 unset($_SESSION['posF']['komoditas']);
                 unset($_SESSION['posF']['kecamatan']);
-                unset($_SESSION['posF']['tglpanen']);}?>
+                unset($_SESSION['posF']['tglpanen']);
+             }?>
 </div>
 <div class="container">
 <div class ="content">
@@ -195,7 +198,7 @@ endif;
                      $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
                     
                     //query view data berdasar filter
-                    
+             
             if(isset($_POST['filter'])||isset($_SESSION['posF']['komoditas'])
                                     ||isset($_SESSION['posF']['kecamatan'])
                                     ||isset($_SESSION['posF']['tglpanen'])) {
@@ -586,7 +589,6 @@ endif;
                 }
                 
             }elseif(isset($_POST['submitcari'])||isset($_POST['submitcariHasil'])||isset($_SESSION['pos']['cari'])) {
-                
                 if(isset($_POST['submitcariHasil'])){
                     $cari = $_POST['cari'];
                 }
@@ -631,6 +633,7 @@ endif;
                 LIMIT $mulai, $halaman 
                 ");
             }
+            
                              
             $total = mysqli_num_rows($query);
             $pages = ceil($total/$halaman);

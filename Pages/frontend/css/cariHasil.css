@@ -1,4 +1,6 @@
-
+body{
+    font-family: Open Sans;
+}
 #flipkart-navbar {
     background-color: #32CD32;
     color: #FFFFFF;

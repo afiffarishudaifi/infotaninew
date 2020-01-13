@@ -144,110 +144,75 @@
 
         <!-- Side Thumbnail -->
         <div class="side-thumbnail" style=" background-color: #0000 "></div>
-
+    <form action="cariHasil.php" method="post">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-6">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h2>Hasil Pembenihan</h2>
+                        <h2>Panen Bulan <?php echo date("F");?></h2>
                         <div class="trans">
-                        <p>Pembenihan adalah suatu tahap kegiatan dalam budidaya yang sangat menentukan tahap kegiatan selanjutnya, yaitu pembesaran atau suau kegiatan pemeliharaan yang bertujuan untuk menghasilkan benih dan selanjutnya benih yang dihasilkan menjadi komponen input bagi kegiatan pembesaran.</p>
+                        <p>Berikut merupakan data komoditas pertanian yang akan panen pada Bulan <?php echo date("F");?>
+                        <br/><br/> Untuk melihat dan memesan semua komoditas yang panen Silahkan Klik
+                        
+                            <button class="btn akame-btn active" name="bulanini" value="bulanini">Lihat</button>
+                        </p>
                     </div></div>
                     <!-- Our Certificate -->
                 </div>
-            </div>
+            </div></form>
         </div>
         <div class="container">
             <div class="row">
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/benihpadi.jpeg" alt="">
-                            <!-- Social Info -->
-                            <div class="team-social-info d-flex align-items-center justify-content-center">
-                                <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h5>Benih Padi</h5>
-                            <p>monocot plant</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/benihkangkung.JPG" alt="">
-                            <!-- Social Info -->
-                            <div class="team-social-info d-flex align-items-center justify-content-center">
-                                <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h5>Benih Kedelai</h5>
-                            <p>dicotyledonous plants</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/Benihjagung.jpg" alt="">
-                            <!-- Social Info -->
-                            <div class="team-social-info d-flex align-items-center justify-content-center">
-                                <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h5>Benih Jagung</h5>
-                            <p>monocot plant</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="800ms">
-                        <div class="team-member-img">
-                            <img src="../../assets/img/bg-img/benihkacanghijau.jpg" alt="">
-                            <!-- Social Info -->
-                            <div class="team-social-info d-flex align-items-center justify-content-center">
-                                <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-member-info">
-                            <h5>Benih Kacang Hijau</h5>
-                            <p>dicotyledonous plants</p>
-                        </div>
-                    </div>
-                </div>
+            <table id="example1" class="table table-bordered table-striped">
+            <thead>
+             <?php echo "<tr bgcolor='cream'>";?>
+                  <th>NO.</th>
+                  <th>KOMODITAS</th>
+                  <th>TGL PANEN</th>
+                  <th>NAMA PETANI</th>
+                  <th>ALAMAT</th>
+                  <th>KECAMATAN</th>
+                  <th>NO HP</th>
+                  <th>HASIL PANEN (KG)</th>
+                  
+                </tr>
+                </thead>
+                <tbody>
+<?php  
+require_once "../../controller/koneksi.php";
+$no = 0;
+$query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
+                INNER JOIN petani on petani.KTP = panen.KTP
+                INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = petani.ID_KECAMATAN
+                WHERE month(panen.TGL_PANEN) = month(CURRENT_DATE())
+                ORDER BY RAND()
+                LIMIT 5
+                ");
+while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek ke array yang biasanya
+    $no=$no+1;
+    if(($no % 2) == 0){
+        $bgcolor="lightgreen";
+  } else{
+        $bgcolor="white";
+  }
+  echo "<tr bgcolor=$bgcolor>"
+    ?>
+    
+        <!--memangambil data dari tabel dengan mengisikan data di table-->
+        <td><?php echo $no;?></td>
+        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
+        <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
+        <td><?php echo $data ['NAMA_PETANI'];?></td>
+        <td><?php echo $data ['ALAMAT_PETANI'];?></td>
+        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+        <td><?php echo $data ['NO_HP'];?></td>
+        <td><?php echo $data ['HASIL'];?></td>
+    </tr>
+<?php } ?>
+    </tbody>
+    </table>
 
             </div>
         </div>
@@ -278,8 +243,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <div class="post-thumbnail">
-                            <a href="https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar" 
-                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/berita1.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/berita1.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a class="post-title" href="https://katadata.co.id/berita/2019/12/12/kementan-subsidi-pupuk-produksi-padi-ditargetkan-capai-7-tonhektar" 
@@ -301,8 +265,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <div class="post-thumbnail">
-                            <a href="https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi" 
-                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info2.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                             <a class="post-title" href="https://katadata.co.id/berita/2019/12/13/pemerintah-siap-ekspor-beras-hingga-ayam-ke-arab-saudi" 
@@ -321,8 +284,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-post-area mb-80 wow fadeInUp" data-wow-delay="600ms">
                         <div class="post-thumbnail">
-                            <a href="post-title" href="https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam" 
-                            target="popup" onClick="MyWindow=window.open('https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam','MyWindow','width=600,height=300'); return false;"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="../../assets/img/bg-img/info3.jpg" alt=""></a>
                         </div>
                         <div class="post-content">
                         <a class="post-title" href="https://katadata.co.id/berita/2019/11/30/tak-kompetitif-ongkos-produksi-beras-ri-25-kali-lipat-dari-vietnam" 
