@@ -71,31 +71,32 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                 <tr>
-                  <th>ID PETANI</th>
-                  <th>NAMA PETANI</th>
-                  <th>DESA</th>
-                  <th>KECAMATAN</th>
+                  <th>ID PANEN</th>
+                  <th>KTP</th>
+                  <th>KOMODITAS</th>
                   <th>TANGGAL PANEN</th>
                   <th>HASIL PANEN</th>
+                  <th>HARGA</th>
+                  <th>STATUS PANEN</th>
                 </tr>
                 </thead>
                 <tbody>
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "select * from $tipe");
+                    $query = mysqli_query($koneksi, $lanjut);
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
+                        <td><?php echo $data ['ID_PANEN'];?></td>
                         <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['NAMA_PETANI'];?></td>
-                        <td><?php echo $data ['NAMA_DESA'];?></td>
-                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+                        <td><?php echo $data ['KOMODITAS'];?></td>
                         <td><?php echo $data ['TGL_PANEN'];?></td>
                         <td><?php echo $data ['HASIL'];?></td>
-
+                        <td><?php echo $data ['HARGA'];?></td>
+                        <td><?php echo $data ['STATUS_PANEN'];?></td>
                         </tr>
                     <?php
                     } ?>
