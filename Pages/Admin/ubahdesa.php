@@ -49,6 +49,21 @@
                     while ($data = mysqli_fetch_array($query)) {?>
                 <input type="hidden" name="iddesa" value="<?php echo $data['ID_DESA']?>">
                 <div class="form-group">
+                    <label>Nama Kecamatan</label>
+                    <?php
+                        $query = "select * from kecamatan";
+                        $resultdesa = mysqli_query($koneksi, $query);
+                       // ----------------------------------------
+                        echo "<select name='idkecamatan' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih kecamatan ===</option>";
+                            while($row2=mysqli_fetch_array($resultdesa))
+                            {
+                                echo "<option value=$row2[0]>$row2[1]</option>";
+                            }
+                       echo "</select>";
+                   ?>
+                </div>
+                <div class="form-group">
                     <label>Nama Desa</label>
                     <!--menginputkan sebuah inputan nim bertipe text-->
                     <input type="text" class="form-control" value="<?php echo $data['NAMA_DESA']?>" name="namadesa" required onkeypress="return hanyaTulisan(event)">

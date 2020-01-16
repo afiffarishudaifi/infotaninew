@@ -46,7 +46,7 @@
                 $hasilcekdata=mysqli_fetch_array($querydata);
                 if($hasilcekdata==0) {
                   ?>
-                  <form method="post" action="../../controller/user/controllerpetani.php">
+                     <form method="post" action="../../controller/user/controllerpetani.php">
                         <?php 
                         $query = mysqli_query($koneksi, "SELECT username, id_user FROM user WHERE id_user='$login_session'");
                         while ($data = mysqli_fetch_array($query)) {?>
@@ -106,21 +106,21 @@
                       <input type="text" class="form-control" name="alamatsawah" placeholder="Masukkan Alamat Sawah" required>
                     </div>
                     <div class="form-group">
-                      <label>Kecamatan</label>
+                      <label>Desa</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                       <?php
-                                  $query = "select * from kecamatan";
-                                  $resultkecamatan = mysqli_query($koneksi, $query);
-                                 // ----------------------------------------
-                                  echo "<select name='idkecamatan' class='form-control' onchange='changeValue(this.value)' required>";
-                                  echo "<option value='' selected>=== Pilih Kecamatan ===</option>";
-                                      while($row2=mysqli_fetch_array($resultkecamatan))
-                                      {
-                                          echo "<option value=$row2[0]>$row2[2]</option>";
-                                      }
-                                 echo "</select>";
-                             ?>
-                          </div>
+                            $query = "select * from DESA";
+                            $resultDESA = mysqli_query($koneksi, $query);
+                           // ----------------------------------------
+                            echo "<select name='iddesa' class='form-control' onchange='changeValue(this.value)' required>";
+                            echo "<option value='' selected>=== Pilih Desa ===</option>";
+                                while($row2=mysqli_fetch_array($resultDESA))
+                                {
+                                    echo "<option value=$row2[0]>$row2[2]</option>";
+                                }
+                           echo "</select>";
+                       ?>
+                    </div>
                     
                     <div class="form-group">
                       <label>Tanggal Tanam</label>
@@ -136,56 +136,104 @@
                       <label>Status</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                      <?php
-                                  $query = "select * from status";
-                                  $resultstatus = mysqli_query($koneksi, $query);
-                                 // ----------------------------------------
-                                  echo "<select name='idstatus' class='form-control' onchange='changeValue(this.value)' required>";
-                                  echo "<option value='' selected>=== Pilih Status Panen ===</option>";
-                                      while($row2=mysqli_fetch_array($resultstatus))
-                                      {
-                                          echo "<option value=$row2[0]>$row2[1]</option>";
-                                      }
-                                 echo "</select>";
-                             ?>
+                          $query = "select * from status";
+                          $resultstatus = mysqli_query($koneksi, $query);
+                         // ----------------------------------------
+                          echo "<select name='idstatus' class='form-control' onchange='changeValue(this.value)' required>";
+                          echo "<option value='' selected>=== Pilih Status Panen ===</option>";
+                              while($row2=mysqli_fetch_array($resultstatus))
+                              {
+                                  echo "<option value=$row2[0]>$row2[1]</option>";
+                              }
+                         echo "</select>";
+                     ?>
                     </div>
               <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
               <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
             </form>
-            <?php }} else {
+                <?php }
+                } else {
                   ?>
-                  <form method="post" action="../../controller/user/controllerpetani.php" enctype="multipart/form-data">
+                  <form method="post" action="../../controller/user/controllerpetani.php" enctype="multipart/form-data" sdfsdf>
                   <?php
                     require_once "../../controller/koneksi.php";
-                    $query = mysqli_query($koneksi, "SELECT * from petani where petani.id_user=$login_session and petani.id_status=2");
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
                     $hasilcek=mysqli_fetch_array($query);
                     if($hasilcek!=0) {
-                        ?>
-                          <script language="JavaScript">
-                          alert('Tunggu Panen Selesai !');
-                          setTimeout(function() {window.location.href='./index.php'},10);
-                          </script>
-                        <?php
-                    }
-                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN as kecamatan, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, kecamatan, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
+                      $querys = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
+                        while ($data = mysqli_fetch_array($querys)) {?>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="KTP" value="<?php echo $data['ktp']?>"  required onkeypress="return hanyaAngka(event)" readonly>
+                      </div>
+                      <div class="form-group">
+                        <input type="hidden" class="form-control" name="username" value="<?php echo $data['username']?>"  required onkeypress="return hanyaAngka(event)" readonly>
+                      </div>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="namapetani" value="<?php echo $data['NAMA_PETANI']?>"  required onkeypress="return hanyaTulisan(event)" readonly>
+                      </div>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="alamatpetani" value="<?php echo $data['ALAMAT_PETANI']?>"  required readonly>
+                      </div>
+
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="nohp" value="<?php echo $data['NO_HP']?>"  required readonly>
+                      </div>
+                      <div class="form-group">
+                        <label>Komoditas</label>
+                        <input type="hidden" class="form-control" name="idkomoditas" value="<?php echo $data['ID_KOMODITAS']?>"  required readonly>
+                        <input type="text" class="form-control" value="<?php echo $data['komoditas']?>"  required readonly>
+                        </div>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="luassawah" value="<?php echo $data['LUAS_SAWAH']?>"  required onkeypress="return hanyaAngka(event)">
+                      </div>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="alamatsawah" value="<?php echo $data['ALAMAT_SAWAH']?>"  required readonly>
+                      </div>
+                      <div class="form-group">
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="hidden" class="form-control" name="iddesa" value="<?php echo $data['ID_DESA']?>"  required readonly>
+                      </div>
+                      <div class="form-group">
+                        <label>Tanggal Tanam</label>
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="date" class="form-control" name="tgltanam" value="<?php echo $data['TANAM']?>"  required readonly>
+                      </div>
+                      <div class="form-group">
+                        <label>Tanggal Panen</label>
+                        <!--menginputkan sebuah inputan nim bertipe text-->
+                        <input type="date" class="form-control" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
+                      </div>
+                      <div class="form-group">
+                        <label>Status</label>
+                        <input type="hidden" class="form-control" name="idstatus" value="<?php echo $data['ID_STATUS']?>"  required>
+                        <input type="text" class="form-control" value="<?php echo $data['STATUS']?>"  required readonly>
+                      </div>
+                
+                      <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
+                      <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+                    <?php }} else { 
+                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status, panen WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=panen.ktp and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
                     while ($data = mysqli_fetch_array($query1)) {?>
                       <div class="form-group">
-                        <label>KTP</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="KTP" value="<?php echo $data['ktp']?>"  required onkeypress="return hanyaAngka(event)" readonly>
+                        <input type="hidden" class="form-control" name="KTP" value="<?php echo $data['ktp']?>"  required onkeypress="return hanyaAngka(event)" readonly>
                       </div>
                       <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" name="username" value="<?php echo $data['username']?>"  required onkeypress="return hanyaAngka(event)" readonly>
+                        <input type="hidden" class="form-control" name="username" value="<?php echo $data['username']?>"  required onkeypress="return hanyaAngka(event)" readonly>
                       </div>
                       <div class="form-group">
-                        <label>Nama Petani</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="namapetani" value="<?php echo $data['NAMA_PETANI']?>"  required onkeypress="return hanyaTulisan(event)" readonly>
+                        <input type="hidden" class="form-control" name="namapetani" value="<?php echo $data['NAMA_PETANI']?>"  required onkeypress="return hanyaTulisan(event)" readonly>
                       </div>
                       <div class="form-group">
-                        <label>Alamat Petani</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="alamatpetani" value="<?php echo $data['ALAMAT_PETANI']?>"  required readonly>
+                        <input type="hidden" class="form-control" name="alamatpetani" value="<?php echo $data['ALAMAT_PETANI']?>"  required readonly>
                       </div>
 
                       <div class="form-group">
@@ -211,19 +259,16 @@
                                ?>
                             </div>
                       <div class="form-group">
-                        <label>Luas Sawah</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="luassawah" value="<?php echo $data['LUAS_SAWAH']?>"  required onkeypress="return hanyaAngka(event)">
+                        <input type="hidden" class="form-control" name="luassawah" value="<?php echo $data['LUAS_SAWAH']?>"  required onkeypress="return hanyaAngka(event)">
                       </div>
                       <div class="form-group">
-                        <label>Alamat Sawah</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="alamatsawah" value="<?php echo $data['ALAMAT_SAWAH']?>"  required readonly>
+                        <input type="hidden" class="form-control" name="alamatsawah" value="<?php echo $data['ALAMAT_SAWAH']?>"  required readonly>
                       </div>
                       <div class="form-group">
-                        <label>Kecamatan</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="idkecamatan" value="<?php echo $data['ID_KECAMATAN']?>"  required readonly>
+                        <input type="hidden" class="form-control" name="iddesa" value="<?php echo $data['ID_DESA']?>"  required readonly>
                       </div>
                       <div class="form-group">
                         <label>Tanggal Tanam</label>
@@ -255,6 +300,7 @@
                 
                       <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
                       <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+                    <?php } ?>
                   </form>
                     <?php
                 }

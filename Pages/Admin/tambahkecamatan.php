@@ -38,22 +38,6 @@
             <!--membuat sebuah form-->
             <form method="post" action="../../controller/admin/controllerkecamatan.php">
                 <div class="form-group">
-                    <label>Nama Desa</label>
-                    <?php
-                        require_once "../../controller/admin/koneksi.php";
-                        $query = "select * from desa";
-                        $resultdesa = mysqli_query($koneksi, $query);
-                       // ----------------------------------------
-                        echo "<select name='iddesa' class='form-control' onchange='changeValue(this.value)' required>";
-                        echo "<option value='' selected>=== Pilih Desa ===</option>";
-                            while($row2=mysqli_fetch_array($resultdesa))
-                            {
-                                echo "<option value=$row2[0]>$row2[1]</option>";
-                            }
-                       echo "</select>";
-                   ?>
-                </div>
-                <div class="form-group">
                     <label>Nama Kecamatan</label>
                     <!--menginputkan sebuah inputan nim bertipe text-->
                     <input type="text" class="form-control" name="namakec" placeholder="Nama Kecamatan" required onkeypress="return hanyaTulisan(event)">

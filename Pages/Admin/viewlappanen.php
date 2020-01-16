@@ -26,27 +26,29 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-               <?php if (isset($_POST['submit'])) {
-                    if ($_POST['pilih']==1) {
-                        $tipe = "laporan_jagung";
-                        $komoditaspanen = "Jagung";
-                    } else {
-                        $tipe = "laporan_padi";
-                        $komoditaspanen = "Padi";
-                    }
+               <?php 
+               if (isset($_POST['submit'])) {
+                  $pilih = $_POST['pilih'];
+
+                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
                 }else {
-                    $tipe = "laporan_panen";
+                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
                 } ?>
               <h3 class="box-title">Laporan Panen <?php echo $komoditaspanen; ?></h3>
               <h3>
                   <form action="" method="POST">
                     <?php
 
-                            echo "<select name='pilih' class='form-control hidden-print'>";
+                        echo "<select name='pilih' class='form-control hidden-print'>";
+                        
 
                         echo "<option value='belum memilih' selected>--Pilih Komoditas--</option>";
-                        echo "<option value=1>Jagung</option>";
-                        echo "<option value=2>Padi</option>";
+                        $cekkomoditastampil = mysqli_query($koneksi, "select * from komoditas");
+                        while ($data=mysqli_fetch_array($cekkomoditastampil)) {
+                        ?>
+                        <option value="<?=$data['ID_KOMODITAS']?>"><?=$data['NAMA_KOMODITAS']?></option>
+                        <?php
+                        }
 
                         echo "</select><br>";
                         echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>   ";
@@ -64,9 +66,9 @@
                 <tr>
                   <th>ID PETANI</th>
                   <th>NAMA PETANI</th>
+                  <th>TANGGAL PANEN</th>
                   <th>DESA</th>
                   <th>KECAMATAN</th>
-                  <th>TANGGAL PANEN</th>
                   <th>HASIL PANEN</th>
                 </tr>
                 </thead>
@@ -74,7 +76,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "select * from $tipe");
+                    $query = mysqli_query($koneksi, $tipe);
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
@@ -82,9 +84,9 @@
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['TGL_PANEN'];?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <td><?php echo $data ['TGL_PANEN'];?></td>
                         <td><?php echo $data ['HASIL'];?></td>
 
                         </tr>

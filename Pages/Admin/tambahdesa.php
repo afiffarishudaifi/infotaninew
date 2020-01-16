@@ -34,18 +34,33 @@
     </section>
     <section class="content">
         <div class="container">
-    		<br>
-    		<!--membuat sebuah form-->
-    		<form method="post" action="../../controller/admin/controllerdesa.php">
-    			<div class="form-group">
-    				<label>Nama Desa</label>
-    				<!--menginputkan sebuah inputan nim bertipe text-->
-    				<input type="text" class="form-control" name="namadesa" placeholder="Nama Desa" required onkeypress="return hanyaTulisan(event)">
-    			</div>
-    			<input type="submit" name="simpan" class="btn btn-success" value="Simpan">
-    			<input type="reset" name="reset" class="btn btn-danger" value="Hapus">
-    		</form>
-    	</div>
+        <br>
+        <!--membuat sebuah form-->
+        <form method="post" action="../../controller/admin/controllerdesa.php">
+          <div class="form-group">
+                    <label>Nama Kecamatan</label>
+                    <?php
+                        $query = "select * from kecamatan";
+                        $resultdesa = mysqli_query($koneksi, $query);
+                       // ----------------------------------------
+                        echo "<select name='idkecamatan' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih kecamatan ===</option>";
+                            while($row2=mysqli_fetch_array($resultdesa))
+                            {
+                                echo "<option value=$row2[0]>$row2[1]</option>";
+                            }
+                       echo "</select>";
+                   ?>
+                </div>
+          <div class="form-group">
+            <label>Nama Desa</label>
+            <!--menginputkan sebuah inputan nim bertipe text-->
+            <input type="text" class="form-control" name="namadesa" placeholder="Nama Desa" required onkeypress="return hanyaTulisan(event)">
+          </div>
+          <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
+          <input type="reset" name="reset" class="btn btn-danger" value="Hapus">
+        </form>
+      </div>
     </section>
     <br><br>
     </div>
