@@ -10,8 +10,8 @@ if (isset($_POST['kirim'])) {
     $mail->SMTPDebug = 2;
     $mail->Port = 465;
     $mail->SMTPAuth = true;
-    $mail->Username = "afiffaris5@gmail.com"; //user email
-    $mail->Password = "Ar3manita040699"; //password email
+    $mail->Username = "infotani.mif@gmail.com"; //user email
+    $mail->Password = "infotani123"; //password email
     $mail->SetFrom($_POST['email'], $_POST['nama']); //set email pengirim
     $mail->Subject = "Komentar dari ".$_POST['nama']; //subyek email
     $mail->AddAddress("infotani.mif@gmail.com", "You");  //tujuan email
