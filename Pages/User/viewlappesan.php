@@ -32,9 +32,9 @@
             <div class="box-header">
                <?php if (isset($_POST['submit'])) {
                   $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select * from pemesanan where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=$tahun and KTP=$ktppetani";
+                  $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and month(TANGGAL) = $bulanpilih AND year(TANGGAL)=$tahun and pemesanan.KTP=$ktppetani";
                 }else {
-                    $lanjut = "select * from pemesanan where KTP=$ktppetani";
+                    $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and pemesanan.KTP=$ktppetani";
                 } ?>
               <h3 class="box-title">Laporan Pemesanan <?php echo $komoditaspanen; ?></h3>
               <h3>
@@ -72,7 +72,7 @@
                 <thead class="thead-dark">
                 <tr>
                   <th>ID PEMESANAN</th>
-                  <th>ID PERUSAHAAN</th>
+                  <th>NAMA PERUSAHAAN</th>
                   <th>TANGGAL</th>
                   <th>JUMLAH_PESAN</th>
                   <th>TOTAL BIAYA</th>
@@ -89,7 +89,7 @@
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_PESAN'];?></td>
-                        <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
+                        <td><?php echo $data ['NAMA_PERUSAHAAN'];?></td>
                         <td><?php echo $data ['TANGGAL'];?></td>
                         <td><?php echo $data ['JUMLAH_PESAN'];?></td>
                         <td><?php echo $data ['TOTAL_BIAYA'];?></td>

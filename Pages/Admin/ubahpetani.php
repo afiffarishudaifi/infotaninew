@@ -45,7 +45,7 @@
                 if(isset($_GET['id'])) {
                     $id = $_GET['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktpp, petani.ID_KECAMATAN, kecamatan.NAMA_KECAMATAN as kecamatan, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, kecamatan, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND kecamatan.ID_KECAMATAN=petani.ID_KECAMATAN AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=$id");
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktpp, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER and petani.ktp=$id");
                     while ($data = mysqli_fetch_array($query)) {?>
                 <div class="form-group">
             <label>KTP</label>
@@ -102,27 +102,27 @@
                        echo "</select>";
                    ?>
                 </div>
-    			<div class="form-group">
-    				<label>Luas Sawah</label>
-    				<!--menginputkan sebuah inputan nim bertipe text-->
-    				<input type="text" class="form-control" name="luassawah" value="<?php echo $data['LUAS_SAWAH']?>"  required onkeypress="return hanyaAngka(event)">
-    			</div>
           <div class="form-group">
-    				<label>Alamat Sawah</label>
-    				<!--menginputkan sebuah inputan nim bertipe text-->
-    				<input type="text" class="form-control" name="alamatsawah" value="<?php echo $data['ALAMAT_SAWAH']?>"  required>
-    			</div>
-          <div class="form-group">
-            <label>Kecamatan</label>
+            <label>Luas Sawah</label>
             <!--menginputkan sebuah inputan nim bertipe text-->
-           <?php
+            <input type="text" class="form-control" name="luassawah" value="<?php echo $data['LUAS_SAWAH']?>"  required onkeypress="return hanyaAngka(event)">
+          </div>
+          <div class="form-group">
+            <label>Alamat Sawah</label>
+            <!--menginputkan sebuah inputan nim bertipe text-->
+            <input type="text" class="form-control" name="alamatsawah" value="<?php echo $data['ALAMAT_SAWAH']?>"  required>
+          </div>
+          <div class="form-group">
+            <label>Desa</label>
+            <!--menginputkan sebuah inputan nim bertipe text-->
+            <?php
                         require_once "../../controller/admin/koneksi.php";
-                        $query = "select * from kecamatan";
-                        $resultkecamatan = mysqli_query($koneksi, $query);
+                        $query = "select * from desa";
+                        $resultdesa = mysqli_query($koneksi, $query);
                        // ----------------------------------------
-                        echo "<select name='idkecamatan' class='form-control' onchange='changeValue(this.value)' required>";
-                        echo "<option value='' selected>=== Pilih Kecamatan ===</option>";
-                            while($row2=mysqli_fetch_array($resultkecamatan))
+                        echo "<select name='iddesa' class='form-control' onchange='changeValue(this.value)' required>";
+                        echo "<option value='' selected>=== Pilih Desa ===</option>";
+                            while($row2=mysqli_fetch_array($resultdesa))
                             {
                                 echo "<option value=$row2[0]>$row2[2]</option>";
                             }

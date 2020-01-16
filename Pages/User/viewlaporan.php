@@ -32,10 +32,10 @@
             <div class="box-header">
                 <?php if (isset($_POST['submit'])) {
                   $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select * from panen where month(TGL_PANEN) = $bulanpilih AND year(TGL_PANEN)=$tahun and KTP=$ktppetani";
+                  $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND month(TGL_PANEN) = $bulanpilih AND year(TGL_PANEN)=$tahun and petani.KTP=$ktppetani";
                 }else {
                     $bulanpilih = 'Tahun '.$tahun;
-                    $lanjut = "select * from panen where KTP=$ktppetani";
+                    $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
                 } ?>
               <h3 class="box-title">Laporan Panen <?php echo $bulanpilih; ?></h3>
               <h3>
@@ -92,7 +92,7 @@
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_PANEN'];?></td>
                         <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['KOMODITAS'];?></td>
+                        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td><?php echo $data ['TGL_PANEN'];?></td>
                         <td><?php echo $data ['HASIL'];?></td>
                         <td><?php echo $data ['HARGA'];?></td>

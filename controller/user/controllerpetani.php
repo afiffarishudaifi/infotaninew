@@ -4,7 +4,6 @@
  if (isset($_POST['ubah'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
          $KTP = $_POST['KTP'];
-         $kecamatan = $_POST['idkecamatan'];
          $komoditas = $_POST['idkomoditas'];
          $namapetani = $_POST['namapetani'];
          $alamatpetani = $_POST['alamatpetani'];
@@ -18,7 +17,7 @@
          $status = $_POST['idstatus'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "UPDATE PETANI SET ID_KECAMATAN='$kecamatan', ID_KOMODITAS='$komoditas', 
+         $query = "UPDATE PETANI SET ID_KOMODITAS='$komoditas', 
          ID_STATUS='$status', NAMA_PETANI='$namapetani', ALAMAT_PETANI='$alamatpetani', NO_HP='$nohp', LUAS_SAWAH='$luassawah',
          ALAMAT_SAWAH='$alamatsawah', TANAM='$tgltanam1', PANEN='$tglpanen1' where KTP='$KTP'";
 
@@ -40,7 +39,7 @@
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
          $iduser= $_POST['iduser'];
          $KTP = $_POST['KTP'];
-         $kecamatan = $_POST['idkecamatan'];
+         $DESA = $_POST['iddesa'];
          $komoditas = $_POST['idkomoditas'];
          $namapetani = $_POST['namapetani'];
          $alamatpetani = $_POST['alamatpetani'];
@@ -54,8 +53,8 @@
          $status = $_POST['idstatus'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "INSERT INTO petani (KTP,ID_KECAMATAN,ID_KOMODITAS,ID_STATUS,ID_USER,NAMA_PETANI,ALAMAT_PETANI,LUAS_SAWAH,ALAMAT_SAWAH,TANAM,PANEN,NO_HP) 
-         VALUES ('$KTP','$kecamatan','$komoditas','2','$iduser','$namapetani','$alamatpetani','$luassawah','$alamatsawah','$tgltanam1','$tglpanen1','$nohp')";
+         $query = "INSERT INTO petani (KTP,ID_DESA,ID_KOMODITAS,ID_STATUS,ID_USER,NAMA_PETANI,ALAMAT_PETANI,LUAS_SAWAH,ALAMAT_SAWAH,TANAM,PANEN,NO_HP) 
+         VALUES ('$KTP','$DESA','$komoditas','2','$iduser','$namapetani','$alamatpetani','$luassawah','$alamatsawah','$tgltanam1','$tglpanen1','$nohp')";
 
          $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
 

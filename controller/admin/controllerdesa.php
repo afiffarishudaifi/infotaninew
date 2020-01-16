@@ -4,9 +4,10 @@ require "koneksi.php";
     if (isset($_POST['simpan'])) {
         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
         $desa = $_POST['namadesa'];
+        $Kecamatan = $_POST['idkecamatan'];
 
         //sebuah query untuk menginputkan data ke table tb_siswa
-        $query = "INSERT INTO desa (NAMA_DESA) VALUES ('$desa')";
+        $query = "INSERT INTO desa (ID_KECAMATAN, NAMA_DESA) VALUES ('$Kecamatan','$desa')";
 
         $result = mysqli_query($koneksi, $query);
 
@@ -26,9 +27,10 @@ require "koneksi.php";
         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
         $id = $_POST['iddesa'];
         $desa = $_POST['namadesa'];
+        $idkecamatan = $_POST['idkecamatan'];
 
         //sebuah query untuk menginputkan data ke table tb_siswa
-        $query = "UPDATE desa SET NAMA_DESA='$desa' where ID_DESA='$id'";
+        $query = "UPDATE desa SET NAMA_DESA='$desa', ID_KECAMATAN='$idkecamatan' where ID_DESA='$id'";
 
         $result = mysqli_query($koneksi, $query);
 

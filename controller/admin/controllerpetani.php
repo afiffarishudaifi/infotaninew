@@ -4,7 +4,7 @@
      if (isset($_POST['simpan'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
          $KTP = $_POST['KTP'];
-         $kecamatan = $_POST['idkecamatan'];
+         $desa = $_POST['iddesa'];
          $komoditas = $_POST['idkomoditas'];
          $username = $_POST['iduser'];
          $namapetani = $_POST['namapetani'];
@@ -17,8 +17,8 @@
          $tglpanen = $_POST['tglpanen'];
          $tglpanen1 = date('Y-m-d',strtotime($tglpanen));
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "INSERT INTO petani (KTP,ID_KECAMATAN,ID_KOMODITAS,ID_USER,ID_STATUS,NAMA_PETANI,ALAMAT_PETANI,LUAS_SAWAH,ALAMAT_SAWAH,TANAM,PANEN,NO_HP) 
-         VALUES ('$KTP','$kecamatan','$komoditas','$username',2,'$namapetani','$alamatpetani','$luassawah','$alamatsawah','$tgltanam1','$tglpanen1','$nohp')";
+         $query = "INSERT INTO petani (KTP,ID_DESA,ID_KOMODITAS,ID_USER,ID_STATUS,NAMA_PETANI,ALAMAT_PETANI,LUAS_SAWAH,ALAMAT_SAWAH,TANAM,PANEN,NO_HP) 
+         VALUES ('$KTP','$desa','$komoditas','$username',2,'$namapetani','$alamatpetani','$luassawah','$alamatsawah','$tgltanam1','$tglpanen1','$nohp')";
 
          $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi)) ;
 
@@ -38,7 +38,7 @@
      } else if (isset($_POST['ubah'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
          $KTP = $_POST['KTP'];
-         $kecamatan = $_POST['idkecamatan'];
+         $desa = $_POST['iddesa'];
          $komoditas = $_POST['idkomoditas'];
          $username = $_POST['iduser'];
          $namapetani = $_POST['namapetani'];
@@ -53,7 +53,7 @@
          $status = $_POST['idstatus'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "UPDATE PETANI SET ID_KECAMATAN='$kecamatan', ID_KOMODITAS='$komoditas', ID_USER='$username',
+         $query = "UPDATE PETANI SET ID_DESA='$desa', ID_KOMODITAS='$komoditas', ID_USER='$username',
          ID_STATUS='$status', NAMA_PETANI='$namapetani', ALAMAT_PETANI='$alamatpetani', NO_HP='$nohp', LUAS_SAWAH='$luassawah',
          ALAMAT_SAWAH='$alamatsawah', TANAM='$tgltanam1', PANEN='$tglpanen1' where KTP='$KTP'";
 

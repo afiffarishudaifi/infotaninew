@@ -3,11 +3,10 @@
 
      if (isset($_POST['simpan'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
-         $desa = $_POST['iddesa'];
          $kec = $_POST['namakec'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "INSERT INTO kecamatan (ID_DESA,NAMA_KECAMATAN) VALUES ('$desa','$kec')";
+         $query = "INSERT INTO kecamatan (NAMA_KECAMATAN) VALUES ('$kec')";
 
          $result = mysqli_query($koneksi, $query);
 
@@ -26,11 +25,10 @@
      } else if (isset($_POST['ubah'])) {
          //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
          $id = $_POST['idkecamatan'];
-         $iddesa = $_POST['iddesa'];
          $nama = $_POST['namakec'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "UPDATE kecamatan SET NAMA_KECAMATAN='$nama', ID_DESA='$iddesa' where ID_KECAMATAN='$id'";
+         $query = "UPDATE kecamatan SET NAMA_KECAMATAN='$nama' where ID_KECAMATAN='$id'";
 
          $result = mysqli_query($koneksi, $query);
 

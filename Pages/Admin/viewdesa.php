@@ -35,6 +35,7 @@
                 <thead class="thead-dark">
                 <tr>
                   <th>ID DESA</th>
+                  <th>ID KECAMATAN</th>
                   <th>NAMA DESA</th>
                   <th>AKSI(s)</th>
                 </tr>
@@ -50,6 +51,7 @@
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_DESA'];?></td>
+                        <td><?php echo $data ['ID_KECAMATAN'];?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td>
                         <a href="ubahdesa.php?id=<?php echo $data['ID_DESA'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
@@ -62,14 +64,14 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <center><h4 class="modal-title" id="myModalLabel">Hapus</h4></center>		<!-- button untuk pilihan del -->
+                                            <center><h4 class="modal-title" id="myModalLabel">Hapus</h4></center>   <!-- button untuk pilihan del -->
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                        					$del=mysqli_query($koneksi, "select * from desa where ID_DESA='".$data['ID_DESA']."'");
-                        					$drow=mysqli_fetch_array($del);
-                        				?>
-                                        <div class="modal-footer">		<!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
+                                  $del=mysqli_query($koneksi, "select * from desa where ID_DESA='".$data['ID_DESA']."'");
+                                  $drow=mysqli_fetch_array($del);
+                                ?>
+                                        <div class="modal-footer">    <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
                                             <input type="hidden" name="idhapus" value="<?php echo $drow['ID_DESA']; ?>">
                                             <h5><center>Apakah yakin ingin menghapus Desa <strong><?php echo $drow['NAMA_DESA']; ?></strong> ?</center></h5>
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
