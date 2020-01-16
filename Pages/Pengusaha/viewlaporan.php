@@ -93,7 +93,7 @@
                         <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
                         <td><?php echo $data ['TANGGAL'];?></td>
                         <td><?php echo $data ['JUMLAH_PESAN'];?></td>
-                        <td><?php echo $data ['TOTAL_BIAYA'];?></td>
+                        <td class="uang"><?php echo $data ['TOTAL_BIAYA'];?></td>
 
                         </tr>
                     <?php
@@ -130,8 +130,15 @@
 <?php
     include_once "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
 
-
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 </body>
 
 

@@ -172,9 +172,9 @@
                   <th>TGL PANEN</th>
                   <th>NAMA PETANI</th>
                   <th>ALAMAT</th>
-                  <th>KECAMATAN</th>
+                  <th>DESA/KELURAHAN</th>
                   <th>NO HP</th>
-                  <th>HASIL PANEN (KG)</th>
+                  <th>HASIL PANEN <div style="float:right;">(KG)</div></th>
                   
                 </tr>
                 </thead>
@@ -185,7 +185,7 @@ $no = 0;
 $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = petani.ID_KECAMATAN
+                INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
                 WHERE month(panen.TGL_PANEN) = month(CURRENT_DATE())
                 ORDER BY RAND()
                 LIMIT 5
@@ -206,9 +206,9 @@ while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek k
         <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
         <td><?php echo $data ['NAMA_PETANI'];?></td>
         <td><?php echo $data ['ALAMAT_PETANI'];?></td>
-        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+        <td><?php echo $data ['NAMA_DESA'];?></td>
         <td><?php echo $data ['NO_HP'];?></td>
-        <td><?php echo $data ['HASIL'];?></td>
+        <td><?php echo $data ['HASIL'];?><div style="float:right;">KG</div></td>
     </tr>
 <?php } ?>
     </tbody>

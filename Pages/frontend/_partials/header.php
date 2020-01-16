@@ -1,3 +1,7 @@
+<?php 
+    require_once "../../controller/koneksi.php";
+    include "../../controller/session.php";
+?>
 <header class="header-area">
     <!-- Top Header Area Start -->
     <!--<div class="top-header-area">
@@ -50,7 +54,9 @@
 
                             <!-- Book Icon -->
                             <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
-                                <a href="./login.php" class="btn akame-btn">Masuk</a>
+                                <a href="./login.php" class="btn akame-btn"><?php if(isset($login_session)||isset($id_pengguna)){ 
+                                    echo "Dashboard";
+                                    }else{ echo "Masuk";}?></a>
                             </div>
                         </div>
                         <!-- Nav End -->

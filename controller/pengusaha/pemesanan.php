@@ -8,11 +8,12 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $ktp = $_POST['ktp'];
     $jumlah = $_POST['jmlpesan'];
     $total = $_POST['total'];
+    $total_fix = str_replace(".","",$total);
     $komoditas = $_POST['komoditas'];
     $petani = $_POST['namapetani'];
     $pengusaha = $_POST['namapengusaha'];
     $idpanen = $_POST['idpanen'];
-    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah','$total','1','$idpanen')");
+    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah','$total_fix','1','$idpanen')");
 
     
     if ($result) {

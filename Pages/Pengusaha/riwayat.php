@@ -37,8 +37,8 @@
                   <TH>ID PERUSAHAAN</TH>
                   <TH>KTP</TH>
                   <th>TANGGAL</th>
-                  <th>JUMLAH PESAN</th>
-                  <th>TOTAL PESAN</th>
+                  <th>JUMLAH PESAN (KG)</th>
+                  <th>TOTAL HARGA PESAN (RP)</th>
                   <th>STATUS PESAN</th>
                 </tr>
                 </thead>
@@ -57,7 +57,7 @@
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['TANGGAL'];?></td>
                         <td><?php echo $data ['JUMLAH_PESAN'];?></td>
-                        <td><?php echo $data ['TOTAL_BIAYA'];?></td>
+                        <td class="uang"><?php echo $data ['TOTAL_BIAYA'];?></td>
                         <td><?php echo $data ['STATUS_PESAN'];?></td>
                         
                         </tr>
@@ -95,7 +95,15 @@
 <?php
     include_once "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
 
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 
 </body>
 
