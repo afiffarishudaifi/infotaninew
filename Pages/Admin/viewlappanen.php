@@ -69,7 +69,7 @@
                   <th>TANGGAL PANEN</th>
                   <th>DESA</th>
                   <th>KECAMATAN</th>
-                  <th>HASIL PANEN</th>
+                  <th>HASIL PANEN (KG)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -84,10 +84,10 @@
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['NAMA_PETANI'];?></td>
-                        <td><?php echo $data ['TGL_PANEN'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
-                        <td><?php echo $data ['HASIL'];?></td>
+                        <td class="uang"><?php echo $data ['HASIL'];?></td>
 
                         </tr>
                     <?php
@@ -124,7 +124,15 @@
 <?php
     include_once "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
 
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 
 </body>
 
