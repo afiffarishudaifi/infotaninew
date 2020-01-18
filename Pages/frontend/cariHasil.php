@@ -184,7 +184,7 @@ endif;
                   <th>ALAMAT</th>
                   <th>DESA/KELURAHAN</th>
                   <th>NO HP</th>
-                  <th>HASIL PANEN <div style="float:right;">(KG)</div></th>
+                  <th>HASIL PANEN (KG)</th>
                   <th>PESAN</th>
                   
                 </tr>
@@ -661,7 +661,7 @@ endif;
                         <td><?php echo $data ['ALAMAT_PETANI'];?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NO_HP'];?></td>
-                        <td><?php echo $data ['HASIL'];?> <div style="float:right;">KG</div></td>
+                        <td class="uang"><?php echo $data ['HASIL'];?></td>
                         <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
                     </form>
                     </tr>
@@ -687,5 +687,14 @@ endif;
 
 </div>
                 </div>
+                <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 </body>
 </html>
