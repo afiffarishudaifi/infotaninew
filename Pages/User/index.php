@@ -6,6 +6,7 @@
         date_default_timezone_set('Asia/Jakarta');
         $tgll = date("Y-m-d");
         $tahun = date("Y");
+        $tglhariini = date("yy-mm-dd");
 ?>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">

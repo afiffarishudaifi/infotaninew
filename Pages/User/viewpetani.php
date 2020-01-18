@@ -125,12 +125,12 @@
                     <div class="form-group">
                       <label>Tanggal Tanam</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="date" class="form-control" name="tgltanam" placeholder="Masukkan tanggal tanam" required>
+                      <input type="text" class="form-control" id="tgl" name="tgltanam" placeholder="Masukkan tanggal tanam" required>
                     </div>
                     <div class="form-group">
                       <label>Tanggal Panen</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="date" class="form-control" name="tglpanen" placeholder="Masukkan tanggal panen" required>
+                      <input type="text" class="form-control" id="tgl2" name="tglpanen" placeholder="Masukkan tanggal panen" required>
                     </div>
                      <div class="form-group">
                       <label>Status</label>
@@ -202,12 +202,12 @@
                       <div class="form-group">
                         <label>Tanggal Tanam</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="date" class="form-control" name="tgltanam" value="<?php echo $data['TANAM']?>"  required readonly>
+                        <input type="text" class="form-control" id="tgl" name="tgltanam" value="<?php echo $data['TANAM']?>"  required readonly>
                       </div>
                       <div class="form-group">
                         <label>Tanggal Panen</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="date" class="form-control" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
+                        <input type="text" class="form-control" id="tgl2" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
                       </div>
                       <div class="form-group">
                         <label>Status</label>
@@ -222,7 +222,7 @@
                     while ($data = mysqli_fetch_array($query1)) {?>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="hidden" class="form-control" name="KTP" value="<?php echo $data['ktp']?>"  required onkeypress="return hanyaAngka(event)" readonly>
+                        <input type="text" class="form-control" name="KTP" value="<?php echo $data['ktp']?>"  required onkeypress="return hanyaAngka(event)" readonly>
                       </div>
                       <div class="form-group">
                         <input type="hidden" class="form-control" name="username" value="<?php echo $data['username']?>"  required onkeypress="return hanyaAngka(event)" readonly>
@@ -273,12 +273,12 @@
                       <div class="form-group">
                         <label>Tanggal Tanam</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="date" class="form-control" name="tgltanam" value="<?php echo $data['TANAM']?>"  required>
+                        <input type="text" class="form-control" id="tgl" name="tgltanam" value="<?php echo $data['TANAM']?>"  required>
                       </div>
                       <div class="form-group">
                         <label>Tanggal Panen</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="date" class="form-control" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
+                        <input type="text" class="form-control" id="tgl2" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
                       </div>
                       <div class="form-group">
                         <label>Status</label>

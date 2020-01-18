@@ -105,3 +105,24 @@
         }
     </script>
 -->
+
+  <!--tanggal pada input tanggal-->
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/resources/demos/style.css">
+  <script src="../../plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#tgl').datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: new Date(<?php $tglhariini?>)
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#tgl2').datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: new Date(<?php $tglhariini?>)
+      });
+    });
+  </script>
