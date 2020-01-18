@@ -26,8 +26,8 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         $mail->SMTPDebug = 2;
         $mail->Port = 465;
         $mail->SMTPAuth = true;
-        $mail->Username = "infotani.mif@gmail.com"; //user email
-        $mail->Password = "infotani123"; //password email
+        $mail->Username = "afiffaris5@gmail.com"; //user email
+        $mail->Password = "Ar3manita040699"; //password email
         $mail->SetFrom($_POST['email'], $_POST['namapengusaha']); //set email pengirim
         $mail->Subject = "Pemesanan dari ".$_POST['namapengusaha']; //subyek email
         $mail->AddAddress("infotani.mif@gmail.com", "You");  //tujuan email

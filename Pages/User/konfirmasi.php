@@ -76,13 +76,13 @@
                 </div>
               </div>
               <div class="form-group col-md-12">
-                <label>Jumlah Pemesanan</label>
-                <input type="text" id="jmlpesan" value="<?php echo $data['JUMLAH_PESAN']?>" name="jmlpesan" class="form-control" readonly="">
+                <label>Jumlah Pemesanan (Kg)</label>
+                <input type="text" id="jmlpesan" value="<?php echo $data['JUMLAH_PESAN']?>" name="jmlpesan" class="uang form-control" readonly="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label>Total Harga Pemesanan</label>
-                  <input type="text" name="total" value="<?php echo $data['TOTAL_BIAYA']?>" id="total" class="form-control" readonly>
+                  <label>Total Harga Pemesanan (Rp)</label>
+                  <input type="text" name="total" value="<?php echo $data['TOTAL_BIAYA']?>" id="total" class="uang form-control" readonly>
                 </div>
               </div>
               <input type="submit" name="konfirmasi" class="btn btn-success" value="konfirmasi">
@@ -123,13 +123,13 @@
                 </div>
               </div>
               <div class="form-group col-md-12">
-                <label>Jumlah Pemesanan</label>
-                <input type="text" id="jmlpesan" value="<?php echo $data['JUMLAH_PESAN']?>" name="jmlpesan" class="form-control" readonly="">
+                <label>Jumlah Pemesanan (Kg)</label>
+                <input type="text" id="jmlpesan" value="<?php echo $data['JUMLAH_PESAN']?>" name="jmlpesan" class="uang form-control" readonly="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label>Total Harga Pemesanan</label>
-                  <input type="text" name="total" value="<?php echo $data['TOTAL_BIAYA']?>" id="total" class="form-control" readonly>
+                  <label>Total Harga Pemesanan (Rp)</label>
+                  <input type="text" name="total" value="<?php echo $data['TOTAL_BIAYA']?>" id="total" class="uang form-control" readonly>
                 </div>
               </div>
               <input type="submit" name="batal" class="btn btn-success" value="Batal Konfirmasi">
@@ -163,5 +163,14 @@
 <?php
     include "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 </body>
 </html>

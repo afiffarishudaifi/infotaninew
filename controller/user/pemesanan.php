@@ -29,6 +29,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
 } elseif (isset($_POST['konfirmasi'])) {
     $id = $_POST['idpesan'];
     $jumlah = $_POST['jmlpesan'];
+    $jumlah_fix = str_replace(".","",$jumlah);
     $ktp = $_POST['ktp'];
     $idpanen = $_POST['idpanen'];
     $idperusahaan = $_POST['idperusahaan'];
@@ -37,7 +38,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
 
         $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
-            $hasil = $data['HASIL'] - $jumlah;
+            $hasil = $data['HASIL'] - $jumlah_fix;
             };
 
         $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
@@ -58,6 +59,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
 } elseif (isset($_POST['batal'])) {
     $id = $_POST['idpesan'];
     $jumlah = $_POST['jmlpesan'];
+    $jumlah_fix = str_replace(".","",$jumlah);
     $ktp = $_POST['ktp'];
     $idpanen = $_POST['idpanen'];
     $idperusahaan = $_POST['idperusahaan'];
@@ -66,7 +68,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         
         $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
-            $hasil = $data['HASIL'] + $jumlah;
+            $hasil = $data['HASIL'] + $jumlah_fix;
             };
 
         $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");

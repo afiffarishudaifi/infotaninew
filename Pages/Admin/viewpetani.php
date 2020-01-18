@@ -68,8 +68,8 @@
                         <td><?php echo $data ['LUAS_SAWAH'];?></td>
                         <td><?php echo $data ['ALAMAT_SAWAH'];?></td>
                         <td><?php echo $data ['desa'];?></td>
-                        <td><?php echo $data ['TANAM'];?></td>
-                        <td><?php echo $data ['PANEN'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TANAM']),'d M Y');?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['STATUS'];?></td>
                         <td>
                         <a href="./ubahpetani.php?id=<?php echo $data['ktp'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">

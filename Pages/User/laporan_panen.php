@@ -56,7 +56,7 @@
                         <td><?php echo $data ['ID_PANEN'];?></td>
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['KOMODITAS'];?></td>
-                        <td><?php echo $data ['TGL_PANEN'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
                         <td class="uang"><?php echo $data ['HARGA'];?></td>
                         <td><?php echo $data ['STATUS_PANEN'];?></td>

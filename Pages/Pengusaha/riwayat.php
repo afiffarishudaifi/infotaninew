@@ -55,7 +55,7 @@
                         <td><?php echo $data ['ID_PESAN'];?></td>
                         <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
                         <td><?php echo $data ['KTP'];?></td>
-                        <td><?php echo $data ['TANGGAL'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TANGGAL']),'d M Y');?></td>
                         <td class="uang"><?php echo $data ['JUMLAH_PESAN'];?></td>
                         <td class="uang"><?php echo $data ['TOTAL_BIAYA'];?></td>
                         <td><?php echo $data ['STATUS_PESAN'];?></td>
