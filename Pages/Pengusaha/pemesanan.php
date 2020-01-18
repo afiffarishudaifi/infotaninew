@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPassword4">Hasil Panen (Kg)</label>
-                  <input type="text" id="hasil" name="hasil" class="form-control" value="<?php echo $data['HASIL']?>" readonly>
+                  <input type="text" id="hasil" name="hasil" class="uang form-control" value="<?php echo $data['HASIL']?>" readonly>
                 </div>
               </div>
               <div class="form-row">
@@ -121,7 +121,7 @@
 
               <div class="form-group col-md-12">
                 <label for="inputPassword4">Total Pemesanan (Kg)</label>
-                <input type="text" id="jmlpesan" name="jmlpesan" class="form-control" onkeyup="sum();" onkeypress="return hanyaAngka(event)"> 
+                <input type="text" id="jmlpesan" name="jmlpesan" class="uang form-control" onkeyup="sum();" onkeypress="return hanyaAngka(event)"> 
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
@@ -143,13 +143,16 @@
                   var textharga = document.getElementById('harga').value;
                   var textharga_new = textharga.replace('.', '');
                   var textpesan = document.getElementById('jmlpesan').value;
+                  var textpesan_new = textpesan.replace('.', '');
                   var texthasil = document.getElementById('hasil').value;
+                  var texthasil_new = texthasil.replace('.', '');
                   var res = parseFloat(textpesan) > parseFloat(texthasil);
-                  if (parseFloat(textpesan) > parseFloat(texthasil)){
+                  if (parseFloat(textpesan_new) > parseFloat(texthasil_new)){
                     document.getElementById('jmlpesan').value = texthasil;
                   }
                   var textpesan = document.getElementById('jmlpesan').value;
-                  var result = parseFloat(textharga_new) * parseFloat(textpesan);
+                  var textpesan_new = textpesan.replace('.', '');
+                  var result = parseFloat(textharga_new) * parseFloat(textpesan_new);
                   if (!isNaN(result)) {
                     var konver=formatCurrency(result);
                     document.getElementById('total').value = konver;

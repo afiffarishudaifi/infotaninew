@@ -96,7 +96,7 @@
                       ?>
                           </div>
                     <div class="form-group">
-                      <label>Luas Sawah</label>
+                      <label>Luas Sawah (ha)</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                       <input type="text" class="form-control" name="luassawah" placeholder="Masukkan Luas Sawah" required onkeypress="return hanyaAngka(event)">
                     </div>

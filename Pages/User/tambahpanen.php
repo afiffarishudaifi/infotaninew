@@ -65,13 +65,13 @@
                     <input type="text" class="form-control" name="tgl" readonly value="<?php echo $drow['TGL_PANEN']; ?>">
                 </div>
                 <div class="form-group">
-                    <label>Harga Panen /kg</label>
-                    <input type="text" class="form-control" name="harga" required onkeypress="return hanyaAngka(event)">
+                    <label>Harga Panen/Kg (Rp)</label>
+                    <input type="text" class="uang form-control" name="harga" required onkeypress="return hanyaAngka(event)">
                 </div>
                 <div class="form-group">
-                    <label>Hasil Panen</label>
+                    <label>Hasil Panen (Kg)</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->
-                    <input type="text" class="form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
+                    <input type="text" class="uang form-control"  value="<?php echo $drow['HASIL']; ?>" name="hasil" placeholder="Masukkan hasil panen dalam kg" required
                     onkeypress="return hanyaAngka(event)">
                 </div>
                 <input type="hidden" class="form-control" readonly name="panen" value="Panen">
@@ -108,5 +108,14 @@
 <?php
     include "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 </body>
 </html>

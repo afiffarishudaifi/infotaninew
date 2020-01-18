@@ -38,8 +38,8 @@
                   <th>KTP</th>
                   <th>KOMODITAS</th>
                   <th>TANGGAL PANEN</th>
-                  <th>HASIL PANEN</th>
-                  <th>HARGA</th>
+                  <th>HASIL PANEN (KG)</th>
+                  <th>HARGA/KG (RP)</th>
                   <th>STATUS PANEN</th>
                 </tr>
                 </thead>
@@ -57,8 +57,8 @@
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['KOMODITAS'];?></td>
                         <td><?php echo $data ['TGL_PANEN'];?></td>
-                        <td><?php echo $data ['HASIL'];?></td>
-                        <td><?php echo $data ['HARGA'];?></td>
+                        <td class="uang"><?php echo $data ['HASIL'];?></td>
+                        <td class="uang"><?php echo $data ['HARGA'];?></td>
                         <td><?php echo $data ['STATUS_PANEN'];?></td>
                         </tr>
                     <?php
@@ -95,7 +95,15 @@
 <?php
     include_once "../_partials/js.php";
 ?>
+<script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
 
+                // Format mata uang.
+                $( '.uang' ).mask('000.000.000', {reverse: true});
+            })
+        </script>
 
 </body>
 
