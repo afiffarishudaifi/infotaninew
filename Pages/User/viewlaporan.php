@@ -31,38 +31,34 @@
           <div class="box">
             <div class="box-header">
                 <?php if (isset($_POST['submit'])) {
-                  $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND month(TGL_PANEN) = $bulanpilih AND year(TGL_PANEN)=$tahun and petani.KTP=$ktppetani";
+                  $tahunpilih = $_POST['pilih'];
+                  $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
                 }else {
-                    $bulanpilih = 'Tahun '.$tahun;
+                    $tahunpilih = $_POST['pilih'];
                     $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
                 } ?>
-              <h3 class="box-title">Laporan Panen <?php echo $bulanpilih; ?></h3>
+              <h3 class="box-title">Laporan Panen Tahun <?php echo $tahunpilih; ?></h3>
               <h3>
                   <form action="" method="POST">
-                       <?php
+                    <?php
 
-                    echo "<select name='bulanpilih' class='form-control hidden-print'>";
-                    
-                    echo "<option value='belum memilih' selected>--Pilih Id Bulan--</option>";
-                    echo "<option value=01>Januari</option>";
-                    echo "<option value=02>Februari</option>";
-                    echo "<option value=03>Maret</option>";
-                    echo "<option value=04>April</option>";
-                    echo "<option value=05>Mei</option>";
-                    echo "<option value=06>Juni</option>";
-                    echo "<option value=07>Juli</option>";
-                    echo "<option value=08>Agustus</option>";
-                    echo "<option value=09>September</option>";
-                    echo "<option value=10>Oktober</option>";
-                    echo "<option value=11>November</option>";
-                    echo "<option value=12>Desember</option>";
-                    
-                    echo "</select><br>";
-                    echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>  ";
-                    echo "<button type='submit' name='submit1' class='btn btn-aqua hidden-print'>Semua</button>";
-                  ?>
+                        echo "<select name='pilih' class='form-control hidden-print'>";
+                        
+
+                        echo "<option value='".$tahun."' selected>--Pilih Tahun--</option>";
+                        $cektahunpanen = mysqli_query($koneksi, "select year(TGL_PANEN) from panen GROUP by year(TGL_PANEN) ");
+                        while ($data=mysqli_fetch_array($cektahunpanen)) {
+                        ?>
+                        <option value="<?=$data[0]?>"><?=$data[0]?></option>
+                        <?php
+                        }
+
+                        echo "</select><br>";
+                        echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>   ";
+                        echo "<button type='submit' name='submit1' class='btn btn-warning hidden-print'>Semua</button>";
+                    ?>
                   </form>
+                 
               </h3>
                
             </div>

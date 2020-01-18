@@ -31,36 +31,32 @@
           <div class="box">
             <div class="box-header">
                <?php if (isset($_POST['submit'])) {
-                  $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and month(TANGGAL) = $bulanpilih AND year(TANGGAL)=$tahun and pemesanan.KTP=$ktppetani";
+                  $tahunpilih = $_POST['pilih'];
+                  $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP AND year(TANGGAL)=$tahunpilih and pemesanan.KTP=$ktppetani";
                 }else {
+                  $tahunpilih = $tahun;
                     $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and pemesanan.KTP=$ktppetani";
                 } ?>
-              <h3 class="box-title">Laporan Pemesanan <?php echo $komoditaspanen; ?></h3>
+              <h3 class="box-title">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
               <h3>
-                  <form action="" method="POST">
-                       <?php
+                 <form action="" method="POST">
+                    <?php
 
-                    echo "<select name='bulanpilih' class='form-control hidden-print'>";
-                    
-                    echo "<option value='belum memilih' selected>--Pilih Id Bulan--</option>";
-                    echo "<option value=01>Januari</option>";
-                    echo "<option value=02>Februari</option>";
-                    echo "<option value=03>Maret</option>";
-                    echo "<option value=04>April</option>";
-                    echo "<option value=05>Mei</option>";
-                    echo "<option value=06>Juni</option>";
-                    echo "<option value=07>Juli</option>";
-                    echo "<option value=08>Agustus</option>";
-                    echo "<option value=09>September</option>";
-                    echo "<option value=10>Oktober</option>";
-                    echo "<option value=11>November</option>";
-                    echo "<option value=12>Desember</option>";
-                    
-                    echo "</select><br>";
-                    echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>  ";
-                    echo "<button type='submit' name='submit1' class='btn btn-aqua hidden-print'>Semua</button>";
-                  ?>
+                        echo "<select name='pilih' class='form-control hidden-print'>";
+                        
+
+                        echo "<option value='".$tahun."' selected>--Pilih Tahun--</option>";
+                        $cektahunpanen = mysqli_query($koneksi, "select year(TANGGAL) from pemesanan GROUP by year(TANGGAL) ");
+                        while ($data=mysqli_fetch_array($cektahunpanen)) {
+                        ?>
+                        <option value="<?=$data[0]?>"><?=$data[0]?></option>
+                        <?php
+                        }
+
+                        echo "</select><br>";
+                        echo "<button type='submit' name='submit' class='btn btn-warning hidden-print'>Pilih</button>   ";
+                        echo "<button type='submit' name='submit1' class='btn btn-warning hidden-print'>Semua</button>";
+                    ?>
                   </form>
               </h3>
 

@@ -64,30 +64,6 @@
                         <a href="ubahdesa.php?id=<?php //echo $data['ID_LEVEL'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
                         <a href="#del<?php //echo $data['ID_LEVEL'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>-->
-                        <!-- Delete -->
-                        <div class="modal fade" id="del<?php echo $data['ID_LEVEL']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerdesa.php" method="post">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <center><h4 class="modal-title" id="myModalLabel">Hapus</h4></center>		<!-- button untuk pilihan del -->
-                                        </div>
-                                        <?php
-                                            require_once "../../controller/admin/koneksi.php";
-                        					$del=mysqli_query($koneksi, "select * from LEVEL where ID_LEVEL='".$data['ID_LEVEL']."'");
-                        					$drow=mysqli_fetch_array($del);
-                        				?>
-                                        <div class="modal-footer">		<!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
-                                            <input type="hidden" name="idhapus" value="<?php echo $drow['ID_LEVEL']; ?>">
-                                            <h5><center>Apakah yakin ingin menghapus Desa <strong><?php echo $drow['NAMA_LEVEL']; ?></strong> ?</center></h5>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
-                                            <button type="submit" class="btn btn-danger" name="hapus"><span class="fa fa-trash"></span> Hapus</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                         <!-- /.modal -->
                         </td>
                         </tr>
