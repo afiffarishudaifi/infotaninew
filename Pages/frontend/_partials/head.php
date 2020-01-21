@@ -13,5 +13,12 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./css/cariHasil.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/fancybox.css" />-->
+
+    <!-- Check session -->
+    <script type="text/javascript">
+
+    </script>
 
 </head>

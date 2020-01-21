@@ -154,14 +154,5 @@
 <?php
     include_once "../_partials/js.php";
 ?>
-<script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/js/jquery.mask.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                // Format mata uang.
-                $( '.uang' ).mask('000.000.000', {reverse: true});
-            })
-        </script>
 </body>
 </html>

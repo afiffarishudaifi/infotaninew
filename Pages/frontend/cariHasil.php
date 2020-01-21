@@ -5,42 +5,56 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+    include "./_partials/head.php";
+?>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- logo infotani -->
-<link rel="icon" href="../../img/logo.png">
-    <title>
-      IT - Pencarian
-  </title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- XAVIER Supports -->
-    <script type="text/javascript">
-
-    </script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.min.css" />
-    <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="./js/database.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap-select.min.js"></script>
-    
     <!--manual CSS-->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/cariHasil.css" />
-    <!-- Check session -->
-    <script type="text/javascript">
-
-    </script>
+    <link rel="stylesheet" href="./css/tentangkami.css">
+    <link rel="stylesheet" href="./css/cariHasil.css">
+    
 
 </head>
 
 <body>
-<?php
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+
+    <!-- Header Area Start -->
+    <?php
+        require_once "./_partials/header.php";
+    ?>
+
+
+    <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area section-padding-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Pencarian</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.php"><i class="icon_house_alt"></i>Beranda</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Cari</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+    
+    <?php
 if(isset($_POST['submitcari'])||isset($_POST['submitcariHasil'])):
     $_SESSION['pos']=$_POST;
 elseif(isset($_POST['filter'])):
@@ -80,7 +94,7 @@ endif;
         </div>
         <div class="row row2">
             <div class="col-sm-2">
-                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;">INFO TANI</a></h2>
+                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;"></a></h2>
                 <!--<h1 style="margin:0px;"><span class="nav-brand" href="index.php"><h3>INFO TANI</h3></span></h1>-->
             </div>
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
@@ -88,8 +102,12 @@ endif;
 
                   <form role="search" action="cariHasil.php" method="post">
                   <?php 
-                  if(isset($_POST['submitcari'])){
+                  if(isset($_POST['submitcari'])||isset($_SESSION['pos']['cari'])){
+                      if(isset($_POST['cari'])){
                       $cari=$_POST['cari'];
+                      }else{
+                          $cari=$_SESSION['pos']['cari'];
+                      }
                 ?>
                     <input class="flipkart-navbar-input col-xs-11 cari" type="text" id="cari" name="cari" placeholder="Cari Data..." value="<?php echo $cari;?>">
                 <?php
@@ -679,22 +697,50 @@ endif;
   }else{
       $cari = "";
   }
+  if(isset($_SESSION['posF']['komoditas'])||isset($_SESSION['posF']['kecamatan'])||isset($_SESSION['posF']['tglpanen'])){
+      $tf="true";
+  }else{
+      $tf="false";
+  }
     for ($i=1; $i<=$pages ; $i++){
-        echo "<li><a href='?cari=$cari&halaman=$i'>$i</a></li>";
+        echo "<li><a href='?cari=$cari&filter=$tf&halaman=$i'>$i</a></li>";
    } ?>
 </ul>
 
 
 </div>
                 </div>
-                <script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/js/jquery.mask.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
 
-                // Format mata uang.
-                $( '.uang' ).mask('000.000.000', {reverse: true});
-            })
-        </script>
+  </div>
+ </div>
+ </section>
+    <!-- Our Expert Area End -->
+
+<!-- Footer Area Start -->
+<?php
+        require_once "./_partials/footer.php";
+    ?>
+    <!-- Footer Area End -->
+    
+    <!-- All JS Files -->
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/akame.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+  <script src="../../assets/js/jquery.mask.min.js"></script>
+   <script type="text/javascript">          
+     $(document).ready(function(){
+             // Format mata uang.
+     $( '.uang' ).mask('000.000.000', {reverse: true});
+    })
+    </script>
 </body>
+
 </html>

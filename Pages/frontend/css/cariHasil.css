@@ -2,8 +2,8 @@ body{
     font-family: Open Sans;
 }
 #flipkart-navbar {
-    background-color: #32CD32;
-    color: #FFFFFF;
+    background-color:#f9f9f9;
+    color: black;
 }
 
 .row1{
@@ -15,18 +15,20 @@ body{
 }
 
 .flipkart-navbar-input {
-    padding: 11px 16px;
+    padding: 11px 11px;
+    border: 1px solid;
     border-radius: 2px 0 0 2px;
-    border: 0 none;
-    outline: 0 none;
-    font-size: 15px;
+    border-right: none;
+    font-size: 13.5px;
     color: black;
     border-radius: 153px 0px 4px 153px;
+    border-color: black;
 }
 
 .flipkart-navbar-button {
-    background-color: #ffe11b;
-    border: 1px solid #ffe11b;
+    background-color: #4cae4c;
+    border: 1px solid black;
+    border-left:none;
     border-radius: 0 2px 2px 0;
     color: #565656;
     padding: 13px 0;
@@ -161,4 +163,105 @@ margin: 0 auto;
 .fluid-container{
     padding-left: 20px;
     padding-right:20px;
+}
+
+
+
+#search-box{
+    position:relative;
+    width:100%;
+    margin:0;
+}
+#search-form{
+    margin:0;background:#fefefe;
+    overflow:hidden;
+    border:1px solid #e0e0e0;
+    transition:all .3s;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    overflow:hidden;}
+.search-form{
+    margin:0;
+    padding:0;
+}
+#search-text{
+    font-size:14px;
+    border-width:0;
+    background:transparent;
+}
+
+#search-button{
+    position:absolute;
+    top:0;
+    right:0;
+    height:42px;
+    width:80px;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+    line-height:42px;
+    border-width:0;
+    background-color:#2EB0EC;
+    -webkit-border-radius:0 3px 3px 0;
+    -moz-border-radius:0 3px 3px 0;
+    border-radius:0 3px 3px 0;
+    cursor:pointer;
+}
+#popup_searchBox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000000;
+    opacity:0.8;
+    z-index:9999999;
+}
+#popup_searchBox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000000;
+    opacity:0.8;
+}
+.search-form-label,.search-text{
+    position:absolute;
+    left:0;
+}
+.search-form-label{
+    bottom:100%;
+    width:100%;
+    display:block;
+    color:#fff;
+    font-size:40px;
+    font-weight:100;
+}
+.search-text{
+    top:40%;
+    width:50%;
+    right:0;
+    margin:20px auto 0;
+    background:0 0;
+    border:none;
+    border-bottom:1px dashed #ddd;
+    font-size:60px;
+    font-size:4vw;
+    color:#fff;
+    text-align:center;
+    outline:0;
+    position:fixed;
+}
+.keluar{
+    height:100vh;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:transparent;
+    border:0;
 }
