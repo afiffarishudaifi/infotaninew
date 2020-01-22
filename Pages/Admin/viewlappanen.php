@@ -62,7 +62,7 @@
               <?php 
               $hasilsum = mysqli_query($koneksi, $sum);
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
-               <h3 class="box-title">Jumlah Pemesanan <b><?php echo $tampilsum[0]; ?></b>  </h3>
+               <h3 class="box-title">Jumlah Panen <b><?php echo $tampilsum[0]; ?></b>  </h3>
              <?php } ?>
                <br>
             </div>
