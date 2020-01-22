@@ -31,10 +31,12 @@
                   $pilih = $_POST['pilih'];
 
                   $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
+                  $sum = "SELECT sum(panen.HASIL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
                 }else {
                   $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
+                  $sum = "SELECT sum(panen.HASIL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
                 } ?>
-              <h3 class="box-title">Laporan Panen <?php echo $komoditaspanen; ?></h3>
+              <h3 style="text-align: center;">Laporan Panen <?php echo $komoditaspanen; ?></h3>
               <h3>
                   <form action="" method="POST">
                     <?php
@@ -56,8 +58,13 @@
                     ?>
                   </form>
               </h3>
-
-               
+              <br>
+              <?php 
+              $hasilsum = mysqli_query($koneksi, $sum);
+              while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
+               <h3 class="box-title">Jumlah Pemesanan <b><?php echo $tampilsum[0]; ?></b>  </h3>
+             <?php } ?>
+               <br>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">

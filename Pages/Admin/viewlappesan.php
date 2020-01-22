@@ -33,11 +33,13 @@
                <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
                   $lanjut = "select * from pemesanan where year(TANGGAL)=$tahunpilih";
+                  $sum = "select SUM(JUMLAH_PESAN) from pemesanan where year(TANGGAL)=$tahunpilih";
                 }else {
                   $tahunpilih = $_POST['pilih'];
                     $lanjut = "select * from pemesanan";
+                  $sum = "select SUM(JUMLAH_PESAN) from pemesanan";
                 } ?>
-              <h3 class="box-title">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
+              <h3 style="text-align: center;">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
               <h3>
                   <form action="" method="POST">
                     <?php
@@ -59,7 +61,13 @@
                     ?>
                   </form>
               </h3>
-
+              <br>
+              <?php 
+              $hasilsum = mysqli_query($koneksi, $sum);
+              while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
+               <h3 class="box-title">Jumlah Pemesanan <b><?php echo $tampilsum[0]; ?></b>  </h3>
+             <?php } ?>
+               <br>
                
             </div>
             <!-- /.box-header -->

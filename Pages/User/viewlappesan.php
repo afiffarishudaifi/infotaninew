@@ -33,11 +33,13 @@
                <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
                   $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP AND year(TANGGAL)=$tahunpilih and pemesanan.KTP=$ktppetani";
+                  $sum = "select psum(pemesanan.JUMLAH_PESAN) from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP AND year(TANGGAL)=$tahunpilih and pemesanan.KTP=$ktppetani";
                 }else {
                   $tahunpilih = $tahun;
                     $lanjut = "select pemesanan.ID_PESAN, pemesanan.ID_PERUSAHAAN, perusahaan.NAMA_PERUSAHAAN, petani.KTP, pemesanan.TANGGAL, pemesanan.JUMLAH_PESAN, pemesanan.TOTAL_BIAYA, pemesanan.ID_PESAN_STATUS, pemesanan.ID_PANEN from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and pemesanan.KTP=$ktppetani";
+                    $sum = "select sum(pemesanan.JUMLAH_PESAN) from pemesanan, perusahaan, petani WHERE pemesanan.ID_PERUSAHAAN=perusahaan.ID_PERUSAHAAN AND pemesanan.KTP=petani.KTP and pemesanan.KTP=$ktppetani";
                 } ?>
-              <h3 class="box-title">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
+              <h3 style="text-align: center;">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
               <h3>
                  <form action="" method="POST">
                     <?php
@@ -59,8 +61,13 @@
                     ?>
                   </form>
               </h3>
-
-               
+              <br>
+              <?php 
+              $hasilsum = mysqli_query($koneksi, $sum);
+              while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
+               <h3 class="box-title">Jumlah Pemesanan <b><?php echo $tampilsum[0]; ?></b>  </h3>
+             <?php } ?>
+               <br>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">

@@ -33,11 +33,13 @@
                 <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
                   $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
+                  $sum = "select sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
                 }else {
                     $tahunpilih = $_POST['pilih'];
                     $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
+                    $sum = "select sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
                 } ?>
-              <h3 class="box-title">Laporan Panen Tahun <?php echo $tahunpilih; ?></h3>
+              <h3 style="text-align: center;">Laporan Panen Tahun <?php echo $tahunpilih; ?></h3>
               <h3>
                   <form action="" method="POST">
                     <?php
@@ -60,7 +62,13 @@
                   </form>
                  
               </h3>
-               
+               <br>
+              <?php 
+              $hasilsum = mysqli_query($koneksi, $sum);
+              while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
+               <h3 class="box-title">Jumlah Pemesanan <b><?php echo $tampilsum[0]; ?></b>  </h3>
+             <?php } ?>
+               <br>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
