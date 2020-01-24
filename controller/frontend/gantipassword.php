@@ -25,7 +25,7 @@ if (isset($_POST['Ganti'])) {
     else if (($_POST['pass_baru']) !=($_POST['pass_konf'])) {
         ?>
         <script language="JavaScript">
-        alert('Gagal Ganti Password,New Password harus sama dengan Confirm Password !');
+        alert('Gagal Ganti Katasandi,Katasandi Baru harus sama dengan Katasandi Konfirmasi!');
         setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
         </script>
     <?php
@@ -38,7 +38,7 @@ if (isset($_POST['Ganti'])) {
         if($sql){
             ?>
             <script language="JavaScript">
-            alert('Password Berhasil di Update!');
+            alert('Katasandi Berhasil di Perbarui!');
             setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
             </script>
         <?php
@@ -46,7 +46,7 @@ if (isset($_POST['Ganti'])) {
         else{
             ?>
             <script language="JavaScript">
-            alert('Password Gagal di Update !');
+            alert('Katasandi Gagal di Perbarui !');
             </script>
         <?php
 

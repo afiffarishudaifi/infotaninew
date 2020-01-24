@@ -28,7 +28,7 @@
         Pengaturan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Pengaturan Data</li>
       </ol>
     </section>
@@ -49,18 +49,18 @@
                                 <input type="file" id="foto" name="foto" >
                             </div>
                         	<div class="form-group">
-                        		Password Lama
-                                <input type="password" class="form-control" placeholder="Password Lama"  name="pass_lama" id="pass_lama" required/>
+                        		Katasandi Lama
+                                <input type="password" class="form-control" placeholder="Katasandi Lama"  name="pass_lama" id="pass_lama" required/>
                             </div>
 
                         	<div class="form-group">
-                        		Password Baru
-                                <input type="password" class="form-control" placeholder="Password Baru"  name="pass_baru" id="pass_baru" required/>
+                        		Katasandi Baru
+                                <input type="password" class="form-control" placeholder="Katasandi Baru"  name="pass_baru" id="pass_baru" required/>
                             </div>
 
                         	<div class="form-group">
-                        		Konfirmasi Password
-                                <input type="password" class="form-control" placeholder="Konfirmasi Password"  name="pass_konf" id="pass_konf" required/>
+                        		Konfirmasi Katasandi
+                                <input type="password" class="form-control" placeholder="Konfirmasi Katasandi"  name="pass_konf" id="pass_konf" required/>
                             </div>
 
                         	<input class="btn btn-block sub-hover" type="submit" name="Ganti" value="Ganti">

@@ -34,11 +34,11 @@
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
+                    echo '<script>alert("Gagal! Katasandi tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
+				echo '<script>alert("Gagal! NamaPengguna telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
 			}
 		}
 	?>
