@@ -55,7 +55,6 @@
                     <div class="section-heading text-left mb-80 pr-5 pt-3">
                         <p>Jember • Tahun 2019</p>
                         <h2>Cerita Tentang Kami</h2>
-                        <span>Riwayat</span>
                     </div>
                 </div>
 

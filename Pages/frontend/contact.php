@@ -24,49 +24,6 @@
     </div>-->
     <!-- Google Maps End -->
 
-    <!-- Contact Information Area Start -->
-    <!--<section class="contact-information-area section-padding-80-0">
-        <div class="container">
-            <div class="row">
-                <!-- Single Contact Information -->
-                <!--<div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-contact-information mb-80">
-                        <h3><span class="fa fa-mobile-phone"></span></h3>
-                        <h4>No HP</h4>
-                        <p>+01-3-8888-6868</p>
-                    </div>
-                </div>
-
-                <!-- Single Contact Information -->
-                <!--<div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-contact-information mb-80">
-                        <h3><span class="fa fa-map-marker"></span></h3>
-                        <h4>Alamat</h4>
-                        <p>Iris Watson, 283 Fusce Rd,NY</p>
-                    </div>
-                </div>
-
-                <!-- Single Contact Information -->
-                <!--<div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-contact-information mb-80">
-                        <h3><span class="fa fa-clock-o"></span></h3>
-                        <h4>Open time</h4>
-                        <p>10:00 am to 23:00 pm</p>
-                    </div>
-                </div>
-
-                <!-- Single Contact Information -->
-                <!--<div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-contact-information mb-80">
-                        <h3><span class="fa fa-envelope-square"></span></h3>
-                        <h4>Email</h4>
-                        <p>info.colorlib@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- Contact Information Area End -->
 
     <!-- Contact Area Start -->
     <section class="akame-contact-area bg-gray section-padding-80">
@@ -76,7 +33,7 @@
                 <div class="col-12">
                     <div class="section-heading text-center">
                         <h2>Tinggalkan Pesan</h2>
-                        <p>Silahkan masukkan pertanyaan tentang apa yang anda butuhkan.</p>
+                        <p style="color: black;">Silahkan masukkan pertanyaan tentang apa yang anda butuhkan.</p>
                     </div>
                 </div>
             </div>

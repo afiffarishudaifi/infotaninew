@@ -28,7 +28,7 @@
         Tambah Data Petani
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Petani</li>
       </ol>
     </section>

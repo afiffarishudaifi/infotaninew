@@ -72,7 +72,6 @@
                     <div class="section-heading mb-80">
                         <h2>Tumbuhan Dikotil</h2>
                         <p>Bahan baku kecap,tahu,&amp; tempe</p>
-                        <span>About Us</span>
                     </div>
                 </div>
 

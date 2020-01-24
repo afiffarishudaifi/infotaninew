@@ -32,7 +32,7 @@
         Halaman Pemesanan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Halaman Pemesanan</li>
       </ol>
     </section>
