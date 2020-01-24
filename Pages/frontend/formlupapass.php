@@ -9,7 +9,7 @@
     <meta name="author" content="">
     
 
-    <title>INFOTANI - REGISTRASI</title>
+    <title>INFOTANI - LUPA KATA SANDI</title>
     <link rel="icon" href="../../img/logo.png">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
         
         <br>
         <label for="username" >Nama Pengguna</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Nama Pengguna" required autofocus>
         
         <label for="password" >Nomor HP</label>
         <input type="text" id="password" name="nohp" class="form-control" placeholder="Masukkan No HP" required autofocus>

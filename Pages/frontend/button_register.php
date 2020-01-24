@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INFOTANI - REGISTER</title>
+    <title>INFOTANI - REGISTRASI</title>
 
     <!-- logo infotani -->
     <link rel="icon" href="../../img/logo.png">
@@ -51,7 +51,7 @@
     <div class="container">
       <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
         <br>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">REGISTER INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">PILIH REGISTRASI</h2>
 
         <br>
        

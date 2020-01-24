@@ -74,7 +74,7 @@ function validate_forgot() {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INFOTANI - LOGIN</title>
+    <title>INFOTANI - LUPA KATA SANDI</title>
 
     <!-- logo infotani -->
     <link rel="icon" href="../../img/logo.png">
@@ -115,12 +115,12 @@ function validate_forgot() {
         <h3 class="form-signin-heading" align="center" style="color: #FFFFFF;">ATUR ULANG KATASANDI</h3>
 
         <br>
-          <label for="username" class="sr-only">Username</label>
-          <input type="text" name="user-login-name" id="user-login-name" class="form-control" placeholder="Username" autofocus>
+          <label for="username" class="sr-only">Nama Pengguna</label>
+          <input type="text" name="user-login-name" id="user-login-name" class="form-control" placeholder="Nama Pengguna" autofocus>
         <br>
         <label for="password" class="sr-only">Email</label>
           <input type="email" name="user-email" id="user-email" class="form-control" placeholder="Email">
-          <input type="submit" name="forgot-password" id="forgot-password" value="Kirim" class="form-submit-button btn btn-lg btn-block">
+          <input type="submit" name="forgot-password" id="forgot-password" value="Kirim" class="form-submit-button btn btn-lg btn-block btn-success">
         <br>
   <a href="./button_login.php" class="btn btn-warning btn-block">Kembali</a>
       <br>

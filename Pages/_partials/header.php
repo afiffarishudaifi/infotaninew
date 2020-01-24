@@ -51,7 +51,7 @@
 
               <p>
                 <?php echo $_SESSION['USERNAME'] ?>
-                <small>Member since Nov. 2012</small>
+                <small>Admin Info Tani</small>
               </p>
             </li>
             <!-- Menu Footer-->

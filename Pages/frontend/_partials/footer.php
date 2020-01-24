@@ -14,7 +14,7 @@
                     <!-- Copywrite Text -->
                     <div class="copywrite-text">
                         <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;2019 All rights reserved | by CAMRI </a>
+Copyright &copy;2019 Seluruh Hak Cipta | Oleh CAMRI </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -52,9 +52,9 @@ Copyright &copy;2019 All rights reserved | by CAMRI </a>
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p>Tel: (+62) 345 678 910</p>
+                        <p>Telp: (+62) 882 1641 6650</p>
                         <p>E-mail: <a href="./contact.php">infotani.mif@gmail.com</a></p>
-                        <p>Address: <a href="#">Jl. Mastrip</p>
+                        <p>Alamat: <a href="#">Jl. Mastrip</p>
                     </div>
                 </div>
             </div>

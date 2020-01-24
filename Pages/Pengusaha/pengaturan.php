@@ -38,29 +38,29 @@
             <div class="col-md-5 col-md-offset-3 form-login" style="position:static">
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="fa fa-hand-o-right" style="position:static"></span>
-                  Form Ganti Password </div>
+                  Form Ganti Kata Sandi </div>
                     <div class="panel-body" style="min-height:450px">
                         <form action="../../controller/pengusaha/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
 
                           <input type="hidden" name="userid" id="userid" value="<?php echo $pengusaha ?>">
                             <div class="form-group">
-                            Logo
+                            Foto
                                 <img src="../../img/pengusaha/user/<?php echo $gambar2;?>" style="height:160px; width:120px;" class="img-rectangle" alt="User Image">
                                 <input type="file" id="foto" name="foto" >
                             </div>
                           <div class="form-group">
                             Katasandi Lama
-                                <input type="password" class="form-control" placeholder="Katasandi Lama"  name="pass_lama" id="pass_lama" required/>
+                                <input type="password" class="form-control" placeholder="Masukkan Kata Sandi Lama"  name="pass_lama" id="pass_lama" required/>
                             </div>
 
                           <div class="form-group">
                             Katasandi Baru
-                                <input type="password" class="form-control" placeholder="Katasandi Baru"  name="pass_baru" id="pass_baru" required/>
+                                <input type="password" class="form-control" placeholder="Masukkan Kata Sandi Baru"  name="pass_baru" id="pass_baru" required/>
                             </div>
 
                           <div class="form-group">
-                            Konfirmasi Katasandi
-                                <input type="password" class="form-control" placeholder="Konfirmasi Katasandi"  name="pass_konf" id="pass_konf" required/>
+                            Konfirmasi Kata Sandi
+                                <input type="password" class="form-control" placeholder="Ulangi Kata Sandi Baru"  name="pass_konf" id="pass_konf" required/>
                             </div>
 
                           <input class="btn btn-block sub-hover" type="submit" name="Ganti" value="Ganti">

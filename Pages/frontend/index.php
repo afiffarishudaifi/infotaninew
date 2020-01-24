@@ -173,7 +173,7 @@
                   <th>ALAMAT</th>
                   <th>DESA/KELURAHAN</th>
                   <th>NO HP</th>
-                  <th>HASIL PANEN <div style="float:right;">(KG)</div></th>
+                  <th>HASIL PANEN (KG)</th>
                   
                 </tr>
                 </thead>
@@ -207,7 +207,7 @@ while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek k
         <td><?php echo $data ['ALAMAT_PETANI'];?></td>
         <td><?php echo $data ['NAMA_DESA'];?></td>
         <td><?php echo $data ['NO_HP'];?></td>
-        <td><?php echo $data ['HASIL'];?><div style="float:right;">KG</div></td>
+        <td class="uang"><?php echo $data ['HASIL'];?></td>
     </tr>
 <?php } ?>
     </tbody>
@@ -314,6 +314,13 @@ while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek k
 
     <!-- All JS Files -->
     <?php require_once "./_partials/js.php"; ?>
+    <script src="../../assets/js/jquery.mask.min.js"></script>
+   <script type="text/javascript">          
+     $(document).ready(function(){
+             // Format mata uang.
+     $( '.uang' ).mask('000.000.000', {reverse: true});
+    })
+    </script>
 
 </body>
 

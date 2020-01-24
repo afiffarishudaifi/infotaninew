@@ -51,7 +51,7 @@
 
               <p>
                 <?php echo $_SESSION['USERNAME'] ?>
-                <small>Member Info Tani</small>
+                <small>Akun Info Tani</small>
               </p>
             </li>
             <li class="user-footer">

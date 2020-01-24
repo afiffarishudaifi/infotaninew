@@ -24,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>INFOTANI - LOGIN</title>
+    <title>INFOTANI - MASUK</title>
 
     <!-- logo infotani -->
     <link rel="icon" href="../../img/logo.png">
@@ -53,18 +53,18 @@
     <div class="container">
       <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
         <br>
-        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">LOGIN INFOTANI</h2>
+        <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">MASUK INFOTANI</h2>
 
         <br>
-        <label for="username" class="sr-only">Username</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <label for="username" class="sr-only">Nama Pengguna</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Nama Pengguna" required autofocus>
         <br>
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <label for="password" class="sr-only">Kata Sandi</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Kata Sandi" required>
         <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Masuk</button>
         <br>
-        <a href="./button_login.php">Lupa Password Anda?</a></p>
+        <a href="./button_lupa.php">Lupa Kata Sandi Anda?</a></p>
         <center> <p>------------------- atau --------------------</p> </center>
         <a href="./button_register.php" class="btn btn-success btn-block">Buat Akun Baru?</a>
         

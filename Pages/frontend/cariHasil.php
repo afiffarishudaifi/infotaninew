@@ -680,8 +680,8 @@ endif;
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NO_HP'];?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
-                        <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
                     </form>
+                    <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button type="submit" class="pilih btn btn-primary btn-xs" name="pesan">Pesan</button></a></td>
                     </tr>
                     <?php
                     $no++;

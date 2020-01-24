@@ -35,8 +35,8 @@
                         <h2>Info Tani</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php"><i class="icon_house_alt"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">About</li>
+                                <li class="breadcrumb-item"><a href="index.php"><i class="icon_house_alt"></i> Beranda</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
                             </ol>
                         </nav>
                     </div>
@@ -65,7 +65,7 @@
                         seperti data bulan tanam, data bulan panen, komoditas tiap daerah 
                         dan lain lain yang bertujuan juga untuk mensejahterakan para tani</p>
                         <!--<img src="img/core-img/signature.png" alt="">-->
-                        <h4>Info Tani Crew</h4>
+                        <h4>Info Tani</h4>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="200ms">
                         <span>Case</span>
                         <img src="../../assets/img/bg-img/bajaksawah.jpg" alt="">
-                        <p>Proses bajak sawah</p>
+                        <p>Proses Membajak Sawah</p>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
                         <span>Client</span>
                         <img src="../../assets/img/bg-img/musimtanam.jpg" alt="">
-                        <p>Musim tanam</p>
+                        <p>Musim Tanam</p>
                     </div>
                 </div>
 
@@ -111,7 +111,7 @@
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="400ms">
                         <span>Award</span>
                         <img src="../../assets/img/bg-img/hama.jpg" alt="">
-                        <p>Proses membasmi hama</p>
+                        <p>Proses Membasmi Hama</p>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                     <div class="single-cool-facts-area text-center mb-80 wow fadeInUp" data-wow-delay="800ms">
                         <span>Style</span>
                         <img src="../../assets/img/bg-img/musimpanen.jpg" alt="">
-                        <p>Musim panen</p>
+                        <p>Musim Panen</p>
                     </div>
                 </div>
             </div>
@@ -223,16 +223,13 @@
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
+                                    <a href="https://id.wikipedia.org/wiki/Padi" target="popup"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
                             <h5>Benih Padi</h5>
-                            <p>monocot plant</p>
+                            <p>Monocot Plants</p>
                         </div>
                     </div>
                 </div>
@@ -245,16 +242,13 @@
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
+                                    <a href="https://id.wikipedia.org/wiki/Kedelai" target="popup"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
                             <h5>Benih Kedelai</h5>
-                            <p>dicotyledonous plants</p>
+                            <p>Dicotyledonous Plants</p>
                         </div>
                     </div>
                 </div>
@@ -267,16 +261,13 @@
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
+                                    <a href="https://id.wikipedia.org/wiki/Jagung" target="popup"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
                             <h5>Benih Jagung</h5>
-                            <p>monocot plant</p>
+                            <p>Monocot Plants</p>
                         </div>
                     </div>
                 </div>
@@ -289,16 +280,13 @@
                             <!-- Social Info -->
                             <div class="team-social-info d-flex align-items-center justify-content-center">
                                 <div class="social-link">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-wikipedia-w"></i></a>
+                                    <a href="https://id.wikipedia.org/wiki/Kacang_hijau" target="popup"><i class="fa fa-wikipedia-w"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="team-member-info">
                             <h5>Benih Kacang Hijau</h5>
-                            <p>dicotyledonous plants</p>
+                            <p>Dicotyledonous Plants</p>
                         </div>
                     </div>
                 </div>

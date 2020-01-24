@@ -59,19 +59,19 @@
                     </div>
                     
                     <div class="form-group">
-                      <label>Username</label>
+                      <label>Nama Pengguna</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                       <input type="text" class="form-control" name="username" value="<?php echo $data['Username']?>" required readonly>
                     </div>
                     <div class="form-group">
                       <label>Nama Perusahaan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="namaperusahaan" placeholder="Masukkan Nama perusahaan" required onkeypress="return hanyaTulisan(event)">
+                      <input type="text" class="form-control" name="namaperusahaan" placeholder="Masukkan Nama Perusahaan" required onkeypress="return hanyaTulisan(event)">
                     </div>
                     <div class="form-group">
                       <label>Email</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="Email" class="form-control" name="email" placeholder="Masukkan Email" required>
+                      <input type="Email" class="form-control" name="email" placeholder="Masukkan Alamat Email" required>
                     </div>
 
                     <div class="form-group">
@@ -82,7 +82,7 @@
                     <div class="form-group">
                       <label>No Telp Perusahaan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="no" placeholder="Masukkan No Telfon" required onkeypress="return hanyaAngka(event)">
+                      <input type="text" class="form-control" name="no" placeholder="Masukkan No Telepon" required onkeypress="return hanyaAngka(event)">
                     </div>
                     <div class="form-group">
                       <label>Nama Manager</label>
