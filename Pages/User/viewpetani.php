@@ -68,9 +68,9 @@
                       <input type="text" class="form-control" name="namapetani" placeholder="Masukkan Nama Petani" required onkeypress="return hanyaTulisan(event)">
                     </div>
                     <div class="form-group">
-                      <label>Alamat Petani</label>
+                      <label title="Alamat Tinggal Yang Dekat Dengan Sawah Anda">Alamat Petani</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="alamatpetani" placeholder="Masukkan alamat Desa" required>
+                      <input type="text" class="form-control" name="alamatpetani" placeholder="Masukkan Alamat Tinggal Saat Ini" required>
                     </div>
 
                     <div class="form-group">
@@ -106,7 +106,7 @@
                       <input type="text" class="form-control" name="alamatsawah" placeholder="Masukkan Alamat Sawah" required>
                     </div>
                     <div class="form-group">
-                      <label>Desa</label>
+                      <label>Desa/Kelurahan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                       <?php
                             $query = "select * from DESA";

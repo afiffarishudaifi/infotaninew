@@ -134,36 +134,39 @@ endif;
 
 <div class="fluid-container">
     <div class="left-sidebar col">
-    <h4>Filters
-            <br/><h5>Komoditas</h5>
+    <h3>Filters</h3>
+        <details class="navigasi" open>
+            <summary><h4>Komoditas</h4></summary>
             <?php 
                  require_once "../../controller/admin/koneksi.php";
                 $sql=mysqli_query($koneksi, "SELECT * FROM komoditas");
                 while ($data=mysqli_fetch_array($sql)) {
                 ?>
-                <label>
+                <h5>
                 <input type="radio" name="komoditas" value="<?=$data['ID_KOMODITAS']?>">
                 <?=$data['NAMA_KOMODITAS']?>
-                </label><br>
+                </h5>
                 <?php
                 }
-                ?>
-            
-            <br/><h5>Desa/Kelurahan</h5>   
+                ?>   
+        </details>
+        
+        <details class="navigasi" open>
+            <summary><h4>Kecamatan</h4></summary>   
                 <?php 
                  require_once "../../controller/admin/koneksi.php";
-                $sql=mysqli_query($koneksi, "SELECT * FROM desa");
+                $sql=mysqli_query($koneksi, "SELECT * FROM kecamatan");
                 while ($data=mysqli_fetch_array($sql)) {
                 ?>
-                <label>
-                <input type="checkbox" name="kecamatan[]" value="<?=$data['ID_DESA']?>">
-                <?=$data['NAMA_DESA']?>
-                </label><br>
+                <h5>
+                <input type="checkbox" name="kecamatan[]" value="<?=$data['ID_KECAMATAN']?>">
+                <?=$data['NAMA_KECAMATAN']?>
+                </h5>
                 <?php
                 }
                 ?>
-
-           <br/><h5>Bulan Panen</h5>
+        </details>
+           <h4 id="bulanPanen">Bulan Panen</h4>
            <select name="tglpanen">
             <option selected="selected" disabled>==Pilih Bulan==</option>
             <?php
@@ -200,7 +203,6 @@ endif;
                   <th>TGL PANEN</th>
                   <th>NAMA PETANI</th>
                   <th>ALAMAT</th>
-                  <th>DESA/KELURAHAN</th>
                   <th>NO HP</th>
                   <th>HASIL PANEN (KG)</th>
                   <th>PESAN</th>
@@ -249,6 +251,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -259,7 +262,7 @@ endif;
                         )
                     AND (panen.HASIL != 0)
                     AND (panen.KOMODITAS = $komoditas)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     AND (month(panen.TGL_PANEN) = '".$tglpanen."')
                     ");
 
@@ -267,6 +270,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -277,7 +281,7 @@ endif;
                         )
                         AND (panen.HASIL != 0)
                     AND (panen.KOMODITAS = $komoditas)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     AND (month(panen.TGL_PANEN) = '".$tglpanen."')
                     ORDER BY panen.TGL_PANEN
                     LIMIT $mulai, $halaman
@@ -305,6 +309,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -315,13 +320,14 @@ endif;
                         )
                         AND (panen.HASIL != 0)
                     AND (panen.KOMODITAS = $komoditas)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     ");
 
                    $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
                    INNER JOIN petani on petani.KTP = panen.KTP
                    INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                    INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                    WHERE (petani.NAMA_PETANI like '%".$cari."%'
                        OR petani.ALAMAT_PETANI like '%".$cari."%'
                        OR petani.NO_HP like '%".$cari."%'
@@ -332,7 +338,7 @@ endif;
                        )
                        AND (panen.HASIL != 0)
                    AND (panen.KOMODITAS = $komoditas)
-                   AND (petani.ID_DESA IN ('$states'))
+                   AND (kecamatan.ID_KECAMATAN IN ('$states'))
                    ORDER BY panen.TGL_PANEN
                    LIMIT $mulai, $halaman
                    ");
@@ -349,6 +355,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -368,6 +375,7 @@ endif;
                  INNER JOIN petani on petani.KTP = panen.KTP
                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                  INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                  WHERE (petani.NAMA_PETANI like '%".$cari."%'
                      OR petani.ALAMAT_PETANI like '%".$cari."%'
                      OR petani.NO_HP like '%".$cari."%'
@@ -403,6 +411,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -412,7 +421,7 @@ endif;
                         OR desa.NAMA_DESA like '%".$cari."%'
                         )
                         AND (panen.HASIL != 0)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     AND (month(panen.TGL_PANEN) = '".$tglpanen."')
                     ");
 
@@ -420,6 +429,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -429,7 +439,7 @@ endif;
                         OR desa.NAMA_DESA like '%".$cari."%'
                         )
                         AND (panen.HASIL != 0)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     AND (month(panen.TGL_PANEN) = '".$tglpanen."')
                     ORDER BY panen.TGL_PANEN
                 LIMIT $mulai, $halaman
@@ -448,6 +458,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -466,6 +477,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -499,6 +511,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -508,13 +521,14 @@ endif;
                         OR desa.NAMA_DESA like '%".$cari."%'
                         )
                         AND (panen.HASIL != 0)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     ");
 
                     $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                         OR petani.ALAMAT_PETANI like '%".$cari."%'
                         OR petani.NO_HP like '%".$cari."%'
@@ -524,7 +538,7 @@ endif;
                         OR desa.NAMA_DESA like '%".$cari."%'
                         )
                         AND (panen.HASIL != 0)
-                    AND (petani.ID_DESA IN ('$states'))
+                    AND (kecamatan.ID_KECAMATAN IN ('$states'))
                     ORDER BY panen.TGL_PANEN
                     LIMIT $mulai, $halaman
                     ");
@@ -544,6 +558,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -562,6 +577,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -581,6 +597,7 @@ endif;
                     INNER JOIN petani on petani.KTP = panen.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                     INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                     WHERE (petani.NAMA_PETANI like '%".$cari."%'
                     OR petani.ALAMAT_PETANI like '%".$cari."%'
                     OR petani.NO_HP like '%".$cari."%'
@@ -594,6 +611,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                 OR petani.ALAMAT_PETANI like '%".$cari."%'
                 OR petani.NO_HP like '%".$cari."%'
@@ -619,6 +637,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                 OR petani.ALAMAT_PETANI like '%".$cari."%'
                 OR petani.NO_HP like '%".$cari."%'
@@ -633,6 +652,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (petani.NAMA_PETANI like '%".$cari."%'
                 OR petani.ALAMAT_PETANI like '%".$cari."%'
                 OR petani.NO_HP like '%".$cari."%'
@@ -650,6 +670,7 @@ endif;
                 INNER JOIN petani on petani.KTP = panen.KTP
                 INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
                 INNER JOIN desa on desa.ID_DESA = petani.ID_DESA
+                    INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN
                 WHERE (panen.HASIL != 0)");
                 $query_tampil = mysqli_query($koneksi, "SELECT * FROM panen
                 INNER JOIN petani on petani.KTP = panen.KTP
@@ -676,12 +697,14 @@ endif;
                         <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['NAMA_PETANI'];?></td>
-                        <td><?php echo $data ['ALAMAT_PETANI'];?></td>
-                        <td><?php echo $data ['NAMA_DESA'];?></td>
+                        <td><?php echo $data ['ALAMAT_PETANI']; echo ", ";
+                                echo "Desa/Kel. "; echo $data ['NAMA_DESA']; 
+                                echo", Kec. "; echo $data ['NAMA_KECAMATAN'];
+                            ?></td>
                         <td><?php echo $data ['NO_HP'];?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
                     </form>
-                    <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button type="submit" class="pilih btn btn-primary btn-xs" name="pesan">Pesan</button></a></td>
+                    <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
                     </tr>
                     <?php
                     $no++;
