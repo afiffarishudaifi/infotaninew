@@ -32,12 +32,38 @@
             <div class="box-header">
                <?php if (isset($_POST['submit'])) {
                   $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "select * from pemesanan where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=$tahun and ID_PERUSAHAAN=$id_pengguna";
+                  $lanjut = "SELECT * FROM Pemesanan
+                  INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                  INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                  INNER JOIN petani on petani.KTP = pemesanan.KTP
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                  INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                  where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN=$id_pengguna";
+                  $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM Pemesanan
+                  INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                  INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                  INNER JOIN petani on petani.KTP = pemesanan.KTP
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                  INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                  where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN=$id_pengguna";
                 }else {
                     $bulanpilih = 'Tahun '.$tahun;
-                    $lanjut = "select * from pemesanan where ID_PERUSAHAAN=$id_pengguna";
+                    $lanjut = "SELECT * FROM Pemesanan
+                    INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                    INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                    INNER JOIN petani on petani.KTP = pemesanan.KTP
+                    INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                    INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
+                    where year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN= $id_pengguna";
+                    $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM Pemesanan
+                    INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                    INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                    INNER JOIN petani on petani.KTP = pemesanan.KTP
+                    INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                    INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                    where year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN= $id_pengguna";
                 } ?>
-              <h3 class="box-title">Laporan Pemesanan <?php echo $bulanpilih; ?></h3>
+              <h3 class="box-title">Laporan Pemesanan <?php if(isset($_POST['submit'])){echo "Bulan ";} echo $bulanpilih; ?></h3>
               <h3>
                   <form action="" method="POST">
                        <?php
@@ -64,6 +90,15 @@
                   ?>
                   </form>
               </h3>
+              <br>
+              <?php 
+              $hasilsum = mysqli_query($koneksi, $sum);
+              while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
+               <h3 class="box-title">Total Pesan : <b class="uang"><?php echo $tampilsum[0]; ?> </b> <b>KG</b>  </h3>
+               <br/>
+               <h3 class="box-title">Total Harga : <b>Rp.</b> <b class="uang"><?php echo $tampilsum[1]; ?></b></h3>
+             <?php } ?>
+               <br>
 
                
             </div>
@@ -72,11 +107,13 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                 <tr>
-                  <th>ID PEMESANAN</th>
-                  <th>ID PERUSAHAAN</th>
+                <th>ID PESAN</th>
+                  <TH>NAMA PERUSAHAAN</TH>
+                  <TH>NAMA PETANI</TH>
+                  <th>KOMODITAS</th>
                   <th>TANGGAL</th>
-                  <th>JUMLAH_PESAN (KG)</th>
-                  <th>TOTAL BIAYA (RP)</th>
+                  <th>JUMLAH PESAN (KG)</th>
+                  <th>TOTAL HARGA PESAN (RP)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -90,7 +127,9 @@
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_PESAN'];?></td>
-                        <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
+                        <td><?php echo $data ['NAMA_PERUSAHAAN'];?></td>
+                        <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td><?php echo DATE_FORMAT(date_create($data ['TANGGAL']),'d M Y');?></td>
                         <td class="uang"><?php echo $data ['JUMLAH_PESAN'];?></td>
                         <td class="uang"><?php echo $data ['TOTAL_BIAYA'];?></td>

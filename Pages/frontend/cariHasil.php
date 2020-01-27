@@ -134,7 +134,7 @@ endif;
 
 <div class="fluid-container">
     <div class="left-sidebar col">
-    <h3>Filters</h3>
+    <h3><span class="fa fa-filter"> Filters </span></h3>
         <details class="navigasi" open>
             <summary><h4>Komoditas</h4></summary>
             <?php 
@@ -198,14 +198,14 @@ endif;
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>NO.</th>
-                  <th>KOMODITAS</th>
-                  <th>TGL PANEN</th>
-                  <th>NAMA PETANI</th>
-                  <th>ALAMAT</th>
-                  <th>NO HP</th>
-                  <th>HASIL PANEN (KG)</th>
-                  <th>PESAN</th>
+                  <th class="text-center">NO.</th>
+                  <th class="text-center">KOMODITAS</th>
+                  <th class="text-center">TGL PANEN</th>
+                  <th class="text-center">NAMA PETANI</th>
+                  <th class="text-center">ALAMAT</th>
+                  <th class="text-center">NO HP</th>
+                  <th class="text-center">HASIL PANEN (KG)</th>
+                  <th class="text-center">PESAN</th>
                   
                 </tr>
                 </thead>
@@ -702,9 +702,9 @@ endif;
                                 echo", Kec. "; echo $data ['NAMA_KECAMATAN'];
                             ?></td>
                         <td><?php echo $data ['NO_HP'];?></td>
-                        <td class="uang"><?php echo $data ['HASIL'];?></td>
+                        <td class="uang text-right"><?php echo $data ['HASIL'];?></td>
                     </form>
-                    <td><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
+                    <td class="text-center"><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
                     </tr>
                     <?php
                     $no++;
