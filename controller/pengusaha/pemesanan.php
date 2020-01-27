@@ -16,7 +16,12 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $idpanen = $_POST['idpanen'];
     $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah_fix','$total_fix','1','$idpanen')");
 
-    
+    $cekkurang = mysqli_query($koneksi, "SELECT max(pemesanan.ID_PESAN), panen.HASIL FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id");
+        while ($data = mysqli_fetch_array($cekkurang)) {
+            $hasil = $data['HASIL'] - $jumlah_fix;
+            };
+
+        $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id AND pemesanan.ID_PESAN=(SELECT max(pemesanan.ID_PESAN) FROM pemesanan)");
     if ($result) {
 
     $mail = new PHPMailer;

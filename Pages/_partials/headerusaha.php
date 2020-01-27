@@ -19,7 +19,7 @@
 		setTimeout(function() {window.location.href="../frontend/login.php"},10);
 		</script>
 	<?php
-}
+  }
 ?>
 <header class="main-header">
   <!-- Logo -->

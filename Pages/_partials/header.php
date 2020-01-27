@@ -8,7 +8,6 @@
   		setTimeout(function() {window.location.href="../frontend/login.php"},10);
   		</script>
       <?php
-	mysqli_close($koneksi); // Menutup koneksi
 	header('Location: ../frontend/login.php'); // Mengarahkan ke Home Page
 	}
 
