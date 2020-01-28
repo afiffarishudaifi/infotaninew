@@ -26,7 +26,7 @@
 				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';
+					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>'; 
                     	}
                     	else{
 					    	echo '<div class="alert alert-warning">Gagal melakukan registrasi</div>';

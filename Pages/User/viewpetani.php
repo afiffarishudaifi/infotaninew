@@ -94,7 +94,6 @@
                               }
                          echo "</select>";
                       ?>
-                      <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                           </div>
                     <div class="form-group">
                       <label>Luas Sawah (ha)</label>
@@ -121,7 +120,6 @@
                                 }
                            echo "</select>";
                        ?>
-                       <h6>*Hubungi admin melalui kontak jika Desa/Kel tidak tersedia</h6>
                     </div>
                     
                     <div class="form-group">
@@ -190,7 +188,6 @@
                         <label>Komoditas</label>
                         <input type="hidden" class="form-control" name="idkomoditas" value="<?php echo $datas['ID_KOMODITAS']?>"  required readonly>
                         <input type="text" class="form-control" value="<?php echo $datas['komoditas']?>"  required readonly>
-                        <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                         </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
@@ -266,7 +263,6 @@
                                         }
                                    echo "</select>";
                                ?>
-                            <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                             </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
@@ -291,21 +287,9 @@
                         <input type="text" class="form-control" id="tgl2" name="tglpanen" value="<?php echo $data['PANEN']?>"  required>
                       </div>
                       <div class="form-group">
-                        <label>Status</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                       <?php
-                                    require_once "../../controller/admin/koneksi.php";
-                                    $query = "select * from status";
-                                    $resultstatus = mysqli_query($koneksi, $query);
-                                   // ----------------------------------------
-                                    echo "<select name='idstatus' class='form-control' onchange='changeValue(this.value)' required>";
-                                    echo "<option value='' selected>=== Pilih Status Panen ===</option>";
-                                        while($row2=mysqli_fetch_array($resultstatus))
-                                        {
-                                            echo "<option value=$row2[0]>$row2[1]</option>";
-                                        }
-                                   echo "</select>";
-                               ?>
+                        <input type="hidden" name="idstatus" value="2">
+                        
                       </div>
                 
                       <input type="submit" name="ubah" class="btn btn-success" value="Simpan">
