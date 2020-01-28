@@ -90,7 +90,7 @@
                       <input type="text" class="form-control" name="manager" placeholder="Masukkan Nama Manager" required onkeypress="return hanyaTulisan(event)">
                     </div> 
                     <div class="form-group">
-                      <label>Logo</label>
+                      <label>Logo Perusahaan/Foto Manager</label>
                       <input type="file" name="foto" id="foto" >
                      </div>
               <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
