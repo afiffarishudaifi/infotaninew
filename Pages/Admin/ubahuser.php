@@ -80,7 +80,7 @@
                 </div>
                 <div class="form-group">
                     <label>Katasandi</label>
-                    <input type="text" class="form-control" value="<?php echo $data['PASSWORD']?>" name="password" required">
+                    <input type="text" class="form-control" value="<?php echo $data['PASSWORD']?>" name="password" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>

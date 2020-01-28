@@ -26,26 +26,25 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Tabel Petani</h3>
-              <h3><a href="./tambahpetani.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
+              <h3 class="box-title">Data Tabel Pengusaha</h3>
+              <h3><a href="./tambahpengusaha.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>KTP</th>
+                  <th>ID PERUSAHAAN</th>
                   <th>USERNAME</th>
-                  <th>NAMA PETANI</th>
-                  <th>ALAMAT PETANI</th>
-                  <th>NO HP</th>
-                  <th>KOMODITAS</th>
-                  <th>LUAS SAWAH</th>
-                  <th>ALAMAT SAWAH</th>
-                  <th>DESA</th>
-                  <th>TANAM</th>
-                  <th>PANEN</th>
-                  <th>STATUS</th>
+                  <th>PASSWORD</th>
+                  <th>SIUP</th>
+                  <th>LOGO</th>
+                  <th>NAMA_PERUSAHAAN</th>
+                  <th>EMAIL</th>
+                  <th>ALAMAT PERUSAHAAN</th>
+                  <th>NO TELP</th>
+                  <th>NAMA MANAGER</th>
+                  <th>ID LEVEL  </th>
                   <th>AKSI(s)</th>
                 </tr>
                 </thead>
@@ -53,31 +52,30 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER");
+                    $query = mysqli_query($koneksi, "SELECT * FROM perusahaan");
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
-                        <td><?php echo $data ['ktp'];?></td>
-                        <td><?php echo $data ['USERNAME'];?></td>
-                        <td><?php echo $data ['NAMA_PETANI'];?></td>
-                        <td><?php echo $data ['ALAMAT_PETANI'];?></td>
-                        <td><?php echo $data ['NO_HP'];?></td>
-                        <td><?php echo $data ['komoditas'];?></td>
-                        <td><?php echo $data ['LUAS_SAWAH'];?></td>
-                        <td><?php echo $data ['ALAMAT_SAWAH'];?></td>
-                        <td><?php echo $data ['desa'];?></td>
-                        <td><?php echo DATE_FORMAT(date_create($data ['TANAM']),'d M Y');?></td>
-                        <td><?php echo DATE_FORMAT(date_create($data ['PANEN']),'d M Y');?></td>
-                        <td><?php echo $data ['STATUS'];?></td>
+                        <td><?php echo $data [0];?></td>
+                        <td><?php echo $data [1];?></td>
+                        <td><?php echo $data [2];?></td>
+                        <td><img style="height:160px; width:120px;" src="../../img/Pengusaha/SIUP/<?php echo $data [3];?>"></td>
+                        <td><img style="height:160px; width:120px;" src="../../img/pengusaha/user/<?php echo $data [4];?>"></td>
+                        <td><?php echo $data [5];?></td>
+                        <td><?php echo $data [6];?></td>
+                        <td><?php echo $data [7];?></td>
+                        <td><?php echo $data [8];?></td>
+                        <td><?php echo $data [9];?></td>
+                        <td><?php echo $data [10];?></td>
                         <td>
-                        <a href="./ubahpetani.php?id=<?php echo $data['ktp'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <a href="./ubahpengusaha.php?id=<?php echo $data[0];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
-                        <a href="#del<?php echo $data['ktp'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
+                        <a href="#del<?php echo $data[0];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->
-                        <div class="modal fade" id="del<?php echo $data['ktp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerpetani.php" method="post">
+                        <div class="modal fade" id="del<?php echo $data[0]; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <form action="../../controller/admin/controllerpengusaha.php" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -86,12 +84,13 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                                  $del=mysqli_query($koneksi, "select * from PETANI where KTP='".$data['ktp']."'");
+                                  $del=mysqli_query($koneksi, "select * from perusahaan where ID_PERUSAHAAN='".$data[0]."'");
                                   $drow=mysqli_fetch_array($del);
                                 ?>
                                         <div class="modal-footer">    <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
-                                            <input type="hidden" name="idhapus" value="<?php echo $drow['KTP']; ?>">
-                                            <h5><center>Apakah yakin ingin menghapus  <strong><?php echo $drow['NAMA_PETANI']; ?></strong> ?</center></h5>
+                                            <input type="hidden" name="idhapus" value="<?php echo $drow[0]; ?>">
+                                            <input type="hidden" name="foto" value="<?php echo $drow[3]; ?>">
+                                            <h5><center>Apakah yakin ingin menghapus  <strong><?php echo $drow['NAMA_PERUSAHAAN']; ?></strong> ?</center></h5>
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
                                             <button type="submit" class="btn btn-danger" name="hapus"><span class="fa fa-trash"></span> Hapus</button>
                                         </div>

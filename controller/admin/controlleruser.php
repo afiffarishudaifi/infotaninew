@@ -57,57 +57,57 @@ if (isset($login_session)) {
 			$id_level	= $_POST['level'];
             
             $foto = $_FILES['foto']['name'];
-    $tmp = $_FILES['foto']['tmp_name'];
-    $fotouser= $_POST['fotouser'];//['name'];
-    //$tmpo = $_POST['fotouser']['tmp_name'];
+            $tmp = $_FILES['foto']['tmp_name'];
+            $fotouser= $_POST['fotouser'];//['name'];
+            //$tmpo = $_POST['fotouser']['tmp_name'];
 
-    //merename foto dengan menambah tgl dan jam upload
-    $fotobaru = $foto;
-    $fotobaru = $fotouser;
-    //set path folder tempat menyimpan foto
-    $path = "../../img/user/".$fotobaru;
+            //merename foto dengan menambah tgl dan jam upload
+            $fotobaru = $foto;
+            $fotobaru = $fotouser;
+            //set path folder tempat menyimpan foto
+            $path = "../../img/user/".$fotobaru;
 
-    
-    if (file_exists($fotouser)) {
-        unlink($fotouser);
-    }else{
-        if(move_uploaded_file($tmp, $path)){
-            //sebuah query untuk menginputkan data ke table tb_siswa
-            $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD=md5('$password'), FOTO_USER='$fotobaru' where ID_USER='$id'";
-    
-            $result = mysqli_query($koneksi, $query);
-    
+            
+            if (file_exists($fotouser)) {
+                unlink($fotouser);
+            }else{
+                if(move_uploaded_file($tmp, $path)){
+                    //sebuah query untuk menginputkan data ke table tb_siswa
+                    $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD=md5('$password'), FOTO_USER='$fotobaru' where ID_USER='$id'";
+            
+                    $result = mysqli_query($koneksi, $query);
+            
+                    if ($result) {?>
+                        <script language="JavaScript">
+                        alert('Ubah Berhasil !');
+                        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+                        </script><?php
+                    }
+                }
+                    
+            }
+          
+        } else if(isset($_POST['hapus'])){
+            $id = $_POST['idhapus'];
+            $fotouser = $_POST['fotouser'];
+            $path = "../../img/user/".$fotouser;
+            if (file_exists($path)) {
+                unlink($path);}
+            //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
+            $query = "Delete FROM user WHERE ID_USER='$id'";
+            $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
+
             if ($result) {?>
                 <script language="JavaScript">
-                alert('Ubah Berhasil !');
+                alert('Hapus Berhasil !');
+                setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+                </script><?php
+            } else {?>
+                <script language="JavaScript">
+                alert('Hapus Gagal ! Silahkan Hapus Data Petani terlebih Dahulu');
                 setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
                 </script><?php
             }
         }
-            
-    }
-  
-} else if(isset($_POST['hapus'])){
-    $id = $_POST['idhapus'];
-    $fotouser = $_POST['fotouser'];
-    $path = "../../img/user/".$fotouser;
-    if (file_exists($path)) {
-        unlink($path);}
-    //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-    $query = "Delete FROM user WHERE ID_USER='$id'";
-    $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
-
-    if ($result) {?>
-        <script language="JavaScript">
-        alert('Hapus Berhasil !');
-        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
-        </script><?php
-    } else {?>
-        <script language="JavaScript">
-        alert('Hapus Gagal ! Silahkan Hapus Data Petani terlebih Dahulu');
-        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
-        </script><?php
-    }
-}
         
 ?>

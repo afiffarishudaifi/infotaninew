@@ -51,6 +51,13 @@
       </a>
     </li>
     <li class="treeview">
+      <a href="./viewpengusaha.php">
+        <i class="fa fa-user-secret"></i> <span>Data Pengusaha</span>
+        <span class="pull-right-container">
+        </span>
+      </a>
+    </li>
+    <li class="treeview">
       <a href="./viewuser.php">
         <i class="fa fa-user"></i> <span>Data User</span>
         <span class="pull-right-container">
