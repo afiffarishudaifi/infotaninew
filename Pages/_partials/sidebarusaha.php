@@ -32,6 +32,16 @@
         </span>
       </a>
     </li>
+    
+    <?php  if($nama_pengguna != ""){            
+          ?>
+    <li class="treeview">
+      <a href="../frontend/cariHasil.php">
+        <button class="btn btn-success btn-md"><span>Pesan Disini</span></button> 
+        <span class="pull-right-container">
+        </span>
+      </a>
+        </li> <?php }?>
   </ul>
 
   </section>

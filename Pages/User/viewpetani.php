@@ -94,6 +94,7 @@
                               }
                          echo "</select>";
                       ?>
+                      <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                           </div>
                     <div class="form-group">
                       <label>Luas Sawah (ha)</label>
@@ -120,6 +121,7 @@
                                 }
                            echo "</select>";
                        ?>
+                       <h6>*Hubungi admin melalui kontak jika Desa/Kel tidak tersedia</h6>
                     </div>
                     
                     <div class="form-group">
@@ -188,6 +190,7 @@
                         <label>Komoditas</label>
                         <input type="hidden" class="form-control" name="idkomoditas" value="<?php echo $datas['ID_KOMODITAS']?>"  required readonly>
                         <input type="text" class="form-control" value="<?php echo $datas['komoditas']?>"  required readonly>
+                        <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                         </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
@@ -263,6 +266,7 @@
                                         }
                                    echo "</select>";
                                ?>
+                            <h6>*Hubungi admin melalui kontak jika komoditas tidak tersedia</h6>
                             </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->

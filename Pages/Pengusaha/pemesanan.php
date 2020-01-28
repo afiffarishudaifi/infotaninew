@@ -97,7 +97,7 @@
                 </div>
               </div>
 </fieldset><?php } }?>
-            <fieldset><legend><h5>Data Pengusaha</h5></legend></fieldset>
+            <fieldset><legend><h5>Data Pengusaha</h5></legend>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">ID Usaha</label>
@@ -118,7 +118,9 @@
                   <input type="text" name="namamanager" value="<?php echo $nama_manager;?>" class="form-control" readonly>
                 </div>
               </div>
-
+              </fieldset>
+              <fieldset><legend><h5>Data Pemesanan</h5></legend>
+              <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="inputPassword4">Total Pemesanan (Kg)</label>
                 <input type="text" id="jmlpesan" name="jmlpesan" class="uang form-control" onkeyup="sum();" onkeypress="return hanyaAngka(event)"> 
@@ -129,6 +131,7 @@
                   <input type="text" name="total" id="total" class="uang form-control" readonly>
                 </div>
               </div>
+              </fieldset>
               <input type="hidden" name="email" class="form-control" readonly>
               <?php $jmlpesan = $_POST['jmlpesan']; ?>
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPush">Lanjut</button>
