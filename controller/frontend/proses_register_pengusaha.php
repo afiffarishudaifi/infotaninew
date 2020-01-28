@@ -29,16 +29,19 @@
 					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';
                     	}
                     	else{
-					    	echo '<div class="alert alert-warning">Gagal melakukan registrasi</div>';
+					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../Pages/frontend/register_pengusaha.php";</script>';
 						}
+					}
+					else{
+						echo '<script>alert("Gagal - Mohon sertakan bukti SIUP!"); document.location="../../Pages/frontend/register_pengusaha.php";</script>';
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Katasandi tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
+                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register_pengusaha.php";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Nama Pengguna telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
 			}
 		}
 	?>

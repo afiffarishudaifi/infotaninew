@@ -26,19 +26,22 @@
 				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>'; 
+					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Login."); document.location="../../Pages/frontend/login.php";</script>';
                     	}
                     	else{
-					    	echo '<div class="alert alert-warning">Gagal melakukan registrasi</div>';
+					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../Pages/frontend/register.php";</script>';
 						}
+					}
+					else{
+						echo '<script>alert("Gagal - Mohon sertakan bukti KTP"); document.location="../../Pages/frontend/register.php";</script>';
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Katasandi tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
+                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! NamaPengguna telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
 			}
 		}
 	?>
