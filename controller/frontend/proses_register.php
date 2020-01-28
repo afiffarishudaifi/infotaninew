@@ -16,7 +16,7 @@
 			$path = "../../img/user/".$fotobaru;
 
             //cek database dengan select nim dari tb_siswa
-			$cek = mysqli_query ($koneksi, "SELECT * FROM perusahaan, user, level WHERE perusahaan.ID_LEVEL=level.ID_LEVEL AND level.ID_LEVEL=perusahaan.ID_LEVEL AND user.USERNAME='$username' OR user.PASSWORD=md5('$password') OR perusahaan.USERNAME='$username' OR perusahaan.PASSWORD=md5('$password')") or die(mysqli_error($koneksi));
+			$cek = mysqli_query ($koneksi, "SELECT * FROM perusahaan, user, level WHERE perusahaan.ID_LEVEL=level.ID_LEVEL AND level.ID_LEVEL=perusahaan.ID_LEVEL AND user.USERNAME='$username' OR perusahaan.USERNAME='$username'") or die(mysqli_error($koneksi));
 			//dilakukan jika data = 0
 			if(mysqli_num_rows($cek) == 0){
                 if($password == $passwordConf){
