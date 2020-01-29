@@ -33,11 +33,11 @@
                 <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
                   $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL_AWAL,panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
-                  $sum = "select sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
+                  $sum = "select sum(panen.HASIL_AWAL), sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
                 }else {
                     $tahunpilih = $_POST['pilih'];
                     $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN,panen.HASIL_AWAL, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
-                    $sum = "select sum(panen.HASIL_AWAL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
+                    $sum = "select sum(panen.HASIL_AWAL), sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
                 } ?>
               <h3 style="text-align: center;">Laporan Panen Tahun <?php echo $tahunpilih; ?></h3>
               <h3>
@@ -66,7 +66,9 @@
               <?php 
               $hasilsum = mysqli_query($koneksi, $sum);
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
-               <h3 class="box-title">Jumlah Panen <b><?php echo $tampilsum[0]; ?></b>  </h3>
+               <h3 class="box-title">Jumlah Awal Panen      : <b><?php echo $tampilsum[0]; ?> KG</b>  </h3>
+               <br/>
+               <h3 class="box-title">Jumlah Sisa Panen :<b><?php echo $tampilsum[1]; ?> KG</b>  </h3>
              <?php } ?>
                <br>
             </div>
@@ -80,7 +82,7 @@
                   <th>KOMODITAS</th>
                   <th>TANGGAL PANEN</th>
                   <th>HASIL AWAL PANEN (KG)</th>
-                  <th>HASIL PANEN (KG)</th>
+                  <th>SISA PANEN (KG)</th>
                   <th>HARGA/KG (RP)</th>
                   <th>STATUS PANEN</th>
                 </tr>

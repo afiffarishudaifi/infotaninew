@@ -66,28 +66,28 @@
                     <div class="form-group">
                       <label>Nama Perusahaan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="namaperusahaan" placeholder="Masukkan Nama Perusahaan" required onkeypress="return hanyaTulisan(event)">
+                      <input type="text" class="form-control" name="namaperusahaan" placeholder="Masukkan Nama Perusahaan" maxlength="50" required onkeypress="return hanyaTulisan(event)">
                     </div>
                     <div class="form-group">
                       <label>Email</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="Email" class="form-control" name="email" placeholder="Masukkan Alamat Email" required>
+                      <input type="Email" class="form-control" name="email" placeholder="Masukkan Alamat Email" maxlength="30" required>
                     </div>
 
                     <div class="form-group">
                       <label>Alamat Perusahaan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat Perusahaan" onkeypress="return hanyaTulisan(event)" required>
+                      <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat Perusahaan" maxlength="100" onkeypress="return hanyaTulisan(event)" required>
                     </div>
                     <div class="form-group">
                       <label>No Telp Perusahaan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="no" placeholder="Masukkan No Telepon" required onkeypress="return hanyaAngka(event)">
+                      <input type="text" class="form-control" name="no" placeholder="Masukkan No Telepon" maxlength="16" required onkeypress="return hanyaAngka(event)">
                     </div>
                     <div class="form-group">
                       <label>Nama Manager</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="manager" placeholder="Masukkan Nama Manager" required onkeypress="return hanyaTulisan(event)">
+                      <input type="text" class="form-control" name="manager" placeholder="Masukkan Nama Manager" maxlength="50" required onkeypress="return hanyaTulisan(event)">
                     </div> 
                     <div class="form-group">
                       <label>Logo Perusahaan/Foto Manager</label>

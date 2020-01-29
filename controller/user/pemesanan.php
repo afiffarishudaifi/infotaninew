@@ -63,8 +63,6 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $ktp = $_POST['ktp'];
     $idpanen = $_POST['idpanen'];
     $idperusahaan = $_POST['idperusahaan'];
-        $sql = mysqli_query
-        ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         
         $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
@@ -72,7 +70,8 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
             };
 
         $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
-
+        $sql = mysqli_query
+        ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         if($sql){
             echo '?>
         <script language="JavaScript">

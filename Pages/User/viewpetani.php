@@ -54,7 +54,7 @@
                     <div class="form-group">
                       <label>KTP</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="KTP" placeholder="Masukkan KTP" required onkeypress="return hanyaAngka(event)">
+                      <input type="text" class="form-control" name="KTP" placeholder="Masukkan KTP" maxlength="20" required onkeypress="return hanyaAngka(event)">
                     </div>
                     
                     <div class="form-group">
@@ -65,18 +65,18 @@
                     <div class="form-group">
                       <label>Nama Petani</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="namapetani" placeholder="Masukkan Nama Petani" required onkeypress="return hanyaTulisan(event)">
+                      <input type="text" class="form-control" name="namapetani" placeholder="Masukkan Nama Petani" maxlength="30" required onkeypress="return hanyaTulisan(event)">
                     </div>
                     <div class="form-group">
                       <label title="Alamat Tinggal Yang Dekat Dengan Sawah Anda">Alamat Petani</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="alamatpetani" placeholder="Masukkan Alamat Tinggal Saat Ini" required>
+                      <input type="text" class="form-control" name="alamatpetani" placeholder="Masukkan Alamat Tinggal Saat Ini" maxlength="100" required>
                     </div>
 
                     <div class="form-group">
                       <label>No HP Petani</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="nohp" placeholder="Masukkan No hp" onkeypress="return hanyaAngka(event)" required>
+                      <input type="text" class="form-control" name="nohp" placeholder="Masukkan No hp" maxlength="15" onkeypress="return hanyaAngka(event)" required>
                     </div>
                     
                     <div class="form-group">
@@ -94,6 +94,7 @@
                               }
                          echo "</select>";
                       ?>
+                      <h6>*Hubungi admin jika komoditas tidak tersedia</h6>
                           </div>
                     <div class="form-group">
                       <label>Luas Sawah (ha)</label>
@@ -103,7 +104,7 @@
                     <div class="form-group">
                       <label>Alamat Sawah</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
-                      <input type="text" class="form-control" name="alamatsawah" placeholder="Masukkan Alamat Sawah" required>
+                      <input type="text" class="form-control" name="alamatsawah" placeholder="Masukkan Alamat Sawah" maxlength="100" required>
                     </div>
                     <div class="form-group">
                       <label>Desa/Kelurahan</label>
@@ -120,6 +121,7 @@
                                 }
                            echo "</select>";
                        ?>
+                       <h6>*Hubungi admin jika Desa/Kel. tidak tersedia</h6>
                     </div>
                     
                     <div class="form-group">
@@ -188,6 +190,7 @@
                         <label>Komoditas</label>
                         <input type="hidden" class="form-control" name="idkomoditas" value="<?php echo $datas['ID_KOMODITAS']?>"  required readonly>
                         <input type="text" class="form-control" value="<?php echo $datas['komoditas']?>"  required readonly>
+                        <h6>*Hubungi admin jika komoditas tidak tersedia</h6>
                         </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
@@ -245,7 +248,7 @@
                       <div class="form-group">
                         <label>No HP Petani</label>
                         <!--menginputkan sebuah inputan nim bertipe text-->
-                        <input type="text" class="form-control" name="nohp" value="<?php echo $data['NO_HP']?>"  required>
+                        <input type="text" class="form-control" name="nohp" value="<?php echo $data['NO_HP']?>" maxlength="15" onkeypress="return hanyaAngka(event)" required>
                       </div>
                       <div class="form-group">
                         <label>Komoditas</label>
@@ -263,6 +266,7 @@
                                         }
                                    echo "</select>";
                                ?>
+                          <h6>*Hubungi admin jika komoditas tidak tersedia</h6>
                             </div>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
