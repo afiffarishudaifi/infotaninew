@@ -38,7 +38,8 @@
                   <th>KTP</th>
                   <th>KOMODITAS</th>
                   <th>TANGGAL PANEN</th>
-                  <th>HASIL PANEN (KG)</th>
+                  <th>HASIL PANEN AWAL (KG)</th>
+                  <th>HASIL SISA PANEN (KG)</th>
                   <th>HARGA/KG (RP)</th>
                   <th>STATUS PANEN</th>
                 </tr>
@@ -57,6 +58,7 @@
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['KOMODITAS'];?></td>
                         <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
+                        <td class="uang"><?php echo $data ['HASIL_AWAL'];?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
                         <td class="uang"><?php echo $data ['HARGA'];?></td>
                         <td><?php echo $data ['STATUS_PANEN'];?></td>

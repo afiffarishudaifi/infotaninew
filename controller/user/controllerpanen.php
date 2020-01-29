@@ -11,7 +11,7 @@ if (isset($_POST['ubah'])) {        //memanggil sebuah nilai dari sebuah inputan
         $max = $_POST['max'];
 
         //sebuah query untuk menginputkan data ke table tb_siswa
-        $query = "UPDATE panen SET HASIL=$hasil_fix, HARGA=$harga_fix, STATUS_PANEN='$status' where ID_PANEN=$max";
+        $query = "UPDATE panen SET HASIL_AWAL=$hasil_fix,HASIL=$hasil_fix, HARGA=$harga_fix, STATUS_PANEN='$status' where ID_PANEN=$max";
 
         $result = mysqli_query($koneksi, $query);
 

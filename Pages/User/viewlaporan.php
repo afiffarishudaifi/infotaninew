@@ -32,12 +32,12 @@
             <div class="box-header">
                 <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
-                  $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
+                  $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL_AWAL,panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
                   $sum = "select sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND year(TGL_PANEN) = $tahunpilih and petani.KTP=$ktppetani";
                 }else {
                     $tahunpilih = $_POST['pilih'];
-                    $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
-                    $sum = "select sum(panen.HASIL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
+                    $lanjut = "select panen.ID_PANEN, petani.KTP, panen.KOMODITAS, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN,panen.HASIL_AWAL, panen.HASIL, panen.HARGA, panen.STATUS_PANEN from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
+                    $sum = "select sum(panen.HASIL_AWAL) from panen, petani, komoditas WHERE petani.KTP=panen.KTP AND komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND petani.KTP=$ktppetani";
                 } ?>
               <h3 style="text-align: center;">Laporan Panen Tahun <?php echo $tahunpilih; ?></h3>
               <h3>
@@ -79,6 +79,7 @@
                   <th>KTP</th>
                   <th>KOMODITAS</th>
                   <th>TANGGAL PANEN</th>
+                  <th>HASIL AWAL PANEN (KG)</th>
                   <th>HASIL PANEN (KG)</th>
                   <th>HARGA/KG (RP)</th>
                   <th>STATUS PANEN</th>
@@ -98,6 +99,7 @@
                         <td><?php echo $data ['KTP'];?></td>
                         <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td><?php echo $data ['TGL_PANEN'];?></td>
+                        <td class="uang"><?php echo $data ['HASIL_AWAL'];?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
                         <td class="uang"><?php echo $data ['HARGA'];?></td>
                         <td><?php echo $data ['STATUS_PANEN'];?></td>

@@ -30,11 +30,11 @@
                if (isset($_POST['submit'])) {
                   $pilih = $_POST['pilih'];
 
-                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
-                  $sum = "SELECT sum(panen.HASIL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
+                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL,panen.HASIL_AWAL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
+                  $sum = "SELECT sum(panen.HASIL_AWAL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP AND panen.KOMODITAS=$pilih";
                 }else {
-                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
-                  $sum = "SELECT sum(panen.HASIL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
+                  $tipe = "SELECT petani.KTP, petani.NAMA_PETANI, panen.TGL_PANEN, desa.NAMA_DESA, kecamatan.NAMA_KECAMATAN, panen.HASIL,panen.HASIL_AWAL FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
+                  $sum = "SELECT sum(panen.HASIL_AWAL) FROM petani, panen, desa, kecamatan WHERE desa.ID_KECAMATAN=kecamatan.ID_KECAMATAN AND desa.ID_DESA=petani.ID_DESA AND petani.KTP=panen.KTP";
                 } ?>
               <h3 style="text-align: center;">Laporan Panen <?php echo $komoditaspanen; ?></h3>
               <h3>
@@ -76,7 +76,8 @@
                   <th>TANGGAL PANEN</th>
                   <th>DESA</th>
                   <th>KECAMATAN</th>
-                  <th>HASIL PANEN (KG)</th>
+                  <th>HASIL PANEN AWAL (KG)</th>
+                  <th>HASIL SISA PANEN (KG)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -94,6 +95,7 @@
                         <td><?php echo DATE_FORMAT(date_create($data ['TGL_PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
+                        <td class="uang"><?php echo $data ['HASIL_AWAL'];?></td>
                         <td class="uang"><?php echo $data ['HASIL'];?></td>
 
                         </tr>
