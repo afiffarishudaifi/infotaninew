@@ -14,17 +14,17 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Tambah Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewdesa.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewdesa'},10);
             </script><?php
         } else {
             ?>
                 <script language="JavaScript">
                 alert('Tambah Gagal !');
-                setTimeout(function() {window.location.href='../../pages/admin/viewdesa.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewdesa'},10);
                 </script><?php
         }
     } else if (isset($_POST['ubah'])) {
-        //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
+        //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran
         $id = $_POST['iddesa'];
         $desa = $_POST['namadesa'];
         $idkecamatan = $_POST['idkecamatan'];
@@ -37,7 +37,7 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Ubah Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewdesa.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewdesa'},10);
             </script><?php
         }
     } else if(isset($_POST['hapus'])){
@@ -49,12 +49,12 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Hapus Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewdesa.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewdesa'},10);
             </script><?php
         } else {?>
             <script language="JavaScript">
             alert('Hapus Gagal ! Data digunakan di Data Kecamatan');
-            setTimeout(function() {window.location.href='../../pages/admin/viewdesa.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewdesa'},10);
             </script><?php
         }
     }

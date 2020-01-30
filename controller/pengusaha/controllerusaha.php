@@ -28,20 +28,20 @@ if (isset($_POST['simpan'])) {
              if ($result) {?>
                  <script language="JavaScript">
                  alert('Ubah Berhasil !');
-                 setTimeout(function() {window.location.href='../../pages/pengusaha/index.php'},10);
+                 setTimeout(function() {window.location.href='../../pages/pengusaha/index'},10);
                  </script><?php
              } else {
                 ?>
                     <script language="JavaScript">
                     alert('Gagal Mengubah Data !');
-                    setTimeout(function() {window.location.href='../../pages/pengusaha/index.php'},10);
+                    setTimeout(function() {window.location.href='../../pages/pengusaha/index'},10);
                     </script><?php
             }
         } else {
             ?>
                     <script language="JavaScript">
                     alert('Gagal Unggah Foto !');
-                    setTimeout(function() {window.location.href='../../pages/pengusaha/index.php'},10);
+                    setTimeout(function() {window.location.href='../../pages/pengusaha/index'},10);
                     </script><?php
         }
          

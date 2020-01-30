@@ -80,7 +80,7 @@ function validate_password_reset() {
         <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Konfirmasi Katasandi">
 		    <input type="submit" name="reset-password" id="reset-password" value="Kirim" class="form-submit-button btn btn-lg btn-block">
        <br>
-  		<a href="./index.php" class="btn btn-warning btn-block">Kembali</a>
+  		<a href="./index" class="btn btn-warning btn-block">Kembali</a>
       <br>
       </form>
     </div> <!-- /container -->

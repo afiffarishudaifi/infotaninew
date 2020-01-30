@@ -28,7 +28,7 @@
         Data Perusahaan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Halaman Utama</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Halaman Utama</a></li>
       </ol>
     </section>
     <section class="content">
@@ -44,11 +44,11 @@
                 ?>
                   <script language="JavaScript">
                   alert('Data Lengkap!');
-                  setTimeout(function() {window.location.href='./index.php'},10);
+                  setTimeout(function() {window.location.href='./index'},10);
                   </script>
                 <?php
             }?>
-                  <form method="post" action="../../controller/pengusaha/controllerusaha.php" enctype="multipart/form-data">
+                  <form method="post" action="../../controller/pengusaha/controllerusaha" enctype="multipart/form-data">
                         <?php 
                         $query = mysqli_query($koneksi, "SELECT Username, ID_PERUSAHAAN FROM perusahaan WHERE ID_PERUSAHAAN=$id_pengguna");
                         while ($data = mysqli_fetch_array($query)) {?>

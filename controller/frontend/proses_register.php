@@ -26,22 +26,22 @@
 				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Masuk."); document.location="../../Pages/frontend/login.php";</script>';
+					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Masuk."); document.location="../../Pages/frontend/login";</script>';
                     	}
                     	else{
-					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../Pages/frontend/register.php";</script>';
+					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../Pages/frontend/register";</script>';
 						}
 					}
 					else{
-						echo '<script>alert("Gagal - Mohon sertakan bukti KTP"); document.location="../../Pages/frontend/register.php";</script>';
+						echo '<script>alert("Gagal - Mohon sertakan bukti KTP"); document.location="../../Pages/frontend/register";</script>';
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Kata Sandi tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
+                    echo '<script>alert("Gagal! Kata Sandi tidak sama."); document.location="../../Pages/frontend/register";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Nama Pengguna telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
+				echo '<script>alert("Gagal! Nama Pengguna telah terdaftar"); document.location="../../Pages/frontend/register";</script>';
 			}
 		}
 	?>

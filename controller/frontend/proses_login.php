@@ -28,14 +28,14 @@ if (isset($_POST['submit'])) {
                 $_SESSION['ID_USER'] = $c['ID_USER'];
 
                 if ($c['ID_LEVEL']==1) {
-                    header("location:..\..\pages\admin\index.php");
+                    header("location:..\..\pages\admin\index");
                 } elseif ($c['ID_LEVEL']==2) {
-                    header("location:..\..\pages\user\index.php");
+                    header("location:..\..\pages\user\index");
                 } else {
                     die("error");
                 }
 
-    // header("location: index.php"); // Mengarahkan ke halaman awal
+    // header("location: index"); // Mengarahkan ke halaman awal
             } else { 
                 $sql = "select * from perusahaan where PASSWORD=md5('$password') AND USERNAME='$username'";
                 $query = mysqli_query($koneksi, $sql);
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
                     $_SESSION['ID_PERUSAHAAN'] = $c['ID_PERUSAHAAN'];
 
                     if ($c['ID_LEVEL']==3) {
-                        header("location:..\..\pages\pengusaha\index.php");
+                        header("location:..\..\pages\pengusaha\index");
                     } else {
                         die("error");
                     }
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
             ?>
                 <script language="JavaScript">
                     alert('Nama Pengguna atau Kata Sandi Salah Untuk Pengguna !');
-                    setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+                    setTimeout(function() {window.location.href='../../pages/frontend/login'},10);
                 </script>
             <?php
                 }
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 
             <script language="JavaScript">
                 alert('Nama Pengguna atau Kata Sandi Salah Untuk Admin !');
-                setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+                setTimeout(function() {window.location.href='../../pages/frontend/login'},10);
             </script>
             <?php
             mysqli_close($koneksi);

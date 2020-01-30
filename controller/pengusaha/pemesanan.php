@@ -42,7 +42,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         if($mail->Send()) {?> <script language="JavaScript">
         alert('Berhasil Terkirim');
         </script><?php
-        header("location:../../pages/pengusaha/riwayat.php");
+        header("location:../../pages/pengusaha/riwayat");
 
     }else echo "Failed to sending message";
         ?>
@@ -56,7 +56,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         ?>
         <script language="JavaScript">
         alert('Tambah Pemesanan Gagal !');
-        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat.php'},10);
+        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat'},10);
         </script>
     <?php
     }
@@ -75,13 +75,13 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
             echo '?>
         <script language="JavaScript">
         alert("Tambah Pemesanan Berhasil !");
-        setTimeout(function() {window.location.href="../../pages/pengusaha/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/pengusaha/riwayat"},10);
         </script><?php';
         }
         else{
             echo '<script language="JavaScript">
         alert("Tambah Pemesanan Gagal !"");
-        setTimeout(function() {window.location.href="../../pages/pengusaha/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/pengusaha/riwayat"},10);
         </script>';
         }
     }

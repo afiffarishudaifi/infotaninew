@@ -15,7 +15,7 @@ if (isset($_POST['Ganti'])) {
     ?>
         <script language="JavaScript">
         alert('Username Tidak Ada, Silahkan ulang kembali !');
-        setTimeout(function() {window.location.href='../../pages/frontend/formlupapass.php'},10);
+        setTimeout(function() {window.location.href='../../pages/frontend/formlupapass'},10);
         </script>
     <?php
         // unset($_SESSION['userid']);
@@ -26,7 +26,7 @@ if (isset($_POST['Ganti'])) {
         ?>
         <script language="JavaScript">
         alert('Gagal Ganti Katasandi,Katasandi Baru harus sama dengan Katasandi Konfirmasi!');
-        setTimeout(function() {window.location.href='../../pages/user/pengaturan.php'},10);
+        setTimeout(function() {window.location.href='../../pages/user/pengaturan'},10);
         </script>
     <?php
     }
@@ -39,7 +39,7 @@ if (isset($_POST['Ganti'])) {
             ?>
             <script language="JavaScript">
             alert('Katasandi Berhasil di Perbarui!');
-            setTimeout(function() {window.location.href='../../pages/frontend/login.php'},10);
+            setTimeout(function() {window.location.href='../../pages/frontend/login'},10);
             </script>
         <?php
             }

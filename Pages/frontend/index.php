@@ -33,7 +33,7 @@
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black"> Info Tani<br> Pertanian Indonesia</h2>
                                     <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Pertanian di Indonesia merupakan salah satu sektor kunci perekonomian Indonesia. Meskipun kontribusi sektor pertanian terhadap produk domestik bruto nasional telah menurun secara signifikan dalam setengah abad terakhir, saat ini sektor pertanian masih memberikan pendapatan bagi sebagian besar rumah tangga Indonesia.”</p>
-                                    <a href="tentangkami.php" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
+                                    <a href="tentangkami" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color: black">Info Tani <br> Pertanian Indonesia</h2>
                                     <p data-animation="fadeInUp" data-delay="400ms" style="color: white">“Sawah adalah suatu bentuk pertanian yang dilakukan di lahan basah dan memerlukan banyak air baik sawah irigasi, sawah lebak, sawah tadah hujan maupun sawah pasang surut. Yang pada masa sekarang sudah hampir punah.”</p>
-                                    <a href="tentangkami.php" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
+                                    <a href="tentangkami" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
 
         <!-- Side Thumbnail -->
         <div class="side-thumbnail" style=" background-color: #0000 "></div>
-    <form action="cariHasil.php" method="post">
+    <form action="cariHasil" method="post">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-6">

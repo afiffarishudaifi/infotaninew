@@ -51,7 +51,7 @@
                 ?>
                   <script language="JavaScript">
                   alert('Lengkapi Data !');
-                  setTimeout(function() {window.location.href='./tambahdata.php'},10);
+                  setTimeout(function() {window.location.href='./tambahdata'},10);
                   </script>
                 <?php
             }

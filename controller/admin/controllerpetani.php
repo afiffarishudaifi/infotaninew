@@ -25,18 +25,18 @@
          if ($result) {?>
              <script language="JavaScript">
              alert('Tambah Berhasil !');
-             setTimeout(function() {window.location.href='../../pages/admin/viewpetani.php'},10);
+             setTimeout(function() {window.location.href='../../pages/admin/viewpetani'},10);
              </script><?php
          } else {
              ?>
                  <script language="JavaScript">
                  alert('Tambah Gagal !');
-                 setTimeout(function() {window.location.href='../../pages/admin/tambahpetani.php'},10);
+                 setTimeout(function() {window.location.href='../../pages/admin/tambahpetani'},10);
                  </script><?php
          }
 
      } else if (isset($_POST['ubah'])) {
-         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
+         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran
          $KTP = $_POST['KTP'];
          $desa = $_POST['iddesa'];
          $komoditas = $_POST['idkomoditas'];
@@ -62,27 +62,30 @@
          if ($result) {?>
              <script language="JavaScript">
              alert('Ubah Berhasil !');
-             setTimeout(function() {window.location.href='../../pages/admin/viewpetani.php'},10);
+             setTimeout(function() {window.location.href='../../pages/admin/viewpetani'},10);
              </script><?php
          } else {
             ?>
                 <script language="JavaScript">
                 alert('Gagal Mengubah Data !');
-                setTimeout(function() {window.location.href='../../pages/admin/ubahpetani.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/ubahpetani'},10);
                 </script><?php
         }
 
 
      } else if(isset($_POST['hapus'])){
          $id = $_POST['idhapus'];
+         $user = $_POST['iduser'];
          //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
          $query = "Delete FROM PETANI WHERE KTP='$id'";
          $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
+         
+         $hapus = mysqli_query($koneksi, "delete FROM user where ID_USER='$user'");
 
          if ($result) {?>
              <script language="JavaScript">
              alert('Hapus Berhasil !');
-             setTimeout(function() {window.location.href='../../pages/admin/viewpetani.php'},10);
+             setTimeout(function() {window.location.href='../../pages/admin/viewpetani'},10);
              </script><?php
          }
      }

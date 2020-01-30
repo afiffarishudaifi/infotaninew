@@ -28,7 +28,7 @@ if (isset($_POST['kirim'])) {
     if($mail->Send()) {?> <script language="JavaScript">
     alert('Berhasil Terkirim');
     </script><?php
-    header("location:../../pages/frontend/contact.php");
+    header("location:../../pages/frontend/contact");
 
 }else echo "Failed to sending message";
 }

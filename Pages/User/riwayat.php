@@ -67,7 +67,7 @@
                           <a href="#konfir<?php echo $data['ID_PESAN'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa">Konfirmasi</a>
                         <!-- Delete -->
                         <div class="modal fade" id="konfir<?php echo $data['ID_PESAN']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="./konfirmasi.php" method="post">
+                            <form action="./konfirmasi" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

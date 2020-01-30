@@ -26,17 +26,17 @@
          if ($result) {?>
              <script language="JavaScript">
              alert('Ubah Berhasil !');
-             setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+             setTimeout(function() {window.location.href='../../pages/user/index'},10);
              </script><?php
          } else {
             ?>
                 <script language="JavaScript">
                 alert('Gagal Mengubah Data !');
-                setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+                setTimeout(function() {window.location.href='../../pages/user/index'},10);
                 </script><?php
         }
      } else if (isset($_POST['simpan'])) {
-         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
+         //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran
          $iduser= $_POST['iduser'];
          $KTP = $_POST['KTP'];
          $DESA = $_POST['iddesa'];
@@ -61,13 +61,13 @@
          if ($result) {?>
              <script language="JavaScript">
              alert('Ubah Berhasil !');
-             setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+             setTimeout(function() {window.location.href='../../pages/user/index'},10);
              </script><?php
          } else {
             ?>
                 <script language="JavaScript">
                 alert('Gagal Mengubah Data !');
-                setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+                setTimeout(function() {window.location.href='../../pages/user/index'},10);
                 </script><?php
         }
      }

@@ -27,7 +27,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Tabel Pengusaha</h3>
-              <h3><a href="./tambahpengusaha.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
+              <h3><a href="./tambahpengusaha"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -61,7 +61,7 @@
                         <td><?php echo $data [0];?></td>
                         <td><?php echo $data [1];?></td>
                         <td><?php echo $data [2];?></td>
-                        <td><img style="height:160px; width:120px;" src="../../img/Pengusaha/SIUP/<?php echo $data [3];?>"></td>
+                        <td><img style="height:160px; width:120px;" src="../../img/pengusaha/SIUP/<?php echo $data [3];?>"></td>
                         <td><img style="height:160px; width:120px;" src="../../img/pengusaha/user/<?php echo $data [4];?>"></td>
                         <td><?php echo $data [5];?></td>
                         <td><?php echo $data [6];?></td>
@@ -70,12 +70,12 @@
                         <td><?php echo $data [9];?></td>
                         <td><?php echo $data [10];?></td>
                         <td>
-                        <a href="./ubahpengusaha.php?id=<?php echo $data[0];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <a href="./ubahpengusaha?id=<?php echo $data[0];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
                         <a href="#del<?php echo $data[0];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->
                         <div class="modal fade" id="del<?php echo $data[0]; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerpengusaha.php" method="post">
+                            <form action="../../controller/admin/controllerpengusaha" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

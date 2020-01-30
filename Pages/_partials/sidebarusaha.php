@@ -14,19 +14,19 @@
   <ul class="sidebar-menu">
     <li class="header">NAVIGASI</li>
     <li class="treeview">
-      <a href="./index.php">
+      <a href="./index">
         <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./Riwayat.php">
+      <a href="./Riwayat">
         <i class="fa fa-send"></i> <span>Riwayat Pemesanan</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewlaporan.php">
+      <a href="./viewlaporan">
         <i class="fa fa-book"></i> <span>Laporan Pemesanan</span>
         <span class="pull-right-container">
         </span>
@@ -36,7 +36,7 @@
     <?php  if($nama_pengguna != ""){            
           ?>
     <li class="treeview">
-      <a href="../frontend/cariHasil.php">
+      <a href="../frontend/cariHasil">
         <button class="btn btn-success btn-md"><span>Pesan Disini</span></button> 
         <span class="pull-right-container">
         </span>

@@ -35,7 +35,7 @@
   <body>
 
     <div class="container">
-      <form  class="form-signin" action="../../controller/frontend/gantipassword.php" method="POST" enctype="multipart/form-data">
+      <form  class="form-signin" action="../../controller/frontend/gantipassword" method="POST" enctype="multipart/form-data">
         <br> 
         <?php
         
@@ -55,7 +55,7 @@
             <label for="passwordConf" >Konfirmasi password</label>
             <input type="password" id="passwordConf" name="pass_konf" class="form-control" placeholder="Ulangi Kata Sandi" required>
 
-             <a href="../../pages/frontend/login.php" class="btn btn-lg btn-warning">Batal</a>
+             <a href="../../pages/frontend/login" class="btn btn-lg btn-warning">Batal</a>
             <button class="btn btn-lg btn-success " type="submit" name="Ganti">Simpan</button>             
          <?php
           }

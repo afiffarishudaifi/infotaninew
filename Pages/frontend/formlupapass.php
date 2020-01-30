@@ -35,7 +35,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="lupapasswordpetani.php" method="post">
+      <form class="form-signin" action="lupapasswordpetani" method="post">
         <br> 
         <h2 class="form-signin-heading" align="center" >Cari Akun</h2>
         
@@ -47,7 +47,7 @@
         <input type="text" id="password" name="nohp" class="form-control" placeholder="Masukkan No HP" required autofocus>
         <br>
         <br>
-        <a href="../../pages/frontend/login.php" class="btn btn-lg btn-warning">Batal</a>
+        <a href="../../pages/frontend/login" class="btn btn-lg btn-warning">Batal</a>
         <button class="btn btn-lg btn-success " type="submit" name="submit">Cari</button>
       </form>
     </div> <!-- /container -->

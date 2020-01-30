@@ -35,7 +35,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="../../controller/frontend/proses_register.php" method="post" enctype="multipart/form-data">
+      <form class="form-signin" action="../../controller/frontend/proses_register" method="post" enctype="multipart/form-data">
       
       
         <br> 
@@ -53,7 +53,7 @@
         <input type="file" id="foto" name="foto" >
         <br>
         <br>
-        <a href="../../pages/frontend/button_register.php" class="btn btn-lg btn-warning">Batal</a>
+        <a href="../../pages/frontend/button_register" class="btn btn-lg btn-warning">Batal</a>
         <button class="btn btn-lg btn-success " type="submit" name="submit">Registrasi</button>
       </form>
     </div> <!-- /container -->

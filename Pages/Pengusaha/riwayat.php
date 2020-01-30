@@ -74,7 +74,7 @@
                         <?php }else{echo "Tidak Dapat Dibatalkan";}?>
                           <!-- Delete -->
                         <div class="modal fade" id="del<?php echo $data['ID_PESAN']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="riwayat.php" method="post" enctype="multipart/form-data">
+                            <form action="riwayat" method="post" enctype="multipart/form-data">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -124,13 +124,13 @@
             echo '?>
         <script language="JavaScript">
         alert("Pembatalan Pemesanan Berhasil !");
-        setTimeout(function() {window.location.href="riwayat.php"},10);
+        setTimeout(function() {window.location.href="riwayat"},10);
         </script><?php';
         }
         else{
             echo '<script language="JavaScript">
         alert("Pembatalan Pemesanan Gagal !"");
-        setTimeout(function() {window.location.href="riwayat.php"},10);
+        setTimeout(function() {window.location.href="riwayat"},10);
         </script>';
         }
     }?>

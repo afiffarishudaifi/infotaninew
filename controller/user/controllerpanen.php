@@ -18,12 +18,12 @@ if (isset($_POST['ubah'])) {        //memanggil sebuah nilai dari sebuah inputan
     if ($result) {?>
         <script language="JavaScript">
         alert('Tambah Panen Berhasil !');
-        setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+        setTimeout(function() {window.location.href='../../pages/user/index'},10);
         </script><?php
     } else {?>
         <script language="JavaScript">
         alert('Tidak Bisa Menambah !');
-        setTimeout(function() {window.location.href='../../pages/user/index.php'},10);
+        setTimeout(function() {window.location.href='../../pages/user/index'},10);
         </script><?php
     }
 }

@@ -28,7 +28,7 @@
         Ubah Data Desa
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/controllerdesa.php">
+            <form method="post" action="../../controller/admin/controllerdesa">
                 <?php
                 require_once "../../controller/koneksi.php";
                 if(isset($_GET['id'])) {

@@ -28,7 +28,7 @@
         Ubah Data Pengusaha
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="form-group">
                     <label>SIUP</label>
-                    <img style="height:160px; width:120px;" src="../../img/Pengusaha/SIUP/<?php echo $data[3]?>">
+                    <img style="height:160px; width:120px;" src="../../img/pengusaha/SIUP/<?php echo $data[3]?>">
                     <input type="hidden" name="fotosiup" value="<?php echo $data[3]?>">
                     <input type="file" name="siup" >
                 </div>

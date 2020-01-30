@@ -31,7 +31,7 @@ if (isset($_POST['Ganti'])) {
     ?>
         <script language="JavaScript">
         alert('Password lama tidak sesuai, Silahkan ulang kembali !');
-        setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan.php'},10);
+        setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan'},10);
         </script>
     <?php
         // unset($_SESSION['userid']);
@@ -42,7 +42,7 @@ if (isset($_POST['Ganti'])) {
         ?>
         <script language="JavaScript">
         alert('Gagal ganti password, Data tidak boleh kosong !');
-        setTimeou t(function() {window.location.href='../../pages/pengusaha/pengaturan.php'},10);
+        setTimeou t(function() {window.location.href='../../pages/pengusaha/pengaturan'},10);
         </script>
     <?php
 
@@ -52,7 +52,7 @@ if (isset($_POST['Ganti'])) {
         ?>
         <script language="JavaScript">
         alert('Gagal Ganti Password,New Password harus sama dengan Confirm Password !');
-        setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan.php'},10);
+        setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan'},10);
         </script>
     <?php
     }
@@ -69,7 +69,7 @@ if (isset($_POST['Ganti'])) {
                     ?>
                     <script language="JavaScript">
                     alert('Password Berhasil di Update!');
-                    setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan.php'},10);
+                    setTimeout(function() {window.location.href='../../pages/pengusaha/pengaturan'},10);
                     </script>
                 <?php
                     }

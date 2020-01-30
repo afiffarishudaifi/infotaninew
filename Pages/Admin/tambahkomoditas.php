@@ -28,7 +28,7 @@
         Tambah Data Komoditas
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Komoditas</li>
       </ol>
     </section>
@@ -36,7 +36,7 @@
         <div class="container">
     		<br>
     		<!--membuat sebuah form-->
-    		<form method="post" action="../../controller/admin/controllerKomoditas.php">
+    		<form method="post" action="../../controller/admin/controllerKomoditas">
     			<div class="form-group">
     				<label>Nama Komoditas</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->

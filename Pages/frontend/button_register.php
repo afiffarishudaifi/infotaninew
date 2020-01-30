@@ -2,13 +2,13 @@
 <?php include ('../../controller/session.php'); ?>
 <?php
   if(isset($login_session)) {
-	header('Location:./register.php'); // Mengarahkan ke Home Page
+	header('Location:./register'); // Mengarahkan ke Home Page
 	}
 
       if ($_SESSION['ID_LEVEL']==1){
-          header('Location:../admin/index.php');
+          header('Location:../admin/index');
     } elseif ($_SESSION['ID_LEVEL']==2) {
-        header('Location:../user/index.php');
+        header('Location:../user/index');
     }
 
 ?>
@@ -49,16 +49,16 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
+      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login" method="post">
         <br>
         <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">PILIH REGISTRASI</h2>
 
         <br>
        
-	<a href="../../pages/frontend/register.php" class="btn btn-primary btn-block">PETANI</a>
-  <a href="../../pages/frontend/register_pengusaha.php" class="btn btn-warning btn-block">PENGUSAHA</a>
+	<a href="../../pages/frontend/register" class="btn btn-primary btn-block">PETANI</a>
+  <a href="../../pages/frontend/register_pengusaha" class="btn btn-warning btn-block">PENGUSAHA</a>
   <br>
-   <a href="../../pages/frontend/login.php" class="btn btn- btn-block">kembali</a>
+   <a href="../../pages/frontend/login" class="btn btn- btn-block">kembali</a>
       <br>
       </form>
     </div> <!-- /container -->

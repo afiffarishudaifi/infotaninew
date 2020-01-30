@@ -16,13 +16,13 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     if ($result) {?>
         <script language="JavaScript">
         alert('Tambah Pemesanan Berhasil !, Segera Bayar Tagihan sebelum 1 jam setelah pemesanan');
-        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat.php'},10);
+        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat'},10);
         </script><?php
     } else {
         ?>
         <script language="JavaScript">
         alert('Tambah Pemesanan Gagal !');
-        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat.php'},10);
+        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat'},10);
         </script>
     <?php
     }
@@ -47,13 +47,13 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
             echo '?>
         <script language="JavaScript">
         alert("Tambah Pemesanan Berhasil !");
-        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/user/riwayat"},10);
         </script><?php';
         }
         else{
             echo '<script language="JavaScript">
         alert("Tambah Pemesanan Gagal !"");
-        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/user/riwayat"},10);
         </script>';
         }
 } elseif (isset($_POST['batal'])) {
@@ -76,13 +76,13 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
             echo '?>
         <script language="JavaScript">
         alert("Hapus Pemesanan Berhasil !");
-        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/user/riwayat"},10);
         </script><?php';
         }
         else{
             echo '<script language="JavaScript">
         alert("Hapus Pemesanan Gagal !"");
-        setTimeout(function() {window.location.href="../../pages/user/riwayat.php"},10);
+        setTimeout(function() {window.location.href="../../pages/user/riwayat"},10);
         </script>';
         }
 }

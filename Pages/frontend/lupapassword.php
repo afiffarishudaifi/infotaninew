@@ -122,7 +122,7 @@ function validate_forgot() {
           <input type="email" name="user-email" id="user-email" class="form-control" placeholder="Email">
           <input type="submit" name="forgot-password" id="forgot-password" value="Kirim" class="form-submit-button btn btn-lg btn-block btn-success">
         <br>
-  <a href="./button_login.php" class="btn btn-warning btn-block">Kembali</a>
+  <a href="./button_login" class="btn btn-warning btn-block">Kembali</a>
       <br>
       </form>
     </div> <!-- /container -->

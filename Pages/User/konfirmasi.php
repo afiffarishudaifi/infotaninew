@@ -32,7 +32,7 @@
         Halaman Pemesanan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Halaman Pemesanan</li>
       </ol>
     </section>
@@ -46,7 +46,7 @@
           require_once "../../controller/koneksi.php";
           if(isset($_POST['konfirmasi'])) { 
           ?>
-          <form action="../../controller/user/Pemesanan.php" method="post" enctype="multipart/form-data">
+          <form action="../../controller/user/Pemesanan" method="post" enctype="multipart/form-data">
             <?php
                     $id = $_POST['id'];
 
@@ -86,7 +86,7 @@
                 </div>
               </div>
               <input type="submit" name="konfirmasi" class="btn btn-success" value="konfirmasi">
-              <a href="./riwayat.php" class="btn btn-danger" value="Kembali">Kembali</a>
+              <a href="./riwayat" class="btn btn-danger" value="Kembali">Kembali</a>
 
             <?php
           }
@@ -94,7 +94,7 @@
             </form>
           <?php } elseif(isset($_POST['batal'])) { 
           ?>
-          <form action="../../controller/user/Pemesanan.php" method="post" enctype="multipart/form-data">
+          <form action="../../controller/user/Pemesanan" method="post" enctype="multipart/form-data">
             <?php
                     $id = $_POST['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
@@ -133,7 +133,7 @@
                 </div>
               </div>
               <input type="submit" name="batal" class="btn btn-success" value="Batal Konfirmasi">
-              <a href="./riwayat.php" class="btn btn-danger" value="Kembali">Kembali</a>
+              <a href="./riwayat" class="btn btn-danger" value="Kembali">Kembali</a>
 
             <?php
           }

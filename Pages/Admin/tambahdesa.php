@@ -28,7 +28,7 @@
         Tambah Data Desa
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Desa</li>
       </ol>
     </section>
@@ -36,7 +36,7 @@
         <div class="container">
         <br>
         <!--membuat sebuah form-->
-        <form method="post" action="../../controller/admin/controllerdesa.php">
+        <form method="post" action="../../controller/admin/controllerdesa">
           <div class="form-group">
                     <label>Nama Kecamatan</label>
                     <?php

@@ -62,7 +62,7 @@
             <div class="icon">
               <i class="fa fa-map-pin"></i>
             </div>
-            <a href="./viewdesa.php" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./viewdesa" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -84,7 +84,7 @@
             <div class="icon">
               <i class="fa fa-tree"></i>
             </div>
-            <a href="./viewkomoditas.php" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./viewkomoditas" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -106,7 +106,7 @@
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="./viewpetani.php" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./viewpetani" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -129,7 +129,7 @@
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="./viewuser.php" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./viewuser" class="small-box-footer">Informasi Lengkap<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-12">

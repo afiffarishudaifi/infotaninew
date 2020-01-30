@@ -27,7 +27,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Tabel Petani</h3>
-              <h3><a href="./tambahpetani.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
+              <h3><a href="./tambahpetani"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -72,12 +72,12 @@
                         <td><?php echo DATE_FORMAT(date_create($data ['PANEN']),'d M Y');?></td>
                         <td><?php echo $data ['STATUS'];?></td>
                         <td>
-                        <a href="./ubahpetani.php?id=<?php echo $data['ktp'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <a href="./ubahpetani?id=<?php echo $data['ktp'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
                         <a href="#del<?php echo $data['ktp'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->
                         <div class="modal fade" id="del<?php echo $data['ktp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerpetani.php" method="post">
+                            <form action="../../controller/admin/controllerpetani" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -91,6 +91,7 @@
                                 ?>
                                         <div class="modal-footer">    <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->
                                             <input type="hidden" name="idhapus" value="<?php echo $drow['KTP']; ?>">
+                                            <input type="hidden" name="iduser" value="<?php echo $drow['ID_USER']; ?>">
                                             <h5><center>Apakah yakin ingin menghapus  <strong><?php echo $drow['NAMA_PETANI']; ?></strong> ?</center></h5>
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal</button>
                                             <button type="submit" class="btn btn-danger" name="hapus"><span class="fa fa-trash"></span> Hapus</button>

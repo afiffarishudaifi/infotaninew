@@ -5,24 +5,24 @@
       ?>
       <script language="JavaScript">
   		alert('Anda Belum Login !');
-  		setTimeout(function() {window.location.href="../frontend/login.php"},10);
+  		setTimeout(function() {window.location.href="../frontend/login"},10);
   		</script>
       <?php
-	header('Location: ../frontend/login.php'); // Mengarahkan ke Home Page
+	header('Location: ../frontend/login'); // Mengarahkan ke Home Page
 	}
 
   if ($_SESSION['ID_LEVEL']!=1){
   ?>
 	<script language="JavaScript">
 		alert('Anda Bukan Admin !');
-		setTimeout(function() {window.location.href="../frontend/login.php"},10);
+		setTimeout(function() {window.location.href="../frontend/login"},10);
 		</script>
 	<?php
 }
 ?>
 <header class="main-header">
   <!-- Logo -->
-  <a href="../frontend/index.php" class="logo">
+  <a href="../frontend/index" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>I</b>T</span>
     <!-- logo for regular state and mobile devices -->
@@ -56,10 +56,10 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="./pengaturan.php" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
+                <a href="./pengaturan" class="btn btn-default btn-flat"><span class="fa fa-gears"></span>Pengaturan</a>
               </div>
               <div class="pull-right">
-                <a href="../../controller/logout.php" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Keluar</a>
+                <a href="../../controller/logout" class="btn btn-default btn-flat"><span class="fa fa-power-off"></span>Keluar</a>
               </div>
             </li>
           </ul>

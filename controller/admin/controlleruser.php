@@ -34,7 +34,7 @@ if (isset($login_session)) {
 				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/frontend/login.php";</script>';
+					    	echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/frontend/login";</script>';
                     	}
                     	else{
 					    	echo '<div class="alert alert-warning">Gagal melakukan registrasi</div>';
@@ -42,15 +42,15 @@ if (isset($login_session)) {
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register.php";</script>';
+                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register.php";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register";</script>';
 			}
         }
         else if (isset($_POST['ubah'])) {
-            //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
+            //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran
             $id = $_POST['id_user'];
             $username			= $_POST['username'];
 			$password   		= $_POST['password'];
@@ -80,7 +80,7 @@ if (isset($login_session)) {
                     if ($result) {?>
                         <script language="JavaScript">
                         alert('Ubah Berhasil !');
-                        setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+                        setTimeout(function() {window.location.href='../../pages/admin/viewuser'},10);
                         </script><?php
                     }
                 }
@@ -100,12 +100,12 @@ if (isset($login_session)) {
             if ($result) {?>
                 <script language="JavaScript">
                 alert('Hapus Berhasil !');
-                setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewuser'},10);
                 </script><?php
             } else {?>
                 <script language="JavaScript">
                 alert('Hapus Gagal ! Silahkan Hapus Data Petani terlebih Dahulu');
-                setTimeout(function() {window.location.href='../../pages/admin/viewuser.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewuser'},10);
                 </script><?php
             }
         }

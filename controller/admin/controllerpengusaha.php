@@ -47,7 +47,7 @@ if (isset($login_session)) {
                     ($koneksi, "INSERT INTO perusahaan(USERNAME, PASSWORD, SIUP, LOGO, NAMA_PERUSAHAAN, EMAIL, ALAMAT_PERUSAHAAN, NO_TELP_PERUSAHAAN, NAMA_MANAGER, ID_LEVEL)
                     VALUES('$username', md5('$password'), '$fotobaru', '$fotologo', '$perusahaan', '$email', '$alamat', '$no', '$manager',3)") or die(mysqli_error($koneksi));
                         if($sql){
-                            echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/admin/viewpengusaha.php";</script>';
+                            echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
                         }
                         else{
                             echo '<div class="alert alert-warning">Gagal melakukan Tambah Data</div>';
@@ -56,7 +56,7 @@ if (isset($login_session)) {
 				}
             }
             else{
-				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/admin/viewpengusaha.php";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/admin/viewpengusaha";</script>';
 			}
         } else if (isset($_POST['ubah'])) {
             $idperusahaan = $_POST['idperusahaan'];
@@ -98,7 +98,7 @@ if (isset($login_session)) {
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), SIUP='$fotobaru', LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
                         if($sql){
-                            echo '<script>alert("Berhasil mengubah data!"); document.location="../../Pages/admin/viewpengusaha.php";</script>';
+                            echo '<script>alert("Berhasil mengubah data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
                         }
                         else{
                             echo '<div class="alert alert-warning">Gagal melakukan Ubah Data</div>';
@@ -128,12 +128,12 @@ if (isset($login_session)) {
             if ($result) {?>
                 <script language="JavaScript">
                 alert('Hapus Berhasil !');
-                setTimeout(function() {window.location.href='../../pages/admin/viewpengusaha.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewpengusaha'},10);
                 </script><?php
             } else {?>
                 <script language="JavaScript">
                 alert('Hapus Gagal ! Silahkan Hapus Data pengusaha terlebih Dahulu');
-                setTimeout(function() {window.location.href='../../pages/admin/viewpengusaha.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewpengusaha'},10);
                 </script><?php
             }
     }

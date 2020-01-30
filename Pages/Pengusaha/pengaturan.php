@@ -28,7 +28,7 @@
         Pengaturan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Pengaturan Data</li>
       </ol>
     </section>
@@ -40,7 +40,7 @@
                     <div class="panel-heading"><span class="fa fa-hand-o-right" style="position:static"></span>
                   Form Ganti Kata Sandi </div>
                     <div class="panel-body" style="min-height:450px">
-                        <form action="../../controller/pengusaha/gantipassword.php" method="POST" name="ganti_password" enctype="multipart/form-data">
+                        <form action="../../controller/pengusaha/gantipassword" method="POST" name="ganti_password" enctype="multipart/form-data">
 
                           <input type="hidden" name="userid" id="userid" value="<?php echo $pengusaha ?>">
                             <div class="form-group">

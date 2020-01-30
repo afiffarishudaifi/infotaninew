@@ -53,7 +53,7 @@
                 ?>
                   <script language="JavaScript">
                   alert('Tambah Konfirmasi Pemesanan !');
-                  setTimeout(function() {window.location.href='./riwayat.php'},10);
+                  setTimeout(function() {window.location.href='./riwayat'},10);
                   </script>
                 <?php
             }
@@ -66,7 +66,7 @@
                 ?>
                   <script language="JavaScript">
                   alert('Lengkapi Data !');
-                  setTimeout(function() {window.location.href='./viewpetani.php'},10);
+                  setTimeout(function() {window.location.href='./viewpetani'},10);
                   </script>
                 <?php
             }
@@ -96,7 +96,7 @@
                 ?>
                   <script language="JavaScript">
                   alert('Tambah Hasil Panen !');
-                  setTimeout(function() {window.location.href='./tambahpanen.php'},10);
+                  setTimeout(function() {window.location.href='./tambahpanen'},10);
                   </script>
                 <?php
             } 

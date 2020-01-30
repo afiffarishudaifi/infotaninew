@@ -28,7 +28,7 @@
         Data Petani
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
       </ol>
     </section>
     <section class="content">
@@ -46,7 +46,7 @@
                 $hasilcekdata=mysqli_fetch_array($querydata);
                 if($hasilcekdata==0) {
                   ?>
-                     <form method="post" action="../../controller/user/controllerpetani.php">
+                     <form method="post" action="../../controller/user/controllerpetani">
                         <?php 
                         $query = mysqli_query($koneksi, "SELECT username, id_user FROM user WHERE id_user='$login_session'");
                         while ($data = mysqli_fetch_array($query)) {?>
@@ -162,7 +162,7 @@
                     $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
                     $hasilcek=mysqli_fetch_array($query);
                     if($hasilcek!=0) {?>
-                      <form method="post" action="../../controller/user/controllerpetani.php" enctype="multipart/form-data" sdfsdf>
+                      <form method="post" action="../../controller/user/controllerpetani" enctype="multipart/form-data" sdfsdf>
                       <?php
                       $querys = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
                         while ($datas = mysqli_fetch_array($querys)) {?>
@@ -225,7 +225,7 @@
                     <?php } ?>  
                     </form>
                      <?php } else { ?>
-                      <form method="post" action="../../controller/user/controllerpetani.php" enctype="multipart/form-data">
+                      <form method="post" action="../../controller/user/controllerpetani" enctype="multipart/form-data">
                    <?php
                     $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
                     while ($data = mysqli_fetch_array($query1)) {?>

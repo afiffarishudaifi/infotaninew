@@ -28,7 +28,7 @@
         Tambah Data Petani
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Petani</li>
       </ol>
     </section>
@@ -36,7 +36,7 @@
         <div class="container">
         <br>
         <!--membuat sebuah form-->
-        <form method="post" action="../../controller/admin/controllerpetani.php">
+        <form method="post" action="../../controller/admin/controllerpetani">
           <div class="form-group">
             <label>KTP</label>
             <!--menginputkan sebuah inputan nim bertipe text-->

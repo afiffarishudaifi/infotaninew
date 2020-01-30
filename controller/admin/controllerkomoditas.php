@@ -13,17 +13,17 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Tambah Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas'},10);
             </script><?php
         } else {
             ?>
                 <script language="JavaScript">
                 alert('Tambah Gagal !');
-                setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas.php'},10);
+                setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas'},10);
                 </script><?php
         }
     } else if (isset($_POST['ubah'])) {
-        //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran.php
+        //memanggil sebuah nilai dari sebuah inputan dari form pendaftaran
         $id = $_POST['idkomoditas'];
         $komoditas = $_POST['namakomoditas'];
 
@@ -35,7 +35,7 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Ubah Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas'},10);
             </script><?php
         }
     } else if(isset($_POST['hapus'])){
@@ -47,7 +47,7 @@ require "koneksi.php";
         if ($result) {?>
             <script language="JavaScript">
             alert('Hapus Berhasil !');
-            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas.php'},10);
+            setTimeout(function() {window.location.href='../../pages/admin/viewkomoditas'},10);
             </script><?php
         }
     }

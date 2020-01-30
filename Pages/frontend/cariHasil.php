@@ -42,7 +42,7 @@ session_start();
                         <h2>Pencarian</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php"><i class="icon_house_alt"></i>Beranda</a></li>
+                                <li class="breadcrumb-item"><a href="index"><i class="icon_house_alt"></i>Beranda</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Cari</li>
                             </ol>
                         </nav>
@@ -94,13 +94,13 @@ endif;
         </div>
         <div class="row row2">
             <div class="col-sm-2">
-                <h2 style="margin:0px;"><a class="nav menu" href="index.php" style="text-decoration:none;color:black;"></a></h2>
+                <h2 style="margin:0px;"><a class="nav menu" href="index" style="text-decoration:none;color:black;"></a></h2>
                 <!--<h1 style="margin:0px;"><span class="nav-brand" href="index.php"><h3>INFO TANI</h3></span></h1>-->
             </div>
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
                 <div class="row">
 
-                  <form role="search" action="cariHasil.php" method="post">
+                  <form role="search" action="cariHasil" method="post">
                   <?php 
                   if(isset($_POST['submitcari'])||isset($_SESSION['pos']['cari'])){
                       if(isset($_POST['cari'])){
@@ -704,7 +704,7 @@ endif;
                         <td><?php echo $data ['NO_HP'];?></td>
                         <td class="uang text-right"><?php echo $data ['HASIL'];?></td>
                     </form>
-                    <td class="text-center"><a href="../pengusaha/pemesanan.php?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
+                    <td class="text-center"><a href="../pengusaha/pemesanan?id=<?php echo $data['ID_PANEN'];?>&tgl=<?php echo $data['TGL_PANEN'];?>"><button class="pilih btn btn-primary btn-xs">Pesan</button></a></td>
                     </tr>
                     <?php
                     $no++;

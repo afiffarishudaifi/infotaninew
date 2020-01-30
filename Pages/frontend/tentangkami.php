@@ -35,7 +35,7 @@
                         <h2>Info Tani</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php"><i class="icon_house_alt"></i> Beranda</a></li>
+                                <li class="breadcrumb-item"><a href="index"><i class="icon_house_alt"></i> Beranda</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
                             </ol>
                         </nav>

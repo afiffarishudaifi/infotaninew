@@ -42,7 +42,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-12">
-          <form action="../../controller/Pengusaha/Pemesanan.php" method="post">
+          <form action="../../controller/Pengusaha/Pemesanan" method="post">
           <?php 
             if(isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -136,7 +136,7 @@
               <?php $jmlpesan = $_POST['jmlpesan']; ?>
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPush">Lanjut</button>
               <!--<input type="submit" name="pesan" class="btn btn-success" value="Lanjut">-->
-              <a href="../frontend/cariHasil.php" class="btn btn-danger" value="Kembali">Kembali</a>
+              <a href="../frontend/cariHasil" class="btn btn-danger" value="Kembali">Kembali</a>
               <!--<a href="https://api.whatsapp.com/send?phone=6289697020078&text=Halo%20mau%20order%20gan">coba</a>-->
               <?php //$harga = $_POST['harga'];
                 //$harga_new = str_replace(".","","$harga");

@@ -28,7 +28,7 @@
         Tambah Data Panen
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Panen</li>
       </ol>
     </section>
@@ -36,7 +36,7 @@
         <div class="container">
             <br>
     		<!--membuat sebuah form-->
-            <form method="post" action="../../controller/user/controllerpanen.php">
+            <form method="post" action="../../controller/user/controllerpanen">
                 <div class="form-group">
                     <label>KTP</label>
                     <?php
@@ -48,7 +48,7 @@
                         ?>
                           <script language="JavaScript">
                           alert('Tunggu Panen Selesai !');
-                          setTimeout(function() {window.location.href='./index.php'},10);
+                          setTimeout(function() {window.location.href='./index'},10);
                           </script>
                         <?php
                     }

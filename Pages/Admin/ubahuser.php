@@ -28,7 +28,7 @@
         Ubah Data User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="post" action="../../controller/admin/controlleruser.php" enctype="multipart/form-data">
+            <form method="post" action="../../controller/admin/controlleruser" enctype="multipart/form-data">
                 <?php
                 require_once "../../controller/koneksi.php";
                 if(isset($_GET['id'])) {
@@ -80,7 +80,7 @@
                 </div>
                 <div class="form-group">
                     <label>Katasandi</label>
-                    <input type="text" class="form-control" value="<?php echo $data['PASSWORD']?>" name="password" required>
+                    <input type="text" class="form-control" placeholder="Masukkan Katasandi" name="password" required>
                 </div>
                 <div class="form-group">
                     <label>Foto</label>

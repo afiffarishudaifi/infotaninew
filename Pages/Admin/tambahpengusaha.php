@@ -28,7 +28,7 @@
         Ubah Data Perusahaan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="POST" action="../../controller/admin/controllerpengusaha.php" enctype="multipart/form-data">
+            <form method="POST" action="../../controller/admin/controllerpengusaha" enctype="multipart/form-data">
                 <?php
                 require_once "../../controller/koneksi.php";?>
                 <div class="form-group">
@@ -67,15 +67,15 @@
                 </div>
                 <div class="form-group">
                     <label>Alamat Perusahaan</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Alamat" name="alamat" required">
+                    <input type="text" class="form-control" placeholder="Masukkan Alamat" name="alamat" required>
                 </div>
                 <div class="form-group">
                     <label>No Telp</label>
-                    <input type="text" class="form-control" placeholder="Masukkan No Telp Perusahaan" name="notelp" required ">
+                    <input type="text" class="form-control" placeholder="Masukkan No Telp Perusahaan" name="notelp" required >
                 </div>
                 <div class="form-group">
                     <label>Nama Manager</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Nama Manager" name="manager" required ">
+                    <input type="text" class="form-control" placeholder="Masukkan Nama Manager" name="manager" required >
                 </div>
                 <input type="submit" name="simpan" class="btn btn-success" value="Simpan">
                 <input type="reset" name="reset" class="btn btn-danger" value="Hapus">

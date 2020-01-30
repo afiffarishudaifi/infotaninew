@@ -13,12 +13,12 @@
   <ul class="sidebar-menu">
     <li class="header">NAVIGASI</li>
     <li class="treeview">
-      <a href="./index.php">
+      <a href="./index">
         <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewlevel.php">
+      <a href="./viewlevel">
         <i class="fa fa-eye"></i> <span>Data Level</span>
         <span class="pull-right-container">
         </span>
@@ -32,33 +32,33 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="./viewdesa.php"><i class="fa fa-map-marker"></i>Data Desa</a></li>
-        <li><a href="./viewkecamatan.php"><i class="fa fa-map-o"></i> Data Kecamatan</a></li>
+        <li><a href="./viewdesa"><i class="fa fa-map-marker"></i>Data Desa</a></li>
+        <li><a href="./viewkecamatan"><i class="fa fa-map-o"></i> Data Kecamatan</a></li>
       </ul>
     </li>
     <li class="treeview">
-      <a href="./viewkomoditas.php">
+      <a href="./viewkomoditas">
         <i class="fa fa-tree"></i> <span>Data Komoditas</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewpetani.php">
+      <a href="./viewpetani">
         <i class="fa fa-users"></i> <span>Data Petani</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewpengusaha.php">
+      <a href="./viewpengusaha">
         <i class="fa fa-user-secret"></i> <span>Data Pengusaha</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewuser.php">
+      <a href="./viewuser">
         <i class="fa fa-user"></i> <span>Data User</span>
         <span class="pull-right-container">
         </span>
@@ -72,8 +72,8 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="./viewlappanen.php"><i class="fa fa-leaf"></i>Data Panen</a></li>
-        <li><a href="./viewlappesan.php"><i class="fa fa-send"></i>Data Pemesanan</a></li>
+        <li><a href="./viewlappanen"><i class="fa fa-leaf"></i>Data Panen</a></li>
+        <li><a href="./viewlappesan"><i class="fa fa-send"></i>Data Pemesanan</a></li>
         <!--<li><a href="viewlappanenpadi.php"><i class="fa fa-map-o"></i> Data Panen Padi</a></li>-->
       </ul>
     </li>

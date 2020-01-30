@@ -28,7 +28,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Tabel Komoditas</h3>
-              <h3><a href="tambahkomoditas.php"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
+              <h3><a href="tambahkomoditas"><span class="fa fa-plus" style="position:static;float:Left"> Tambah Data</span></a></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -53,12 +53,12 @@
                         <td><?php echo $data ['ID_KOMODITAS'];?></td>
                         <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
                         <td>
-                        <a href="ubahkomoditas.php?id=<?php echo $data['ID_KOMODITAS'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
+                        <a href="ubahkomoditas?id=<?php echo $data['ID_KOMODITAS'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>
                         <a href="#del<?php echo $data['ID_KOMODITAS'];?>" data-toggle="modal" class="btn btn-danger"><span class="fa fa-trash"></a>
                         <!-- Delete -->
                         <div class="modal fade" id="del<?php echo $data['ID_KOMODITAS']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <form action="../../controller/admin/controllerkomoditas.php" method="post">
+                            <form action="../../controller/admin/controllerkomoditas" method="post">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

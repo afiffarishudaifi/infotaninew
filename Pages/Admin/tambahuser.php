@@ -28,7 +28,7 @@
         Ubah Data User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-dashboard"></i> Beranda</a></li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Beranda</a></li>
         <li class="active">Tambah Data</li>
       </ol>
     </section>
@@ -39,7 +39,7 @@
 
              ?>
             <!--membuat sebuah form-->
-            <form method="POST" action="../../controller/admin/controlleruser.php" enctype="multipart/form-data">
+            <form method="POST" action="../../controller/admin/controlleruser" enctype="multipart/form-data">
                 <?php
                 require_once "../../controller/koneksi.php";?>
                 <div class="form-group">

@@ -13,25 +13,25 @@
   <ul class="sidebar-menu">
     <li class="header">NAVIGASI</li>
     <li class="treeview">
-      <a href="./index.php">
+      <a href="./index">
         <i class="fa fa-dashboard"></i> <span>Beranda</span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./viewpetani.php">
+      <a href="./viewpetani">
         <i class="fa fa-users"></i> <span>Data Petani</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
     <li class="treeview">
-      <a href="./tambahpanen.php">
+      <a href="./tambahpanen">
         <i class="fa fa-users"></i> <span>Form Panen</span>
         <span class="pull-right-container">
         </span>
       </a>
     </li>
-    <li><a href="../user/laporan_panen.php"><i class="fa fa-book"></i> <span>Data Panen </span></a></li>
+    <li><a href="../user/laporan_panen"><i class="fa fa-book"></i> <span>Data Panen </span></a></li>
 
     <li class="treeview">
       <a href="#">
@@ -41,9 +41,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="./viewlaporan.php"><i class="fa fa-leaf"></i>Data Panen</a></li>
-        <li><a href="./viewlappesan.php"><i class="fa fa-send"></i>Data Pemesanan</a></li>
-        <!--<li><a href="viewlappanenpadi.php"><i class="fa fa-map-o"></i> Data Panen Padi</a></li>-->
+        <li><a href="./viewlaporan"><i class="fa fa-leaf"></i>Data Panen</a></li>
+        <li><a href="./viewlappesan"><i class="fa fa-send"></i>Data Pemesanan</a></li>
+        <!--<li><a href="viewlappanenpadi"><i class="fa fa-map-o"></i> Data Panen Padi</a></li>-->
       </ul>
     </li>
   </ul>
