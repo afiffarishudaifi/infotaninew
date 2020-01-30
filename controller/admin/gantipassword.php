@@ -72,5 +72,4 @@ if (isset($_POST['Ganti'])) {
             }
     }
 }
-
 ?>

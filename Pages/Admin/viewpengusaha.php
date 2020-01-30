@@ -44,7 +44,6 @@
                   <th>ALAMAT PERUSAHAAN</th>
                   <th>NO TELP</th>
                   <th>NAMA MANAGER</th>
-                  <th>ID LEVEL  </th>
                   <th>AKSI(s)</th>
                 </tr>
                 </thead>
@@ -68,7 +67,6 @@
                         <td><?php echo $data [7];?></td>
                         <td><?php echo $data [8];?></td>
                         <td><?php echo $data [9];?></td>
-                        <td><?php echo $data [10];?></td>
                         <td>
                         <a href="./ubahpengusaha?id=<?php echo $data[0];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">
                         </span></button></a>

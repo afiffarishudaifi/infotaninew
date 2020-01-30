@@ -50,10 +50,11 @@
                 <input type="hidden" name="idperusahaan" value="<?php echo $data[0]?>">
                 <div class="form-group">
                     <label>Nama Pengguna</label>
-                    <input type="text" class="form-control" value="<?php echo $data[1]?>" name="username" required onkeypress="return hanyaTulisan(event)">
+                    <input type="text" class="form-control" value="<?php echo $data[1]?>" name="username" required onkeypress="return hanyaTulisan(event)" readonly>
                 </div><div class="form-group">
-                    <label>katasandi</label>
-                    <input type="text" class="form-control" placeholder="masukkan katasandi" name="password" required onkeypress="return hanyaTulisan(event)">
+                    <label>Kata Sandi</label>
+                    <input type="text" class="password form-control" placeholder="Masukkan Kata Sandi" name="password" required onkeypress="return hanyaTulisan(event)">
+                    <input type="checkbox" id="cek"> Centang untuk Ubah Kata Sandi
                 </div>
                 <div class="form-group">
                     <label>SIUP</label>

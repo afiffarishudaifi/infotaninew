@@ -135,3 +135,15 @@
                 $( '.uang' ).mask('000.000.000', {reverse: true});
             })
         </script>
+
+<!--disabled enabled password-->
+<script type="text/javascript">
+    $(document).ready(function(){
+      enable_cb();
+      $("#cek").click(enable_cb);
+  });
+  
+  function enable_cb() {
+    $("input.password").prop("disabled", !this.checked);
+  }
+  </script>

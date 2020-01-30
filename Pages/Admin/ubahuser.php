@@ -50,7 +50,7 @@
                 <input type="hidden" name="id_user" value="<?php echo $data['ID_USER']?>">
                 <div class="form-group">
                     <label>Nama Pengguna</label>
-                    <input type="text" class="form-control" value="<?php echo $data['USERNAME']?>" name="username" required onkeypress="return hanyaTulisan(event)">
+                    <input type="text" class="form-control" value="<?php echo $data['USERNAME']?>" name="username" required onkeypress="return hanyaTulisan(event)" readonly>
                 </div>
                 <div class="form-group">
                     <label>Level</label>
@@ -80,7 +80,8 @@
                 </div>
                 <div class="form-group">
                     <label>Katasandi</label>
-                    <input type="text" class="form-control" placeholder="Masukkan Katasandi" name="password" required>
+                    <input type="text" class="password form-control" placeholder="Masukkan Katasandi" name="password">
+                    <input type="checkbox" id="cek"> Centang untuk Ubah Kata Sandi
                 </div>
                 <div class="form-group">
                     <label>Foto</label>

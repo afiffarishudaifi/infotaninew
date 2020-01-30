@@ -96,17 +96,39 @@ if (isset($login_session)) {
                 }
             } else{
                 if(move_uploaded_file($tmp, $path)&&move_uploaded_file($tmp2, $path2)){
+                    if(isset($_POST['password'])){
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), SIUP='$fotobaru', LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                    }else{
+                        $sql = mysqli_query
+                        ($koneksi, "update perusahaan set USERNAME='$username',  SIUP='$fotobaru', LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+    
+                    }
                 }else if(move_uploaded_file($tmp, $path)){
+                    if(isset($_POST['password'])){
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), SIUP='$fotobaru', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                    }else{
+                        $sql = mysqli_query
+                    ($koneksi, "update perusahaan set USERNAME='$username',  SIUP='$fotobaru',  NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+
+                    }
                 }else if(move_uploaded_file($tmp2, $path2)){
+                    if(isset($_POST['password'])){
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                    }else{
+                        $sql = mysqli_query
+                        ($koneksi, "update perusahaan set USERNAME='$username',  LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));      
+                    }
                 }else{
+                    if(isset($_POST['password'])){
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                    }else{
+                        $sql = mysqli_query
+                        ($koneksi, "update perusahaan set USERNAME='$username', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));      
+                    }
                 }
                     if($sql){
                             echo '<script>alert("Berhasil mengubah data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
