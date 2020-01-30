@@ -82,6 +82,25 @@ if (isset($_POST['Ganti'])) {
                 <?php
 
                     }
+            }else{
+                $query = "UPDATE user SET password = md5('$pass_baru') WHERE ID_USER='$userid'";
+                $sql = mysqli_query($koneksi,$query);
+                //Setelah diupdate
+                if($sql){
+                    ?>
+                    <script language="JavaScript">
+                    alert('Password Berhasil di Update!');
+                    setTimeout(function() {window.location.href='../../pages/user/pengaturan'},10);
+                    </script>
+                <?php
+                    }
+                else{
+                    ?>
+                    <script language="JavaScript">
+                    alert('Password Gagal di Update !');
+                    </script>
+                <?php
+                }
             }
         }
     }
