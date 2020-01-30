@@ -74,7 +74,9 @@ if (isset($login_session)) {
                 if(move_uploaded_file($tmp, $path)){
                     //sebuah query untuk menginputkan data ke table tb_siswa
                     $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD=md5('$password'), FOTO_USER='$fotobaru' where ID_USER='$id'";
-            
+                }else{
+                    $query = "UPDATE user SET ID_LEVEL='$id_level', USERNAME='$username', PASSWORD=md5('$password') where ID_USER='$id'";                 
+                }
                     $result = mysqli_query($koneksi, $query);
             
                     if ($result) {?>
@@ -83,7 +85,7 @@ if (isset($login_session)) {
                         setTimeout(function() {window.location.href='../../pages/admin/viewuser'},10);
                         </script><?php
                     }
-                }
+                
                     
             }
           

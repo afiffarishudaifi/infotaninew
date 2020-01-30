@@ -87,24 +87,33 @@ if (isset($login_session)) {
             $no              = $_POST['notelp'];
             $manager         = $_POST['manager'];
 
-            if (file_exists($fotolamalogo)) {
+            if (file_exists($fotolamalogo)||file_exists($fotosiup)) {
+                if (file_exists($fotolamalogo)){
                 unlink($fotolamalogo);
+                }
                 if (file_exists($fotosiup)) {
                     unlink($fotosiup);   
                 }
             } else{
-                if(move_uploaded_file($tmp, $path)){
-                    if(move_uploaded_file($tmp2, $path2)){
+                if(move_uploaded_file($tmp, $path)&&move_uploaded_file($tmp2, $path2)){
                     $sql = mysqli_query
                     ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), SIUP='$fotobaru', LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
-                        if($sql){
+                }else if(move_uploaded_file($tmp, $path)){
+                    $sql = mysqli_query
+                    ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), SIUP='$fotobaru', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                }else if(move_uploaded_file($tmp2, $path2)){
+                    $sql = mysqli_query
+                    ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                }else{
+                    $sql = mysqli_query
+                    ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                }
+                    if($sql){
                             echo '<script>alert("Berhasil mengubah data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
                         }
                         else{
                             echo '<div class="alert alert-warning">Gagal melakukan Ubah Data</div>';
                         } echo "s";
-                    }echo "d";
-                }echo "f";
             } echo "a";
         } else if(isset($_POST['hapus'])){
             $id = $_POST['idhapus'];
