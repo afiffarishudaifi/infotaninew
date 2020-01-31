@@ -24,7 +24,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id AND pemesanan.ID_PESAN=(SELECT max(pemesanan.ID_PESAN) FROM pemesanan)");
     if ($result) {
 
-    $mail = new PHPMailer;
+    /*$mail = new PHPMailer;
         $mail->IsSMTP();
         $mail->SMTPSecure = 'ssl';
         $mail->Host = "smtp.gmail.com"; //host masing2 provider email
@@ -45,12 +45,11 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         header("location:../../pages/pengusaha/riwayat");
 
     }else echo "Failed to sending message";
-        ?>
+        ?>*/
     ?>
         <script language="JavaScript">
         alert('Tambah Pemesanan Berhasil !, Segera Bayar Tagihan sebelum 1 jam setelah pemesanan');
-        setTimeout(function() {window.location.href=''},10);
-        $mail->Send();
+        setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat'},10);
         </script><?php
     } else {
         ?>

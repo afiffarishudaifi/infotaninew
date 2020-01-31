@@ -42,33 +42,33 @@
             require "../../controller/koneksi.php";
         if (isset($_POST['submit'])) {
            $username = $_POST['username'];
-           $no = $_POST['nohp'];
-           $query = mysqli_query($koneksi, "select user.ID_USER FROM user, petani WHERE user.ID_USER=petani.ID_USER and username='$username' and petani.NO_HP='$no'");
+           $email = $_POST['email'];
+           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM PERUSAHAAN WHERE username='$username' and EMAIL='$email'");
            $hasil = mysqli_fetch_array($query);
            if ($hasil == 0) {
              ?>
                 <script language="JavaScript">
                 alert('Tidak ditemukan nama Pengguna');
-                setTimeout(function() {window.location.href='../../pages/frontend/formlupapass'},10);
+                setTimeout(function() {window.location.href='../../pages/frontend/formlupapasspengusaha'},10);
                 </script>
             <?php
            }
-           $query = mysqli_query($koneksi, "select user.ID_USER FROM user, petani WHERE user.ID_USER=petani.ID_USER and username='$username' and petani.NO_HP='$no'");
+           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM PERUSAHAAN WHERE username='$username' and EMAIL='$email'");
             while($data = mysqli_fetch_array($query)){?>
               <h2 class="form-signin-heading" align="center" >Atur Ulang Kata Sandi</h2>
-            <input type="hidden" name="iduser" style="color: black;" value="<?php echo $data['ID_USER']; ?>">
+            <input type="hidden" name="id" style="color: black;" value="<?php echo $data['ID_PERUSAHAAN']; ?>">
             <br>
             <label for="password" >Katasandi Baru</label>
             <input type="password" id="password" name="pass_baru" class="form-control" placeholder="Kata Sandi" required autofocus>
 
-            <label for="passwordConf" >Konfirmasi password</label>
+            <label for="passwordConf" >Konfirmasi Katasandi</label>
             <input type="password" id="passwordConf" name="pass_konf" class="form-control" placeholder="Ulangi Kata Sandi" required>
 
              <a href="../../pages/frontend/login" class="btn btn-lg btn-warning">Batal</a>
-            <button class="btn btn-lg btn-success " type="submit" name="Gantipetani">Simpan</button>             
+            <button class="btn btn-lg btn-success " type="submit" name="Gantipengusaha">Simpan</button>             
          <?php
           }
-       }
+       } 
         ?>
 
       </form>
