@@ -35,7 +35,7 @@
                 <thead class="thead-dark">
                 <tr>
                   <th>ID DESA</th>
-                  <th>ID KECAMATAN</th>
+                  <th>NAMA KECAMATAN</th>
                   <th>NAMA DESA</th>
                   <th>AKSI(s)</th>
                 </tr>
@@ -44,14 +44,14 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT * FROM desa");
+                    $query = mysqli_query($koneksi, "SELECT * FROM desa INNER JOIN kecamatan on kecamatan.ID_KECAMATAN = desa.ID_KECAMATAN");
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_DESA'];?></td>
-                        <td><?php echo $data ['ID_KECAMATAN'];?></td>
+                        <td><?php echo $data ['NAMA_KECAMATAN'];?></td>
                         <td><?php echo $data ['NAMA_DESA'];?></td>
                         <td>
                         <a href="ubahdesa?id=<?php echo $data['ID_DESA'];?>"><button class="pilih btn btn-primary"><span class="fa fa-pencil">

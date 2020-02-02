@@ -62,7 +62,7 @@ if (isset($_POST['Ganti'])) {
             unlink($gambar);
         } else {
             if(move_uploaded_file($tmp, $path)){
-                $query = "UPDATE PERUSAHAAN SET password = md5('$pass_baru'), LOGO = '$fotobaru' WHERE ID_PERUSAHAAN='$userid'";
+                $query = "UPDATE perusahaan SET password = md5('$pass_baru'), LOGO = '$fotobaru' WHERE ID_PERUSAHAAN='$userid'";
                 $sql = mysqli_query($koneksi,$query);
                 //Setelah diupdate
                 if($sql){
@@ -82,7 +82,7 @@ if (isset($_POST['Ganti'])) {
 
                     }
             }else{
-                $query = "UPDATE PERUSAHAAN SET password = md5('$pass_baru') WHERE ID_PERUSAHAAN='$userid'";
+                $query = "UPDATE perusahaan SET password = md5('$pass_baru') WHERE ID_PERUSAHAAN='$userid'";
                 $sql = mysqli_query($koneksi,$query);
                 //Setelah diupdate
                 if($sql){

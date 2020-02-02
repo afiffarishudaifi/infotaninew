@@ -4,7 +4,16 @@
 <?php
     include "./_partials/head.php";
 ?>
-<link rel="stylesheet" type="text/css" href="./css/index.css" />
+<head>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--manual CSS-->
+    <link rel="stylesheet" href="./css/tentangkami.css">
+    <link rel="stylesheet" href="./css/cariHasil.css">
+    
+
+</head>
 
 <body>
     <!-- Preloader -->
@@ -163,6 +172,7 @@
         </div>
         <div class="container">
             <div class="row">
+            <div class="box-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
             <thead>
              <?php echo "<tr bgcolor='cream'>";?>
@@ -212,7 +222,7 @@ while($data = mysqli_fetch_array($query_tampil)) {  //merubah array dari objek k
 <?php } ?>
     </tbody>
     </table>
-
+        </div>
             </div>
         </div>
     </section>

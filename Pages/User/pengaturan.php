@@ -46,6 +46,7 @@
                             <div class="form-group">
                         		Foto
                                 <img src="../../img/user/<?php echo $gambar;?>" style="height:160px; width:120px;" class="img-rectangle" alt="User Image">
+                                <input type="hidden" name="fotouser" id="fotouser" value="<?php echo $gambar ?>">
                                 <input type="file" id="foto" name="foto" >
                             </div>
                         	<div class="form-group">

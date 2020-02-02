@@ -43,7 +43,7 @@
         if (isset($_POST['submit'])) {
            $username = $_POST['username'];
            $email = $_POST['email'];
-           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM PERUSAHAAN WHERE username='$username' and EMAIL='$email'");
+           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM perusahaan WHERE username='$username' and EMAIL='$email'");
            $hasil = mysqli_fetch_array($query);
            if ($hasil == 0) {
              ?>
@@ -53,7 +53,7 @@
                 </script>
             <?php
            }
-           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM PERUSAHAAN WHERE username='$username' and EMAIL='$email'");
+           $query = mysqli_query($koneksi, "select ID_PERUSAHAAN FROM perusahaan WHERE username='$username' and EMAIL='$email'");
             while($data = mysqli_fetch_array($query)){?>
               <h2 class="form-signin-heading" align="center" >Atur Ulang Kata Sandi</h2>
             <input type="hidden" name="id" style="color: black;" value="<?php echo $data['ID_PERUSAHAAN']; ?>">

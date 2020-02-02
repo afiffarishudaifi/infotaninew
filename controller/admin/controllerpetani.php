@@ -53,7 +53,7 @@
          $status = $_POST['idstatus'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "UPDATE PETANI SET ID_DESA='$desa', ID_KOMODITAS='$komoditas', ID_USER='$username',
+         $query = "UPDATE petani SET ID_DESA='$desa', ID_KOMODITAS='$komoditas', ID_USER='$username',
          ID_STATUS='$status', NAMA_PETANI='$namapetani', ALAMAT_PETANI='$alamatpetani', NO_HP='$nohp', LUAS_SAWAH='$luassawah',
          ALAMAT_SAWAH='$alamatsawah', TANAM='$tgltanam1', PANEN='$tglpanen1' where KTP='$KTP'";
 
@@ -77,7 +77,7 @@
          $id = $_POST['idhapus'];
          $user = $_POST['iduser'];
          //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-         $query = "Delete FROM PETANI WHERE KTP='$id'";
+         $query = "Delete FROM petani WHERE KTP='$id'";
          $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
          
          $hapus = mysqli_query($koneksi, "delete FROM user where ID_USER='$user'");

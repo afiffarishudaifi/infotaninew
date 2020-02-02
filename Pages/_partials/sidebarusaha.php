@@ -19,7 +19,7 @@
       </a>
     </li>
     <li class="treeview">
-      <a href="./Riwayat">
+      <a href="./riwayat">
         <i class="fa fa-send"></i> <span>Riwayat Pemesanan</span>
         <span class="pull-right-container">
         </span>

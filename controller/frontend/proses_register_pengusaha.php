@@ -26,22 +26,22 @@
 				    	VALUES('$username', md5('$password'),'$fotobaru', '$id_level')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Masuk."); document.location="../../Pages/frontend/login";</script>';
+					    	echo '<script>alert("Berhasil menambahkan data - Silahkan Masuk."); document.location="../../pages/frontend/login";</script>';
                     	}
                     	else{
-					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../Pages/frontend/register_pengusaha";</script>';
+					    	echo '<script>alert("Gagal melakukan registrasi!"); document.location="../../pages/frontend/register_pengusaha";</script>';
 						}
 					}
 					else{
-						echo '<script>alert("Gagal - Mohon sertakan bukti SIUP!"); document.location="../../Pages/frontend/register_pengusaha";</script>';
+						echo '<script>alert("Gagal - Mohon sertakan bukti SIUP!"); document.location="../../pages/frontend/register_pengusaha";</script>';
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Kata Sandi tidak sama."); document.location="../../Pages/frontend/register_pengusaha";</script>';
+                    echo '<script>alert("Gagal! Kata Sandi tidak sama."); document.location="../../pages/frontend/register_pengusaha";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Nama Pengguna telah terdaftar"); document.location="../../Pages/frontend/register";</script>';
+				echo '<script>alert("Gagal! Nama Pengguna telah terdaftar"); document.location="../../pages/frontend/register";</script>';
 			}
 		}
 	?>

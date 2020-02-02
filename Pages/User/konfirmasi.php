@@ -46,12 +46,12 @@
           require_once "../../controller/koneksi.php";
           if(isset($_POST['konfirmasi'])) { 
           ?>
-          <form action="../../controller/user/Pemesanan" method="post" enctype="multipart/form-data">
+          <form action="../../controller/user/pemesanan" method="post" enctype="multipart/form-data">
             <?php
                     $id = $_POST['id'];
 
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
+                    $query = mysqli_query($koneksi, "SELECT * FROM pemesanan WHERE ID_PESAN='$id'");
                     while ($data = mysqli_fetch_array($query)) {?>
             <fieldset><legend><h5>Data Pemesanan</h5></legend></fieldset>
             <input type="hidden" name="idpanen" value="<?php echo $data['ID_PANEN'] ?>">
@@ -94,11 +94,11 @@
             </form>
           <?php } elseif(isset($_POST['batal'])) { 
           ?>
-          <form action="../../controller/user/Pemesanan" method="post" enctype="multipart/form-data">
+          <form action="../../controller/user/pemesanan" method="post" enctype="multipart/form-data">
             <?php
                     $id = $_POST['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan WHERE ID_PESAN='$id'");
+                    $query = mysqli_query($koneksi, "SELECT * FROM pemesanan WHERE ID_PESAN='$id'");
                     while ($data = mysqli_fetch_array($query)) {?>
             <fieldset><legend><h5>Data Pemesanan</h5></legend></fieldset>
             <input type="hidden" name="idpanen" value="<?php echo $data['ID_PANEN'] ?>">

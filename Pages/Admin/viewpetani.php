@@ -53,7 +53,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER");
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER")or die(mysqli_error($koneksi));
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
@@ -86,7 +86,7 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                                  $del=mysqli_query($koneksi, "select * from PETANI where KTP='".$data['ktp']."'");
+                                  $del=mysqli_query($koneksi, "select * from petani where KTP='".$data['ktp']."'") or die(mysqli_error($koneksi));
                                   $drow=mysqli_fetch_array($del);
                                 ?>
                                         <div class="modal-footer">    <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->

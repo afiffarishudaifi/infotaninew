@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <?php
         include "../_partials/head.php";

@@ -43,7 +43,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT * FROM kecamatan");
+                    $query = mysqli_query($koneksi, "SELECT * FROM kecamatan") or die(mysqli_error($koneksi));
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>

@@ -36,7 +36,7 @@
         <div class="container">
     		<br>
     		<!--membuat sebuah form-->
-    		<form method="post" action="../../controller/admin/controllerKomoditas">
+    		<form method="post" action="../../controller/admin/controllerkomoditas">
     			<div class="form-group">
     				<label>Nama Komoditas</label>
     				<!--menginputkan sebuah inputan nim bertipe text-->

@@ -9,7 +9,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $total = $_POST['total'];
 
     //sebuah query untuk menginputkan data ke table tb_siswa
-    $query = "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS) values('$id','$ktp','$tgl','$jumlah','$total','1')";
+    $query = "INSERT INTO pemesanan(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS) values('$id','$ktp','$tgl','$jumlah','$total','1')";
 
     $result = mysqli_query($koneksi, $query);
 
@@ -34,7 +34,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $idpanen = $_POST['idpanen'];
     $idperusahaan = $_POST['idperusahaan'];
         $sql = mysqli_query
-        ($koneksi, "UPDATE PEMESANAN SET ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+        ($koneksi, "UPDATE pemesanan SET ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
 
 /*        $cekkurang = mysqli_query($koneksi, "SELECT * FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
@@ -69,9 +69,9 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
             $hasil = $data['HASIL'] + $jumlah_fix;
             };
 
-        $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
+        $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set panen.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN=$id");
         $sql = mysqli_query
-        ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+        ($koneksi, "DELETE FROM pemesanan WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         if($sql){
             echo '?>
         <script language="JavaScript">

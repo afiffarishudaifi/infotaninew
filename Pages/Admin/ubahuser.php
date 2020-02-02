@@ -35,17 +35,14 @@
     <section class="content">
         <div class="container">
             <br>
-            <?php
-
-             ?>
-            <!--membuat sebuah form-->
             <form method="post" action="../../controller/admin/controlleruser" enctype="multipart/form-data">
-                <?php
+                <?php $id= $_GET['id'];
                 require_once "../../controller/koneksi.php";
                 if(isset($_GET['id'])) {
                     $id = $_GET['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT USER.ID_LEVEL, USERNAME, ID_USER, NAMA_LEVEL, PASSWORD, FOTO_USER FROM USER, LEVEL WHERE LEVEL.ID_LEVEL=USER.ID_LEVEL AND ID_USER='$id'");
+                    $query = mysqli_query($koneksi, "SELECT user.ID_LEVEL, USERNAME, ID_USER, NAMA_LEVEL, PASSWORD, FOTO_USER FROM user, level WHERE level.ID_LEVEL=user.ID_LEVEL AND ID_USER='$id'") or die(mysqli_error($koneksi));
+                }
                     while ($data = mysqli_fetch_array($query)) {?>
                 <input type="hidden" name="id_user" value="<?php echo $data['ID_USER']?>">
                 <div class="form-group">
@@ -94,7 +91,7 @@
             </form>
 
             <?php
-        }} ?>
+        } ?>
         </div>
     </section>
     <br><br>

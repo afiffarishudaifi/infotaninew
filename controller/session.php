@@ -22,7 +22,7 @@ $ktppetani =$rowpetani['KTP'];
 
 $pengusaha=$_SESSION['ID_PERUSAHAAN'];
 
-$sql2 = "select * from PERUSAHAAN where ID_PERUSAHAAN='$pengusaha'" ;
+$sql2 = "select * from perusahaan where ID_PERUSAHAAN='$pengusaha'" ;
 $ses_sql2=mysqli_query($koneksi, $sql2);
 $row2 = mysqli_fetch_assoc($ses_sql2);
 $login_pengusaha =$row2['ID_USER'];

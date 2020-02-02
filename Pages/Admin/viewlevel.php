@@ -42,7 +42,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT * FROM LEVEL");
+                    $query = mysqli_query($koneksi, "SELECT * FROM level") or die(mysqli_error($koneksi));;
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
@@ -65,7 +65,7 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                        					$del=mysqli_query($koneksi, "select * from LEVEL where ID_LEVEL='".$data['ID_LEVEL']."'");
+                        					$del=mysqli_query($koneksi, "select * from level where ID_LEVEL='".$data['ID_LEVEL']."'") or die(mysqli_error($koneksi));
                         					$drow=mysqli_fetch_array($del);
                         				?>
                                         <div class="modal-footer">		<!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->

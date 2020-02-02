@@ -42,7 +42,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-12">
-          <form action="../../controller/Pengusaha/Pemesanan" method="post">
+          <form action="../../controller/pengusaha/pemesanan" method="post">
           <?php 
             if(isset($_GET['id'])) {
                 $id = $_GET['id'];

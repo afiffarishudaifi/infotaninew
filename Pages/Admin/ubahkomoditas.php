@@ -45,7 +45,7 @@
                 if(isset($_GET['id'])) {
                     $id = $_GET['id'];
                     //query untuk menampilkan sebuah query select dari table tb_siswa dengan id siswa sebagai parameter
-                    $query = mysqli_query($koneksi, "SELECT * FROM KOMODITAS WHERE ID_KOMODITAS='$id'");
+                    $query = mysqli_query($koneksi, "SELECT * FROM komoditas WHERE ID_KOMODITAS='$id'");
                     while ($data = mysqli_fetch_array($query)) {?>
                 <input type="hidden" name="idkomoditas" value="<?php echo $data['ID_KOMODITAS']?>">
                 <div class="form-group">

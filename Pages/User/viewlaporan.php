@@ -66,9 +66,9 @@
               <?php 
               $hasilsum = mysqli_query($koneksi, $sum);
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
-               <h3 class="box-title">Jumlah Awal Panen      : <b><?php echo $tampilsum[0]; ?> KG</b>  </h3>
+               <h3 class="box-title">Jumlah Awal Panen      : <b class="uang"><?php echo $tampilsum[0]; ?></b><b> KG</b>  </h3>
                <br/>
-               <h3 class="box-title">Jumlah Sisa Panen :<b><?php echo $tampilsum[1]; ?> KG</b>  </h3>
+               <h3 class="box-title">Jumlah Sisa Panen :<b class="uang"><?php echo $tampilsum[1]; ?></b><b>  KG</b>  </h3>
              <?php } ?>
                <br>
             </div>

@@ -17,7 +17,7 @@ if (isset($_POST['Ganti'])) {
     $pass_konf = $_POST['pass_konf'];
 
     //Cek Password Lama
-    $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password=md5('$pass_lama')";
+    $query = "SELECT * FROM user WHERE ID_USER='$userid' AND password=md5('$pass_lama')";
     $sql = mysqli_query($koneksi, $query);
     $hasil = mysqli_num_rows($sql);
     if (!$hasil >= 1) {

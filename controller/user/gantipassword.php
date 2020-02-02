@@ -17,15 +17,15 @@ if (isset($_POST['Ganti'])) {
     $pass_konf = $_POST['pass_konf'];
     $foto = $_FILES['foto']['name'];
     $tmp = $_FILES['foto']['tmp_name'];
-
+    $fotouser = $_POST['fotouser'];
     //merename foto dengan menambah tgl dan jam upload
     $fotobaru = $foto;
-    $fotobaru = $gambar;
+    $fotobaru = $fotouser;
     //set path folder tempat menyimpan foto
     $path = "../../img/user/".$fotobaru;
 
     //Cek Password Lama
-    $query = "SELECT * FROM USER WHERE ID_USER='$userid' AND password=md5('$pass_lama')";
+    $query = "SELECT * FROM user WHERE ID_USER='$userid' AND password=md5('$pass_lama')";
     $sql = mysqli_query($koneksi, $query);
     $hasil = mysqli_num_rows($sql);
     if (!$hasil >= 1) {
@@ -59,8 +59,8 @@ if (isset($_POST['Ganti'])) {
     }
     //Update data
     else{
-        if (file_exists($gambar)) {
-            unlink($gambar);
+        if (file_exists($fotouser)) {
+            unlink($fotouser);
         } else {
             if(move_uploaded_file($tmp, $path)){
                 $query = "UPDATE user SET password = md5('$pass_baru'), FOTO_USER = '$fotobaru' WHERE ID_USER='$userid'";

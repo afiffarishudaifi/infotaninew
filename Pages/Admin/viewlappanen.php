@@ -45,7 +45,7 @@
                         
 
                         echo "<option value='belum memilih' selected>--Pilih Komoditas--</option>";
-                        $cekkomoditastampil = mysqli_query($koneksi, "select * from komoditas");
+                        $cekkomoditastampil = mysqli_query($koneksi, "select * from komoditas") or die(mysqli_error($koneksi));
                         while ($data=mysqli_fetch_array($cekkomoditastampil)) {
                         ?>
                         <option value="<?=$data['ID_KOMODITAS']?>"><?=$data['NAMA_KOMODITAS']?></option>
@@ -60,9 +60,9 @@
               </h3>
               <br>
               <?php 
-              $hasilsum = mysqli_query($koneksi, $sum);
+              $hasilsum = mysqli_query($koneksi, $sum) or die(mysqli_error($koneksi));
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
-               <h3 class="box-title">Jumlah Panen : <b><?php echo $tampilsum[0]; ?> KG</b>  </h3>
+               <h3 class="box-title">Jumlah Panen : <b class="uang"><?php echo $tampilsum[0]; ?> </b><b> KG</b>  </h3>
              <?php } ?>
                <br>
             </div>
@@ -84,7 +84,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, $tipe);
+                    $query = mysqli_query($koneksi, $tipe) or die(mysqli_error($koneksi));
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>

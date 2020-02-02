@@ -34,7 +34,7 @@ if (isset($login_session)) {
 				    	VALUES('$id_level', '$username', md5('$password'), '$fotobaru')") or die(mysqli_error($koneksi));
 
 				    	if($sql){
-					    	echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/frontend/login";</script>';
+					    	echo '<script>alert("Berhasil menambahkan data!"); document.location="../../pages/frontend/login";</script>';
                     	}
                     	else{
 					    	echo '<div class="alert alert-warning">Gagal melakukan registrasi</div>';
@@ -42,11 +42,11 @@ if (isset($login_session)) {
 					}
                 }
                 else{
-                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../Pages/frontend/register";</script>';
+                    echo '<script>alert("Gagal! Password tidak sama."); document.location="../../pages/frontend/register";</script>';
                 }
             }
             else{
-				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/frontend/register";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../pages/frontend/register";</script>';
 			}
         }
         else if (isset($_POST['ubah'])) {

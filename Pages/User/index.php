@@ -83,13 +83,13 @@
                 $query = "update petani set ID_STATUS=1 WHERE KTP='$KTP'";
                 $ubah = mysqli_query($koneksi, $query);
                 if ($status==2) {
-                    $queryinsertpanen = "insert into PANEN(KTP,TGL_PANEN,KOMODITAS) values($KTP,'$tgll', $komoditas)";
+                    $queryinsertpanen = "insert into panen(KTP,TGL_PANEN,KOMODITAS) values($KTP,'$tgll', $komoditas)";
                     $insert = mysqli_query($koneksi, $queryinsertpanen);
                 }
             }
 
             //cek panen
-            $cek = "select * from PANEN, petani where petani.KTP=PANEN.KTP and HASIL=0 and petani.id_user='$iduserpetani'";
+            $cek = "select * from panen, petani where petani.KTP=panen.KTP and HASIL=0 and petani.id_user='$iduserpetani'";
             $querycek = mysqli_query($koneksi, $cek);
             $hasilcek=mysqli_fetch_array($querycek);
             if($hasilcek>=1) {

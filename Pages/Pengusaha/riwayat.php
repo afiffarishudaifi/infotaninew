@@ -48,12 +48,12 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT * FROM Pemesanan
+                    $query = mysqli_query($koneksi, "SELECT * FROM pemesanan
                     INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
                     INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
                     INNER JOIN petani on petani.KTP = pemesanan.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                    INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
+                    INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
                     where pemesanan.ID_PERUSAHAAN= $id_pengguna");
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
@@ -118,8 +118,8 @@
                         $hasil = $data['HASIL'] + $jumlah;
                       };
 
-                      $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN='$id'") or die(mysqli_error($koneksi));
-                      $sql = mysqli_query ($koneksi, "DELETE FROM PEMESANAN WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+                      $Tambah = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set panen.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$idperusahaan AND pemesanan.ID_PESAN='$id'") or die(mysqli_error($koneksi));
+                      $sql = mysqli_query ($koneksi, "DELETE FROM pemesanan WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         if($sql){
             echo '?>
         <script language="JavaScript">

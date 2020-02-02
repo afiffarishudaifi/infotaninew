@@ -32,35 +32,35 @@
             <div class="box-header">
                <?php if (isset($_POST['submit'])) {
                   $bulanpilih = $_POST['bulanpilih'];
-                  $lanjut = "SELECT * FROM Pemesanan
+                  $lanjut = "SELECT * FROM pemesanan
                   INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
                   INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
                   INNER JOIN petani on petani.KTP = pemesanan.KTP
                   INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                  INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                  INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
                   where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN=$id_pengguna";
-                  $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM Pemesanan
+                  $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM pemesanan
                   INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
                   INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
                   INNER JOIN petani on petani.KTP = pemesanan.KTP
                   INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                  INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                  INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
                   where month(TANGGAL) = $bulanpilih AND year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN=$id_pengguna";
                 }else {
                     $bulanpilih = 'Tahun '.$tahun;
-                    $lanjut = "SELECT * FROM Pemesanan
+                    $lanjut = "SELECT * FROM pemesanan
                     INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
                     INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
                     INNER JOIN petani on petani.KTP = pemesanan.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                    INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
+                    INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
                     where year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN= $id_pengguna";
-                    $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM Pemesanan
+                    $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM pemesanan
                     INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
                     INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
                     INNER JOIN petani on petani.KTP = pemesanan.KTP
                     INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
-                    INNER JOIN PESAN on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                    INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
                     where year(TANGGAL)=year(current_date()) and pemesanan.ID_PESAN_STATUS = 2 and pemesanan.ID_PERUSAHAAN= $id_pengguna";
                 } ?>
               <h3 class="box-title">Laporan Pemesanan <?php if(isset($_POST['submit'])){echo "Bulan ";} echo $bulanpilih; ?></h3>
@@ -92,7 +92,7 @@
               </h3>
               <br>
               <?php 
-              $hasilsum = mysqli_query($koneksi, $sum);
+              $hasilsum = mysqli_query($koneksi, $sum) or die(mysqli_error($koneksi));
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
                <h3 class="box-title">Total Pesan : <b class="uang"><?php echo $tampilsum[0]; ?> </b> <b>KG</b>  </h3>
                <br/>
@@ -120,7 +120,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, $lanjut);
+                    $query = mysqli_query($koneksi, $lanjut) or die(mysqli_error($koneksi));
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>

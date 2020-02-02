@@ -16,7 +16,7 @@
 			$condition = " where " . $condition;
 		}
 
-		$sql = "Select * from PERUSAHAAN " . $condition;
+		$sql = "Select * from perusahaan " . $condition;
 		$result = mysqli_query($conn,$sql);
 		$user = mysqli_fetch_array($result);
 		

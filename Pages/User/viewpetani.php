@@ -110,7 +110,7 @@
                       <label>Desa/Kelurahan</label>
                       <!--menginputkan sebuah inputan nim bertipe text-->
                       <?php
-                            $query = "select * from DESA";
+                            $query = "select * from desa";
                             $resultDESA = mysqli_query($koneksi, $query);
                            // ----------------------------------------
                             echo "<select name='iddesa' class='form-control' onchange='changeValue(this.value)' required>";
@@ -159,12 +159,12 @@
                   
                   <?php
                     require_once "../../controller/koneksi.php";
-                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
+                    $query = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
                     $hasilcek=mysqli_fetch_array($query);
                     if($hasilcek!=0) {?>
                       <form method="post" action="../../controller/user/controllerpetani" enctype="multipart/form-data" sdfsdf>
                       <?php
-                      $querys = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
+                      $querys = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=2 GROUP BY petani.KTP");
                         while ($datas = mysqli_fetch_array($querys)) {?>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->
@@ -227,7 +227,7 @@
                      <?php } else { ?>
                       <form method="post" action="../../controller/user/controllerpetani" enctype="multipart/form-data">
                    <?php
-                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND DESA.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
+                    $query1 = mysqli_query($koneksi, "SELECT petani.KTP as ktp, user.username as username, petani.ID_DESA, desa.NAMA_DESA as desa, petani.ID_KOMODITAS, komoditas.NAMA_KOMODITAS as komoditas, petani.ID_USER, user.USERNAME, petani.ID_STATUS, status.STATUS, petani.NAMA_PETANI, petani.ALAMAT_PETANI, petani.LUAS_SAWAH, petani.ALAMAT_SAWAH, petani.TANAM, petani.PANEN, petani.NO_HP FROM komoditas, desa, petani, user, status WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS AND desa.ID_DESA=petani.ID_DESA AND status.ID_STATUS=petani.ID_STATUS and user.ID_USER=petani.ID_USER  and petani.id_user=$login_session and petani.id_status=1 GROUP BY petani.KTP");
                     while ($data = mysqli_fetch_array($query1)) {?>
                       <div class="form-group">
                         <!--menginputkan sebuah inputan nim bertipe text-->

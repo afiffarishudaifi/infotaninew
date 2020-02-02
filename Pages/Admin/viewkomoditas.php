@@ -44,7 +44,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT * FROM KOMODITAS");
+                    $query = mysqli_query($koneksi, "SELECT * FROM komoditas") or die(mysqli_error($koneksi));
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
@@ -67,7 +67,7 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                        					$del=mysqli_query($koneksi, "select * from komoditas where id_komoditas='".$data['ID_KOMODITAS']."'");
+                        					$del=mysqli_query($koneksi, "select * from komoditas where id_komoditas='".$data['ID_KOMODITAS']."'") or die(mysqli_error($koneksi));
                         					$drow=mysqli_fetch_array($del);
                         				?>
                                         <div class="modal-footer">		<!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->

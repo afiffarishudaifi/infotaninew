@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label>KTP</label>
                     <?php
-                    $sql = "select MAX(ID_PANEN) as max, panen.KTP, komoditas.NAMA_KOMODITAS, PANEN.TGL_PANEN, HASIL from petani, panen, komoditas
+                    $sql = "select MAX(ID_PANEN) as max, panen.KTP, komoditas.NAMA_KOMODITAS, panen.TGL_PANEN, HASIL from petani, panen, komoditas
                     WHERE komoditas.ID_KOMODITAS=petani.ID_KOMODITAS and petani.KTP=panen.KTP and petani.id_user= $login_session AND HASIL=0";
                     $query = mysqli_query($koneksi, $sql);
                     $drow=mysqli_fetch_array($query);

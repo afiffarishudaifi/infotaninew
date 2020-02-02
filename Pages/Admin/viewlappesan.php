@@ -32,12 +32,34 @@
             <div class="box-header">
                <?php if (isset($_POST['submit'])) {
                   $tahunpilih = $_POST['pilih'];
-                  $lanjut = "select * from pemesanan where year(TANGGAL)=$tahunpilih";
-                  $sum = "select SUM(JUMLAH_PESAN) from pemesanan where year(TANGGAL)=$tahunpilih";
+                  $lanjut = "SELECT * FROM pemesanan
+                  INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                  INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                  INNER JOIN petani on petani.KTP = pemesanan.KTP
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                  INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS
+                   where year(TANGGAL)=$tahunpilih";
+                  $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM pemesanan
+                  INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                  INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                  INNER JOIN petani on petani.KTP = pemesanan.KTP
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                  INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS 
+                  where year(TANGGAL)=$tahunpilih";
                 }else {
                   $tahunpilih = $_POST['pilih'];
-                    $lanjut = "select * from pemesanan";
-                  $sum = "select SUM(JUMLAH_PESAN) from pemesanan";
+                    $lanjut = "SELECT * FROM pemesanan
+                    INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                    INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                    INNER JOIN petani on petani.KTP = pemesanan.KTP
+                    INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                    INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS";
+                  $sum = "SELECT SUM(JUMLAH_PESAN), SUM(TOTAL_BIAYA) FROM pemesanan
+                  INNER JOIN panen on panen.ID_PANEN = pemesanan.ID_PANEN
+                  INNER JOIN perusahaan on perusahaan.ID_PERUSAHAAN = pemesanan.ID_PERUSAHAAN
+                  INNER JOIN petani on petani.KTP = pemesanan.KTP
+                  INNER JOIN komoditas on komoditas.ID_KOMODITAS = panen.KOMODITAS
+                  INNER JOIN pesan on pesan.ID_PESAN_STATUS = pemesanan.ID_PESAN_STATUS";
                 } ?>
               <h3 style="text-align: center;">Laporan Pemesanan <?php echo $tahunpilih; ?></h3>
               <h3>
@@ -48,7 +70,7 @@
                         
 
                         echo "<option value='".$tahun."' selected>--Pilih Tahun--</option>";
-                        $cektahunpanen = mysqli_query($koneksi, "select year(TANGGAL) from pemesanan GROUP by year(TANGGAL) ");
+                        $cektahunpanen = mysqli_query($koneksi, "select year(TANGGAL) from pemesanan GROUP by year(TANGGAL) ") or die(mysqli_error($koneksi));
                         while ($data=mysqli_fetch_array($cektahunpanen)) {
                         ?>
                         <option value="<?=$data[0]?>"><?=$data[0]?></option>
@@ -63,9 +85,9 @@
               </h3>
               <br>
               <?php 
-              $hasilsum = mysqli_query($koneksi, $sum);
+              $hasilsum = mysqli_query($koneksi, $sum) or die(mysqli_error($koneksi));
               while($tampilsum = mysqli_fetch_array($hasilsum)){ ?>
-               <h3 class="box-title">Jumlah Pemesanan : <b><?php echo $tampilsum[0]; ?> KG</b>  </h3>
+               <h3 class="box-title">Jumlah Pemesanan : <b class="uang"><?php echo $tampilsum[0]; ?> </b><b> KG</b>  </h3>
              <?php } ?>
                <br>
                
@@ -76,25 +98,29 @@
                 <thead class="thead-dark">
                 <tr>
                   <th>ID PEMESANAN</th>
-                  <th>ID PERUSAHAAN</th>
+                  <TH>NAMA PERUSAHAAN</TH>
+                  <TH>NAMA PETANI</TH>
+                  <th>KOMODITAS</th>
                   <th>TANGGAL</th>
-                  <th>JUMLAH_PESAN (KG)</th>
-                  <th>TOTAL BIAYA (RP)</th>
+                  <th>JUMLAH PESAN (KG)</th>
+                  <th>TOTAL HARGA PESAN (RP)</th>
                 </tr>
                 </thead>
                 <tbody>
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, $lanjut);
+                    $query = mysqli_query($koneksi, $lanjut) or die(mysqli_error($koneksi));
                     //echo $query;
                     while ($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
                     <tr>
                         <!--memangambil data dari tabel dengan mengisikan data di table-->
                         <td><?php echo $data ['ID_PESAN'];?></td>
-                        <td><?php echo $data ['ID_PERUSAHAAN'];?></td>
-                        <td><?php echo $data ['TANGGAL'];?></td>
+                        <td><?php echo $data ['NAMA_PERUSAHAAN'];?></td>
+                        <td><?php echo $data ['NAMA_PETANI'];?></td>
+                        <td><?php echo $data ['NAMA_KOMODITAS'];?></td>
+                        <td><?php echo DATE_FORMAT(date_create($data ['TANGGAL']),'d M Y');?></td>
                         <td class="uang"><?php echo $data ['JUMLAH_PESAN'];?></td>
                         <td class="uang"><?php echo $data ['TOTAL_BIAYA'];?></td>
 

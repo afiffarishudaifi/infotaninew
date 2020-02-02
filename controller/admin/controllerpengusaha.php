@@ -47,7 +47,7 @@ if (isset($login_session)) {
                     ($koneksi, "INSERT INTO perusahaan(USERNAME, PASSWORD, SIUP, LOGO, NAMA_PERUSAHAAN, EMAIL, ALAMAT_PERUSAHAAN, NO_TELP_PERUSAHAAN, NAMA_MANAGER, ID_LEVEL)
                     VALUES('$username', md5('$password'), '$fotobaru', '$fotologo', '$perusahaan', '$email', '$alamat', '$no', '$manager',3)") or die(mysqli_error($koneksi));
                         if($sql){
-                            echo '<script>alert("Berhasil menambahkan data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
+                            echo '<script>alert("Berhasil menambahkan data!"); document.location="../../pages/admin/viewpengusaha";</script>';
                         }
                         else{
                             echo '<div class="alert alert-warning">Gagal melakukan Tambah Data</div>';
@@ -56,7 +56,7 @@ if (isset($login_session)) {
 				}
             }
             else{
-				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../Pages/admin/viewpengusaha";</script>';
+				echo '<script>alert("Gagal! Username telah terdaftar"); document.location="../../pages/admin/viewpengusaha";</script>';
 			}
         } else if (isset($_POST['ubah'])) {
             $idperusahaan = $_POST['idperusahaan'];
@@ -64,7 +64,12 @@ if (isset($login_session)) {
             $password           = $_POST['password'];
             $siup = $_FILES['siup']['name'];
             $tmp = $_FILES['siup']['tmp_name'];
+            if(isset($_POST['fotosiup'])){
             $fotosiup= $_POST['fotosiup'];
+            }
+            else{
+                $fotosiup = date('dmYHis').".jpg";
+            }
             //set path folder tempat menyimpan foto
             $fotobaru = $siup;
             $fotobaru = $fotosiup; 
@@ -73,8 +78,11 @@ if (isset($login_session)) {
 
             $logo = $_FILES['logo']['name'];
             $tmp2 = $_FILES['logo']['tmp_name'];
+            if(!empty($_POST['fotologo'])){
             $fotolamalogo = $_POST['fotologo'];
-
+            }else{
+                $fotolamalogo = date('dmYHis').".jpg";
+            }
             //merename foto dengan menambah tgl dan jam upload
             $fotologo = $logo;
             $fotologo = $fotolamalogo;
@@ -116,7 +124,7 @@ if (isset($login_session)) {
                 }else if(move_uploaded_file($tmp2, $path2)){
                     if(isset($_POST['password'])){
                     $sql = mysqli_query
-                    ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
+                    ($koneksi, "update perusahaan set USERNAME='$username', PASSWORD=md5('$password'), LOGO='$fotolamalogo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));
                     }else{
                         $sql = mysqli_query
                         ($koneksi, "update perusahaan set USERNAME='$username',  LOGO='$fotologo', NAMA_PERUSAHAAN='$perusahaan', EMAIL='$email', ALAMAT_PERUSAHAAN='$alamat', NO_TELP_PERUSAHAAN='$no', NAMA_MANAGER='$manager' WHERE ID_PERUSAHAAN='$idperusahaan'") or die(mysqli_error($koneksi));      
@@ -131,7 +139,7 @@ if (isset($login_session)) {
                     }
                 }
                     if($sql){
-                            echo '<script>alert("Berhasil mengubah data!"); document.location="../../Pages/admin/viewpengusaha";</script>';
+                            echo '<script>alert("Berhasil mengubah data!"); document.location="../../pages/admin/viewpengusaha";</script>';
                         }
                         else{
                             echo '<div class="alert alert-warning">Gagal melakukan Ubah Data</div>';

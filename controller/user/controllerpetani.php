@@ -17,7 +17,7 @@
          $status = $_POST['idstatus'];
 
          //sebuah query untuk menginputkan data ke table tb_siswa
-         $query = "UPDATE PETANI SET ID_KOMODITAS='$komoditas', 
+         $query = "UPDATE petani SET ID_KOMODITAS='$komoditas', 
          ID_STATUS='$status', NAMA_PETANI='$namapetani', ALAMAT_PETANI='$alamatpetani', NO_HP='$nohp', LUAS_SAWAH='$luassawah',
          ALAMAT_SAWAH='$alamatsawah', TANAM='$tgltanam1', PANEN='$tglpanen1' where KTP='$KTP'";
 

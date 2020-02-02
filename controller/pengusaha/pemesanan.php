@@ -14,14 +14,14 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $petani = $_POST['namapetani'];
     $pengusaha = $_POST['namapengusaha'];
     $idpanen = $_POST['idpanen'];
-    $result = mysqli_query($koneksi, "INSERT INTO PEMESANAN(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah_fix','$total_fix','1','$idpanen')");
+    $result = mysqli_query($koneksi, "INSERT INTO pemesanan(ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, ID_PESAN_STATUS, ID_PANEN) values('$id','$ktp','$tgl','$jumlah_fix','$total_fix','1','$idpanen')");
 
     $cekkurang = mysqli_query($koneksi, "SELECT max(pemesanan.ID_PESAN), panen.HASIL FROM panen, petani, pemesanan WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id");
         while ($data = mysqli_fetch_array($cekkurang)) {
             $hasil = $data['HASIL'] - $jumlah_fix;
             };
 
-        $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set PANEN.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id AND pemesanan.ID_PESAN=(SELECT max(pemesanan.ID_PESAN) FROM pemesanan)");
+        $kurang = mysqli_query($koneksi,"UPDATE panen, petani, pemesanan set panen.hasil=$hasil WHERE petani.KTP=panen.KTP AND petani.KTP=pemesanan.KTP AND panen.ID_PANEN=$idpanen AND pemesanan.KTP=$ktp AND pemesanan.ID_PERUSAHAAN=$id AND pemesanan.ID_PESAN=(SELECT max(pemesanan.ID_PESAN) FROM pemesanan)");
     if ($result) {
 
     /*$mail = new PHPMailer;
@@ -48,7 +48,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
         ?>*/
     ?>
         <script language="JavaScript">
-        alert('Tambah Pemesanan Berhasil !, Segera Bayar Tagihan sebelum 1 jam setelah pemesanan');
+        alert('Tambah Pemesanan Berhasil !, Segera Hubungi Petani untuk melakukan pembayaran');
         setTimeout(function() {window.location.href='../../pages/pengusaha/riwayat'},10);
         </script><?php
     } else {
@@ -69,7 +69,7 @@ if (isset($_POST['pesan'])) {        //memanggil sebuah nilai dari sebuah inputa
     $path = "../../img/pengusaha/buktibayar/".$fotobaru;
     if(move_uploaded_file($tmp, $path)){
         $sql = mysqli_query
-        ($koneksi, "UPDATE PEMESANAN SET FOTO='$fotobaru', ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
+        ($koneksi, "UPDATE pemesanan SET FOTO='$fotobaru', ID_PESAN_STATUS = '2' WHERE ID_PESAN = '$id'") or die(mysqli_error($koneksi));
         if($sql){
             echo '?>
         <script language="JavaScript">

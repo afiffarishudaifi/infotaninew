@@ -72,7 +72,7 @@
                                         </div>
                                         <?php
                                             require_once "../../controller/admin/koneksi.php";
-                                            $del=mysqli_query($koneksi, "select * from user where ID_USER='".$data['ID_USER']."'");
+                                            $del=mysqli_query($koneksi, "select * from user where ID_USER='".$data['ID_USER']."'") or die(mysqli_error($koneksi));
                                             $drow=mysqli_fetch_array($del);
                                         ?>
                                         <div class="modal-footer">        <!-- pilihan button yang terdapat dalam delete ada cancel dan delete -->

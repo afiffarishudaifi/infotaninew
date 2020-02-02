@@ -51,7 +51,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login" method="post">
+      <form class="form-signin" id="login" name="login" action="../../controller/frontend/proses_login.php" method="post">
         <br>
         <h2 class="form-signin-heading" align="center" style="color: #FFFFFF;">MASUK INFOTANI</h2>
 
@@ -64,12 +64,12 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Masuk</button>
         <br>
-        <a href="./button_lupa">Lupa Kata Sandi Anda?</a></p>
+        <a href="./button_lupa.php">Lupa Kata Sandi Anda?</a></p>
         <center> <p>------------------- atau --------------------</p> </center>
-        <a href="./button_register" class="btn btn-success btn-block">Buat Akun Baru?</a>
+        <a href="./button_register.php" class="btn btn-success btn-block">Buat Akun Baru?</a>
         
       	<br>
-	<a href="../../pages/frontend/index" class="btn btn-warning btn-block">Kembali</a>
+	<a href="../../pages/frontend/index.php" class="btn btn-warning btn-block">Kembali</a>
       <br>
       </form>
     </div> <!-- /container -->

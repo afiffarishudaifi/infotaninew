@@ -47,7 +47,7 @@
                     <?php
                     require_once "../../controller/admin/koneksi.php";
                     //query untuk menampilkan data table dari tb_siswa
-                    $query = mysqli_query($koneksi, "SELECT ID_PESAN, ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, STATUS_PESAN FROM Pemesanan, PESAN where PESAN.ID_PESAN_STATUS=Pemesanan.ID_PESAN_STATUS");
+                    $query = mysqli_query($koneksi, "SELECT ID_PESAN, ID_PERUSAHAAN, KTP, TANGGAL, JUMLAH_PESAN, TOTAL_BIAYA, STATUS_PESAN FROM pemesanan, pesan where pesan.ID_PESAN_STATUS=pemesanan.ID_PESAN_STATUS");
                     //echo $query;
                     while($data = mysqli_fetch_array($query)) {  //merubah array dari objek ke array yang biasanya
                     ?>
